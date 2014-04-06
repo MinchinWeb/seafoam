@@ -1,0 +1,34 @@
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+	     {% set modified = False %}
+         {% if articles %}
+            {% set copy_date = articles[0].date.strftime('%Y') %}
+         {% else %}
+            {% set copy_date = '' %}
+         {% endif %}
+		 {% if page %}
+		   {% if page.copy_date %}
+		     {% set copy_date = page.copy_date %}
+		   {% endif %}
+		   {% if page.modified %}
+		     {% set modified = page.modified %}
+		   {% endif %}
+         {% endif %}
+         <div class="col-xs-10">
+		    &copy; {{ copy_date }} {{ AUTHOR }}
+			{% if modified %}
+			  &middot;
+			  Last Updated {{ modified }}
+			{% endif %}
+            {%- if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
+			  &middot;
+              {% from 'includes/cc-license.html' import cc_license_mark %}
+              <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
+            {% endif %}
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>

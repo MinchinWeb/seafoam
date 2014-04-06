@@ -1,0 +1,51 @@
+//
+// Custom Additions
+// --------------------------------------------------
+
+
+// Sidebar Vertical Navigation
+// -------------------------
+// from  http://www.jonathanbriehl.com/2014/01/17/vertical-menu-for-bootstrap-3/
+
+@media (min-width: @screen-sm) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .navbar-brand {
+	height: auto;
+	//min-height: 100%;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  body {
+    padding-top: 0;
+  }
+  
+  .sidebar-nav {
+    padding-left: -15px;
+	padding-right: -15px;
+  }
+}
+
+
+// Images with Captions
+// -------------------------
+//
+
+.max-col-md-9 {
+	max-width: ((@screen-md - (@grid-gutter-width * 2)) * 9 / 12);
+}
