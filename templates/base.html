@@ -78,9 +78,10 @@
     {% else %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
     {% endif %}
+	{# DISABLED -- moved this to my Bootstrap theme 
     <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
-
     <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
+	#}
     {% if DOCUTIL_CSS %}
         <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
     {% endif %}
@@ -88,8 +89,8 @@
     {% if TYPOGRIFY %}
         <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
     {% endif %}
-	#}
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"/>
+	#}
     {% if CUSTOM_CSS %}
         <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
     {% endif %}
