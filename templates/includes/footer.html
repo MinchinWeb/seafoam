@@ -16,7 +16,7 @@
 		     {% set modified = page.modified %}
 		   {% endif %}
          {% endif %}
-         <div class="col-xs-10">
+         <div class="col-sm-10 col-xs-8">
 		    &copy; {{ copy_date }} {{ AUTHOR }}
 			{% if modified %}
 			  &middot;
@@ -28,7 +28,7 @@
               <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
             {% endif %}
          </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+         <div class="col-sm-2 col-xs-4"><p class="pull-right"><span class="fa fa-arrow-up"></span> <a href="#">Back to top</a></p></div>
       </div>
    </div>
 </footer>
