@@ -12,7 +12,7 @@ body {
 }
 
 /* for list-group-items nested within a list-group-item, reset the bottom
-   padding of the last item, b/c the containing item has padding already 
+   padding of the last item, b/c the containing item has paddimg already 
  */
 .list-group-item .list-group-item:last-child {
     padding-bottom: 0px;
@@ -20,6 +20,10 @@ body {
 
 .list-group-item {
     border: none;
+}
+
+.tag-0 {
+    font-size: 16pt;
 }
 
 .tag-1 {
@@ -36,6 +40,13 @@ body {
 
 .tag-4 {
     font-size: 6pt;
+}
+
+#aboutme {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    -ms-word-break: normal;
+    word-break: normal;
 }
 
 #sidebar {
@@ -63,11 +74,9 @@ body {
     margin-right: 3px;
 }
 
-/* this is breaking my bootstrap theme..
 a, a:hover {
     color: inherit;
 }
-*/
 
 .entry-content a {
     text-decoration: none;
@@ -88,6 +97,12 @@ a, a:hover {
     font-size: small;
     margin-bottom: 2px;
 }
+
+.summary img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 .floatright, .align-right {
     float: right;
@@ -125,7 +140,7 @@ figure.floatcenter, .align-center {
     margin-bottom: 11px;
 }
 
-.highlighttable .code {
+.highlighttable {
     width: 100%;
 }
 
@@ -152,3 +167,6 @@ figure.floatcenter, .align-center {
     margin-right: 10px;
 }
 
+.tagcloud li {
+    padding: 0px;
+}
