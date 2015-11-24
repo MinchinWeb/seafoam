@@ -1,13 +1,14 @@
 {% extends "base.html" %}
+
 {% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
         <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
-	  {% if not page.url == '' %}
-        <li class="active">{{ page.title }}</li>
-	  {% endif %}
+        {% if not page.url == '' %}
+            <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>
+        {% endif %}
     </ol>
     {% endif %}
 {% endblock %}

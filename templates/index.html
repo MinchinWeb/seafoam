@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% block breadcrumbs %}{% endblock %}
+
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}

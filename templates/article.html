@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
+
 {% block html_lang %}{{ article.lang }}{% endblock %}
+
 {% block meta %}
     {% if article.author %}
         <meta name="author" content="{{ article.author }}" />
@@ -14,6 +17,7 @@
         <meta name="description" content="{{ article.summary|striptags|escape }}" />
     {% endif %}
 {% endblock %}
+
 {% block opengraph %}
     {% if OPEN_GRAPH_FB_APP_ID %}
         <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
@@ -50,18 +54,13 @@
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
-        {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
-            <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+        <ol class="breadcrumb">
+            <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+            {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
                 <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
-                <li class="active">{{ article.title }}</li>
-            </ol>
-        {% else %}
-            <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">{{ article.title }}</li>
-            </ol>
-        {% endif %}
+            {% endif %}
+            <li class="active">{{ article.title }}</li>
+        </ol>     
     {% endif %}
 {% endblock %}
 

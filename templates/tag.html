@@ -1,4 +1,7 @@
 {% extends "index.html" %}
+
+{% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
+
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
@@ -8,4 +11,3 @@
     </ol>
     {% endif %}
 {% endblock %}
-{% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
