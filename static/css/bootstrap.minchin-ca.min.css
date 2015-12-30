@@ -5819,6 +5819,10 @@ button.close {
     font-family: "Expletus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
+.nav-list-level2 {
+  font-size: 18px;
+  padding-left: 40px;
+}
 .max-col-md-9 {
   max-width: 699px;
 }

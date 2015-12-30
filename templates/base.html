@@ -128,7 +128,17 @@
 					<div class="collapse navbar-collapse sidebar-navbar-collapse navbar-nonheader">
 						<ul class="nav navbar-nav">
 							{% for title, link, icon in MENUITEMS %}
-								<li><a href="{{ link }}">{% if icon %}<span class="{{icon}}"></span> {% endif %}{{ title }}</a></li>
+								<li {% if MENUITEMS_2_AT and title == MENUITEMS_2_AT %}class="active"{% endif %}><a href="{{ link }}">{% if icon %}<span class="{{icon}}"></span> {% endif %}{{ title }}</a>
+								{% if MENUITEMS_2_AT %}
+									{% if title == MENUITEMS_2_AT %}
+										<ul class="nav navbar-nav nav-list-level2">
+										{% for title_2, link_2, icon_2 in MENUITEMS_2 %}
+											<li><a href="{{ link_2 }}">{% if icon_2 %}<span class="{{icon_2}}"></span> {% endif %}{{ title_2 }}</a></li>
+										{% endfor %}
+										</ul>
+									{% endif %}
+								{% endif %}
+								</li>
 							{% endfor %}
 							{% if DISPLAY_PAGES_ON_MENU %}
 								{% for p in PAGES|sort(attribute='source_path') %}
@@ -156,11 +166,13 @@
 		{% else %}
 		<div class="col-sm-9">
 		{% endif %}
+
 		{% block breadcrumbs %}
 		{% endblock %}
 
 		{% block content %}
 		{% endblock %}
+
 		</div>
 	{% if not HIDE_SIDEBAR %}
         <div class="col-sm-3 well well-sm" id="sidebar">
