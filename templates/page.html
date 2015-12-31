@@ -6,6 +6,9 @@
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
         <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
+        {% if MENUITEMS_2_AT %}
+            <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+        {% endif %}
         {% if not page.url == '' %}
             <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>
         {% endif %}
