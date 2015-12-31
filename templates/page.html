@@ -28,6 +28,9 @@
         {% endif %}
         <div class="entry-content">
             {{ page.content }}
+            {% if ADAM_FOOTER %}
+                {{ ADAM_FOOTER }}
+            {% endif %}
         </div>
     </section>
 {% endblock %}
