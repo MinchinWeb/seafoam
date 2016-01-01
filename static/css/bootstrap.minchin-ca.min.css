@@ -5036,7 +5036,16 @@ a.list-group-item-danger.active:focus {
 .panel-danger > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #ebccd1;
 }
-.well {
+.well,
+.gt-toc,
+#gt-menu,
+.gt-stats-wrapper,
+.gt-heatmap-wrapper,
+.gt-census-wrapper,
+.gt-index-wrapper,
+.gt-birthdays-wrapper,
+#map,
+#gt-person-chart {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -5825,6 +5834,1655 @@ button.close {
 }
 .max-col-md-9 {
   max-width: 699px;
+}
+.gt-heatmap-wrapper {
+  min-height: 750px;
+  padding: 3px 13px 5px 14px;
+}
+/* Photo and File link boxes */
+.gt-image-photo-box {
+  max-width: 100px;
+  max-height: 100px;
+  display: -moz-inline-box;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+.gt-image-file-box {
+  max-width: 50px;
+  max-height: 50px;
+  width: 50px;
+  height: 50px;
+  display: -moz-inline-box;
+  display: inline-block;
+  overflow: hidden;
+}
+.gt-image-photo {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gt-image-file {
+  max-height: 100%;
+  max-width: 100%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* General */
+.gt-aid {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: .9em;
+}
+.gt-alignright {
+  float: right;
+}
+.gt-alignleft {
+  /*float:left; position:absolute;*/
+}
+/* Index Page  */
+/*
+#gt-menu h3                    {padding:5px; font-weight:bold;}
+#gt-menu ul                    {padding: 0; margin: 0; border: 0;}
+#gt-menu ul li                 {background: transparent; border-bottom: 1px solid rgba(196, 196, 196, 0.25);}
+#gt-menu a                     {color:#282828;}
+#gt-menu a:link                {color:#282828;}
+#gt-menu a:visited             {color:#282828;}
+#gt-menu a:active              {color:#282828;}
+#gt-menu a:hover               {color:#9e9e9e; text-decoration:none;}
+.gt-toc-item                   {}
+*/
+/* Surnames Page */
+.gt-index-legend {
+  text-align: center;
+}
+.gt-index-names {
+  text-align: center;
+}
+.gt-index-entry {
+  display: inline;
+  white-space: nowrap;
+}
+/* Bonkers Page */
+.gt-bonkers {
+  background: #fdf6e3;
+  color: #586e75;
+  font-size: 16px;
+  padding-top: 5px;
+}
+/* Photos Page */
+#gt-photos {
+  background: #fdf6e3;
+  color: #586e75;
+  padding: 3px 3px 0px 3px;
+}
+/* Updates page */
+.gt-updated-missing {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-updated-person {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-updated-note {
+  background: #fdf6e3;
+  color: #586e75;
+  font-style: italic;
+}
+.gt-updated-source {
+  background: #fdf6e3;
+  color: #586e75;
+  font-style: italic;
+}
+/* Source Page */
+.gt-source-publication {
+  background: #c1c872;
+}
+.gt-source-bibliography {
+  background: #d9c072;
+}
+.gt-source-template {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-source-type {
+  background: #c1c872;
+}
+.gt-source-repository {
+  background: #c1c872;
+}
+.gt-source-quality {
+  background: #F4E5CF;
+}
+.gt-source-page {
+  background: #F4E5CF;
+}
+.gt-source-ref {
+  white-space: nowrap;
+}
+.gt-referrer {
+  background: #c1c872;
+}
+.gt-url {
+  background: #b5b4d4;
+}
+.gt-citation-heading {
+  background: #7f918d;
+  padding: 1px 10px 2px 10px;
+}
+.gt-citation-text {
+  background: #92c1db;
+}
+.gt-citation-text-missing {
+  padding: 0;
+}
+.gt-citation-text pre {
+  margin: 5px 0px;
+}
+/* Location Page */
+.gt-location {
+  background: #92c1db;
+  padding: 5px 10px 5px 10px;
+}
+.gt-table-box {
+  width: 100%;
+  border: 1px solid #aaa;
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  /*padding-bottom: 1px;*/
+}
+/* Statistics Page */
+.gt-bonkers-item {
+  background: #fdf6e3;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.gt-il-title {
+  padding-left: 10px;
+  padding-top: 10px;
+  background: white;
+  font-weight: 700;
+  min-height: 30px;
+  vertical-align: bottom;
+}
+.gt-il-item {
+  padding-left: 10px;
+}
+.gt-il-item-bonkers {
+  font-size: 1.4em;
+  padding: 10px 0;
+}
+.gt-stats-title {
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+.gt-stats-line {
+  padding-left: 20px;
+}
+.gt-stats-table {
+  border: 1px;
+}
+.gt-stats-line tr td {
+  padding-right: 10px;
+}
+.gt-stats-legend td {
+  font-weight: 700;
+}
+.gt-stats-super-legend td {
+  font-weight: bolder;
+  text-align: center;
+}
+/* Census page */
+.gt-census {
+  width: 100%;
+  background: lightgrey;
+  padding: 1px 1px 1px 1px;
+  border: 1px solid rgba(196, 196, 196, 0.25);
+}
+.gt-census i {
+  font-style: italic;
+}
+.gt-census b {
+  font-weight: 700;
+}
+.gt-census-heading {
+  background: #FFE7BA;
+  font-weight: 700;
+}
+.gt-census-body {
+  background: lightyellow;
+}
+.gt-census-name {
+  background: lightyellow;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.gt-census-date {
+  background: lightyellow;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.gt-census-entryeven {
+  background: lightyellow;
+  vertical-align: top;
+  white-space: nowrap;
+  text-align: center;
+}
+.gt-census-entryodd {
+  background: lightgrey;
+  vertical-align: top;
+  white-space: nowrap;
+  text-align: center;
+}
+/* Immigrants Page */
+.gt-immigrant-ship {
+  font-style: italic;
+}
+/* Nobility Titles Page */
+/* Product Version */
+#gt-qscore {
+  display: none;
+}
+/* Last Modified date */
+#gt-modified {
+  font-size: .9em;
+  padding: 2px 0px 0px 0px;
+  margin-top: 20px;
+}
+/* GEDCOM ids */
+.gt-heading {
+  background: #002b36;
+  color: #fdf6e3;
+}
+.gt-heading li.gt-title {
+  float: left;
+  color: #fdf6e3;
+}
+.gt-heading li.gt-id {
+  float: right;
+}
+/* Photos */
+/* Claims */
+.gt-name {
+  background: #b5b4d4;
+}
+.gt-parents {
+  background: #ed9489;
+}
+.gt-spouses {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-children {
+  background: #92c1db;
+}
+.gt-assoc {
+  background: #EDCBAD;
+}
+.gt-event {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-attr {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-claim > td {
+  padding-right: 1em;
+}
+.gt-claim-index {
+  padding: 0px 5px 0px 0px;
+}
+.gt-claim-tag {
+  white-space: normal;
+}
+.gt-claim-tag-no-wrap {
+  white-space: nowrap;
+}
+.gt-claim-date {
+  white-space: nowrap;
+  text-align: right;
+}
+.gt-claim-age {
+  white-space: nowrap;
+}
+.gt-claim-disproved {
+  background: lightgrey;
+}
+.gt-claim-quality {
+  text-align: right;
+  white-space: nowrap;
+}
+.gt-claim-quality-disproved {
+  background: lightgrey;
+  font-weight: 700;
+}
+.gt-claim-quality-uncertain {
+  color: #002b36;
+}
+.gt-claim-quality-estimated {
+  color: #6c71c4;
+}
+.gt-claim-quality-unsupported {
+  color: #002b36;
+}
+.gt-claim-quality-improbable {
+  color: #dc322f;
+  font-weight: 700;
+}
+.gt-claim-quality-probable {
+  color: #859900;
+}
+.gt-claim-quality-proposed {
+  color: #2aa198;
+}
+.gt-claim-quality-possible {
+  color: #2aa198;
+}
+.gt-claim-quality-supported {
+  color: #2aa198;
+}
+.gt-claim-quality-likely {
+  color: #2aa198;
+}
+.gt-claim-quality-maybe {
+  color: #2aa198;
+}
+.gt-claim-quality-assumed {
+  color: #2aa198;
+}
+.gt-claim-quality-proven {
+  color: #2aa198;
+}
+.gt-claim-quality-certain {
+  color: #2aa198;
+}
+.gt-claim-evidence {
+  color: #859900;
+}
+.gt-claim-evidence a {
+  color: #859900;
+}
+.gt-claim-evidence a:link {
+  color: #859900;
+}
+.gt-claim-evidence a:visited {
+  color: #859900;
+}
+.gt-claim-evidence a:active {
+  color: #859900;
+}
+.gt-claim-conclusion {
+  color: #6c71c4;
+}
+.gt-claim-conclusion a {
+  color: #6c71c4;
+}
+.gt-claim-conclusion a:link {
+  color: #6c71c4;
+}
+.gt-claim-conclusion a:visited {
+  color: #6c71c4;
+}
+.gt-claim-conclusion a:active {
+  color: #6c71c4;
+}
+/* Links */
+.gt-source-link {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.gt-location-link {
+  color: #1a4c80;
+}
+.gt-chart-name-link {
+  color: #00008b;
+}
+/* Text */
+.gt-comment {
+  background: #d9c072;
+}
+.gt-note-text {
+  background: #92c1db;
+  padding: 5px 10px 3px 10px;
+}
+/* Tabs Content */
+.gt-list-group {
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+}
+.gt-list-item {
+  position: relative;
+  display: block;
+  padding: 5px 10px 8px 15px;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
+}
+.gt-list-item:last-child {
+  margin-bottom: 0;
+}
+/* Maps */
+#map {
+  min-height: 750px;
+  padding: 10px 10px 10px 10px;
+}
+.gt-map {
+  padding: 0px 0px 0px 00px;
+}
+#gt-map-canvas {
+  height: 500px;
+}
+#gt-heat-map {
+  width: 100%;
+  max-width: 1023px;
+  height: 650px;
+  margin-right: 10px;
+  float: left;
+  border: 1px solid rgba(196, 196, 196, 0.25);
+}
+div.infowindow {
+  max-height: 400px;
+  width: 100%;
+  max-width: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* for use with google heat map */
+.gt-map-location {
+  white-space: nowrap;
+}
+.gt-map-person {
+  white-space: nowrap;
+}
+.gt-map-status {
+  display: inline-block;
+  max-width: 1024px;
+  width: auto;
+  margin: 15px 0 15px 0;
+}
+/* Ancestor Lists */
+.gt-al-page {
+  background: #fdf6e3;
+  color: #586e75;
+  padding: 5px;
+  border: 1px solid #aaa;
+  margin: 2px 0px 20px 0px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+}
+.gt-al-page b {
+  font-weight: 700;
+}
+.gt-al-page i {
+  font-style: italic;
+}
+.gt-al-legend {
+  width: 600px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.gt-al-generation {
+  padding-top: 10px;
+  font-weight: 700;
+}
+.gt-al-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.gt-al-item-primary {
+  font-weight: 700;
+}
+.gt-al-item-uncertain {
+  background: lightgrey;
+}
+.gt-al-name {
+  float: left;
+  margin: 0;
+}
+.gt-al-path {
+  float: right;
+  margin: 0;
+}
+/* Note and Articles */
+.gt-note-text img,
+.gt-url img {
+  cursor: pointer;
+  margin: 0 0 3px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.gt-note-text img {
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+/* Charts */
+#gt-person-chart {
+  position: relative;
+}
+.gt-chart-node {
+  padding: 2px;
+  text-align: left;
+  font-size: 8pt;
+  font-family: "Cabin", Georgia, "Times New Roman", Times, serif;
+  vertical-align: middle;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: #000000;
+  border-right-color: #000000;
+  border-bottom-color: #000000;
+  border-left-color: #000000;
+  border-image: initial;
+}
+.gt-chart-node {
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+  height: 36px;
+  width: 156px;
+  border-color: #949494;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.gt-chart-nodeshadow {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  height: 33px;
+  width: 153px;
+  background-color: #444;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -khtml-border-radius: 5px;
+}
+.gt-chart-connector {
+  position: absolute;
+  z-index: 3;
+  overflow: hidden;
+  background-color: #949494;
+}
+.gt-chart-arrow {
+  position: absolute;
+  z-index: 5;
+}
+.gt-chart-arrow img {
+  /*width:10px;  height:10px;*/
+  cursor: pointer;
+  margin: 0 0 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.gt-chart-node-bkgnd5 {
+  background-color: #f5ecce;
+}
+.gt-chart-node-bkgnd4 {
+  background-color: #f7f2e0;
+}
+.gt-chart-node-bkgnd3 {
+  background-color: #fbf8ef;
+}
+.gt-chart-node-bkgnd2 {
+  background-color: #fbfbef;
+}
+.gt-chart-node-bkgnd1 {
+  background-color: #ffffff;
+}
+.gt-chart-node-bkgnd0 {
+  background-color: #f5ecce;
+}
+#gt-chart-legend-uncertain {
+  background-color: #aaaaaa;
+  border: 1px solid #666;
+}
+.gt-chart-node-uncertain {
+  background-color: #aaaaaa;
+}
+.gt-chart-node-uncertain a {
+  color: #ffffff;
+}
+.gt-chart-node-unknown {
+  background-color: #efefef;
+}
+.gt-chart-arrow0 {
+  left: 4px;
+}
+.gt-chart-node0 {
+  left: 23px;
+}
+.gt-chart-nodeshadow0 {
+  left: 27px;
+}
+.gt-chart-connector0a {
+  left: 179px;
+  height: 1px;
+  width: 5px;
+}
+.gt-chart-connector0b {
+  left: 183px;
+  height: 1px;
+  width: 5px;
+}
+.gt-chart-connector0c {
+  left: 183px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-arrow2 {
+  top: 290px;
+  left: 320px;
+  width: 16px;
+  height: 10px;
+}
+#gt-chart-arrow3 {
+  top: 350px;
+  left: 320px;
+  width: 16px;
+  height: 10px;
+}
+#gt-chart-node1 {
+  top: 310px;
+  left: 188px;
+}
+#gt-chart-nodeshadow1 {
+  top: 314px;
+  left: 192px;
+}
+#gt-chart-connector1 {
+  top: 328px;
+  left: 344px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector1-2a {
+  top: 168px;
+  left: 348px;
+  height: 160px;
+  width: 1.1px;
+}
+#gt-chart-connector1-2b {
+  top: 168px;
+  left: 348px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector1-3a {
+  top: 328px;
+  left: 348px;
+  height: 160px;
+  width: 1.1px;
+}
+#gt-chart-connector1-3b {
+  top: 488px;
+  left: 348px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node2 {
+  top: 150px;
+  left: 353px;
+}
+#gt-chart-nodeshadow2 {
+  top: 154px;
+  left: 357px;
+}
+#gt-chart-connector2 {
+  top: 168px;
+  left: 509px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector2-4a {
+  top: 88px;
+  left: 513px;
+  height: 80px;
+  width: 1.1px;
+}
+#gt-chart-connector2-4b {
+  top: 88px;
+  left: 513px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector2-5a {
+  top: 168px;
+  left: 513px;
+  height: 80px;
+  width: 1.1px;
+}
+#gt-chart-connector2-5b {
+  top: 248px;
+  left: 513px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node3 {
+  top: 470px;
+  left: 353px;
+}
+#gt-chart-nodeshadow3 {
+  top: 474px;
+  left: 357px;
+}
+#gt-chart-connector3 {
+  top: 488px;
+  left: 509px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector3-6a {
+  top: 408px;
+  left: 513px;
+  height: 80px;
+  width: 1.1px;
+}
+#gt-chart-connector3-6b {
+  top: 408px;
+  left: 513px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector3-7a {
+  top: 488px;
+  left: 513px;
+  height: 80px;
+  width: 1.1px;
+}
+#gt-chart-connector3-7b {
+  top: 568px;
+  left: 513px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node4 {
+  top: 70px;
+  left: 518px;
+}
+#gt-chart-nodeshadow4 {
+  top: 74px;
+  left: 522px;
+}
+#gt-chart-connector4 {
+  top: 88px;
+  left: 674px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector4-8a {
+  top: 48px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector4-8b {
+  top: 48px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector4-9a {
+  top: 88px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector4-9b {
+  top: 128px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node5 {
+  top: 230px;
+  left: 518px;
+}
+#gt-chart-nodeshadow5 {
+  top: 234px;
+  left: 522px;
+}
+#gt-chart-connector5 {
+  top: 248px;
+  left: 674px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector5-10a {
+  top: 208px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector5-10b {
+  top: 208px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector5-11a {
+  top: 248px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector5-11b {
+  top: 288px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node6 {
+  top: 390px;
+  left: 518px;
+}
+#gt-chart-nodeshadow6 {
+  top: 394px;
+  left: 522px;
+}
+#gt-chart-connector6 {
+  top: 408px;
+  left: 674px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector6-12a {
+  top: 368px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector6-12b {
+  top: 368px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector6-13a {
+  top: 408px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector6-13b {
+  top: 448px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node7 {
+  top: 550px;
+  left: 518px;
+}
+#gt-chart-nodeshadow7 {
+  top: 554px;
+  left: 522px;
+}
+#gt-chart-connector7 {
+  top: 568px;
+  left: 674px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector7-14a {
+  top: 528px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector7-14b {
+  top: 528px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector7-15a {
+  top: 568px;
+  left: 678px;
+  height: 40px;
+  width: 1.1px;
+}
+#gt-chart-connector7-15b {
+  top: 608px;
+  left: 678px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node8 {
+  top: 30px;
+  left: 683px;
+}
+#gt-chart-nodeshadow8 {
+  top: 34px;
+  left: 687px;
+}
+#gt-chart-connector8 {
+  top: 48px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector8-16a {
+  top: 28px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector8-16b {
+  top: 28px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector8-17a {
+  top: 48px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector8-17b {
+  top: 68px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node9 {
+  top: 110px;
+  left: 683px;
+}
+#gt-chart-nodeshadow9 {
+  top: 114px;
+  left: 687px;
+}
+#gt-chart-connector9 {
+  top: 128px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector9-18a {
+  top: 108px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector9-18b {
+  top: 108px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector9-19a {
+  top: 128px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector9-19b {
+  top: 148px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node10 {
+  top: 190px;
+  left: 683px;
+}
+#gt-chart-nodeshadow10 {
+  top: 194px;
+  left: 687px;
+}
+#gt-chart-connector10 {
+  top: 208px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector10-20a {
+  top: 188px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector10-20b {
+  top: 188px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector10-21a {
+  top: 208px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector10-21b {
+  top: 228px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node11 {
+  top: 270px;
+  left: 683px;
+}
+#gt-chart-nodeshadow11 {
+  top: 274px;
+  left: 687px;
+}
+#gt-chart-connector11 {
+  top: 288px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector11-22a {
+  top: 268px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector11-22b {
+  top: 268px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector11-23a {
+  top: 288px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector11-23b {
+  top: 308px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node12 {
+  top: 350px;
+  left: 683px;
+}
+#gt-chart-nodeshadow12 {
+  top: 354px;
+  left: 687px;
+}
+#gt-chart-connector12 {
+  top: 368px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector12-24a {
+  top: 348px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector12-24b {
+  top: 348px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector12-25a {
+  top: 368px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector12-25b {
+  top: 388px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node13 {
+  top: 430px;
+  left: 683px;
+}
+#gt-chart-nodeshadow13 {
+  top: 434px;
+  left: 687px;
+}
+#gt-chart-connector13 {
+  top: 448px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector13-26a {
+  top: 428px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector13-26b {
+  top: 428px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector13-27a {
+  top: 448px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector13-27b {
+  top: 468px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node14 {
+  top: 510px;
+  left: 683px;
+}
+#gt-chart-nodeshadow14 {
+  top: 514px;
+  left: 687px;
+}
+#gt-chart-connector14 {
+  top: 528px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector14-28a {
+  top: 508px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector14-28b {
+  top: 508px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector14-29a {
+  top: 528px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector14-29b {
+  top: 548px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node15 {
+  top: 590px;
+  left: 683px;
+}
+#gt-chart-nodeshadow15 {
+  top: 594px;
+  left: 687px;
+}
+#gt-chart-connector15 {
+  top: 608px;
+  left: 839px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector15-30a {
+  top: 588px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector15-30b {
+  top: 588px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-connector15-31a {
+  top: 608px;
+  left: 843px;
+  height: 20px;
+  width: 1.1px;
+}
+#gt-chart-connector15-31b {
+  top: 628px;
+  left: 843px;
+  height: 1px;
+  width: 5px;
+}
+#gt-chart-node16 {
+  top: 10px;
+  left: 848px;
+}
+#gt-chart-nodeshadow16 {
+  top: 14px;
+  left: 852px;
+}
+#gt-chart-arrow16 {
+  top: 19px;
+  left: 1010px;
+}
+#gt-chart-node17 {
+  top: 50px;
+  left: 848px;
+}
+#gt-chart-nodeshadow17 {
+  top: 54px;
+  left: 852px;
+}
+#gt-chart-arrow17 {
+  top: 69px;
+  left: 1010px;
+}
+#gt-chart-node18 {
+  top: 90px;
+  left: 848px;
+}
+#gt-chart-nodeshadow18 {
+  top: 94px;
+  left: 852px;
+}
+#gt-chart-arrow18 {
+  top: 99px;
+  left: 1010px;
+}
+#gt-chart-node19 {
+  top: 130px;
+  left: 848px;
+}
+#gt-chart-nodeshadow19 {
+  top: 134px;
+  left: 852px;
+}
+#gt-chart-arrow19 {
+  top: 139px;
+  left: 1010px;
+}
+#gt-chart-node20 {
+  top: 170px;
+  left: 848px;
+}
+#gt-chart-nodeshadow20 {
+  top: 174px;
+  left: 852px;
+}
+#gt-chart-arrow20 {
+  top: 179px;
+  left: 1010px;
+}
+#gt-chart-node21 {
+  top: 210px;
+  left: 848px;
+}
+#gt-chart-nodeshadow21 {
+  top: 214px;
+  left: 852px;
+}
+#gt-chart-arrow21 {
+  top: 219px;
+  left: 1010px;
+}
+#gt-chart-node22 {
+  top: 250px;
+  left: 848px;
+}
+#gt-chart-nodeshadow22 {
+  top: 254px;
+  left: 852px;
+}
+#gt-chart-arrow22 {
+  top: 259px;
+  left: 1010px;
+}
+#gt-chart-node23 {
+  top: 290px;
+  left: 848px;
+}
+#gt-chart-nodeshadow23 {
+  top: 294px;
+  left: 852px;
+}
+#gt-chart-arrow23 {
+  top: 299px;
+  left: 1010px;
+}
+#gt-chart-node24 {
+  top: 330px;
+  left: 848px;
+}
+#gt-chart-nodeshadow24 {
+  top: 334px;
+  left: 852px;
+}
+#gt-chart-arrow24 {
+  top: 339px;
+  left: 1010px;
+}
+#gt-chart-node25 {
+  top: 370px;
+  left: 848px;
+}
+#gt-chart-nodeshadow25 {
+  top: 374px;
+  left: 852px;
+}
+#gt-chart-arrow25 {
+  top: 379px;
+  left: 1010px;
+}
+#gt-chart-node26 {
+  top: 410px;
+  left: 848px;
+}
+#gt-chart-nodeshadow26 {
+  top: 414px;
+  left: 852px;
+}
+#gt-chart-arrow26 {
+  top: 419px;
+  left: 1010px;
+}
+#gt-chart-node27 {
+  top: 450px;
+  left: 848px;
+}
+#gt-chart-nodeshadow27 {
+  top: 454px;
+  left: 852px;
+}
+#gt-chart-arrow27 {
+  top: 459px;
+  left: 1010px;
+}
+#gt-chart-node28 {
+  top: 490px;
+  left: 848px;
+}
+#gt-chart-nodeshadow28 {
+  top: 494px;
+  left: 852px;
+}
+#gt-chart-arrow28 {
+  top: 499px;
+  left: 1010px;
+}
+#gt-chart-node29 {
+  top: 530px;
+  left: 848px;
+}
+#gt-chart-nodeshadow29 {
+  top: 534px;
+  left: 852px;
+}
+#gt-chart-arrow29 {
+  top: 539px;
+  left: 1010px;
+}
+#gt-chart-node30 {
+  top: 570px;
+  left: 848px;
+}
+#gt-chart-nodeshadow30 {
+  top: 574px;
+  left: 852px;
+}
+#gt-chart-arrow30 {
+  top: 579px;
+  left: 1010px;
+}
+#gt-chart-node31 {
+  top: 610px;
+  left: 848px;
+}
+#gt-chart-nodeshadow31 {
+  top: 614px;
+  left: 852px;
+}
+#gt-chart-arrow31 {
+  top: 619px;
+  left: 1010px;
+}
+/******************/
+/* Tabs           */
+/******************/
+.gt-ac-container label[for^='gt-ac'] {
+  background-color: #2aa198;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  display: block;
+  font-weight: 700;
+  padding: 5px 15px;
+  margin-bottom: 0;
+}
+.gt-ac-container label[for^='gt-ac']:hover {
+  background: #35c9be;
+}
+.gt-ac-container {
+  margin: 5px auto 30px auto;
+  text-align: left;
+}
+.gt-ac-container label:hover:after,
+.gt-ac-container input:checked + label:hover:after {
+  background: transparent url(../images/ac_arrow_down.png) no-repeat center center;
+}
+.gt-ac-container input:checked + label:hover:after {
+  background-image: url(../images/ac_arrow_up.png);
+}
+/*
+.gt-ac-container label[for^='gt-ac']{
+  font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
+  padding: 5px 15px;
+  margin-bottom: 0px; /* override bootstrap */
+/*
+  position: relative;
+  display: block;
+  height: 40px;
+  cursor: pointer;
+  color: #333;
+  line-height: 33px;
+  font-size: 19px;
+  font-weight:normal;
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
+  background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+  background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+  background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+  background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
+  box-shadow:
+    0px 0px 0px 1px rgba(155,155,155,0.3),
+    1px 0px 0px 0px rgba(255,255,255,0.9) inset,
+    0px 2px 2px rgba(0,0,0,0.1);
+}
+.gt-ac-container label[for^='gt-ac']:hover{
+  background: #fff;
+  font-weight: 500;
+}
+.gt-ac-container input[id^="gt-ac-"]:checked + label,
+.gt-ac-container input[id^="gt-ac-"]:checked + label:hover{
+    background: #96b432;
+    background: -moz-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #96b432), color-stop(3%, #92b42a), color-stop(9%, #8fb429), color-stop(12%, #8eb12f), color-stop(15%, #8db12b), color-stop(24%, #88ad29), color-stop(41%, #7fa629), color-stop(56%, #759d23), color-stop(79%, #679320), color-stop(85%, #64911a), color-stop(88%, #648e22), color-stop(91%, #638d1d), color-stop(97%, #5e8d1d), color-stop(100%, #64891f));
+    background: -webkit-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
+    background: -o-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
+    background: -ms-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
+    background: linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
+  color: #fff;
+  text-shadow: 0px 1px 1px rgba(255,255,255, 0.3);
+  box-shadow:
+    0px 0px 0px 1px rgba(155,155,155,0.3),
+    0px 2px 2px rgba(0,0,0,0.1);
+}
+.gt-ac-container label[for^='gt-ac']:hover:after,
+.gt-ac-container input[id^="gt-ac-"]:checked + label:hover:after{
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 13px;
+  top: 7px;
+} */
+.gt-ac-container input[id^="gt-ac-"] {
+  display: none;
+}
+.gt-ac-container article {
+  background: rgba(255, 255, 255, 0.5);
+  margin-top: -1px;
+  overflow: hidden;
+  height: 0px;
+  position: relative;
+  -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+  transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.gt-ac-container article p {
+  color: #777;
+  line-height: 23px;
+  font-size: 14px;
+  margin: 0px;
+  padding-top: 10px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+}
+.gt-ac-container input[id^="gt-ac-"]:checked ~ article {
+  -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  -ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3);
+}
+.gt-ac-container input[id^="gt-ac-"]:checked ~ article.gt-ac-auto {
+  height: auto;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.gt-ac-container input[id^="gt-ac-"]:checked + label {
+  margin-top: 20px;
+}
+/******************/
+/* Graphs         */
+/******************/
+#boysNamesChartContainer {
+  height: 500px;
+}
+#girlsNamesChartContainer {
+  height: 500px;
+}
+#surnamesChartContainer {
+  height: 500px;
+}
+#totRecordsChartContainer {
+  height: 200px;
+}
+#expandedTotRecordsChartContainer {
+  height: 400px;
+}
+#avgRecordsChartContainer {
+  height: 200px;
+}
+#distOfClaimsChartContainer {
+  height: 400px;
+  margin-left: 20px;
+}
+#docClaimsChartContainer {
+  height: 400px;
+}
+#avgLifeSpanChartContainer {
+  height: 600px;
+}
+#avgAgesChartContainer {
+  height: 150px;
+}
+#expandedTotRecordsChartContainer2 {
+  height: 600px;
+}
+#xfactorChartContainer {
+  height: 350px;
+}
+#xfactorTotRecordsChartContainer {
+  height: 300px;
+}
+#xfactorStatsChartContainer {
+  height: 300px;
+}
+@media only screen and (max-width: 1200px) {
+  g.dxc-title g text tspan {
+    font-size: .7em;
+  }
+}
+/********************/
+/* Mobile Overrides */
+/********************/
+@media only screen and (max-width: 1200px) {
+  .gt-census-wrapper {
+    font-size: 1.0em;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  #gt-chart-tab {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .gt-al-path {
+    display: none;
+  }
+  .gt-census-wrapper {
+    font-size: .7em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #gt-ancestors-tab {
+    display: none;
+  }
+  .gt-census-wrapper {
+    font-size: .6em;
+  }
+  .gt-claim-quality {
+    text-align: left;
+  }
+  .gt-claim-date {
+    text-align: left;
+  }
+  #gt-comments {
+    padding: 5px 5px;
+  }
 }
 .gsc-control-cse {
   font-family: "Cabin", Georgia, "Times New Roman", Times, serif !important;

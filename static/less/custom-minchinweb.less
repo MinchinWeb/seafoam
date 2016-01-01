@@ -84,11 +84,8 @@
 .gt-birthdays-wrapper,
 #map,
 #gt-person-chart {
-  background: white;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin: 0;
-  border: 0;
+
+  &:extend(.well);
 }
 
 .gt-toc, 
@@ -97,10 +94,10 @@
 .gt-index-wrapper, 
 .gt-birthdays-wrapper,
 #gt-person-chart {
-  padding: 10px 10px 10px 20px;
+  //padding: 10px 10px 10px 20px;
 }
 .gt-stats-wrapper  {
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
 }
 
 .gt-heatmap-wrapper {
@@ -148,10 +145,11 @@
 }
 
 /* General */
-.gt-aid                        {font-family:Monaco, Consolas, monospace; font-size:.9em;}
+.gt-aid                        {font-family:@font-family-monospace; font-size:.9em;}  //font-family:Monaco, Consolas, monospace
 .gt-alignright                 {float:right;}
 .gt-alignleft                  {/*float:left; position:absolute;*/}
 /* Index Page  */
+/*
 #gt-menu h3                    {padding:5px; font-weight:bold;}
 #gt-menu ul                    {padding: 0; margin: 0; border: 0;}
 #gt-menu ul li                 {background: transparent; border-bottom: 1px solid rgba(196, 196, 196, 0.25);}
@@ -161,54 +159,55 @@
 #gt-menu a:active              {color:#282828;}
 #gt-menu a:hover               {color:#9e9e9e; text-decoration:none;}
 .gt-toc-item                   {}
+*/
 /* Surnames Page */
 .gt-index-legend               {text-align:center;}
 .gt-index-names                {text-align:center;}
 .gt-index-entry                {display:inline; white-space:nowrap;}
 /* Bonkers Page */
-.gt-bonkers                    {font-size:12px; padding-top:5px;}
+.gt-bonkers                    {background:@well-bg; color:@text-color-inverse; font-size:@font-size-small; padding-top:5px;}  // no backgound, font-size:12px
 /* Photos Page */
-#gt-photos      {padding: 3px 3px 0px 3px;}
+#gt-photos                     {background:@well-bg; color:@text-color-inverse; padding: 3px 3px 0px 3px;}  //no background
 /* Updates page */
-.gt-updated-missing            {}
-.gt-updated-person             {}
-.gt-updated-note               {font-style:italic;}
-.gt-updated-source             {font-style:italic;}
+.gt-updated-missing            {background:@well-bg; color:@text-color-inverse;}
+.gt-updated-person             {background:@well-bg; color:@text-color-inverse;}
+.gt-updated-note               {background:@well-bg; color:@text-color-inverse; font-style:italic;}
+.gt-updated-source             {background:@well-bg; color:@text-color-inverse; font-style:italic;}
 /* Source Page */
-.gt-source-publication                    {background:#F0FFF0;}
-.gt-source-bibliography        {background:#F4E5CF;}
-.gt-source-template            {background:#FFFAFA;}
-.gt-source-type                {background:#F0FFF0;}
-.gt-source-repository          {background:#F0FFF0;}
+.gt-source-publication         {background:mix(@well-bg, @sol-green);}  //#F0FFF0
+.gt-source-bibliography        {background:mix(@well-bg, @sol-yellow);}  //#F4E5CF
+.gt-source-template            {background:@well-bg; color:@text-color-inverse;}  //#FFFAFA
+.gt-source-type                {background:mix(@well-bg, @sol-green);}  //#F0FFF0
+.gt-source-repository          {background:mix(@well-bg, @sol-green);}  //#F0FFF0
 .gt-source-quality             {background:#F4E5CF;}
 .gt-source-page                {background:#F4E5CF;}
 .gt-source-ref                 {white-space:nowrap;}
-.gt-referrer                   {background:#F0FFF0;}
-.gt-url                        {background:#CBCCE6;}
-.gt-citation-heading           {background:#959A92; padding:1px 10px 2px 10px;}
-.gt-citation-text              {background:#E7F0FF;}
-.gt-citation-text-missing {padding: 0;}
+.gt-referrer                   {background:mix(@well-bg, @sol-green);}  //#F0FFF0
+.gt-url                        {background:mix(@well-bg, @sol-purple);}  //#CBCCE6
+.gt-citation-heading           {background:mix(@well-bg, @body-bg); padding:1px 10px 2px 10px;}  //#959A92
+.gt-citation-text              {background:mix(@well-bg, @sol-blueDark);}  //#E7F0FF
+.gt-citation-text-missing      {padding: 0;}
 .gt-citation-text pre          {margin: 5px 0px;}
 /* Location Page */
-.gt-location                   {background:#E7F0FF; padding:5px 10px 5px 10px;}
+.gt-location                   {background:mix(@well-bg, @sol-blueDark); padding:5px 10px 5px 10px;}  //#E7F0FF
 .gt-table-box                  {width:100%; border:1px solid #aaa; border-spacing:0px; border-collapse:separate; border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; -moz-border-radius: 4px 4px 4px 4px; /*padding-bottom: 1px;*/}
 /* Statistics Page */
-.gt-bonkers-item               {background:white; border-radius: 5px; -webkit-border-radius: 5px; margin-bottom:20px; padding-left:10px; padding-right:10px; padding-bottom:10px;}
-.gt-il-title                   {padding-left:10px; padding-top:10px; background:white; font-weight:bold; min-height:30px; vertical-align:bottom;}
+.gt-bonkers-item               {background:@well-bg; border-radius: 5px; -webkit-border-radius: 5px; margin-bottom:20px; padding-left:10px; padding-right:10px; padding-bottom:10px;}  //background:white
+.gt-il-title                   {padding-left:10px; padding-top:10px; background:white; font-weight:700; min-height:30px; vertical-align:bottom;}  //bold
 .gt-il-item                    {padding-left:10px;}
 .gt-il-item-bonkers            {font-size: 1.4em; padding: 10px 0;}
-.gt-stats-title                {font-weight: bold; padding-bottom: 10px;}
+.gt-stats-title                {font-weight: 700; padding-bottom: 10px;}  //bold
 .gt-stats-line                 {padding-left: 20px;}
 .gt-stats-table                {border: 1px;}
 .gt-stats-table-line           {}
 .gt-stats-line tr td           {padding-right: 10px;}
-.gt-stats-legend td            {font-weight: bold;}
+.gt-stats-legend td            {font-weight: 700;}  //bold
 .gt-stats-super-legend td      {font-weight: bolder; text-align: center;}
 /* Census page */
 .gt-census                     {width:100%; background:lightgrey; padding:1px 1px 1px 1px; border: 1px solid rgba(196, 196, 196, 0.25);}
 .gt-census i                   {font-style:italic;}
-.gt-census b                   {font-weight:bold;}
-.gt-census-heading             {background:#FFE7BA; font-weight:bold;}
+.gt-census b                   {font-weight:700;}  //bold
+.gt-census-heading             {background:#FFE7BA; font-weight:700;}  //bold
 .gt-census-body                {background:lightyellow;}
 .gt-census-name                {background:lightyellow; vertical-align:top; white-space:nowrap;}
 .gt-census-date                {background:lightyellow; vertical-align:top; white-space:nowrap;}
@@ -221,27 +220,27 @@
 .gt-title-cont                 {}
 
 /* Product Version */
-.gt-version                    {font-size:.9em; padding-top:10px; padding-bottom:10px;}
+//.gt-version                    {font-size:.9em; padding-top:10px; padding-bottom:10px;}  //unsed
 #gt-qscore                     {display:none;}
 /* Last Modified date */
 #gt-modified                   {font-size:.9em; padding: 2px 0px 0px 0px; margin-top: 20px;}
 /* GEDCOM ids */
-.gt-heading                    {background:#303030; color:white;}
-.gt-heading li.gt-title        {float:left;color:white;}
+.gt-heading                    {background:@body-bg; color:@sol-white;}  //background:#303030, color:white
+.gt-heading li.gt-title        {float:left; color:@sol-white;}  //white
 .gt-heading li.gt-id           {float:right;}
 /* Photos */ 
 .gt-photo                      {}
 /* Claims */
-.gt-name                       {background:#E7D0FF;}
-.gt-parents                    {background:#EDCBAD;}
-.gt-spouses                    {background:#FFEAD0;}
-.gt-children                   {background:#E7F0FF;}
+.gt-name                       {background:mix(@well-bg, @sol-purple);}  //E7D0FF
+.gt-parents                    {background:mix(@well-bg, @sol-red);}  //#EDCBAD
+.gt-spouses                    {background:@well-bg; color:@text-color-inverse;}  //#FFEAD0
+.gt-children                   {background:mix(@well-bg, @sol-blueDark);}  //#E7F0FF
 .gt-assoc                      {background:#EDCBAD;}
-.gt-event                      {background:#E7F0FF;}
-.gt-attr                       {background:#E7F0FF;}
+.gt-event                      {background:@well-bg; color:@text-color-inverse;}  //#E7F0FF
+.gt-attr                       {background:@well-bg; color:@text-color-inverse;}  //#E7F0FF
 .gt-claim>td                   {padding-right:1em;}
 .gt-claim-index                {padding:0px 5px 0px 0px;}
-.gt-claim-name                 {white-space:nowrap;}
+.gt-claim-name                 {}  //white-space:nowrap;
 .gt-claim-tag                  {white-space:normal;}
 .gt-claim-tag-no-wrap          {white-space:nowrap;}
 .gt-claim-data                 {}
@@ -249,41 +248,41 @@
 .gt-claim-age                  {white-space:nowrap;}
 .gt-claim-disproved            {background:lightgrey;}
 .gt-claim-quality              {text-align:right; white-space: nowrap;}
-.gt-claim-quality-disproved    {background:lightgrey; font-weight:bold;}
-.gt-claim-quality-uncertain    {color:black;}
-.gt-claim-quality-estimated    {color:purple;}
-.gt-claim-quality-unsupported  {color:black;}
-.gt-claim-quality-improbable   {color:red;  font-weight:bold;}
-.gt-claim-quality-probable     {color:green;}
-.gt-claim-quality-proposed     {color:#28A500;}
-.gt-claim-quality-possible     {color:#28A500;}
-.gt-claim-quality-supported    {color:#28A500;}
-.gt-claim-quality-likely       {color:#28A500;}
-.gt-claim-quality-maybe        {color:#28A500;}
-.gt-claim-quality-assumed      {color:#28A500;}
-.gt-claim-quality-certain      {color:blue;}
-.gt-claim-quality-proven       {color:blue;}
-.gt-claim-evidence             {color:green;}
-.gt-claim-evidence a           {color:green;}
-.gt-claim-evidence a:link      {color:green;}
-.gt-claim-evidence a:visited   {color:green;}
-.gt-claim-evidence a:active    {color:green;}
-.gt-claim-conclusion           {color:purple;}
-.gt-claim-conclusion a         {color:purple;}
-.gt-claim-conclusion a:link    {color:purple;}
-.gt-claim-conclusion a:visited {color:purple;}
-.gt-claim-conclusion a:active  {color:purple;}
+.gt-claim-quality-disproved    {background:lightgrey; font-weight:700;}  //bold
+.gt-claim-quality-uncertain    {color:@sol-black;}  //black
+.gt-claim-quality-estimated    {color:@sol-purple;}  //purple
+.gt-claim-quality-unsupported  {color:@sol-black;}  //black
+.gt-claim-quality-improbable   {color:@sol-red;  font-weight:700;}  //red
+.gt-claim-quality-probable     {color:@sol-green;}  //green
+.gt-claim-quality-proposed     {color:@sol-blue;}  //#28A500
+.gt-claim-quality-possible     {color:@sol-blue;}  //#28A500
+.gt-claim-quality-supported    {color:@sol-blue;}  //#28A500
+.gt-claim-quality-likely       {color:@sol-blue;}  //#28A500
+.gt-claim-quality-maybe        {color:@sol-blue;}  //#28A500
+.gt-claim-quality-assumed      {color:@sol-blue;}  //#28A500
+.gt-claim-quality-proven       {color:@sol-blue;}  //blue
+.gt-claim-quality-certain      {color:@sol-blue;}  //blue
+.gt-claim-evidence             {color:@sol-green;}  //green
+.gt-claim-evidence a           {color:@sol-green;}  //green
+.gt-claim-evidence a:link      {color:@sol-green;}  //green
+.gt-claim-evidence a:visited   {color:@sol-green;}  //green
+.gt-claim-evidence a:active    {color:@sol-green;}  //green
+.gt-claim-conclusion           {color:@sol-purple;}  //purple
+.gt-claim-conclusion a         {color:@sol-purple;}  //purple
+.gt-claim-conclusion a:link    {color:@sol-purple;}  //purple
+.gt-claim-conclusion a:visited {color:@sol-purple;}  //purple
+.gt-claim-conclusion a:active  {color:@sol-purple;}  //purple
 /* Links */
-.gt-source-link                {}
+.gt-source-link                {background:@well-bg; color:@text-color-inverse;} //empty
 .gt-article-link               {}
 .gt-location-link              {color:#1a4c80;}
-.gt-name-link                  {color:#cc3300; white-space:normal;}
+//.gt-name-link                  {color:#cc3300; white-space:normal;}
 .gt-chart-name-link            {color:#00008b;}
 /* Text */
-.gt-comment                    {background:#FFFFCC;}
-.gt-note-text                  {background:#E7F0FF; padding:5px 10px 3px 10px;}
+.gt-comment                    {background:mix(@well-bg, @sol-yellow);}  //#FFFFCC
+.gt-note-text                  {background:mix(@well-bg, @sol-blueDark); padding:5px 10px 3px 10px;}  //#E7F0FF
 /* Tabs Content */
-.gt-list-group                 {margin: 0;} 
+.gt-list-group                 {border-radius: 0 0 @border-radius-base @border-radius-base; margin: 0;} 
 .gt-list-item                  {position: relative; display: block; padding: 5px 10px 8px 15px; margin-bottom: -1px; border: 1px solid #ddd;} 
 .gt-list-item:last-child       {margin-bottom: 0;}
 /* Maps */
@@ -296,14 +295,14 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-map-person                 {white-space:nowrap;}
 .gt-map-status                 {display: inline-block; max-width:1024px; width:auto; margin:15px 0 15px 0;}
 /* Ancestor Lists */
-.gt-al-page                    {background:#E0FFFF; padding:5px; border: 1px solid #aaa; margin: 2px 0px 20px 0px; border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; -moz-border-radius: 4px 4px 4px 4px;}
-.gt-al-page b                  {font-weight:bold;}
+.gt-al-page                    {background:@well-bg; color:@text-color-inverse; padding:5px; border: 1px solid #aaa; margin: 2px 0px 20px 0px; border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px; -moz-border-radius: 4px 4px 4px 4px;}  //background:#E0FFFF
+.gt-al-page b                  {font-weight:700;}  //bold
 .gt-al-page i                  {font-style:italic;}
 .gt-al-legend                  {width:600px; list-style-type:none; margin:0; padding:0;}
-.gt-al-generation              {padding-top:10px; font-weight:bold;}
+.gt-al-generation              {padding-top:10px; font-weight:700;}  //bold
 .gt-al-list                    {list-style-type:none;  margin:0; padding:0; width: 100%;}
 .gt-al-item                    {}
-.gt-al-item-primary            {font-weight:bold;}
+.gt-al-item-primary            {font-weight:700;}  //bold
 .gt-al-item-uncertain          {background:lightgrey;}
 .gt-al-name                    {float:left;  margin:0;}
 .gt-al-path                    {float:right; margin:0;}
@@ -312,7 +311,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-note-text img              {max-height: 100%; max-width: 100%; margin:auto; display:block; }
 /* Charts */
 #gt-person-chart               {position:relative;}
-.gt-chart-node                 {padding:2px; text-align:left; font-size:8pt; font-family:Arial, Helvetica, sans-serif; vertical-align:middle; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:rgb(0, 0, 0); border-right-color:rgb(0, 0, 0); border-bottom-color:rgb(0, 0, 0); border-left-color:rgb(0, 0, 0); border-image:initial;}
+.gt-chart-node                 {padding:2px; text-align:left; font-size:8pt; font-family:@font-family-serif; vertical-align:middle; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:rgb(0, 0, 0); border-right-color:rgb(0, 0, 0); border-bottom-color:rgb(0, 0, 0); border-left-color:rgb(0, 0, 0); border-image:initial;}  //font-family:Arial, Helvetica, sans-serif;
 .gt-chart-node                 {position:absolute; z-index:5; overflow:hidden; height:36px; width:156px; border-color: #949494; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -khtml-border-radius:5px;}
 .gt-chart-nodeshadow           {position:absolute; z-index:1; overflow:hidden; height:33px; width:153px; background-color:#444; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -khtml-border-radius:5px;}
 .gt-chart-connector            {position:absolute; z-index:3; overflow:hidden; background-color:#949494;}
@@ -493,6 +492,28 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 /******************/
 /* Tabs           */
 /******************/
+#gt-profile-tab,
+#gt-timeline-tab,
+#gt-attributes-tab,
+#gt-ancestors-tab,
+#gt-chart-tab {
+}
+
+.gt-ac-container label[for^='gt-ac']{
+  background-color: @brand-primary;
+  cursor: pointer;
+  border-radius: @border-radius-base @border-radius-base 0 0;
+  display: block;
+  font-weight: 700;
+  padding: 5px 15px;
+  margin-bottom: 0; // override bootstrap
+}
+.gt-ac-container label[for^='gt-ac']:hover{
+  background: lighten(@brand-primary, 10%);;
+}
+
+
+
 .gt-ac-container{
   margin: 5px auto 30px auto;
   text-align: left;
@@ -506,10 +527,11 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
     background-image: url(../images/ac_arrow_up.png);
 }    
 
+/*
 .gt-ac-container label[for^='gt-ac']{
   font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
   padding: 5px 15px;
-  margin-bottom: 0px; /* override bootstrap */
+  margin-bottom: 0px; /* override bootstrap */ /*
   position: relative;
   display: block;
   height: 40px;
@@ -533,7 +555,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 }
 .gt-ac-container label[for^='gt-ac']:hover{
   background: #fff;
-    font-weight: 500;
+  font-weight: 500;
 }
 .gt-ac-container input[id^="gt-ac-"]:checked + label,
 .gt-ac-container input[id^="gt-ac-"]:checked + label:hover{
@@ -558,7 +580,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
   height: 24px;
   right: 13px;
   top: 7px;
-}
+} */
 .gt-ac-container input[id^="gt-ac-"] {
   display: none;
 }
@@ -597,7 +619,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-ac-container input[id^="gt-ac-"]:checked  + label {margin-top: 20px;} 
 
 /******************/
-/* Graphs      */
+/* Graphs         */
 /******************/
 #boysNamesChartContainer          {height: 500px;}
 #girlsNamesChartContainer         {height: 500px;}
