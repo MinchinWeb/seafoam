@@ -7516,6 +7516,10 @@ div.infowindow {
 .gt-chart-name-link {
   border-bottom: none;
 }
+.real-list ul {
+  list-style: disc outside none;
+  padding-left: 25px;
+}
 .gsc-control-cse {
   font-family: "Cabin", Georgia, "Times New Roman", Times, serif !important;
   font-size: 18px !important;
