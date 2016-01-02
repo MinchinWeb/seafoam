@@ -5978,10 +5978,10 @@ button.close {
   background: #c1c872;
 }
 .gt-source-quality {
-  background: #F4E5CF;
+  background: #ed9489;
 }
 .gt-source-page {
-  background: #F4E5CF;
+  background: #ed9489;
 }
 .gt-source-ref {
   white-space: nowrap;
@@ -6025,6 +6025,7 @@ button.close {
   background: #fdf6e3;
   border-radius: 5px;
   -webkit-border-radius: 5px;
+  color: #586e75;
   margin-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
@@ -6033,8 +6034,10 @@ button.close {
 .gt-il-title {
   padding-left: 10px;
   padding-top: 10px;
-  background: white;
-  font-weight: 700;
+  background: #2aa198;
+  color: #fdf6e3;
+  font-family: "Expletus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   min-height: 30px;
   vertical-align: bottom;
 }
@@ -7394,9 +7397,9 @@ div.infowindow {
   transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
 .gt-ac-container article p {
-  color: #777;
-  line-height: 23px;
-  font-size: 14px;
+  color: #586e75;
+  line-height: 22px;
+  font-size: 16px;
   margin: 0px;
   padding-top: 10px;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
@@ -7519,6 +7522,11 @@ div.infowindow {
 .real-list ul {
   list-style: disc outside none;
   padding-left: 25px;
+}
+.gt-revision {
+  background: #fdf6e3;
+  color: #586e75;
+  font-size: 18px;
 }
 .gsc-control-cse {
   font-family: "Cabin", Georgia, "Times New Roman", Times, serif !important;
