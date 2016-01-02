@@ -68,31 +68,31 @@
 	
 	{# ALL_CSS cannot be a list or a tuple for this to work... #} 
 	{% assets filters="cssmin", output="all-css.css", ALL_CSS %}
-		<link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}" type="text/css" />
+		<link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
 	{% endassets %}
 
   {% else %}
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" type="text/css"/>
+        <link href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
     {% else %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/bootstrap.min.css" type="text/css"/>
+        <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     {% endif %}
 	{# DISABLED -- moved this to my Bootstrap theme 
-    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet" type="text/css" />
 	#}
     {% if DOCUTIL_CSS %}
-        <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet" type="text/css" />
     {% endif %}
 	{# DISABLED -- moved this to my Bootstrap theme 
     {% if TYPOGRIFY %}
-        <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet">
+        <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet"  type="text/css" />
     {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css"/>
+    <link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" />
 	#}
     {% if CUSTOM_CSS %}
-        <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet">
+        <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
     {% endif %}
   {% endif %}
 

@@ -84,7 +84,6 @@
 .gt-birthdays-wrapper,
 #map,
 #gt-person-chart {
-
   &:extend(.well);
 }
 
@@ -149,17 +148,16 @@
 .gt-alignright                 {float:right;}
 .gt-alignleft                  {/*float:left; position:absolute;*/}
 /* Index Page  */
-/*
-#gt-menu h3                    {padding:5px; font-weight:bold;}
-#gt-menu ul                    {padding: 0; margin: 0; border: 0;}
-#gt-menu ul li                 {background: transparent; border-bottom: 1px solid rgba(196, 196, 196, 0.25);}
-#gt-menu a                     {color:#282828;}
-#gt-menu a:link                {color:#282828;}
-#gt-menu a:visited             {color:#282828;}
-#gt-menu a:active              {color:#282828;}
-#gt-menu a:hover               {color:#9e9e9e; text-decoration:none;}
+#gt-menu h3                    {padding:5px; font-weight:700;}  //bold
+#gt-menu ul                    {padding: 0; margin: 0; border: 0; list-style: none;}
+#gt-menu ul li                 {background: transparent;}  //border-bottom: 1px solid rgba(196, 196, 196, 0.25);
+#gt-menu a                     {color:@text-color-inverse; border-bottom:none;}  //#282828
+#gt-menu a:link                {color:@text-color-inverse;}  //#282828
+#gt-menu a:visited             {color:@text-color-inverse;}  //#282828
+#gt-menu a:active              {color:@text-color-inverse;}  //#282828
+#gt-menu a:hover               {color:@link-color; text-decoration:none;}  //#9e9e9e
 .gt-toc-item                   {}
-*/
+
 /* Surnames Page */
 .gt-index-legend               {text-align:center;}
 .gt-index-names                {text-align:center;}
@@ -223,7 +221,7 @@
 //.gt-version                    {font-size:.9em; padding-top:10px; padding-bottom:10px;}  //unsed
 #gt-qscore                     {display:none;}
 /* Last Modified date */
-#gt-modified                   {font-size:.9em; padding: 2px 0px 0px 0px; margin-top: 20px;}
+#gt-modified                   {font-size:@font-size-small; padding: 2px 0px 0px 0px; margin-top: 20px;}  //font-size:.9em; padding: 2px 0px 0px 0px;
 /* GEDCOM ids */
 .gt-heading                    {background:@body-bg; color:@sol-white;}  //background:#303030, color:white
 .gt-heading li.gt-title        {float:left; color:@sol-white;}  //white
@@ -254,12 +252,12 @@
 .gt-claim-quality-unsupported  {color:@sol-black;}  //black
 .gt-claim-quality-improbable   {color:@sol-red;  font-weight:700;}  //red
 .gt-claim-quality-probable     {color:@sol-green;}  //green
-.gt-claim-quality-proposed     {color:@sol-blue;}  //#28A500
-.gt-claim-quality-possible     {color:@sol-blue;}  //#28A500
-.gt-claim-quality-supported    {color:@sol-blue;}  //#28A500
-.gt-claim-quality-likely       {color:@sol-blue;}  //#28A500
-.gt-claim-quality-maybe        {color:@sol-blue;}  //#28A500
-.gt-claim-quality-assumed      {color:@sol-blue;}  //#28A500
+.gt-claim-quality-proposed     {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-possible     {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-supported    {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-likely       {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-maybe        {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-assumed      {color:@sol-blueDark;}  //#28A500
 .gt-claim-quality-proven       {color:@sol-blue;}  //blue
 .gt-claim-quality-certain      {color:@sol-blue;}  //blue
 .gt-claim-evidence             {color:@sol-green;}  //green
@@ -278,6 +276,7 @@
 .gt-location-link              {color:#1a4c80;}
 //.gt-name-link                  {color:#cc3300; white-space:normal;}
 .gt-chart-name-link            {color:#00008b;}
+.gt-chart-name-link a          {border-bottom-width: 0;}
 /* Text */
 .gt-comment                    {background:mix(@well-bg, @sol-yellow);}  //#FFFFCC
 .gt-note-text                  {background:mix(@well-bg, @sol-blueDark); padding:5px 10px 3px 10px;}  //#E7F0FF
@@ -660,9 +659,21 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 }
 
 @media only screen and (max-width: 768px) {
-  #gt-ancestors-tab {display:none;}
+  #gt-ancestors-tab  {display:none;}
   .gt-census-wrapper {font-size: .6em;}
-  .gt-claim-quality              {text-align:left;}
-  .gt-claim-date             {text-align:left;}
-  #gt-comments {padding: 5px 5px;}
+  .gt-claim-quality  {text-align:left;}
+  .gt-claim-date     {text-align:left;}
+  #gt-comments       {padding: 5px 5px;}
 }
+
+/********************/
+/*Overrides         */
+/********************/
+
+.entry-content {
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+.gt-chart-name-link          {border-bottom: none;}

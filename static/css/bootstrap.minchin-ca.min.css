@@ -5887,17 +5887,36 @@ button.close {
   /*float:left; position:absolute;*/
 }
 /* Index Page  */
-/*
-#gt-menu h3                    {padding:5px; font-weight:bold;}
-#gt-menu ul                    {padding: 0; margin: 0; border: 0;}
-#gt-menu ul li                 {background: transparent; border-bottom: 1px solid rgba(196, 196, 196, 0.25);}
-#gt-menu a                     {color:#282828;}
-#gt-menu a:link                {color:#282828;}
-#gt-menu a:visited             {color:#282828;}
-#gt-menu a:active              {color:#282828;}
-#gt-menu a:hover               {color:#9e9e9e; text-decoration:none;}
-.gt-toc-item                   {}
-*/
+#gt-menu h3 {
+  padding: 5px;
+  font-weight: 700;
+}
+#gt-menu ul {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style: none;
+}
+#gt-menu ul li {
+  background: transparent;
+}
+#gt-menu a {
+  color: #586e75;
+  border-bottom: none;
+}
+#gt-menu a:link {
+  color: #586e75;
+}
+#gt-menu a:visited {
+  color: #586e75;
+}
+#gt-menu a:active {
+  color: #586e75;
+}
+#gt-menu a:hover {
+  color: #2aa198;
+  text-decoration: none;
+}
 /* Surnames Page */
 .gt-index-legend {
   text-align: center;
@@ -6099,7 +6118,7 @@ button.close {
 }
 /* Last Modified date */
 #gt-modified {
-  font-size: .9em;
+  font-size: 16px;
   padding: 2px 0px 0px 0px;
   margin-top: 20px;
 }
@@ -6188,22 +6207,22 @@ button.close {
   color: #859900;
 }
 .gt-claim-quality-proposed {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-possible {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-supported {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-likely {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-maybe {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-assumed {
-  color: #2aa198;
+  color: #268bd2;
 }
 .gt-claim-quality-proven {
   color: #2aa198;
@@ -6251,6 +6270,9 @@ button.close {
 }
 .gt-chart-name-link {
   color: #00008b;
+}
+.gt-chart-name-link a {
+  border-bottom-width: 0;
 }
 /* Text */
 .gt-comment {
@@ -7483,6 +7505,16 @@ div.infowindow {
   #gt-comments {
     padding: 5px 5px;
   }
+}
+/********************/
+/*Overrides         */
+/********************/
+.entry-content ul {
+  padding-left: 0;
+  list-style: none;
+}
+.gt-chart-name-link {
+  border-bottom: none;
 }
 .gsc-control-cse {
   font-family: "Cabin", Georgia, "Times New Roman", Times, serif !important;
