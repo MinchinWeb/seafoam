@@ -9,6 +9,9 @@
         {% if MENUITEMS_2_AT %}
             <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
         {% endif %}
+        {% if page.at %}
+            <li><a href="{{ SITEURL }}/{{ page.at_link }}" title="{{ page.at }}">{{ page.at }}</a></li>
+        {% endif %}
         {% if not page.url == '' %}
             <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>
         {% endif %}
