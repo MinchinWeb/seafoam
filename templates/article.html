@@ -70,7 +70,17 @@
 {% block content %}
     <section id="content">
         <article>
-            <header class="page-header">
+            {% if article.image %}
+                <picture>
+                    <img class="featured-image" src="{{ SITEURL }}/{{ article.image }}">
+                </picture>
+            {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
+                <picture>
+                    <img class="featured-image" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category] }}">
+                </picture>               
+            {% endif %}
+
+            <header class="entry-header">
                 <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
@@ -88,6 +98,7 @@
                 {{ article.content }}
             </div>
             <!-- /.entry-content -->
+            {% include 'includes/neighbors.html' %}
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
             {% include 'includes/comments.html' %}

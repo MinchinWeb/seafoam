@@ -56,6 +56,25 @@
   padding-left: 40px;
 }
 
+/* No top navigation */
+body {
+    padding-top: 20px   !important;
+}
+
+/* have links only below the header image */
+.navbar-nonheader {
+  clear: left;
+}
+
+/* make sidebar nav vertical */
+/* modifications for our logo */
+
+@media (max-width: 767px) {
+  .navbar-header {
+    margin-bottom: 45px;
+  /*  This is too much if the screen is narrower than about 250px */
+  }
+}
 
 
 // Images with Captions
@@ -65,6 +84,61 @@
 .max-col-md-9 {
 	max-width: ((@screen-md - (@grid-gutter-width * 2)) * 9 / 12);
 }
+
+
+// Blog Archives page
+.archives-date {
+    text-align: right;
+}
+
+// Blog Featured Images
+.featured-image {
+  &:extend(.center-block);
+  &:extend(.img-responsive);
+  border-radius: @border-radius-base;
+}
+
+// Blog -- Project 365 EXIF data
+.photo-infobox {
+  &:extend(blockquote);
+  padding-left: @font-size-h2 + @line-height-computed;
+  em {
+    font-style: normal;
+    color: @brand-primary;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+.photo-infobox::before {
+  // displays 'exif', rotated, along the left edge of the box
+  color: @blockquote-border-color;
+  content: 'exif';
+  display: block;
+  font-size: @font-size-h2;
+  font-style: italic;
+  line-height: 1;
+  position: absolute;
+  transform: translate(@line-height-computed, 150px) rotate(-90deg);
+  transform-origin: -2*@font-size-h2 top 0;
+}
+
+// Pager spacing
+//
+// On narrow screens, the two pages end up touching. This puts vertical space
+// between them.
+//
+// TO-DO: Fix this further
+.pager {
+  a {
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+  }
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
 
 // for Genealogy (Gigatrees)
 // ------------------------
@@ -670,7 +744,8 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 /*Overrides         */
 /********************/
 
-.entry-content {
+//.entry-content {
+.fake-list {
   ul {
     padding-left: 0;
     list-style: none;

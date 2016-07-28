@@ -1,0 +1,42 @@
+{% if NEIGHBORS %}
+	<hr />
+	<p class="text-center">Other posts</p>
+	<ul class="pager">
+		{% if article.prev_article %}
+		    <li class="previous">
+		        <a href="{{ SITEURL }}/{{ article.prev_article.url}}" rel="prev">
+		            &larr; {{ article.prev_article.title }}
+		        </a>
+		    </li>
+		{% endif %}
+		{% if article.next_article %}
+		    <li class="next">
+		        <a href="{{ SITEURL }}/{{ article.next_article.url}}" rel="next">
+		            {{ article.next_article.title }} &rarr;
+		        </a>
+		   </li>
+		{% endif %}
+	</ul>
+
+	{% if not article.category == 'misc' %}
+		<hr />
+		<p class="text-center">Other posts under {{ article.category }}</p>
+
+		<ul class="pager">
+			{% if article.prev_article_in_category %}
+		     	<li class="previous">
+		         	<a href="{{ SITEURL }}/{{ article.prev_article_in_category.url}}">
+		            	&larr; {{ article.prev_article_in_category.title }}
+		         	</a>
+			    </li>
+			{% endif %}
+			{% if article.next_article_in_category %}
+			    <li class="next">
+			        <a href="{{ SITEURL }}/{{ article.next_article_in_category.url}}">
+			            {{ article.next_article_in_category.title }} &rarr;
+			        </a>
+			    </li>
+			{% endif %}
+		</ul>
+	{% endif %}
+{% endif %}

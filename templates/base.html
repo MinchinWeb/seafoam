@@ -94,6 +94,11 @@
     {% if CUSTOM_CSS %}
         <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
     {% endif %}
+    {% if CUSTOM_CSS_LIST %}
+		{% for custom_css in CUSTOM_CSS_LIST %}
+	    	<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
+		{% endfor %}
+	{% endif %}
   {% endif %}
 
     {% if FEED_ALL_ATOM %}
@@ -143,7 +148,7 @@
 							{% if DISPLAY_PAGES_ON_MENU %}
 								{% for p in PAGES|sort(attribute='source_path') %}
 									 <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-										 {% if p.icon %}<span class="{{p.icon}}"></span> {% endif %}{{ p.menulabel|default(p.title) }}
+										 {%- if p.icon %}<span class="{{p.icon}}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
 									  </a></li>
 								  {% endfor %}
 							{% endif %}

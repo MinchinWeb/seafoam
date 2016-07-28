@@ -202,7 +202,8 @@ th {
     content: "";
   }
   pre,
-  blockquote {
+  blockquote,
+  .photo-infobox {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
@@ -306,7 +307,8 @@ img {
 .thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner > .item > a > img,
+.featured-image {
   display: block;
   max-width: 100%;
   height: auto;
@@ -624,10 +626,11 @@ abbr[data-original-title] {
   font-size: 90%;
   text-transform: uppercase;
 }
-blockquote {
+blockquote,
+.photo-infobox {
   padding: 12.5px 25px;
   margin: 0 0 25px;
-  font-size: 22.5px;
+  font-size: 18px;
   border-left: 5px solid #586e75;
 }
 blockquote p:last-child,
@@ -5648,7 +5651,8 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.center-block {
+.center-block,
+.featured-image {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -5832,8 +5836,59 @@ button.close {
   font-size: 18px;
   padding-left: 40px;
 }
+/* No top navigation */
+body {
+  padding-top: 20px   !important;
+}
+/* have links only below the header image */
+.navbar-nonheader {
+  clear: left;
+}
+/* make sidebar nav vertical */
+/* modifications for our logo */
+@media (max-width: 767px) {
+  .navbar-header {
+    margin-bottom: 45px;
+    /*  This is too much if the screen is narrower than about 250px */
+  }
+}
 .max-col-md-9 {
   max-width: 699px;
+}
+.archives-date {
+  text-align: right;
+}
+.featured-image {
+  border-radius: 4px;
+}
+.photo-infobox {
+  padding-left: 63px;
+}
+.photo-infobox em {
+  font-style: normal;
+  color: #2aa198;
+}
+.photo-infobox p:last-child {
+  margin-bottom: 0;
+}
+.photo-infobox::before {
+  color: #586e75;
+  content: 'exif';
+  display: block;
+  font-size: 38px;
+  font-style: italic;
+  line-height: 1;
+  position: absolute;
+  transform: translate(25px, 150px) rotate(-90deg);
+  transform-origin: -76px top 0;
+}
+.pager {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pager a {
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
 }
 .gt-heatmap-wrapper {
   min-height: 750px;
@@ -7512,7 +7567,7 @@ div.infowindow {
 /********************/
 /*Overrides         */
 /********************/
-.entry-content ul {
+.fake-list ul {
   padding-left: 0;
   list-style: none;
 }
