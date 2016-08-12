@@ -1,9 +1,10 @@
 {% if article.tags %}
-<span class="label label-default">Filed Under</span>
-{% for tag in article.tags %}
-	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-    {% if not loop.last %}
-        /
-    {% endif %}
-{% endfor %}
+	<span class="label label-default">Filed Under</span>
+	<i class="fa fa-tags"></i>
+	{% for tag in article.tags %}
+		<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+	    {% if not loop.last %}
+	        &bull;
+	    {% endif %}
+	{% endfor %}
 {% endif %}
