@@ -72,11 +72,11 @@
         <article>
             {% if article.image %}
                 <picture>
-                    <img class="featured-image" src="{{ SITEURL }}/{{ article.image }}">
+                    <img class="featured-image" src="{{ SITEURL }}/{{ article.image }}" alt="{{ article.title|e }}">
                 </picture>
             {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
                 <picture>
-                    <img class="featured-image" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category] }}">
+                    <img class="featured-image" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category] }}"  alt="{{ article.category|e }}">
                 </picture>               
             {% endif %}
 
