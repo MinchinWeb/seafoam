@@ -18,6 +18,23 @@
     <section id="content">
         <h1>Archives for {{ SITENAME }}</h1>
         <div id="archives">
+            {# Top Row with links to Archives by Year #}
+            <div class="row">
+                <div class="archives-quicklinks text-center col-xs-12">
+                    {%- set last_year = None -%}
+                    {% for article in dates %}
+                        {% if article.date.year != last_year %}
+                            {% if last_year != None %} &bull; {% endif -%}
+                            {%- set last_year = article.date.year -%}
+                            <a href="#{{ article.date.year }}">{{ article.date.year }}</a>
+                        {%- endif -%}
+                    {%- endfor %}
+                </div>
+                <div class="archives-spacer col-xs-12">&nbsp;</div>
+                <div class="archives-spacer col-xs-12">&nbsp;</div>
+            </div>
+
+            {# Main Archive Listing #}
             {%- set last_year = None -%}
             {%- set last_month = None -%}
             {%- set last_day = None -%}
