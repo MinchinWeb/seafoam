@@ -1,0 +1,26 @@
+{% if BOOTSTRAP_THEME %}
+	{% set ALL_CSS = ("css/bootstrap." + BOOTSTRAP_THEME + ".min.css", ) %}
+{% else %}
+	{% set ALL_CSS = ("css/bootstrap.min.css", ) %}
+{% endif %}
+{% set ALL_CSS = ALL_CSS + ("css/font-awesome.min.css", ) %}
+{% set ALL_CSS = ALL_CSS + ("css/pygments/" + PYGMENTS_STYLE|default('native') + ".css", ) %}
+{% if DOCUTIL_CSS %}
+	{% set ALL_CSS = ALL_CSS + ("css/html4css1.css", ) %}
+{% endif %}
+{# DISABLED -- moved this to my Bootstrap theme 
+{% if TYPOGRIFY %}
+	{% set ALL_CSS = ALL_CSS + ("css/typogrify.css", ) %}
+{% endif %}
+{% set ALL_CSS = ALL_CSS + ("css/style.css", ) %}
+#}
+{% if CUSTOM_CSS %}
+	{% set ALL_CSS = ALL_CSS + (CUSTOM_CSS, ) %}
+{% endif %}
+
+<meta name="all css" value= "{{ ALL_CSS }}" />
+
+{# ALL_CSS cannot be a list or a tuple for this to work... #} 
+{% assets filters="cssmin", output="all-css.css", ALL_CSS %}
+	<link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
+{% endassets %}

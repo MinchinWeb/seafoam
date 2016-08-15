@@ -24,21 +24,22 @@ setup(
     author_email = "w_minchin@hotmail.com",
     url = "https://github.com/MinchinWeb/minchin.pelican.themes.minchindotca",
 	packages = find_packages(),
-    namespace_packages = ['minchin.pelican.themes'],
+    namespace_packages = [
+                          'minchin.pelican.themes'
+                         ],
 	include_package_data = True,
     install_requires = [
         'pelican',
-        # and others
+        # requires asset plugin, bundle? -- https://github.com/getpelican/pelican-plugins/tree/master/assets
+        # and others, I'm sure...
+        # pathlib2 on Python 2.7
         ],
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'License :: OSI Approved :: MIT',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Multimedia :: Graphics',

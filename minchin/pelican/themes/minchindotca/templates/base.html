@@ -44,33 +44,9 @@
     {% endif %}
 	
   {% if ASSET_CSS %}
-	{% if BOOTSTRAP_THEME %}
-		{% set ALL_CSS = ("css/bootstrap." + BOOTSTRAP_THEME + ".min.css", ) %}
-	{% else %}
-		{% set ALL_CSS = ("css/bootstrap.min.css", ) %}
-	{% endif %}
-	{% set ALL_CSS = ALL_CSS + ("css/font-awesome.min.css", ) %}
-	{% set ALL_CSS = ALL_CSS + ("css/pygments/" + PYGMENTS_STYLE|default('native') + ".css", ) %}
-	{% if DOCUTIL_CSS %}
-		{% set ALL_CSS = ALL_CSS + ("css/html4css1.css", ) %}
-	{% endif %}
-	{# DISABLED -- moved this to my Bootstrap theme 
-	{% if TYPOGRIFY %}
-		{% set ALL_CSS = ALL_CSS + ("css/typogrify.css", ) %}
-	{% endif %}
-	{% set ALL_CSS = ALL_CSS + ("css/style.css", ) %}
-	#}
-	{% if CUSTOM_CSS %}
-		{% set ALL_CSS = ALL_CSS + (CUSTOM_CSS, ) %}
-	{% endif %}
-	
-	<meta name="all css" value= "{{ ALL_CSS }}" />
-	
-	{# ALL_CSS cannot be a list or a tuple for this to work... #} 
-	{% assets filters="cssmin", output="all-css.css", ALL_CSS %}
-		<link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
-	{% endassets %}
-
+  	{# put assets in a seperate file, otherwise it breaks if the assets #}
+  	{# plugin is not active #}
+  	{% include 'includes/assets-css.html' %}
   {% else %}
     <!-- Bootstrap -->
     {% if BOOTSTRAP_THEME %}
@@ -189,9 +165,9 @@
 {% include 'includes/footer.html' %}
 
 {% if ASSET_JS %}
-	{% assets filters="jspacker", output="js/all-js.js", "js/jquery.min.js", "js/bootstrap.min.js", "js/respond.min.js" %}
-	<script src="{{ SITEURL }}/{{ ASSET_URL }}" type="text/javascript"></script>
-	{% endassets %}
+	{# put assets in a seperate file, otherwise it breaks if the assets #}
+  	{# plugin is not active #}
+  	{% include 'includes/assets-js.html' %}
 {% else %}
 	<script src="{{ SITEURL }}/theme/js/jquery.min.js" type="text/javascript"></script>
 

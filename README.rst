@@ -18,14 +18,16 @@ of pip. This will also install the required dependencies automatically.
 
   pip install minchin.pelican.themes.minchindotca
 
-Then, in your ``pelicanconf.py`` file, import the modele, and then use the
-built in function to specify your theme location:
+Then, in your ``pelicanconf.py`` file, import the modele, use the
+built in function to specify your theme location, and set the default
+colour scheme:
 
 .. code-block:: python
 
   from minchin.pelican.themes import minchindotca
 
   THEME = minchindotca.get_path()
+  BOOTSTRAP_THEME = 'minchindotca'
 
 
 You will may also need to configure the theme through the use of additional
