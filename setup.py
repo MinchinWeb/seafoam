@@ -25,7 +25,9 @@ setup(
     url = "https://github.com/MinchinWeb/minchin.pelican.themes.minchindotca",
 	packages = find_packages(),
     namespace_packages = [
-                          'minchin.pelican.themes'
+                          'minchin.pelican.themes',
+                          'minchin.pelican',
+                          'minchin',
                          ],
 	include_package_data = True,
     install_requires = [
@@ -37,7 +39,7 @@ setup(
     classifiers = [
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
-        'License :: OSI Approved :: MIT',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',

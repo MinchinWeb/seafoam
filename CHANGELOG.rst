@@ -1,4 +1,4 @@
-v. 1.0.0 [2016-08-14]
+v. 1.0.0 [2016-08-15]
 =====================
 
 - pull code out of main Minchin.ca repo
