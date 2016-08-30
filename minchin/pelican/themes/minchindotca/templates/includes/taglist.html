@@ -3,8 +3,6 @@
 	<i class="fa fa-tags"></i>
 	{% for tag in article.tags %}
 		<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-	    {% if not loop.last %}
-	        &bull;
-	    {% endif %}
+	    {%- if not loop.last %} &bull; {% endif %}
 	{% endfor %}
 {% endif %}
