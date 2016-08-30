@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
-{% block breadcrumbs %}{% endblock %}
+{% block breadcrumbs %}
+    {% if DISPLAY_BREADCRUMBS %}
+        <ol class="breadcrumb">
+            <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
+            {% if MENUITEMS_2_AT %}
+                <li>{{ MENUITEMS_2_AT }}</li>
+            {% endif %}
+        </ol>     
+    {% endif %}
+{% endblock %}
 
 {% block content %}
     {% if articles %}
@@ -9,7 +18,7 @@
                 <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
-                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">more ...</a>
+                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </article>
             <hr/>
