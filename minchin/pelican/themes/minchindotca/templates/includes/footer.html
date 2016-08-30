@@ -1,12 +1,29 @@
 {% set modified = False %}
 
 {% if articles %}
+    {# if we have nothing else, set the copyright date to the year of the #}
+    {# latest article #}
     {% set copy_date = articles[0].date.strftime('%Y') %}
 {% else %}
     {% set copy_date = '' %}
 {% endif %}
 
+{% if article %}
+    {% if article.date %}
+        {% set copy_date = article.date.strftime('%Y') %}
+    {% endif %}
+    {% if article.copy_date %}
+        {% set copy_date = article.copy_date %}
+    {% endif %}
+    {% if article.modified %}
+        {% set modified = article.modified.strftime('%B %d, %Y').replace(' 0',' ') %}
+    {% endif %}
+{% endif %}
+
 {% if page %}
+    {% if page.date %}
+        {% set copy_date = page.date.strftime('%Y') %}
+    {% endif %}
     {% if page.copy_date %}
         {% set copy_date = page.copy_date %}
     {% endif %}
@@ -20,6 +37,12 @@
         {% set copy_date = ADAM_COPY_DATE %}
     {% endif %}
     {% set modified = ADAM_UPDATED %}
+{% endif %}
+
+{% if page_name == 'index' %}
+    {% if INDEX_COPY_DATE %}
+        {% set copy_date = INDEX_COPY_DATE %}
+    {% endif %}
 {% endif %}
 
 <footer>
