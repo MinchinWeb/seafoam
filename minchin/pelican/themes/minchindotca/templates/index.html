@@ -18,6 +18,8 @@
                 <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 <div class="summary">{{ article.summary }}
                     {% include 'includes/comment_count.html' %}
+                </div>
+                <div class="read-more-link text-right">
                     <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </article>
