@@ -1,6 +1,7 @@
 Changelog
 =========
 
+- :feature:`-` include (thumbnail of) featured image on article listing
 - :support:`-` start documentation with the changelog (this file)
 - :bug:`-` Better handling for copyright and modified dates in `footer.html`
 - :feature:`-` add breadcrumbs to main blog post listing page
