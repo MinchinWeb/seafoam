@@ -68,6 +68,11 @@
                     {% from 'includes/cc-license.html' import cc_license_mark %}
                     <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
                 {% endif %}
+                {% if FEED_ALL_ATOM %}
+                    {# &middot; #}
+                    &bull;
+                    <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed"><i class="fa fa-rss-square" aria-hidden="true"></i> Atom Feed</a>
+                {% endif %}
             </div>
             <div class="col-sm-2 col-xs-4"><p class="pull-right"><span class="fa fa-arrow-up"></span> <a href="#">Back to top</a></p></div>
         </div>
