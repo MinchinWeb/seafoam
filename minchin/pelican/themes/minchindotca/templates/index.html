@@ -18,16 +18,12 @@
                 <h2 class="col-xs-12"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 {%- if article.image %}
                     <div class="col-xs-4">
-                        <picture>
-                            <img class="featured-image image-process-index-thumbnail" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
-                        </picture>
+                        <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
                     </div>
                     <div class="summary col-xs-8">
                 {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
                     <div class="col-xs-4">
-                        <picture>
-                            <img class="featured-image image-process-index-thumbnail" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
-                        </picture>
+                        <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
                     </div>
                     <div class="summary col-xs-8">
                 {% else %}

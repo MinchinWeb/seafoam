@@ -73,13 +73,9 @@
     <section id="content">
         <article>
             {% if article.image %}
-                <picture>
-                    <img class="featured-image image-process-9-col" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
-                </picture>
+                <img class="featured-image image-process-article-feature" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
             {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
-                <picture>
-                    <img class="featured-image image-process-9-col" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
-                </picture>               
+                <img class="featured-image image-process-article-feature" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">              
             {% endif %}
 
             <header class="entry-header">
