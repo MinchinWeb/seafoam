@@ -8,7 +8,8 @@ This is a Pelican theme. This is the helper code to go with it.
 
 from pathlib import Path
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
+
 
 def get_path():
     """

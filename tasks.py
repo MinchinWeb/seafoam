@@ -17,6 +17,7 @@ INVOKE_SHELL = 'C:\Windows\system32\cmd.EXE'
 
 p = Path(__file__).parent  # directory holding this file
 
+
 @task
 def build(ctx):
     p2 = p / 'minchin' / 'pelican' / 'themes' / 'minchindotca'
@@ -25,10 +26,12 @@ def build(ctx):
     run('lessc {} > {}'.format(source, dest), shell=INVOKE_SHELL)
     # TODO -- minimize css!
 
+
 @task
 def test(ctx):
     p3 = p / 'test' / 'pelicanconf.py'
     run('pelican -s {}'.format(p3), shell=INVOKE_SHELL)
+
 
 @task
 def serve_test(ctx, port='8000'):
@@ -43,30 +46,39 @@ version_re = re.compile(r"__version__ = [\"\']{1,3}(?P<major>\d+)\.(?P<minor>\d+
 bare_version_re = re.compile(r"__version__ = [\"\']{1,3}([\.\dA-Za-z+-]*)[\"\']{1,3}")
 list_match_re = re.compile(r"(?P<leading>[ \t]*)(?P<mark>[-\*+]) +:\w+:")
 
+
 def here_directory():
     return(Path.cwd())
+
 
 def module_name():
     return("minchin.pelican.themes.minchindotca")
 
+
 def source_directory():
     return(here_directory() / 'minchin')
 
+
 def test_directory():
     return(here_directory() / 'tests')
+
 
 def doc_directory():
     #return(here_directory() / 'docs')
     pass
 
+
 def dist_directory():
     return(here_directory() / 'dist')
+
 
 def version_file():
     return(source_directory() / 'pelican' / 'themes' / 'minchindotca' / '__init__.py')
 
+
 def changelog_file():
     return(here_directory() / "changelog.rst")
+
 
 def server_url(server_name):
     server_name = server_name.lower()
@@ -74,6 +86,7 @@ def server_url(server_name):
         return(r"https://testpypi.python.org/pypi")
     elif server_name in ["pypi", ]:
         return(r"https://pypi.python.org/pypi")
+
 
 def update_version_number(update_level='patch'):
     """Update version number
@@ -94,7 +107,7 @@ def update_version_number(update_level='patch'):
                     else:
                         current_version = Version.coerce(bare_version_str)
                         if not text.query_yes_quit("{}I think the version is {}. Use it?".format(" "*4, current_version), default="yes"):
-                            exit(Fore.RED + 'Please set an initial version number to continue')
+                            exit(colorama.Fore.RED + 'Please set an initial version number to continue')
 
                     """Determine new version number"""
                     if update_level is 'major':
@@ -111,7 +124,7 @@ def update_version_number(update_level='patch'):
                         # don't update version
                         pass
                     else:
-                        exit(Fore.RED + 'Cannot update version in {} mode'.format(update_level))
+                        exit(colorama.Fore.RED + 'Cannot update version in {} mode'.format(update_level))
 
                     print("{}New version is     {}".format(" "*4, current_version))
 
@@ -123,10 +136,12 @@ def update_version_number(update_level='patch'):
     os.remove(str(temp_file))
     return(current_version)
 
+
 def build_distribution():
     build_status = subprocess.check_call(['python', 'setup.py', 'sdist', 'bdist_egg', 'bdist_wheel'])
     if build_status is not 0:
         exit(colorama.Fore.RED + 'Something broke tyring to package your code...')
+
 
 def other_dependancies(server, environment):
     """Installs things that need to be in place before installing the main package"""
@@ -135,10 +150,11 @@ def other_dependancies(server, environment):
     if server is "local":
         pass
     elif server in ["testpypi", "pypitest"]:
-        print("  **Install Pelican**")
-        subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pelican'], shell=True)
-    elif server is "pypi":
-        pass
+        print("  **Install Pillow, Pelican**")
+        subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pillow', 'pelican'], shell=True)
+    elif server in ["pypi"]:
+        print("  **Install Pillow, dateutil**")
+        subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pillow', 'python-dateutil'], shell=True)
     else:
         print("  **Nothing more to install**")
 
@@ -161,6 +177,8 @@ def check_local_install(version, ext, server="local"):
     if (here_directory() / environment).exists():
         shutil.rmtree(environment)  # remove directory if it exists
     subprocess.call(['python', '-m', 'venv', environment])
+    # upgrade pip
+    subprocess.call([environment + '\\Scripts\\python.exe', '-m', "pip", "install", "pip", "--upgrade"], shell=True)
     if server == "local":
         subprocess.call([environment + '\\Scripts\\pip.exe', 'install', str(the_file)], shell=True)
     else:
@@ -209,11 +227,11 @@ def make_release(cts):
     build_distribution()
 
     for server in [
-                    #"local",
-                    #"testpypi",
+                    "local",
+                    "testpypi",
                     "pypi",
                   ]:
-        for file_format in ["zip", "whl"]:
+        for file_format in ["tar.gz", "whl"]:
             print()
             text.subtitle("Test {} Build {}".format(file_format, server))
             check_local_install(new_version, file_format, server)

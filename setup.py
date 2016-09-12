@@ -20,7 +20,7 @@ setup(
     name="minchin.pelican.themes.minchindotca",
     version=get_version(),
     description="Pelican theme, first used for Minchin.ca.",
-    long_description="\n\n".join([open(os.path.join(base_dir, "README.rst")).read(), open(os.path.join(base_dir,"CHANGELOG.rst")).read()]),
+    long_description="\n\n".join([open(os.path.join(base_dir, "README.rst")).read()]),
     author="W. Minchin",
     author_email="w_minchin@hotmail.com",
     url="https://github.com/MinchinWeb/minchin.pelican.themes.minchindotca",
@@ -33,6 +33,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'pelican',
+        'minchin.pelican.plugins.image_process>=1.0.1'
         # requires asset plugin, bundle? -- https://github.com/getpelican/pelican-plugins/tree/master/assets
         # and others, I'm sure...
         # pathlib2 on Python 2.7
