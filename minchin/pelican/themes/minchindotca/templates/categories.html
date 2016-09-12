@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Categories - {{ SITENAME }}{% endblock %}
+{% block title -%}
+    Categories &mdash; {{ super() }}
+{%- endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}

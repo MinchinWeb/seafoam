@@ -1,6 +1,8 @@
 {% extends "index.html" %}
 
-{% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
+{% block title -%}
+    {{ tag|striptags|breaking_spaces }} &mdash; {{ super() }}
+{%- endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}

@@ -1,6 +1,8 @@
 {% extends "article_list.html" %}
 
-{% block title %}Articles by {{ author }} - {{ SITENAME }}{% endblock %}
+{% block title -%}
+    Articles by {{ author }} &mdash; {{ super() }}
+{%- endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
