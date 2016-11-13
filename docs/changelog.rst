@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :bug:`-` don't print section for next and previous posts in a category if
+  the article is the only one in that category
 - :feature:`-` include (thumbnail of) featured image on article listing
 - :support:`-` start documentation with the changelog (this file)
 - :bug:`-` Better handling for copyright and modified dates in `footer.html`
