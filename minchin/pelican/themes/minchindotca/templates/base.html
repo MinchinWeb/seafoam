@@ -1,90 +1,90 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+	  xmlns:og="http://ogp.me/ns#"
+	  xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>{% block title %}{{ SITENAME|striptags|breaking_spaces }}{% endblock %}</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    {% if FAVICON %}
-    <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
-    {% endif %}
+	<title>{% block title %}{{ SITENAME|striptags|breaking_spaces }}{% endblock %}</title>
+	<!-- Using the latest rendering mode for IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	{% if FAVICON %}
+	<link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
+	{% endif %}
 
-    {# Open Graph tags #}
-    {% if USE_OPEN_GRAPH is not defined %}
-        {% set USE_OPEN_GRAPH = True %}
-    {% endif %}
-    {% if USE_OPEN_GRAPH %}
-    <!-- Open Graph tags -->
-        {% if OPEN_GRAPH_FB_APP_ID %}
-            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-        {% endif %}
-        {% if article %}
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
-            <meta property="og:description" content="{{ article.summary|striptags }}"/>
-        {% elif page %}
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
-        {% else %}
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}"/>
-            <meta property="og:description" content="{{ SITENAME }}"/>
-            {% if OPEN_GRAPH_IMAGE %}
-            <meta property="og:image"
-                  content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
-            {% endif %}
-        {% endif %}
-    {% endif %}
+	{# Open Graph tags #}
+	{% if USE_OPEN_GRAPH is not defined %}
+		{% set USE_OPEN_GRAPH = True %}
+	{% endif %}
+	{% if USE_OPEN_GRAPH %}
+	<!-- Open Graph tags -->
+		{% if OPEN_GRAPH_FB_APP_ID %}
+			<meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+		{% endif %}
+		{% if article %}
+			<meta property="og:type" content="article"/>
+			<meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}"/>
+			<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+			<meta property="og:description" content="{{ article.summary|striptags }}"/>
+		{% elif page %}
+			<meta property="og:type" content="article"/>
+			<meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}"/>
+			<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
+		{% else %}
+			<meta property="og:type" content="website"/>
+			<meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}"/>
+			<meta property="og:url" content="{{ SITEURL }}"/>
+			<meta property="og:description" content="{{ SITENAME }}"/>
+			{% if OPEN_GRAPH_IMAGE %}
+			<meta property="og:image"
+				  content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
+			{% endif %}
+		{% endif %}
+	{% endif %}
 	
   {% if ASSET_CSS %}
-  	{# put assets in a seperate file, otherwise it breaks if the assets #}
-  	{# plugin is not active #}
-  	{% include 'includes/assets-css.html' %}
+	{# put assets in a seperate file, otherwise it breaks if the assets #}
+	{# plugin is not active #}
+	{% include 'includes/assets-css.html' %}
   {% else %}
-    <!-- Bootstrap -->
-    {% if BOOTSTRAP_THEME %}
-        <link href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
-    {% else %}
-        <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    {% endif %}
+	<!-- Bootstrap -->
+	{% if BOOTSTRAP_THEME %}
+		<link href="{{ SITEURL }}/theme/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
+	{% else %}
+		<link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	{% endif %}
 	{# DISABLED -- moved this to my Bootstrap theme 
-    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet" type="text/css" />
+	<link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="{{ SITEURL }}/theme/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet" type="text/css" />
 	#}
-    {% if DOCUTIL_CSS %}
-        <link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet" type="text/css" />
-    {% endif %}
+	{% if DOCUTIL_CSS %}
+		<link href="{{ SITEURL }}/theme/css/html4css1.css" rel="stylesheet" type="text/css" />
+	{% endif %}
 	{# DISABLED -- moved this to my Bootstrap theme 
-    {% if TYPOGRIFY %}
-        <link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet"  type="text/css" />
-    {% endif %}
-    <link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" />
+	{% if TYPOGRIFY %}
+		<link href="{{ SITEURL }}/theme/css/typogrify.css" rel="stylesheet"  type="text/css" />
+	{% endif %}
+	<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" />
 	#}
-    {% if CUSTOM_CSS %}
-        <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
-    {% endif %}
-    {% if CUSTOM_CSS_LIST %}
+	{% if CUSTOM_CSS %}
+		<link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
+	{% endif %}
+	{% if CUSTOM_CSS_LIST %}
 		{% for custom_css in CUSTOM_CSS_LIST %}
-	    	<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
+			<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
 		{% endfor %}
 	{% endif %}
   {% endif %}
 
-    {% if FEED_ALL_ATOM %}
-        <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
-              title="{{ SITENAME }} ATOM Feed"/>
-    {% endif %}
-    {% if FEED_ALL_RSS %}
-        <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/atom+xml" rel="alternate"
-              title="{{ SITENAME }} RSS Feed"/>
-    {% endif %}
+	{% if FEED_ALL_ATOM %}
+		<link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+			  title="{{ SITENAME }} ATOM Feed"/>
+	{% endif %}
+	{% if FEED_ALL_RSS %}
+		<link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/atom+xml" rel="alternate"
+			  title="{{ SITENAME }} RSS Feed"/>
+	{% endif %}
 
 </head>
 <body>
@@ -156,18 +156,18 @@
 
 		</div>
 	{% if not HIDE_SIDEBAR %}
-        <div class="col-sm-3 well well-sm" id="sidebar">
-            {% include 'includes/sidebar.html' %}
-        </div>
+		<div class="col-sm-3 well well-sm" id="sidebar">
+			{% include 'includes/sidebar.html' %}
+		</div>
 	{% endif %}
-    </div>
+	</div>
 </div>
 {% include 'includes/footer.html' %}
 
 {% if ASSET_JS %}
 	{# put assets in a seperate file, otherwise it breaks if the assets #}
-  	{# plugin is not active #}
-  	{% include 'includes/assets-js.html' %}
+	{# plugin is not active #}
+	{% include 'includes/assets-js.html' %}
 {% else %}
 	<script src="{{ SITEURL }}/theme/js/jquery.min.js" type="text/javascript"></script>
 
@@ -179,7 +179,7 @@
 {% endif %}
 {% if CUSTOM_JS_LIST %}
 	{% for custom_js in CUSTOM_JS_LIST%}
-    <script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
+	<script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
 	{% endfor %}
 {% endif %}
 

@@ -25,6 +25,7 @@ def build(ctx):
     dest = p2 / 'static' / 'css' / 'bootstrap.minchindotca.min.css'
     run('lessc {} > {}'.format(source, dest), shell=INVOKE_SHELL)
     # TODO -- minimize css!
+    #   consider css-html-js-minify
 
 
 @task
