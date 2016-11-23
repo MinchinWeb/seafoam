@@ -20,8 +20,8 @@ of pip. This will also install the required dependencies automatically.
 
 Then, in your ``pelicanconf.py`` file, import the modele, use the
 built in function to specify your theme location, set the default
-colour scheme, set the image processing patterns used, and add some Jinja
-filters that the theme uses:
+colour scheme (more options coming soon), add the required plugins, and set
+the image processing patterns used:
 
 .. code-block:: python
 
@@ -30,34 +30,17 @@ filters that the theme uses:
   THEME = minchindotca.get_path()
   BOOTSTRAP_THEME = 'minchindotca'
 
+  PLUGINS = ['minchin.pelican.jinja_filters',
+             'minchin.pelican.plugins.image_process',
+             # others, as desired...
+             ]
+
   IMAGE_PROCESS = {
     'article-feature': ["scale_in 848 848 True"],
     'index-feature': ["scale_in 263 263 True"],
   }
 
-  # Jijna2 filters
-  def datetimefilter(value, format='%Y/%m/%d %H:%M'):
-      """convert a datetime to a different format."""
-      return value.strftime(format)
-
-
-  def article_date(value):
-      """Converts a date to the format we want it displayed on the article
-         template.
-      """
-      return value.strftime('%A, %B %-d, %Y')
-
-
-  def breaking_spaces(value):
-      """Converts non-breaking spaces to regular spaces."""
-      return value.replace('\u00A0', ' ')
-
-
-  JINJA_FILTERS = {
-    'datetimefilter': datetimefilter,
-    'article_date':   article_date,
-    'breaking_spaces': breaking_spaces,
-  }
+  # the rest of the your configuration file...
 
 
 You will may also need to configure the theme through the use of additional
@@ -67,12 +50,16 @@ settings (see below).
 Requirements
 ============
 
-``Minchin dot ca`` requires Pelican and the ``image_process`` plugin.
-This can be manually installed with pip:
+``Minchin dot ca`` requires Pelican and the ``image_process`` and
+the ``jinja filters`` plugin. If the theme is installed from pip, these
+should be automatically installed. If needed they can be manually
+installed with pip:
 
 .. code-block:: sh
 
-   pip install pelican minchin.pelican.plugins.image_process
+   pip install pelican
+   pip install minchin.pelican.plugins.image_process
+   pip install minchin.pelican.jinja_filters
 
 
 Additional Settings

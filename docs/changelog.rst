@@ -1,6 +1,9 @@
 Changelog
 =========
 
+- :feature:`-` switch to ``minchin.pelican.jinja_filters`` to provide
+  the requied Jinja filters, rather than requiring them to be mannually
+  added to the user's configuration file
 - :bug:`-` don't print section for next and previous posts in a category if
   the article is the only one in that category
 - :release:`1.1.0 <2016-09-12>`

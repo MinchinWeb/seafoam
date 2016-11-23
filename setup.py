@@ -16,6 +16,7 @@ def get_version(filename="minchin/pelican/themes/minchindotca/__init__.py"):
             if m:
                 return m.group(1)
 
+
 setup(
     name="minchin.pelican.themes.minchindotca",
     version=get_version(),
@@ -33,7 +34,8 @@ setup(
     include_package_data=True,
     install_requires=[
         'pelican',
-        'minchin.pelican.plugins.image_process>=1.0.1'
+        'minchin.pelican.plugins.image_process>=1.0.1',
+        'minchin.pelican.jinja_filters',
         # requires asset plugin, bundle? -- https://github.com/getpelican/pelican-plugins/tree/master/assets
         # and others, I'm sure...
         # pathlib2 on Python 2.7
