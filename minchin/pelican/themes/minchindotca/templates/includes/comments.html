@@ -3,7 +3,7 @@
 	<section class="comments pcs-comments" id="comments">
 		<h2>Comments</h2>
 
-		{% if DISQUS_SITENAME %}
+		{%- if DISQUS_SITENAME %}
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
 				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -30,27 +30,23 @@
 			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 		{% endif %}
 
-		{% if PELICAN_COMMENT_SYSTEM %}
+		{%- if PELICAN_COMMENT_SYSTEM %}
 			{# comments and comment form #}
 
 			{# existing comments, if any #}
-			{% if article.comments %}
-				<div class="comment-main-level row">
-				{% set comment_level = [0] %}
-				{% for comment in article.comments recursive %}
-					
-						<div class="comment-avatar col-xs-3 col-sm-2
-								    {% if comment_level[0] > 0 %} col-xs-offset-{{ comment_level[0] }}{% endif %}"
-							 id="comment-{{comment.slug}}">
+			{%- if article.comments %}
+				{%- for comment in article.comments recursive %}
+					<div class="media" id="comment-{{comment.slug}}">
+						<div class="media-left">
 							<img    src="{{ SITEURL }}/{{ comment.avatar }}"
 									alt="Avatar for {{ comment.author }}"
 									height="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"
 									width="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"
-									class="img-responsive pull-right">
+									class="media-object">
 						</div>
-						<div class="comment-body col-xs-{{ 9 - comment_level[0] }} col-sm-{{ 10 - comment_level[0] }}">
+						<div class="media-body">
 							<div class="panel
-								        {% if article.author == comment.author %} panel-primary {% else %} panel-default {% endif %}">
+								        {%- if article.author == comment.author %} panel-primary {%- else %} panel-default {%- endif -%}">
 								<div class="panel-heading">
 									<strong>
 										{% if comment.metadata['website'] %}
@@ -69,20 +65,14 @@
 										<button class="btn btn-primary btn-xs" onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');"><i class="fa fa-reply"></i> Reply</button>
 									</div>
 								</div>
-							</div>
-						</div>
-
-						{% if comment.replies %}
-							{# increment comment level #}
-							{% if comment_level.append(comment_level.pop() + 1) %}{% endif %}
-							{{ loop(comment.replies) }}
-						{% endif %}
-
-						{# reset comment level to zero #}
-						{% if comment_level.pop() %}{% endif %}
-						{% if comment_level.append(0) %}{% endif %}
-				{% endfor %}
-				</div>
+							</div>  <!-- panel -->
+						
+							{%- if comment.replies %}
+								{{ loop(comment.replies) }}
+							{% endif -%}
+						</div>  <!-- media-body -->
+					</div>  <!-- media -->
+				{%- endfor %}
 			{% else %}
 				<p>There are no comments yet. Will add the first one?</p>
 			{% endif %}
