@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :bug:`5` switch template variable from ``PAGES`` to ``pages`` to support
+  Pelican v3.7 
 - :feature:`-` switch to ``minchin.pelican.jinja_filters`` to provide
   the requied Jinja filters, rather than requiring them to be mannually
   added to the user's configuration file

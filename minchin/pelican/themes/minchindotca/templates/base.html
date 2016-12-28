@@ -122,7 +122,7 @@
 								</li>
 							{% endfor %}
 							{% if DISPLAY_PAGES_ON_MENU %}
-								{% for p in PAGES|sort(attribute='source_path') %}
+								{% for p in pages|sort(attribute='source_path') %}
 									 <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
 										 {%- if p.icon %}<span class="{{p.icon}}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
 									  </a></li>
