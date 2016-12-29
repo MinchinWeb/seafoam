@@ -101,21 +101,28 @@
 							<p class="help-block">You can use the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> syntax to format your comment.</p>	
 						</div>
 					</div>
-					<div style="display: none; " id="pcs-comment-form-display-replyto"></div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10" style="display: none; " id="pcs-comment-form-display-replyto"></div>
+					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-primary"
 							        id="pcs-comment-form-button-submit">
-								Post via email
+							    <i class="fa fa-envelope"></i>
+								Post comment via email
 							</button>
 						</div>
 					</div>
 				</form>
 
 				{% if PELICAN_COMMENT_SYSTEM_FEED and article %}
-					<a href="{{ SITEURL }}/{{ PELICAN_COMMENT_SYSTEM_FEED|format(article.slug) }}">
-						Comment Atom Feed
-					</a>
+					<div class="col-sm-offset-2 col-sm-10">
+						<a href="{{ SITEURL }}/{{ PELICAN_COMMENT_SYSTEM_FEED|format(article.slug) }}">
+							<i class="fa fa-rss-square"></i>
+							Comment Atom Feed
+						</a>
+						(for this post)
+					</div>
 				{% endif %}
 			</section>
 		{% endif %}

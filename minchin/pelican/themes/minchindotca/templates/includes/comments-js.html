@@ -9,10 +9,10 @@
 				CommentSystem.email_domain = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}";
 				CommentSystem.display_replyto_html = function(comment_content, article_slug, author) { 
 					return ''
-						+ '<button class="pull-xs-right btn btn-sm btn-secondary" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
-						+ 	'<i class="fa fa-remove"></i>'
-						+ '</button>'
-						+ '<p>This comment will be posted as a reply to \'<a title="'+comment_content+'" href="#comment-'+article_slug+'">'+author+'</a>\'</p>';
+						+ '<button class="pull-xs-right btn btn-sm btn-danger" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
+						+ 	'<i class="fa fa-times-circle"></i> Cancel reply'
+						+ '</button> '
+						+ 'This comment will be posted as a reply to \'<a title="'+comment_content+'" href="#comment-'+article_slug+'">'+author+'</a>\'';
 				};
 
 				$('#pcs-comment-form').on("submit",

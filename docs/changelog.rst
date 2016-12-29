@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :feature:`-` upgrade to FontAwesome 4.7.0
+- :feature:`-` upgrade to jQuery 3.1.0
 - :bug:`5` switch template variable from ``PAGES`` to ``pages`` to support
   Pelican v3.7 
 - :feature:`-` switch to ``minchin.pelican.jinja_filters`` to provide
