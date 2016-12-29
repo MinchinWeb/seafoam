@@ -1,17 +1,11 @@
-// Pelican Comment System
-
 //requires jquery
 var CommentSystem = {
 	email_user:   "not set",
 	email_domain: "not set",
 	display_replyto_html: function(comment_content, article_slug, author) {return ''},
 
-	test: function() {
-		window.alert('click worked')
-	}
-
 	cancelReply: function() {
-		$('#commentForm_replyto').val("");
+		$('#pcs-comment-form-input-replyto').val("");
 		$('#pcs-comment-form-display-replyto').hide();
 	},
 

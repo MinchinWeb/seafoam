@@ -4,10 +4,11 @@ Changelog
 - :bug:`5` switch template variable from ``PAGES`` to ``pages`` to support
   Pelican v3.7 
 - :feature:`-` switch to ``minchin.pelican.jinja_filters`` to provide
-  the requied Jinja filters, rather than requiring them to be mannually
+  the required Jinja filters, rather than requiring them to be manually
   added to the user's configuration file
 - :bug:`-` don't print section for next and previous posts in a category if
   the article is the only one in that category
+- :feature:`-` add support for Pelican Blog System
 - :release:`1.1.0 <2016-09-12>`
 - :feature:`-` include (thumbnail of) featured image on article listing
 - :support:`-` start documentation with the changelog (this file)

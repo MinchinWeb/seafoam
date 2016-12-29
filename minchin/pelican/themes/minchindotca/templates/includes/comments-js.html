@@ -2,15 +2,15 @@
 	{% if PELICAN_COMMENT_SYSTEM%}
 		{# load after jQuery #}
 		<!-- Pelican Comment System -->
-		<script src="{{ SITEURL }}/theme/js/pcs.js" type="text/javascript"></script>
+		<script src="{{ SITEURL }}/theme/js/comments.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				CommentSystem.email_user   = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }}";
 				CommentSystem.email_domain = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}";
 				CommentSystem.display_replyto_html = function(comment_content, article_slug, author) { 
 					return ''
-						+ '<button style="float:right;" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
-						+   '×'
+						+ '<button class="pull-xs-right btn btn-sm btn-secondary" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
+						+ 	'<i class="fa fa-remove"></i>'
 						+ '</button>'
 						+ '<p>This comment will be posted as a reply to \'<a title="'+comment_content+'" href="#comment-'+article_slug+'">'+author+'</a>\'</p>';
 				};
