@@ -14,14 +14,17 @@
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
+            {% set DISPLAY_IMAGE = false %}
             <article class="row">
                 <h2 class="col-xs-12"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 {%- if article.image %}
+                    {% set DISPLAY_IMAGE = true %}
                     <div class="col-xs-4">
                         <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
                     </div>
                     <div class="summary col-xs-8">
                 {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
+                    {% set DISPLAY_IMAGE = true %}
                     <div class="col-xs-4">
                         <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
                     </div>
@@ -33,20 +36,32 @@
                     {{- article.summary -}}
 
                 </div>
-                <div class="read-more-link text-right">
-                    <p><small>
+                {% if DISPLAY_IMAGE == true %}
+                    <div class="col-xs-8 col-xs-offset-4">
+                {% else %}
+                    <div class="col-xs-12">
+                {% endif %}
+                    <p class="text-right"><small>
                         <span class="published">
                             <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
                         </span>
-                        &bull;
                         {% if article.stats -%}
-                            <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read &bull;
+                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read
                         {%- endif %}
-                        <i class="fa fa-comments"></i>
+                        {% if DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS %}
+                            &bull; <i class="fa fa-comments"></i>
+                        {% endif -%}
+                        {% if PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false %}
+                            &bull; <i class="fa fa-comments"></i>
+                        {% endif -%}
                         {% include 'includes/comment_count.html' %}
-                        </small>
-                        <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i></a>
-                    </p>
+                        {# only display the 'read more' link if there is more to the article #}
+                        {% if article.has_summary != false %} 
+                            &bull; <span class="label label-primary">
+                                <a href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
+                            </span>
+                        {% endif %}
+                    </small></p>
                 </div>
             </article>
             <hr/>

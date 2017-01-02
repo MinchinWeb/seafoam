@@ -8532,6 +8532,10 @@ div.infowindow {
   color: #586e75;
   font-size: 18px;
 }
+.label-default a,
+.label-primary a {
+  color: #fdf6e3;
+}
 .gsc-control-cse {
   font-family: "Cabin", Georgia, "Times New Roman", Times, serif !important;
   font-size: 18px !important;

@@ -1,11 +1,10 @@
 {% set modified = False %}
 
 {% if articles %}
-    {# if we have nothing else, set the copyright date to the year of the #}
-    {# latest article #}
+    {# if we have nothing else, set the copyright date to what we use on the index #}
     {% set copy_date = articles[0].date.strftime('%Y') %}
 {% else %}
-    {% set copy_date = '' %}
+    {% set copy_date = INDEX_COPY_DATE %}
 {% endif %}
 
 {% if article %}
@@ -58,18 +57,15 @@
                     Last Updated {{ modified }}
                 {% endif %}
                 {% if ADAM_VERSION %}
-                    {# &middot; #}
                     &bull;
                     <a href="{{ ADAM_LINK }}">{{ ADAM_VERSION }}</a>
                 {% endif %}
                 {%- if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
-                    {# &middot; #}
                     &bull;
                     {% from 'includes/cc-license.html' import cc_license_mark %}
                     <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
                 {% endif %}
                 {% if FEED_ALL_ATOM %}
-                    {# &middot; #}
                     &bull;
                     <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed"><i class="fa fa-rss-square" aria-hidden="true"></i> Atom Feed</a> (all posts)
                 {% endif %}
