@@ -7,7 +7,12 @@
     {#{% if article.author %}#}
     {#<span class="label">By</span>#}
     {#<a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>#}
-    {#{% endif %}#}
+    {#{% endif -%}#}
+
+    {%- if article.stats -%}
+        <span class="label label-default">Reading Time</span>
+        <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
+    {%- endif %}
 
     {# Uncomment if you want to show Categories#}
     {#<span class="label label-default">Category</span>#}

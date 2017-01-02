@@ -31,10 +31,22 @@
                 {% endif -%}
 
                     {{- article.summary -}}
-                    {% include 'includes/comment_count.html' %}
+
                 </div>
                 <div class="read-more-link text-right">
-                    <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i></a>
+                    <p><small>
+                        <span class="published">
+                            <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
+                        </span>
+                        &bull;
+                        {% if article.stats -%}
+                            <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read &bull;
+                        {%- endif %}
+                        <i class="fa fa-comments"></i>
+                        {% include 'includes/comment_count.html' %}
+                        </small>
+                        <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i></a>
+                    </p>
                 </div>
             </article>
             <hr/>
