@@ -1,6 +1,9 @@
 Changelog
 =========
 
+- :feature:`-` add Seafoam logo
+- :support:`-` rename from ``minchin.pelican.themes.minchindotca`` to
+  ``seafoam``
 - :feature:`-` upgrade to FontAwesome 4.7.0
 - :feature:`-` upgrade to jQuery 3.1.0
 - :bug:`5` switch template variable from ``PAGES`` to ``pages`` to support

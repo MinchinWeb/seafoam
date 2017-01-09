@@ -20,9 +20,9 @@ p = Path(__file__).parent  # directory holding this file
 
 @task
 def build(ctx):
-    p2 = p / 'minchin' / 'pelican' / 'themes' / 'minchindotca'
-    source = p2 / 'static' / 'less' / 'bootstrap.minchindotca.less'
-    dest = p2 / 'static' / 'css' / 'bootstrap.minchindotca.min.css'
+    p2 = p / 'seafoam'
+    source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
+    dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
     run('lessc {} > {}'.format(source, dest), shell=INVOKE_SHELL)
     # TODO -- minimize css!
     #   consider css-html-js-minify
@@ -49,15 +49,15 @@ list_match_re = re.compile(r"(?P<leading>[ \t]*)(?P<mark>[-\*+]) +:\w+:")
 
 
 def here_directory():
-    return(Path.cwd())
+    return(p)
 
 
 def module_name():
-    return("minchin.pelican.themes.minchindotca")
+    return("seafoam")
 
 
 def source_directory():
-    return(here_directory() / 'minchin')
+    return(here_directory() / 'seafoam')
 
 
 def test_directory():
@@ -65,8 +65,7 @@ def test_directory():
 
 
 def doc_directory():
-    #return(here_directory() / 'docs')
-    pass
+    return(here_directory() / 'docs')
 
 
 def dist_directory():
@@ -74,7 +73,7 @@ def dist_directory():
 
 
 def version_file():
-    return(source_directory() / 'pelican' / 'themes' / 'minchindotca' / '__init__.py')
+    return(source_directory() / '__init__.py')
 
 
 def changelog_file():

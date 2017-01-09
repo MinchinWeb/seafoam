@@ -1,5 +1,5 @@
 include LICENSE.txt
 include README.rst
 include docs/CHANGELOG.rst
-recursive-include minchin/pelican/themes/minchindotca/static *.*
-recursive-include minchin/pelican/themes/minchindotca/templates *.*
+recursive-include seafoam/static *.*
+recursive-include seafoam/templates *.*

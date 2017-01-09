@@ -1,22 +1,27 @@
-====================
-Minchin dot CA Theme
-====================
+=======
+Seafoam
+=======
 
-``Minchin dot CA`` is a theme for `Pelican <http://docs.getpelican.com/>`_,
+.. images:: https://raw.githubusercontent.com/MinchinWeb/seafoam/master/docs/seafoam-logo.png
+    :scale: 400%
+    :align: center
+    :alt: Seafoam Logo
+
+``Seafoam`` is a theme for `Pelican <http://docs.getpelican.com/>`_,
 a static site generator written in Python.
 
-The ``Minchin dot CA`` theme is based on Bootstrap 3, and was first used at
+The ``Seafoam`` theme is based on Bootstrap 3, and was first used at
 `Minchin.ca <http://minchin.ca>`_. 
 
 Installation
 ============
 
-The easiest way to install the ``Minchin dot CA`` theme is through the use
+The easiest way to install the ``Seafoam`` theme is through the use
 of pip. This will also install the required dependencies automatically.
 
 .. code-block:: sh
 
-  pip install minchin.pelican.themes.minchindotca
+  pip install seafoam
 
 Then, in your ``pelicanconf.py`` file, import the modele, use the
 built in function to specify your theme location, set the default
@@ -25,9 +30,9 @@ the image processing patterns used:
 
 .. code-block:: python
 
-  from minchin.pelican.themes import minchindotca
+  import seafoam
 
-  THEME = minchindotca.get_path()
+  THEME = seafoam.get_path()
   BOOTSTRAP_THEME = 'minchindotca'
 
   PLUGINS = ['minchin.pelican.jinja_filters',
@@ -50,7 +55,7 @@ settings (see below).
 Requirements
 ============
 
-``Minchin dot ca`` requires Pelican and the ``image_process`` and
+``Seafoam`` requires Pelican and the ``image_process`` and
 the ``jinja filters`` plugin. If the theme is installed from pip, these
 should be automatically installed. If needed they can be manually
 installed with pip:

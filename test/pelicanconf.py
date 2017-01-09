@@ -1,4 +1,4 @@
-from minchin.pelican.themes import minchindotca
+import seafoam
 
-THEME = minchindotca.get_path()
-BOOTSTRAP_THEME = 'minchindotca'
+THEME = seafoam.get_path()
+BOOTSTRAP_THEME = 'seafoam'
