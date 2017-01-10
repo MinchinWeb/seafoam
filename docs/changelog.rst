@@ -1,13 +1,21 @@
 Changelog
 =========
 
+- :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
 - :support:`-` rename from ``minchin.pelican.themes.minchindotca`` to
   ``seafoam``
+- :feature:`-` add support for reading time via `post stats
+  <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_
+  plugin
+- :bug:`6 major` restyle comments with bootstrap's ``media`` class (much
+  cleaner template code)
+- :feature:`-` add support for `pelican comment system
+  <https://github.com/getpelican/pelican-plugins/tree/master/pelican_comment_system>`_
 - :feature:`-` upgrade to FontAwesome 4.7.0
 - :feature:`-` upgrade to jQuery 3.1.0
-- :bug:`5` switch template variable from ``PAGES`` to ``pages`` to support
-  Pelican v3.7 
+- :bug:`5 major` switch template variable from ``PAGES`` to ``pages`` to
+  support Pelican v3.7 
 - :feature:`-` switch to ``minchin.pelican.jinja_filters`` to provide
   the required Jinja filters, rather than requiring them to be manually
   added to the user's configuration file
