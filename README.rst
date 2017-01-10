@@ -2,7 +2,7 @@
 Seafoam
 =======
 
-.. images:: https://raw.githubusercontent.com/MinchinWeb/seafoam/master/docs/seafoam-logo.png
+.. image:: https://raw.githubusercontent.com/MinchinWeb/seafoam/master/docs/seafoam-logo.png
     :scale: 400%
     :align: center
     :alt: Seafoam Logo
@@ -14,7 +14,7 @@ The ``Seafoam`` theme is based on Bootstrap 3, and was first used at
 `Minchin.ca <http://minchin.ca>`_. 
 
 Installation
-============
+------------
 
 The easiest way to install the ``Seafoam`` theme is through the use
 of pip. This will also install the required dependencies automatically.
@@ -33,7 +33,7 @@ the image processing patterns used:
   import seafoam
 
   THEME = seafoam.get_path()
-  BOOTSTRAP_THEME = 'minchindotca'
+  BOOTSTRAP_THEME = 'seafoam'
 
   PLUGINS = ['minchin.pelican.jinja_filters',
              'minchin.pelican.plugins.image_process',
@@ -53,7 +53,7 @@ settings (see below).
 
 
 Requirements
-============
+------------
 
 ``Seafoam`` requires Pelican and the ``image_process`` and
 the ``jinja filters`` plugin. If the theme is installed from pip, these
@@ -68,7 +68,7 @@ installed with pip:
 
 
 Additional Settings
-===================
+-------------------
 
 Details coming. In the meantime, refer to the settings on the `Bootstrap 3
 theme <https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3>`_.
