@@ -1,16 +1,17 @@
 Changelog
 =========
 
-- :release:`2.0.3 <2017-01-10>`
+- :release:`2.0.4 <2017-01-11>`
 - :bug:`10` fix archive page template code to work with Jinja2 v2.9.0
+- :release:`2.0.3 <2017-01-11>`
 - :bug:`-` fix link color in body area of panel-primary (fixes regression
   from version 2.0.2)
-- :release:`2.0.2 <2017-01-10>`
+- :release:`2.0.2 <2017-01-11>`
 - :bug:`-` fix link color on panel-primary
 - :bug:`-` improve layout of generated HTML
 - :release:`2.0.1 <2017-01-10>`
 - :bug:`8` pluarization of "1 comment" now correct
-- :bug:`9` fix pagation code to work with Jinja2 v2.9.0
+- :bug:`9` fix pagation template code to work with Jinja2 v2.9.0
 - :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
 - :support:`-` [BREAKING] rename from ``minchin.pelican.themes.minchindotca``
