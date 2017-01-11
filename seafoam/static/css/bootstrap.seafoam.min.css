@@ -8533,7 +8533,8 @@ div.infowindow {
   font-size: 18px;
 }
 .label-default a,
-.label-primary a {
+.label-primary a,
+.panel-primary a {
   color: #fdf6e3;
 }
 .gsc-control-cse {
