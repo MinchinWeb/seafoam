@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :release:`2.0.2 <2017-01-10>`
+- :bug:`-` fix link color on panel-primary
 - :bug:`-` improve layout of generated HTML
 - :release:`2.0.1 <2017-01-10>`
 - :bug:`8` pluarization of "1 comment" now correct
