@@ -20,6 +20,7 @@ p = Path(__file__).parent  # directory holding this file
 
 @task
 def build(ctx):
+    """Compile the theme LESS files to CSS."""
     p2 = p / 'seafoam'
     source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
     dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
@@ -30,12 +31,14 @@ def build(ctx):
 
 @task
 def test(ctx):
+    """Generate the test Pelican site."""
     p3 = p / 'test' / 'pelicanconf.py'
     run('pelican -s {}'.format(p3), shell=INVOKE_SHELL)
 
 
 @task
 def serve_test(ctx, port='8000'):
+    """Serve the generated test site."""
     # call using:
     # invoke serve_test --port 8001
 
@@ -197,6 +200,7 @@ def check_local_install(version, ext, server="local"):
 
 @task
 def make_release(cts):
+    """Prepare a release and upload it to PyPI."""
     make_release_version = '0.2.0'
     colorama.init()
     text.title("Minchin 'Make Release' for Python v{}".format(make_release_version))
