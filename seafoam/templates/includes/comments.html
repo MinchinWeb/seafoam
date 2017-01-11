@@ -28,12 +28,12 @@
 			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
 				Disqus.</a></noscript>
 			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-		{% endif %}
+		{% endif -%}
 
 		{%- if PELICAN_COMMENT_SYSTEM %}
-			{# comments and comment form #}
+			{# comments and comment form -#}
 
-			{# existing comments, if any #}
+			{#- existing comments, if any -#}
 			{%- if article.comments %}
 				{%- for comment in article.comments recursive %}
 					<div class="media" id="comment-{{comment.slug}}">
@@ -130,4 +130,4 @@
 			</section>
 		{% endif %}
 	</section>
-{% endif %}
+{% endif -%}

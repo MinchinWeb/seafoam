@@ -1,11 +1,11 @@
-{% set modified = False %}
+{% set modified = False -%}
 
-{% if articles %}
+{%- if articles %}
     {# if we have nothing else, set the copyright date to what we use on the index #}
     {% set copy_date = articles[0].date.strftime('%Y') %}
 {% else %}
     {% set copy_date = INDEX_COPY_DATE %}
-{% endif %}
+{% endif -%}
 
 {% if article %}
     {% if article.date %}
@@ -17,7 +17,7 @@
     {% if article.modified %}
         {% set modified = article.modified.strftime('%B %d, %Y').replace(' 0',' ') %}
     {% endif %}
-{% endif %}
+{% endif -%}
 
 {% if page %}
     {% if page.date %}
@@ -29,14 +29,14 @@
     {% if page.modified %}
         {% set modified = page.modified.strftime('%B %d, %Y').replace(' 0',' ') %}
     {% endif %}
-{% endif %}
+{% endif -%}
 
 {% if ADAM %}
     {% if copy_date == '' %}
         {% set copy_date = ADAM_COPY_DATE %}
     {% endif %}
     {% set modified = ADAM_UPDATED %}
-{% endif %}
+{% endif -%}
 
 {% if page_name == 'index' %}
     {% if INDEX_COPY_DATE %}

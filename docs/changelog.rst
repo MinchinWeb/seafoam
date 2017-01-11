@@ -1,6 +1,7 @@
 Changelog
 =========
 
+- :bug:`-` improve layout of generated HTML
 - :release:`2.0.1 <2017-01-10>`
 - :bug:`8` pluarization of "1 comment" now correct
 - :bug:`9` fix pagation code to work with Jinja2 v2.9.0
