@@ -762,9 +762,16 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 
 // links within labels, panels
 .label-default,
-.label-primary,
-.panel-primary {
+.label-primary {
   a {
     color: @text-color;
+  }
+}
+
+.panel-primary {
+  .panel-heading {
+    a {
+      color: @text-color;
+    }
   }
 }
