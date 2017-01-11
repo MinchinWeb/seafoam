@@ -2,8 +2,7 @@
 Seafoam
 =======
 
-.. image:: https://raw.githubusercontent.com/MinchinWeb/seafoam/master/docs/seafoam-logo.png
-    :scale: 400%
+.. image:: https://raw.githubusercontent.com/MinchinWeb/seafoam/master/docs/seafoam-logo-4x.png
     :align: center
     :alt: Seafoam Logo
 
