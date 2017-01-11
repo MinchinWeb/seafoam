@@ -19,15 +19,24 @@
 {% block content %}
     <section id="content">
         <h1>Archives for {{ SITENAME }}</h1>
+
+        {#
+        {% for article in dates %}
+            {{ dates[loop.index0].date }} - 
+            {{ article.date }}
+            {{loop.index0 == 0 }}
+            {{(article.date.year != dates[loop.index0 - 1].date.year)}} /
+        {% endfor %}
+        #}
+
+
         <div id="archives">
             {# Top Row with links to Archives by Year #}
             <div class="row">
                 <div class="archives-quicklinks text-center col-xs-12">
-                    {%- set last_year = None -%}
                     {% for article in dates %}
-                        {% if article.date.year != last_year %}
-                            {% if last_year != None %} &bull; {% endif -%}
-                            {%- set last_year = article.date.year -%}
+                        {% if loop.index0 == 0 or (article.date.year != dates[loop.index0 - 1].date.year) %}
+                            {% if loop.index0 != 0 %} &bull; {% endif -%}
                             <a href="#{{ article.date.year }}">{{ article.date.year }}</a>
                         {%- endif -%}
                     {%- endfor %}
@@ -37,14 +46,10 @@
             </div>
 
             {# Main Archive Listing #}
-            {%- set last_year = None -%}
-            {%- set last_month = None -%}
-            {%- set last_day = None -%}
-
             {% for article in dates %}
                 <div class="row">
-                    {% if article.date.year != last_year %}
-                        {% if last_year != None -%}
+                    {% if (loop.index0 == 0) or (article.date.year != dates[loop.index0 - 1].date.year) %}
+                        {% if loop.index0 != 0 -%}
                             <div class="archives-spacer col-xs-12">&nbsp;</div>
                             <div class="archives-spacer col-xs-12">&nbsp;</div>
                         {%- endif %}
@@ -55,37 +60,35 @@
                         <div class="archives-title col-xs-7 col-sm-6">
                             &nbsp;
                         </div>
-                        {%- set last_year = article.date.year -%}
-                        {%- set last_month = None -%}
-                        {%- set last_day = None -%}
                     {% endif %}
-                    {% if article.date.month != last_month %}
-                        {% if last_month != None -%}
-                            <div class="archives-spacer col-xs-12">&nbsp;</div>
-                        {%- endif %}
-                        <div class="archives-date archives-month col-xs-4 col-md-2 col-md-offset-2">
-                        <a name="{{ article.date.year }}-{{ article.date.month }}"></a>
-                            {{- article.date|strftime('%B') -}}
-                        </div>
-                        <div class="archives-title col-xs-7 col-sm-6">
-                            &nbsp;
-                        </div>
-                        {%- set last_month = article.date.month -%}
-                        {%- set last_day = None -%}
+                    {% if (loop.index0 == 0) or
+                          (article.date.year != dates[loop.index0 - 1].date.year) or
+                          ((article.date.year == dates[loop.index0 - 1].date.year) and (article.date.month != dates[loop.index0 - 1].date.month)) %}
+                                {% if ((article.date.year == dates[loop.index0 - 1].date.year) and (article.date.month != dates[loop.index0 - 1].date.month)) -%}
+                                            <div class="archives-spacer col-xs-12">&nbsp;</div>
+                                {%- endif %}
+                                <div class="archives-date archives-month col-xs-4 col-md-2 col-md-offset-2">
+                                <a name="{{ article.date.year }}-{{ article.date.month }}"></a>
+                                    {{- article.date|strftime('%B') -}}
+                                </div>
+                                <div class="archives-title col-xs-7 col-sm-6">
+                                    &nbsp;
+                                </div>
                     {% endif %}
 
                     <div class="archives-date categories-timestamp col-xs-4 col-md-2 col-md-offset-2">
-                        {%- if last_day != article.date.day %}
-                            <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%a %-d') }}</time>
+                        {%- if ((article.date.day == dates[loop.index0 - 1].date.day) and
+                                (article.date.month == dates[loop.index0 - 1].date.month) and 
+                                (article.date.year == dates[loop.index0 - 1].date.year)) %}
+                                    &mdash;
                         {% else -%}
-                            &nbsp;
+                                    <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%a %-d') }}</time>
                         {%- endif -%}
                     </div>
                     <div class="archives-title col-xs-7 col-md-6">
                         <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                         {% if article.subtitle %}<br />{{ article.subtitle }}{% endif %}
                     </div>
-                    {%- set last_day = article.date.day %}
                 </div>
             {% endfor %}
         </div>

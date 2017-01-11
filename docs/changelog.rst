@@ -2,6 +2,7 @@ Changelog
 =========
 
 - :release:`2.0.3 <2017-01-10>`
+- :bug:`10` fix archive page template code to work with Jinja2 v2.9.0
 - :bug:`-` fix link color in body area of panel-primary (fixes regression
   from version 2.0.2)
 - :release:`2.0.2 <2017-01-10>`
