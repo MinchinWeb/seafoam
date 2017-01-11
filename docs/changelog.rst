@@ -1,12 +1,13 @@
 Changelog
 =========
 
+- :release:`2.0.1 <2017-01-10>`
 - :bug:`8` pluarization of "1 comment" now correct
 - :bug:`9` fix pagation code to work with Jinja2 v2.9.0
 - :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
-- :support:`-` rename from ``minchin.pelican.themes.minchindotca`` to
-  ``seafoam``
+- :support:`-` [BREAKING] rename from ``minchin.pelican.themes.minchindotca``
+  to ``seafoam``
 - :feature:`-` add support for reading time via `post stats
   <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_
   plugin
@@ -33,4 +34,4 @@ Changelog
 - :release:`1.0.0 <2016-08-15>`
 - :feature:`-` add 'setup.py', 'README.rst', 'CHANGELOG.rst'
 - :support:`-` move package to 'minchin.pelican.themes.minchindotca'
-- :support:`-` pull code out of main Minchin.ca repo
+- :support:`-` pull code out of main Minchin.ca website repo
