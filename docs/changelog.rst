@@ -1,6 +1,7 @@
 Changelog
 =========
 
+- :bug:`9` fix pagation code to work with Jinja2 v2.9.0
 - :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
 - :support:`-` rename from ``minchin.pelican.themes.minchindotca`` to
