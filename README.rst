@@ -9,20 +9,20 @@ Seafoam
 ``Seafoam`` is a theme for `Pelican <http://docs.getpelican.com/>`_,
 a static site generator written in Python.
 
-The ``Seafoam`` theme is based on Bootstrap 3, and was first used at
+The ``seafoam`` theme is based on Bootstrap 3, and was first used at
 `Minchin.ca <http://minchin.ca>`_. 
 
 Installation
 ------------
 
-The easiest way to install the ``Seafoam`` theme is through the use
+The easiest way to install the ``seafoam`` theme is through the use
 of pip. This will also install the required dependencies automatically.
 
 .. code-block:: sh
 
   pip install seafoam
 
-Then, in your ``pelicanconf.py`` file, import the modele, use the
+Then, in your ``pelicanconf.py`` file, import the module, use the
 built in function to specify your theme location, set the default
 colour scheme (more options coming soon), add the required plugins, and set
 the image processing patterns used:
