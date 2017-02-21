@@ -6,6 +6,7 @@ Changelog
   preference to the ``post-stats`` plugin to get artivle reading time. The
   former is availabe on PyPI (as ``pelican-readtime``), while the latter is
   not.
+- :support:`2` document optionally supported plugins
 - :release:`2.0.4 <2017-01-11>`
 - :bug:`10` fix archive page template code to work with Jinja2 v2.9.0
 - :release:`2.0.3 <2017-01-11>`
@@ -19,8 +20,8 @@ Changelog
 - :bug:`9` fix pagation template code to work with Jinja2 v2.9.0
 - :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
-- :support:`-` [BREAKING] rename from ``minchin.pelican.themes.minchindotca``
-  to ``seafoam``
+- :support:`-` [BREAKING] rename from
+  ``minchin.pelican.themes.minchindotca`` to ``seafoam``
 - :feature:`-` add support for reading time via `post stats
   <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_
   plugin

@@ -66,6 +66,17 @@ installed with pip:
    pip install minchin.pelican.jinja_filters
 
 
+Supported Plugins
+-----------------
+
+Seafoam works with several other plugins for Pelican, but none of those
+listed in this section are required.
+
+- `readtime <https://pypi.python.org/pypi/pelican-readtime>`_ -- provides estimated reading time for articles. Available from PyPI as ``pelican-readtime``.
+- `post-stats <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_ -- provides estimated reading time for articles if `readtime` is not available. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
+- `neigbours <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides post-article links to the next and previous  article on your blog and the next and previous article in that category. Available on PyPI as ``pelican-neighours``.
+- `pelican_comment_system <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_ -- add static comments to your blog. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
+
 Additional Settings
 -------------------
 
