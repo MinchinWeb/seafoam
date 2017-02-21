@@ -4,7 +4,7 @@ Changelog
 - :release:`2.1.0 <2017-02-20>`
 - :feature:`-` add support for
   `readtime <https://pypi.python.org/pypi/pelican-readtime>` plugin in
-  preference to the ``post-stats`` plugin to get artivle reading time. The
+  preference to the ``post-stats`` plugin to get article reading time. The
   former is availabe on PyPI (as ``pelican-readtime``), while the latter is
   not.
 - :support:`2` document optionally supported plugins
