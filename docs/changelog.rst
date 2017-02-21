@@ -1,6 +1,11 @@
 Changelog
 =========
 
+- :feature:`-` add support for
+  `readtime <https://pypi.python.org/pypi/pelican-readtime>` plugin in
+  preference to the ``post-stats`` plugin to get artivle reading time. The
+  former is availabe on PyPI (as ``pelican-readtime``), while the latter is
+  not.
 - :release:`2.0.4 <2017-01-11>`
 - :bug:`10` fix archive page template code to work with Jinja2 v2.9.0
 - :release:`2.0.3 <2017-01-11>`

@@ -9,7 +9,10 @@
     {#<a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>#}
     {#{% endif -%}-#}
 
-    {%- if article.stats -%}
+    {%- if article.readtime_minutes -%}
+        <span class="label label-default">Reading Time</span>
+        <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
+    {%- elif article.stats -%}
         <span class="label label-default">Reading Time</span>
         <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
     {%- endif -%}

@@ -45,7 +45,9 @@
                         <span class="published">
                             <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
                         </span>
-                        {% if article.stats -%}
+                        {% if article.readtime_minutes -%}
+                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min to read
+                        {% elif article.stats -%}
                             &bull; <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read
                         {%- endif %}
                         {% if DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS %}
