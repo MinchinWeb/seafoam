@@ -20,16 +20,6 @@
     <section id="content">
         <h1>Archives for {{ SITENAME }}</h1>
 
-        {#
-        {% for article in dates %}
-            {{ dates[loop.index0].date }} - 
-            {{ article.date }}
-            {{loop.index0 == 0 }}
-            {{(article.date.year != dates[loop.index0 - 1].date.year)}} /
-        {% endfor %}
-        #}
-
-
         <div id="archives">
             {# Top Row with links to Archives by Year #}
             <div class="row">
