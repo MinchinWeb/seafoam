@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :bug:`13` remove unused code in pagination template. Thanks
+  `@jorgesumle <https://github.com/jorgesumle>`_
 - :release:`2.1.0 <2017-02-20>`
 - :feature:`-` add support for
   `readtime <https://pypi.python.org/pypi/pelican-readtime>` plugin in
@@ -17,8 +19,8 @@ Changelog
 - :bug:`-` fix link color on panel-primary
 - :bug:`-` improve layout of generated HTML
 - :release:`2.0.1 <2017-01-10>`
-- :bug:`8` pluarization of "1 comment" now correct
-- :bug:`9` fix pagation template code to work with Jinja2 v2.9.0
+- :bug:`8` pluralization of "1 comment" now correct
+- :bug:`9` fix pagination template code to work with Jinja2 v2.9.0
 - :release:`2.0.0 <2017-01-09>`
 - :feature:`-` add Seafoam logo
 - :support:`-` [BREAKING] rename from

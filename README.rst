@@ -77,11 +77,27 @@ listed in this section are required.
 - `neigbours <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides post-article links to the next and previous  article on your blog and the next and previous article in that category. Available on PyPI as ``pelican-neighours``.
 - `pelican_comment_system <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_ -- add static comments to your blog. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
 
+
 Additional Settings
 -------------------
 
-Details coming. In the meantime, refer to the settings on the `Bootstrap 3
-theme <https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3>`_.
+These settings can be set in your `pelicanconf.py` file (your Pelican settings
+file) to alter the behaviour of the theme.
+
+.. use the ".. data::" directive here for Sphinx output, but on GitHub, that just causes everything to disappear
+
+PAGINATOR_LIMIT = 8
+  Number of page number links to appear of the main "index" page of your
+  blog. The default of 8 results in showing a link to page 1, links the
+  three previous pages (8 divided by 2 and rounded down), a number
+  representing the current page, links to the next three pages, and a link
+  to the last page.
+
+The above list is not yet complete. In the meantime, refer to the settings on
+the `Bootstrap 3 theme <https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3>`_.
+
+It may also be helpful to review the
+`settings for Pelican itself <http://docs.getpelican.com/en/3.7.1/settings.html>`_.
 
 
 Credits
