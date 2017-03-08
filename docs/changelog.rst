@@ -1,6 +1,8 @@
 Changelog
 =========
 
+- :bug:`-` fix pagination links on category and tag pages. See `this issue
+  <https://github.com/MinchinWeb/blog.minchin.ca/issues/6>`_.
 - :bug:`13` remove unused code in pagination template. Thanks
   `@jorgesumle <https://github.com/jorgesumle>`_
 - :release:`2.1.0 <2017-02-20>`
