@@ -1,6 +1,9 @@
 Changelog
 =========
 
+.. Added, Changed, Depreciated, Removed, Fixed, Security
+
+- :release:`2.1.1 <2017-03-08>`
 - :bug:`-` fix pagination links on category and tag pages. See `this issue
   <https://github.com/MinchinWeb/blog.minchin.ca/issues/6>`_.
 - :bug:`13` remove unused code in pagination template. Thanks
@@ -9,16 +12,16 @@ Changelog
 - :feature:`-` add support for
   `readtime <https://pypi.python.org/pypi/pelican-readtime>` plugin in
   preference to the ``post-stats`` plugin to get article reading time. The
-  former is availabe on PyPI (as ``pelican-readtime``), while the latter is
+  former is available on PyPI (as ``pelican-readtime``), while the latter is
   not.
 - :support:`2` document optionally supported plugins
 - :release:`2.0.4 <2017-01-11>`
 - :bug:`10` fix archive page template code to work with Jinja2 v2.9.0
 - :release:`2.0.3 <2017-01-11>`
-- :bug:`-` fix link color in body area of panel-primary (fixes regression
+- :bug:`-` fix link colour in body area of panel-primary (fixes regression
   from version 2.0.2)
 - :release:`2.0.2 <2017-01-11>`
-- :bug:`-` fix link color on panel-primary
+- :bug:`-` fix link colour on panel-primary
 - :bug:`-` improve layout of generated HTML
 - :release:`2.0.1 <2017-01-10>`
 - :bug:`8` pluralization of "1 comment" now correct
