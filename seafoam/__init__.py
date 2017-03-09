@@ -2,7 +2,7 @@
 """
 Seafoam.
 
-This is a Pelican theme. This is the helper code to go with it.
+This is a Pelican theme. This module is the helper code to go with it.
 """
 
 try:
@@ -14,7 +14,12 @@ __version__ = "2.1.1"
 
 
 def get_path():
-    """Shortcut for users whose theme is not next to their pelicanconf.py."""
+    """
+    Shortcut for users whose theme is not next to their pelicanconf.py.
+
+    Returns:
+        str: filepath to folder containing theme
+    """
     # Theme directory is defined as our parent directory
     return str(Path(__file__).resolve().parent)
 
