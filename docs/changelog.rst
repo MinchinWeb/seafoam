@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` provide an absolute path.
 - :release:`2.1.1 <2017-03-08>`
 - :bug:`-` fix pagination links on category and tag pages. See `this issue
   <https://github.com/MinchinWeb/blog.minchin.ca/issues/6>`_.
