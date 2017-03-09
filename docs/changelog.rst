@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.1.2 <2017-03-08>`
 - :bug:`-` provide universal wheels. ON versions of Python before 3.4 (when the
   ``pathlib`` module was added to the standard library), we now depend on
   `pathlib2 <https://pypi.python.org/pypi/pathlib2>`_.
