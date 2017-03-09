@@ -32,15 +32,19 @@ setup(
         'minchin.pelican.plugins.image_process>=1.0.1',
         'minchin.pelican.jinja_filters',
         # requires asset plugin, bundle? -- https://github.com/getpelican/pelican-plugins/tree/master/assets
-        # and others, I'm sure...
-        # pathlib2 on Python 2.7
         ],
+    extras_require={
+        ':python_version < "3.4"': ['pathlib2'],
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',

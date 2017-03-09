@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` provide universal wheels. ON versions of Python before 3.4 (when the
+  ``pathlib`` module was added to the standard library), we now depend on
+  `pathlib2 <https://pypi.python.org/pypi/pathlib2>`_.
 - :bug:`-` provide an absolute path.
 - :release:`2.1.1 <2017-03-08>`
 - :bug:`-` fix pagination links on category and tag pages. See `this issue
