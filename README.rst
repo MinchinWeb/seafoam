@@ -85,8 +85,8 @@ Additional Settings
 These settings can be set in your ``pelicanconf.py`` file (your Pelican settings
 file) to alter the behavior of the theme.
 
-If a value is given, this represents the effective default value. If no value is
-given, the effective default value is `None`.
+If a value is given below, this represents the effective default value. If no
+value is given, the effective default value is `None`.
 
 If you are using this theme on a subsite (i.e a directory of the "main site"),
 look at ``MENUITEMS_2``, ``MENUITEMS_2_AT``, and ``MENUITEMS_2_AT_LINK``
@@ -95,7 +95,7 @@ settings.
 If you are using this theme on a subdomain, look at the ``SITE_ROOT_URL``
 setting.
 
-This documentation has to be manual updated. If the settings no longer match
+This documentation has to be manually updated. If the settings no longer match
 the theme's behavior, or a setting is missing from here, please open a ticket
 on `GitHub <https://github.com/MinchinWeb/seafoam/issues>`_.
 
