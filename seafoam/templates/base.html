@@ -124,7 +124,7 @@
 							{% if DISPLAY_PAGES_ON_MENU %}
 								{% for p in pages|sort(attribute='source_path') %}
 									 <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-										 {%- if p.icon %}<span class="{{p.icon}}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
+										 {%- if p.icon %}<span class="{{ p.icon }}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
 									  </a></li>
 								  {% endfor %}
 							{% endif %}
@@ -178,7 +178,7 @@
 	<script src="{{ SITEURL }}/theme/js/respond.min.js" type="text/javascript"></script>
 {% endif %}
 {% if CUSTOM_JS_LIST %}
-	{% for custom_js in CUSTOM_JS_LIST%}
+	{% for custom_js in CUSTOM_JS_LIST %}
 	<script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
 	{% endfor %}
 {% endif -%}
