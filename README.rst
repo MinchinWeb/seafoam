@@ -175,6 +175,7 @@ CUSTOM_CSS_LIST
 CUSTOM_JS_LIST
   A list of links, relative to SITEURL, to custom Javascript files.
 DEFAULT_LANG
+  .
 DISPLAY_BREADCRUMBS = False
   Display Breadcrumbs on site.
 
@@ -192,7 +193,7 @@ DISPLAY_RECENT_POSTS_ON_SIDEBAR
   active; see ``HIDE_SIDEBAR`` setting). Also see the ``RECENT_POST_COUNT``
   setting.
 DISPLAY_TAGS_INLINE
-
+  .
 DISPLAY_TAGS_ON_SIDEBAR = True
   Include a listing of tags on the sidebar (assuming the sidebar is active;
   see ``HIDE_SIDEBAR`` setting)
@@ -315,7 +316,7 @@ PAGINATOR_LIMIT = 8
   representing the current page, links to the next three pages, and a link
   to the last page.
 PDF_PROCESSOR
-
+  .
 PELICAN_COMMENT_SYSTEM = False
   Set this to ``True`` to active the
   `pelican_comment_system <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_.
@@ -387,7 +388,6 @@ THEME_STATIC_DIR
 TWITTER_USERNAME
   You can optionally provide a this which will be used to set the Twitter
   username for the site and for the content creator.
-  <!-- See the ``TWITTER_CARDS`` setting. -->
 TWITTER_WIDGET_ID
   The theme can show your twitter timeline in the sidebar. To enable, provide a
   ``TWITTER_USERNAME`` and a ``TWITTER_WIDGET_ID``.
@@ -416,7 +416,6 @@ USE_OPEN_GRAPH = True
   setting this to ``False``.
 
   See also ``OPEN_GRAPH_FB_APP_ID``, and ``OPEN_GRAPH_FB_APP_ID``
-  <!-- , and ``TWITTER_CARDS``-->
   settings.
 
 It may also be helpful to review the
@@ -441,6 +440,8 @@ Known Issues
   downloading a pre-build wheel from `Christoph Gohlke
   <http://www.lfd.uci.edu/~gohlke/pythonlibs/#scandir>`_ and installing
   ``scandir`` this way before you try and install ``seafoam``.
+- activating both Typogrify and the Pelican Comment System on Pelican 3.6
+  causes issues. This issue has been fixed in Pelican 3.7.
 
 Credits
 -------
