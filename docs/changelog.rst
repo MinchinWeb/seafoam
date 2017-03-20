@@ -3,7 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
-- :support:`2` document most theme options
+- :release:`2.1.3 <2017-03-19>`
+- :support:`2 (==2.1.3)` document most theme options
 - :release:`2.1.2 <2017-03-08>`
 - :bug:`-` provide universal wheels. On versions of Python before 3.4 (when the
   ``pathlib`` module was added to the standard library), we now depend on
