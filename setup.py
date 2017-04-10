@@ -35,7 +35,7 @@ setup(
         ],
     extras_require={
         ':python_version < "3.4"': ['pathlib2'],
-    },
+        },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
@@ -48,7 +48,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Multimedia :: Graphics',
-        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Framework :: Pelican :: Themes',
         ],
+    zip_safe=False,  # use wheels instead
 )

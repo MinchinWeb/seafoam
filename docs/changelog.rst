@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :releaseL`2.1.4 <2017-04-09>`
+- :bug:`-` ``Framework :: Pelican :: Themes`` trove classifier on PyPI now
+  available.
 - :release:`2.1.3 <2017-03-19>`
 - :support:`2 (==2.1.3)` document most theme options
 - :release:`2.1.2 <2017-03-08>`
