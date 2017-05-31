@@ -4,6 +4,7 @@ Changelog
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
 - :releaseL`2.1.4 <2017-04-09>`
+- :bug:`11` indent definition list items
 - :bug:`-` ``Framework :: Pelican :: Themes`` trove classifier on PyPI now
   available.
 - :release:`2.1.3 <2017-03-19>`

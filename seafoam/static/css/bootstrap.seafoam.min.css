@@ -6747,6 +6747,10 @@ button.close {
     display: none !important;
   }
 }
+/* Custom Seafoam additions */
+dd {
+  padding-left: 32px;
+}
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
