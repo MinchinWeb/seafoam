@@ -153,8 +153,8 @@ def other_dependancies(server, environment):
     if server is "local":
         pass
     elif server in ["testpypi", "pypitest"]:
-        print("  **Install Pillow, Pelican**")
-        subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pillow', 'pelican'], shell=True)
+        print("  **Install Pillow, Pelican, docutils**")
+        subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pillow', 'pelican', 'docutils'], shell=True)
     elif server in ["pypi"]:
         print("  **Install Pillow, dateutil**")
         subprocess.call([environment + '\\Scripts\\pip.exe', 'install', 'pillow', 'python-dateutil'], shell=True)
