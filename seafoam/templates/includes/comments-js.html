@@ -2,7 +2,7 @@
 	{% if PELICAN_COMMENT_SYSTEM %}
 		{# load after jQuery #}
 		<!-- Pelican Comment System -->
-		<script src="{{ SITEURL }}/theme/js/comments.js" type="text/javascript"></script>
+		<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/comments.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
 				CommentSystem.email_user   = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }}";

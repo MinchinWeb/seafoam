@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` respect Pelican's ``THEME_STATIC_DIR`` setting
 - :support:`-` use ``minchin.releaser`` to put out releases
 - :release:`2.1.5 <2017-05-31>`
 - :bug:`11` indent definition list items
