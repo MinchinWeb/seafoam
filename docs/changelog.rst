@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :support:`-` use ``minchin.releaser`` to put out releases
 - :release:`2.1.5 <2017-05-31>`
 - :bug:`11` indent definition list items
 - :bug:`-` note that Image Processing v1.1.2 is broken (see

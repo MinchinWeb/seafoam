@@ -1,0 +1,17 @@
+releaser:
+    module_name: seafoam
+    here: .
+    docs: docs
+    test: test
+    source: seafoam
+    changelog: changelog.rst
+    version: seafoam\__init__.py
+    test_command: none
+    version_bump: none
+    extra_packages:
+        test:
+            - pillow
+            - pelican
+        pypi:
+            - pillow
+            - dateutil
