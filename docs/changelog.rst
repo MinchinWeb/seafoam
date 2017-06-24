@@ -3,7 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
-- :bug:`-` respect Pelican's ``THEME_STATIC_DIR`` setting
+- :feature:`-` use ``NAVBAR_ON_TOP`` to move the menu from the left side of the
+  page to the top (Bootstrap default)
+- :bug:`- major` respect Pelican's ``THEME_STATIC_DIR`` setting
 - :support:`-` use ``minchin.releaser`` to put out releases
 - :release:`2.1.5 <2017-05-31>`
 - :bug:`11` indent definition list items

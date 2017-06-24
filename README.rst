@@ -298,6 +298,9 @@ MENUITEMS_2_AT_LINK
   When set and Breadcrumbs are enabled, all items on the site are shown to be
   under both "home" (linked to at the ``SITE_ROOT_URL``) and ``MENUITEMS_2_AT``
   (linked to at ``MENUITEMS_2_AT_LINK``).
+NAVBAR_ON_TOP
+  If True, the navigation menu is on top. If False, the navigation menu is
+  vertical on the left side of the page. Default is False.
 NEIGHBORS
   Activates the links to the next and previous articles, both in the "all
   posts" index and the category-specific index. Requires the
