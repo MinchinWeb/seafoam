@@ -35,7 +35,9 @@ setup(
         ],
     extras_require={
         ':python_version < "3.4"': ['pathlib2'],
-        'dev:': ['minchin.releaser'],
+        'dev': ['minchin.releaser',
+                'markdown',
+               ],
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
