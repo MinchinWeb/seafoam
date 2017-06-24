@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` include prjct template
 - :feature:`-` include 404 template
 - :feature:`-` use ``NAVBAR_ON_TOP`` to move the menu from the left side of the
   page to the top (Bootstrap default)
