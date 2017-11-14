@@ -14,4 +14,4 @@ releaser:
             - pelican
         pypi:
             - pillow
-            - dateutil
+            - python-dateutil

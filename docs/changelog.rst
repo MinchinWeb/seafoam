@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.2.1 <2017-11-13>`
+- :bug:`-` fix reference to ``python-dateutil`` in project metadata
 - :release:`2.2.0 <2017-11-13>`
 - :feature:`-` include prjct template
 - :feature:`15` include 404 template
