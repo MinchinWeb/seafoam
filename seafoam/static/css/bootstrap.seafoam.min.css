@@ -1176,7 +1176,8 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
+.h6,
+.tipue_search_content_title {
   font-family: "Expletus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
@@ -1215,7 +1216,8 @@ h1,
 h2,
 .h2,
 h3,
-.h3 {
+.h3,
+.tipue_search_content_title {
   margin-top: 25px;
   margin-bottom: 12.5px;
 }
@@ -1265,7 +1267,8 @@ h2,
   font-size: 38px;
 }
 h3,
-.h3 {
+.h3,
+.tipue_search_content_title {
   font-size: 31px;
 }
 h4,
@@ -6842,6 +6845,12 @@ body {
 .pager a {
   margin-top: 12.5px;
   margin-bottom: 12.5px;
+}
+.tipue_search_content_url {
+  display: none;
+}
+.h01 {
+  background: #b58900;
 }
 .gt-heatmap-wrapper {
   min-height: 750px;
