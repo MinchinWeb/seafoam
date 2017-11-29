@@ -96,13 +96,14 @@
 </head>
 <body>
 
-<div class="container">
+	<div class="container">
 	{% if not NAVBAR_ON_TOP %}
 	<div class="row">
 		<div class="col-sm-3">
 			<div class="sidebar-nav">
 	{% endif %}
-				<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation">
+				<nav class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation">
+
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target={% if not NAVBAR_ON_TOP %}".sidebar-navbar-collapse"{% else %}".navbar-collapse"{% endif %}>
 							<span class="sr-only">Toggle navigation</span>
@@ -111,8 +112,8 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a href="{{ SITE_ROOT_URL }}/" class="navbar-brand">
-							{% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive"/> {% endif %}
-							{% if not HIDE_SITENAME %}{{ SITENAME }}{% endif %}
+							{% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/></span> {% endif %}
+							{% if not HIDE_SITENAME %} <span class="navbar-text">{{- SITENAME -}}</span>{% endif %}
 						</a>
 					</div>
 					<div class="collapse navbar-collapse {% if not NAVBAR_ON_TOP %}sidebar-navbar-collapse navbar-nonheader{% endif %}">
@@ -146,7 +147,7 @@
 							{% endif %}
 						</ul>
 					</div> <!-- /.navbar-collapse -->
-				</div>
+				</nav>
 	{% if not NAVBAR_ON_TOP %}
 			</div> <!-- /.sidebar-nav -->
 		</div>
@@ -176,12 +177,14 @@
 
 		</div>
 	{%- if not HIDE_SIDEBAR %}
-		<div class="col-sm-3 well well-sm" id="sidebar">
+		<div class="col-sm-3">
+			<div class="well well-sm" id="sidebar">
 			{% include 'includes/sidebar.html' %}
+			</div>
 		</div>
 	{% endif %}
-	</div>
-</div>
+	</div> <!-- /.row -->
+</div> <!-- /.container -->
 {%- include 'includes/footer.html' %}
 
 {% if ASSET_JS %}

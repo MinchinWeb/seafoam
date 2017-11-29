@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` fix issues with navbar coloring, navbar brand text + logo layout,
+  and sidebar alinement.
 - :feature:`-` added support for `prjct <https://github.com/MinchinWeb/prjct>`_.
 - :release:`2.2.1 <2017-11-13>`
 - :bug:`-` fix reference to ``python-dateutil`` in project metadata
