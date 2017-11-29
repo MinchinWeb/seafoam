@@ -166,6 +166,11 @@
 		{% block breadcrumbs %}
 		{% endblock %}
 
+        {% if PRJCT %}
+			{% block prjct %}
+			{% endblock %}
+		{% endif %}
+
 		{% block content %}
 		{% endblock %}
 

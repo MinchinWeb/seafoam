@@ -1,0 +1,23 @@
+<div class='prjct'>
+	<h1><i class="fa fa-tags"></i> {{ tag | string | replace('_', ' ') | titlecase }}</h1>
+
+	<!-- Project Description -->
+	{% if tag in PRJCT_DESC %}
+		{{ PRJCT_DESC[tag] }}
+		<hr />
+	{% endif %}
+
+	<!-- To-do items -->
+	{% if tag in PRJCT_TODO %}
+		<h2>To Do Items</h2>
+		{{ PRJCT_TODO[tag] }}
+		<hr />
+	{% endif %}
+
+	<!-- Done items -->
+	{% if tag in PRJCT_DONE %}
+		<h2>Completed Items</h2>
+		{{ PRJCT_DONE[tag] }}
+		<hr />
+	{% endif %}
+</div>

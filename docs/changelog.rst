@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` added support for `prjct <https://github.com/MinchinWeb/prjct>`_.
 - :release:`2.2.1 <2017-11-13>`
 - :bug:`-` fix reference to ``python-dateutil`` in project metadata
 - :release:`2.2.0 <2017-11-13>`

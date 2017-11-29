@@ -88,7 +88,7 @@ file) to alter the behavior of the theme.
 If a value is given below, this represents the effective default value. If no
 value is given, the effective default value is `None`.
 
-If you are using this theme on a subsite (i.e a directory of the "main site"),
+If you are using this theme on a sub-site (i.e a directory of the "main site"),
 look at ``MENUITEMS_2``, ``MENUITEMS_2_AT``, and ``MENUITEMS_2_AT_LINK``
 settings.
 
@@ -276,9 +276,9 @@ MENUITEMS
   ``'fa fa-fw fa-pencil'``. ``icon`` can be set to ``None``.
 
   If this is set, the working assumption is that the site you are generating is
-  a "subsite".
+  a "sub-site".
 MENUITEMS_2
-  Extra items you want added as a submenu. Use in conjunction with the
+  Extra items you want added as a sub-menu. Use in conjunction with the
   ``MENUITEMS_2_AT`` setting. Provide a list of tuples of the form
   ``(title, link, icon)``. ``link`` is absolute, so build them using SITEURL, 
   if needed. ``icon`` here is of the form of the CSS classes to be used; e.g.
@@ -354,6 +354,53 @@ PIWIK_URL
   Used for Piwik site analytics.
 PLUGINS
   Same as the regular Pelican setting.
+PRJCT
+  Set to ``TRUE`` to active `prjct <https://github.com/MinchinWeb/prjct>`_
+  support. Recommended segment to include in your ``pelicanconf.py``:
+
+  ``
+  import prjct
+
+  PRJCT = True
+  PRJCT_TODO, PRJCT_DONE = prjct.todo_export.to_html_dicts()
+  PRJCT_PROJECTS = prjct.multi_source.project_list()
+  PRJCT_ACTIVE_PROJECTS = prjct.multi_source.active_project_list()
+  PRJCT_SOMEDAY_PROJECTS = prjct.config.someday_projects()
+  PRJCT_COMPLETED_PROJECTS = prjct.config.completed_projects()
+  PRJCT_DESC = prjct.descriptions.to_html_dict(markdown_extension_config=MARKDOWN['extension_configs'])
+  PRJCT_VERSION = prjct.__version__
+  PRJCT_FOOTER_URL = prjct.__url__
+  ``
+
+  Also add prjct to our direct templates list.
+PRJCT_ACTIVE_PROJECTS
+  A list of *active* projects. Used to sort projects on the main prjct page.
+  See the ``PRJCT`` setting.
+PRJCT_COMPLETED_PROJECTS
+  A list of *active* projects. Used to sort projects on the main prjct page.
+  See the ``PRJCT`` setting.
+PRJCT_DESC
+  A dictionary of descriptions for each project, where the key is the name of
+  the project, and will match the *tag* page where the output appears. The
+  return value is assumed to be a valid HTML segment. See the ``PRJCT``
+  setting.
+PRJCT_DONE
+  A dictionary of done to-do items for each project, where the key is the name
+  of the project, and will match the *tag* page where the output appears. The
+  return value is assumed to be a valid HTML segment. See the ``PRJCT``
+  setting.
+PRJCT_FOOTER_URL = 'https://github.com/MinchinWeb/prjct'
+  *prjct* URL used for link displayed in footer. See the ``PRJCT`` setting.
+PRJCT_SOMEDAY_PROJECTS
+  A list of *active* projects. Used to sort projects on the main prjct page.
+  See the ``PRJCT`` setting.
+PRJCT_TODO
+  A dictionary of open to-do items for each project, where the key is the name
+  of the project, and will match the *tag* page where the output appears. The
+  return value is assumed to be a valid HTML segment. See the ``PRJCT``
+  setting.
+PRJCT_VERSION = ''
+  *prjct* version displayed in footer. See the ``PRJCT`` setting.
 PYGMENTS_STYLE = 'native'
   This setting is currently ignored, and my preferred Pygments style is
   included directly into the Seafoam CSS.
