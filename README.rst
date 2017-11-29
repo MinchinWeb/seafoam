@@ -76,7 +76,8 @@ listed in this section are required.
 - `post-stats <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_ -- provides estimated reading time for articles if `readtime` is not available. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
 - `neighbors <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides post-article links to the next and previous  article on your blog and the next and previous article in that category. Available on PyPI as ``pelican-neighours``.
 - `pelican_comment_system <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_ -- add static comments to your blog. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
-- `Related Posts <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ -- adds the related_posts variable to the article's context
+- `Related Posts <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ -- adds the related_posts variable to the article's context.
+- Tipue Search
 
 
 Additional Settings

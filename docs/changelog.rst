@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add basic support for Tuque Search plugin.
 - :bug:`-` fix issues with navbar coloring, navbar brand text + logo layout,
   and sidebar alinement.
 - :feature:`-` added support for `prjct <https://github.com/MinchinWeb/prjct>`_.

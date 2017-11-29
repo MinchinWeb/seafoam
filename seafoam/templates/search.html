@@ -4,6 +4,18 @@
     Search &mdash; {{ super() }}
 {%- endblock %}
 
+{% block breadcrumbs %}
+  {% if DISPLAY_BREADCRUMBS %}
+    <ol class="breadcrumb">
+        <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
+        {% if MENUITEMS_2_AT %}
+            <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+        {% endif %}
+        <li class="active"><a href="{{ SITEURL }}/{{ SEARCH_URL | default('search.html') }}" title="Search">Search</a></li>
+    </ol>
+  {% endif %}
+{% endblock %}
+
 {% block scripts %}
     {% if 'assets' in PLUGINS %}
     {% include 'includes/minify_tipuesearch.html' with context %}
