@@ -1,19 +1,21 @@
-//
+/*
 // Custom Additions -- Seafoam theme colours
 // --------------------------------------------------
-//
+*/
 
 /* Custom Seafoam additions */
 
-// left pad definition items
+/* left pad definition items
+*/
 dd {
  padding-left: @padding-large-horizontal * 2;
 }
 
 
-// Sidebar Vertical Navigation
+/* Sidebar Vertical Navigation
 // -------------------------
 // from  http://www.jonathanbriehl.com/2014/01/17/vertical-menu-for-bootstrap-3/
+*/
 
 @media (min-width: @screen-sm) {
   .sidebar-nav .navbar .navbar-collapse {
@@ -54,9 +56,9 @@ dd {
 }
 
 
-// More Sidebar Nav
+/* More Sidebar Nav
 // -------------------------
-//
+*/
 
 .nav-list-level2 {
   font-size: @font-size-base;
@@ -84,9 +86,9 @@ body {
 }
 
 
-// Images with Captions
+/* Images with Captions
 // -------------------------
-//
+*/
 
 .max-col-md-9 {
 	max-width: ((@screen-md - (@grid-gutter-width * 2)) * 9 / 12);
@@ -130,11 +132,11 @@ body {
   transform-origin: -2*@font-size-h2 top 0;
 }
 
-// Pager spacing
+/* Pager spacing
 //
 // On narrow screens, the two pages end up touching. This puts vertical space
 // between them.
-//
+*/
 // TO-DO: Fix this further
 .pager {
   a {
@@ -147,9 +149,9 @@ body {
 }
 
 
-// Tipue Search
+/* Tipue Search
 // ------------------------
-//
+*/
 
 .tipue_search_content_title {
   &:extend(.h3);
@@ -164,9 +166,101 @@ body {
   background: @sol-yellow;
 }
 
-// for Genealogy (Gigatrees)
-// ------------------------
-//
+#tipue_search_foot {
+  &:extend(.text-center);
+}
+
+// below is copied from 'pagination.less'
+// .pagination {
+#tipue_search_foot_boxes {
+  display: inline-block;
+  padding-left: 0;
+  margin: @line-height-computed 0;
+  border-radius: @border-radius-base;
+  cursor: pointer;
+
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      position: relative;
+      float: left; // Collapse white-space
+      padding: @padding-base-vertical @padding-base-horizontal;
+      line-height: @line-height-base;
+      text-decoration: none;
+      color: @pagination-color;
+      background-color: @pagination-bg;
+      border: 1px solid @pagination-border;
+      margin-left: -1px;
+    }
+    &:first-child {
+      &,
+      > a,
+      > span {
+        margin-left: 0;
+        .border-left-radius(@border-radius-base);
+      }
+    }
+    &:last-child {
+      &,
+      > a,
+      > span {
+        .border-right-radius(@border-radius-base);
+      }
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      z-index: 2;
+      color: @pagination-hover-color;
+      background-color: @pagination-hover-bg;
+      border-color: @pagination-hover-border;
+    }
+  }
+
+  // > .active > a,
+  // > .active > span {
+  > .current {
+    &,
+    &:hover,
+    &:focus {
+      z-index: 3;
+      color: @pagination-active-color;
+      background-color: @pagination-active-bg;
+      cursor: @cursor-disabled;
+
+      position: relative;
+      float: left; // Collapse white-space
+      padding: @padding-base-vertical @padding-base-horizontal;
+      line-height: @line-height-base;
+      text-decoration: none;
+      border: 1px solid @pagination-active-border;
+      margin-left: -1px;
+    }
+  }
+
+  // > .disabled {
+  //   > span,
+  //   > span:hover,
+  //   > span:focus,
+  //   > a,
+  //   > a:hover,
+  //   > a:focus {
+  //     color: @pagination-disabled-color;
+  //     background-color: @pagination-disabled-bg;
+  //     border-color: @pagination-disabled-border;
+  //     cursor: @cursor-disabled;
+  //   }
+  // }
+}
+
+
+/* for Genealogy (Adam/Gigatrees)
+// ------------------------------
+*/
 
 .gt-tab-table {
   &:extend(.table);

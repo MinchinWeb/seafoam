@@ -1312,7 +1312,8 @@ mark,
 .text-right {
   text-align: right;
 }
-.text-center {
+.text-center,
+#tipue_search_foot {
   text-align: center;
 }
 .text-justify {
@@ -6750,10 +6751,20 @@ button.close {
     display: none !important;
   }
 }
+/*
+// Custom Additions -- Seafoam theme colours
+// --------------------------------------------------
+*/
 /* Custom Seafoam additions */
+/* left pad definition items
+*/
 dd {
   padding-left: 32px;
 }
+/* Sidebar Vertical Navigation
+// -------------------------
+// from  http://www.jonathanbriehl.com/2014/01/17/vertical-menu-for-bootstrap-3/
+*/
 @media (min-width: 768px) {
   .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
@@ -6788,6 +6799,9 @@ dd {
     font-family: "Expletus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
+/* More Sidebar Nav
+// -------------------------
+*/
 .nav-list-level2 {
   font-size: 18px;
   padding-left: 40px;
@@ -6808,6 +6822,9 @@ body {
     /*  This is too much if the screen is narrower than about 250px */
   }
 }
+/* Images with Captions
+// -------------------------
+*/
 .max-col-md-9 {
   max-width: 699px;
 }
@@ -6838,6 +6855,11 @@ body {
   transform: translate(25px, 150px) rotate(-90deg);
   transform-origin: -76px top 0;
 }
+/* Pager spacing
+//
+// On narrow screens, the two pages end up touching. This puts vertical space
+// between them.
+*/
 .pager {
   margin-top: 0;
   margin-bottom: 0;
@@ -6846,12 +6868,77 @@ body {
   margin-top: 12.5px;
   margin-bottom: 12.5px;
 }
+/* Tipue Search
+// ------------------------
+*/
 .tipue_search_content_url {
   display: none;
 }
 .h01 {
   background: #b58900;
 }
+#tipue_search_foot_boxes {
+  display: inline-block;
+  padding-left: 0;
+  margin: 25px 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#tipue_search_foot_boxes > li {
+  display: inline;
+}
+#tipue_search_foot_boxes > li > a,
+#tipue_search_foot_boxes > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #2aa198;
+  background-color: #fdf6e3;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+#tipue_search_foot_boxes > li:first-child,
+#tipue_search_foot_boxes > li:first-child > a,
+#tipue_search_foot_boxes > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#tipue_search_foot_boxes > li:last-child,
+#tipue_search_foot_boxes > li:last-child > a,
+#tipue_search_foot_boxes > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#tipue_search_foot_boxes > li > a:hover,
+#tipue_search_foot_boxes > li > span:hover,
+#tipue_search_foot_boxes > li > a:focus,
+#tipue_search_foot_boxes > li > span:focus {
+  z-index: 2;
+  color: #48cfc5;
+  background-color: #586e75;
+  border-color: #ddd;
+}
+#tipue_search_foot_boxes > .current,
+#tipue_search_foot_boxes > .current:hover,
+#tipue_search_foot_boxes > .current:focus {
+  z-index: 3;
+  color: #fdf6e3;
+  background-color: #2aa198;
+  cursor: not-allowed;
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  border: 1px solid #2aa198;
+  margin-left: -1px;
+}
+/* for Genealogy (Adam/Gigatrees)
+// ------------------------------
+*/
 .gt-heatmap-wrapper {
   min-height: 750px;
   padding: 3px 13px 5px 14px;
