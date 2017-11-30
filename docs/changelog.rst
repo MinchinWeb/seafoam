@@ -3,7 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
-- :bug:`-` fix styling to pager on search results.
+- :bug:`-` fix styling of breadcrumbs on article pages.
+- :bug:`-` fix styling of pager on search results.
 - :release:`2.3.0 <2017-11-29>`
 - :feature:`-` add basic support for Tuque Search plugin.
 - :bug:`- major` fix issues with navbar coloring, navbar brand text + logo

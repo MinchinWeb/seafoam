@@ -64,7 +64,7 @@
             {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
                 <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
             {% endif %}
-            <li class="active">{{ article.title }}</li>
+            <li class="active">{{ article.title | striptags }}</li>
         </ol>     
     {% endif %}
 {% endblock %}
