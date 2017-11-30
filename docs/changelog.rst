@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.3.1 <2017-11-30>`
 - :bug:`-` fix styling of breadcrumbs on article pages.
 - :bug:`-` fix styling of pager on search results.
 - :release:`2.3.0 <2017-11-29>`
