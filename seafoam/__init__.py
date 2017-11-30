@@ -10,7 +10,7 @@ try:
 except ImportError:
     from pathlib2 import Path
 
-__version__ = "2.3.0+dev.20171128.0"
+__version__ = "2.3.0"
 
 
 def get_path():
