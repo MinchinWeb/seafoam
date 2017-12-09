@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` fix styling of main text body when using vertical menu.
 - :release:`2.3.1 <2017-11-30>`
 - :bug:`-` fix styling of breadcrumbs on article pages.
 - :bug:`-` fix styling of pager on search results.
