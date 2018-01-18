@@ -124,6 +124,9 @@
 									{% if MENUITEMS_2_AT %}
 										{% if title == MENUITEMS_2_AT %}
 											<ul class="nav navbar-nav nav-list-level2">
+											{% if ARCHIVES_SAVE_AS %}
+												<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
+											{% endif %}
 											{% for title_2, link_2, icon_2 in MENUITEMS_2 %}
 												<li><a href="{{ link_2 }}">{% if icon_2 %}<span class="{{icon_2}}"></span> {% endif %}{{ title_2 }}</a></li>
 											{% endfor %}
@@ -149,7 +152,7 @@
 							</ul>
 						{% endif %}
 						{% if 'tipue_search' in PLUGINS or ARCHIVES_SAVE_AS %}
-							<ul class="nav navbar-nav navbar-right">
+							<ul class="nav navbar-nav {%if NAVBAR_ON_TOP %}navbar-right{% endif %}">
 								{% if 'tipue_search' in PLUGINS %}
 									<li><span>
 									<form class="navbar-search navbar-form" action="{{ SITEURL }}/{{ SEARCH_URL | default('search.html') }}">
@@ -160,8 +163,8 @@
 									</form>
 									</span></li>
 								{% endif %}
-								{% if ARCHIVES_SAVE_AS %}
-									<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i> <span class="icon-label">Archives</span></a></li>
+								{% if ARCHIVES_SAVE_AS and not MENUITEMS_2_AT %}
+									<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
 								{% endif %}
 							</ul>
 						{% endif %}

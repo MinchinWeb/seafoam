@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` make *Archives* link work better with vertical menu and with
+  sub-sites.
 - :release:`2.3.2 <2017-12-08>`
 - :bug:`-` fix styling of main text body when using vertical menu.
 - :release:`2.3.1 <2017-11-30>`

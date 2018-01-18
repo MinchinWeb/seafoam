@@ -41,6 +41,7 @@ nosetests.xml
 env*/
 
 *.sublime-workspace
+.vscode/*
 
 ## test output
 test/output

@@ -10,7 +10,7 @@ try:
 except ImportError:
     from pathlib2 import Path
 
-__version__ = "2.3.2"
+__version__ = "2.3.3-dev"
 
 
 def get_path():
@@ -23,4 +23,4 @@ def get_path():
     # Theme directory is defined as our parent directory
     return str(Path(__file__).resolve().parent)
 
-# TO-DO: add extension that adds theme version to Pelican metadata
+# TODO: add extension that adds theme version to Pelican metadata
