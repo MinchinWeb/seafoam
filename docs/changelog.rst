@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` Add instructions on how to use the *404 Error* page.
 - :release:`2.3.3 <2018-01-18>`
 - :bug:`-` make *Archives* link work better with vertical menu and with
   sub-sites.

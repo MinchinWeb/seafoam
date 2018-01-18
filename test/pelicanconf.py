@@ -14,3 +14,7 @@ PLUGINS = [
 
 CACHE_CONTENT = False
 LOAD_CACHE_CONTENT = False
+
+TEMPLATE_PAGES = {
+    '404.html':     '404.html',
+}

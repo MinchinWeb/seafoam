@@ -44,6 +44,11 @@ the image processing patterns used:
     'index-feature': ["scale_in 263 263 True"],
   }
 
+  # Generate 404 error page
+  TEMPLATE_PAGES = {
+      '404.html':     '404.html',
+  }
+
   # the rest of the your configuration file...
 
 
