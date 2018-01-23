@@ -112,10 +112,10 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a href="{{ SITE_ROOT_URL }}/" class="navbar-brand">
-							{% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/></span> {% endif %}
-							{% if not HIDE_SITENAME %} <span class="navbar-text">{{- SITENAME -}}</span>{% endif %}
+							{% if SITELOGO %} <img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/> {% endif %}
+							{% if not HIDE_SITENAME %} <span class="navbar-text">{{- SITENAME -}}</span> {% endif %}
 						</a>
-					</div>
+					</div> <!-- /.navbar-header -->
 					<div class="collapse navbar-collapse {% if not NAVBAR_ON_TOP %}sidebar-navbar-collapse navbar-nonheader{% endif %}">
 						{% if MENUITEMS or DISPLAY_PAGES_ON_MENU or DISPLAY_CATEGORIES_ON_MENU %}
 							<ul class="nav navbar-nav">
