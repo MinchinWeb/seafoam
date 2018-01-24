@@ -79,7 +79,11 @@
 	{% endif %}
 	{% if CUSTOM_CSS_LIST %}
 		{% for custom_css in CUSTOM_CSS_LIST %}
-			<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
+			{% if custom_css.startswith('//') or custom_css.startswith('http://') or custom_css.startswith('https://') %}
+				<link href="{{ custom_css }}" rel="stylesheet" type="text/css" />
+			{% else %}
+				<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
+			{% endif %}
 		{% endfor %}
 	{% endif %}
   {% endif -%}
@@ -223,7 +227,11 @@
 {% endif %}
 {% if CUSTOM_JS_LIST %}
 	{% for custom_js in CUSTOM_JS_LIST %}
-	<script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
+		{% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
+			<script src="{{ custom_js }}" type="text/javascript"></script>
+		{% else %}
+			<script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
+		{% endif %}
 	{% endfor %}
 {% endif -%}
 
