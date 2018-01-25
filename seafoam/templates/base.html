@@ -1,102 +1,102 @@
 {% if NAVBAR_ON_TOP is not defined %}
-	{% set NAVBAR_ON_TOP = False %}
+    {% set NAVBAR_ON_TOP = False %}
 {% endif -%}
 {% if HIDE_SIDEBAR is not defined %}
-	{% set HIDE_SIDEBAR = False %}
+    {% set HIDE_SIDEBAR = False %}
 {% endif -%}
 {% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?3.1.1" %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:og="http://ogp.me/ns#"
-	  xmlns:fb="https://www.facebook.com/2008/fbml">
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-	<title>{% block title %}{{ SITENAME|striptags|breaking_spaces }}{% endblock %}</title>
-	<!-- Using the latest rendering mode for IE -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	{%- if FAVICON %}
-	<link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
-	{% endif -%}
+    <title>{% block title %}{{ SITENAME|striptags|breaking_spaces }}{% endblock %}</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {%- if FAVICON %}
+    <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
+    {% endif -%}
 
-	{# Open Graph tags #}
-	{% if USE_OPEN_GRAPH is not defined %}
-		{% set USE_OPEN_GRAPH = True %}
-	{% endif %}
-	{% if USE_OPEN_GRAPH %}
-	<!-- Open Graph tags -->
-		{% if OPEN_GRAPH_FB_APP_ID %}
-			<meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
-		{% endif %}
-		{% if article %}
-			<meta property="og:type" content="article"/>
-			<meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}"/>
-			<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
-			<meta property="og:description" content="{{ article.summary|striptags }}"/>
-		{% elif page %}
-			<meta property="og:type" content="article"/>
-			<meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}"/>
-			<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
-		{% else %}
-			<meta property="og:type" content="website"/>
-			<meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}"/>
-			<meta property="og:url" content="{{ SITEURL }}"/>
-			<meta property="og:description" content="{{ SITENAME }}"/>
-			{% if OPEN_GRAPH_IMAGE %}
-				<meta property="og:image"
-					content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
-			{% endif %}
-		{% endif %}
-	{% endif -%}
-	
+    {# Open Graph tags #}
+    {% if USE_OPEN_GRAPH is not defined %}
+        {% set USE_OPEN_GRAPH = True %}
+    {% endif %}
+    {% if USE_OPEN_GRAPH %}
+    <!-- Open Graph tags -->
+        {% if OPEN_GRAPH_FB_APP_ID %}
+            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+        {% endif %}
+        {% if article %}
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}"/>
+            <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
+            <meta property="og:description" content="{{ article.summary|striptags }}"/>
+        {% elif page %}
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}"/>
+            <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
+        {% else %}
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}"/>
+            <meta property="og:url" content="{{ SITEURL }}"/>
+            <meta property="og:description" content="{{ SITENAME }}"/>
+            {% if OPEN_GRAPH_IMAGE %}
+                <meta property="og:image"
+                    content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
+            {% endif %}
+        {% endif %}
+    {% endif -%}
+    
   {% if ASSET_CSS %}
-	{# put assets in a seperate file, otherwise it breaks if the assets #}
-	{# plugin is not active #}
-	{% include 'includes/assets-css.html' %}
+    {# put assets in a seperate file, otherwise it breaks if the assets #}
+    {# plugin is not active #}
+    {% include 'includes/assets-css.html' %}
   {% else %}
-	<!-- Bootstrap -->
-	{% if BOOTSTRAP_THEME %}
-		<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
-	{% else %}
-		<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	{% endif %}
-	{# DISABLED -- moved this to my Bootstrap theme 
-	<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet" type="text/css" />
-	#}
-	{% if DOCUTIL_CSS %}
-		<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/html4css1.css" rel="stylesheet" type="text/css" />
-	{% endif %}
-	{# DISABLED -- moved this to my Bootstrap theme 
-	{% if TYPOGRIFY %}
-		<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/typogrify.css" rel="stylesheet"  type="text/css" />
-	{% endif %}
-	<link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" rel="stylesheet" type="text/css" />
-	#}
-	{% if CUSTOM_CSS %}
-		<link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
-	{% endif %}
-	{% if CUSTOM_CSS_LIST %}
-		{% for custom_css in CUSTOM_CSS_LIST %}
-			{% if custom_css.startswith('//') or custom_css.startswith('http://') or custom_css.startswith('https://') %}
-				<link href="{{ custom_css }}" rel="stylesheet" type="text/css" />
-			{% else %}
-				<link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
-			{% endif %}
-		{% endfor %}
-	{% endif %}
+    <!-- Bootstrap -->
+    {% if BOOTSTRAP_THEME %}
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
+    {% else %}
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    {% endif %}
+    {# DISABLED -- moved this to my Bootstrap theme 
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments/{{ PYGMENTS_STYLE|default('native') }}.css" rel="stylesheet" type="text/css" />
+    #}
+    {% if DOCUTIL_CSS %}
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/html4css1.css" rel="stylesheet" type="text/css" />
+    {% endif %}
+    {# DISABLED -- moved this to my Bootstrap theme 
+    {% if TYPOGRIFY %}
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/typogrify.css" rel="stylesheet"  type="text/css" />
+    {% endif %}
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" rel="stylesheet" type="text/css" />
+    #}
+    {% if CUSTOM_CSS %}
+        <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" rel="stylesheet" type="text/css" />
+    {% endif %}
+    {% if CUSTOM_CSS_LIST %}
+        {% for custom_css in CUSTOM_CSS_LIST %}
+            {% if custom_css.startswith('//') or custom_css.startswith('http://') or custom_css.startswith('https://') %}
+                <link href="{{ custom_css }}" rel="stylesheet" type="text/css" />
+            {% else %}
+                <link href="{{ SITEURL }}/{{ custom_css }}" rel="stylesheet" type="text/css" />
+            {% endif %}
+        {% endfor %}
+    {% endif %}
   {% endif -%}
 
-	{% if FEED_ALL_ATOM %}
-		<link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
-			  title="{{ SITENAME }} ATOM Feed"/>
-	{% endif %}
-	{% if FEED_ALL_RSS %}
-		<link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/atom+xml" rel="alternate"
-			  title="{{ SITENAME }} RSS Feed"/>
-	{% endif -%}
+    {% if FEED_ALL_ATOM %}
+        <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+              title="{{ SITENAME }} ATOM Feed"/>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/atom+xml" rel="alternate"
+              title="{{ SITENAME }} RSS Feed"/>
+    {% endif -%}
     {% if JQUERY_JS_IN_HEAD %}
         <script src="{{ JQUERY_JS_URL }}" type="text/javascript"></script>
     {% endif %}
@@ -104,141 +104,141 @@
 </head>
 <body>
 
-	<div class="container">
-	{% if not NAVBAR_ON_TOP %}
-	<div class="row">
-		<div class="col-sm-3">
-			<div class="sidebar-nav">
-	{% endif %}
-				<nav class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation">
+    <div class="container">
+    {% if not NAVBAR_ON_TOP %}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="sidebar-nav">
+    {% endif %}
+                <nav class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation">
 
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target={% if not NAVBAR_ON_TOP %}".sidebar-navbar-collapse"{% else %}".navbar-collapse"{% endif %}>
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="{{ SITE_ROOT_URL }}/" class="navbar-brand">
-							{% if SITELOGO %} <img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/> {% endif %}
-							{% if not HIDE_SITENAME %} <span class="navbar-text">{{- SITENAME -}}</span> {% endif %}
-						</a>
-					</div> <!-- /.navbar-header -->
-					<div class="collapse navbar-collapse {% if not NAVBAR_ON_TOP %}sidebar-navbar-collapse navbar-nonheader{% endif %}">
-						{% if MENUITEMS or DISPLAY_PAGES_ON_MENU or DISPLAY_CATEGORIES_ON_MENU %}
-							<ul class="nav navbar-nav">
-								{% for title, link, icon in MENUITEMS %}
-									<li {% if MENUITEMS_2_AT and title == MENUITEMS_2_AT %}class="active"{% endif %}><a href="{{ link }}">{% if icon %}<span class="{{icon}}"></span> {% endif %}{{ title }}</a>
-									{% if MENUITEMS_2_AT %}
-										{% if title == MENUITEMS_2_AT %}
-											<ul class="nav navbar-nav nav-list-level2">
-											{% if ARCHIVES_SAVE_AS %}
-												<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
-											{% endif %}
-											{% for title_2, link_2, icon_2 in MENUITEMS_2 %}
-												<li><a href="{{ link_2 }}">{% if icon_2 %}<span class="{{icon_2}}"></span> {% endif %}{{ title_2 }}</a></li>
-											{% endfor %}
-											</ul>
-										{% endif %}
-									{% endif %}
-									</li>
-								{% endfor %}
-								{% if DISPLAY_PAGES_ON_MENU %}
-									{% for p in pages|sort(attribute='source_path') %}
-										<li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-											{%- if p.icon %}<span class="{{ p.icon }}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
-										</a></li>
-									{% endfor %}
-								{% endif %}
-								{% if DISPLAY_CATEGORIES_ON_MENU %}
-									{% for cat, null in categories %}
-										<li {% if cat == category %}class="active"{% endif %}>
-											<a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
-										</li>
-									{% endfor %}
-								{% endif %}
-							</ul>
-						{% endif %}
-						{% if 'tipue_search' in PLUGINS or ARCHIVES_SAVE_AS %}
-							<ul class="nav navbar-nav {%if NAVBAR_ON_TOP %}navbar-right{% endif %}">
-								{% if 'tipue_search' in PLUGINS %}
-									<li><span>
-									<form class="navbar-search navbar-form" action="{{ SITEURL }}/{{ SEARCH_URL | default('search.html') }}">
-										<div class="form-group">
-											<input type="text" class="form-control search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-											{# consider adding "go!" button #}
-										</div>
-									</form>
-									</span></li>
-								{% endif %}
-								{% if ARCHIVES_SAVE_AS and not MENUITEMS_2_AT %}
-									<li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
-								{% endif %}
-							</ul>
-						{% endif %}
-					</div> <!-- /.navbar-collapse -->
-				</nav>
-	{% if not NAVBAR_ON_TOP %}
-			</div> <!-- /.sidebar-nav -->
-		</div> <!-- /.col-sm-3 -->
-	{% else %}
-	<div class="row">
-	{% endif %}
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target={% if not NAVBAR_ON_TOP %}".sidebar-navbar-collapse"{% else %}".navbar-collapse"{% endif %}>
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="{{ SITE_ROOT_URL }}/" class="navbar-brand">
+                            {% if SITELOGO %} <img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/> {% endif %}
+                            {% if not HIDE_SITENAME %} <span class="navbar-text">{{- SITENAME -}}</span> {% endif %}
+                        </a>
+                    </div> <!-- /.navbar-header -->
+                    <div class="collapse navbar-collapse {% if not NAVBAR_ON_TOP %}sidebar-navbar-collapse navbar-nonheader{% endif %}">
+                        {% if MENUITEMS or DISPLAY_PAGES_ON_MENU or DISPLAY_CATEGORIES_ON_MENU %}
+                            <ul class="nav navbar-nav">
+                                {% for title, link, icon in MENUITEMS %}
+                                    <li {% if MENUITEMS_2_AT and title == MENUITEMS_2_AT %}class="active"{% endif %}><a href="{{ link }}">{% if icon %}<span class="{{icon}}"></span> {% endif %}{{ title }}</a>
+                                    {% if MENUITEMS_2_AT %}
+                                        {% if title == MENUITEMS_2_AT %}
+                                            <ul class="nav navbar-nav nav-list-level2">
+                                            {% if ARCHIVES_SAVE_AS %}
+                                                <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
+                                            {% endif %}
+                                            {% for title_2, link_2, icon_2 in MENUITEMS_2 %}
+                                                <li><a href="{{ link_2 }}">{% if icon_2 %}<span class="{{icon_2}}"></span> {% endif %}{{ title_2 }}</a></li>
+                                            {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endif %}
+                                    </li>
+                                {% endfor %}
+                                {% if DISPLAY_PAGES_ON_MENU %}
+                                    {% for p in pages|sort(attribute='source_path') %}
+                                        <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
+                                            {%- if p.icon %}<span class="{{ p.icon }}"></span> {% endif %}{{- p.menulabel|default(p.title) -}}
+                                        </a></li>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if DISPLAY_CATEGORIES_ON_MENU %}
+                                    {% for cat, null in categories %}
+                                        <li {% if cat == category %}class="active"{% endif %}>
+                                            <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                        {% if 'tipue_search' in PLUGINS or ARCHIVES_SAVE_AS %}
+                            <ul class="nav navbar-nav {%if NAVBAR_ON_TOP %}navbar-right{% endif %}">
+                                {% if 'tipue_search' in PLUGINS %}
+                                    <li><span>
+                                    <form class="navbar-search navbar-form" action="{{ SITEURL }}/{{ SEARCH_URL | default('search.html') }}">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                                            {# consider adding "go!" button #}
+                                        </div>
+                                    </form>
+                                    </span></li>
+                                {% endif %}
+                                {% if ARCHIVES_SAVE_AS and not MENUITEMS_2_AT %}
+                                    <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><span class="fa fa-fw fa-archive"></span> Archives</a></li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </div> <!-- /.navbar-collapse -->
+                </nav>
+    {% if not NAVBAR_ON_TOP %}
+            </div> <!-- /.sidebar-nav -->
+        </div> <!-- /.col-sm-3 -->
+    {% else %}
+    <div class="row">
+    {% endif %}
 
-	{%- if not HIDE_SIDEBAR and not NAVBAR_ON_TOP %}
-		<div class="col-sm-6">
-	{% elif not HIDE_SIDEBAR or not NAVBAR_ON_TOP %}
-		<div class="col-sm-9">
-	{% else %}
-		<div class="col-sm-12">
-	{% endif -%}
+    {%- if not HIDE_SIDEBAR and not NAVBAR_ON_TOP %}
+        <div class="col-sm-6">
+    {% elif not HIDE_SIDEBAR or not NAVBAR_ON_TOP %}
+        <div class="col-sm-9">
+    {% else %}
+        <div class="col-sm-12">
+    {% endif -%}
 
-		{% block breadcrumbs %}
-		{% endblock %}
+    {% block breadcrumbs %}
+    {% endblock %}
 
-        {% if PRJCT %}
-			{% block prjct %}
-			{% endblock %}
-		{% endif %}
+    {% if PRJCT %}
+        {% block prjct %}
+        {% endblock %}
+    {% endif %}
 
-		{% block content %}
-		{% endblock %}
+    {% block content %}
+    {% endblock %}
 
-		</div>
-	{%- if not HIDE_SIDEBAR %}
-		<div class="col-sm-3">
-			<div class="well well-sm" id="sidebar">
-			{% include 'includes/sidebar.html' %}
-			</div> <!-- /.well #sidebar -->
-		</div> <!-- /.col-sm-3 -->
-	{% endif %}
-	</div> <!-- /.row -->
+        </div>
+    {%- if not HIDE_SIDEBAR %}
+        <div class="col-sm-3">
+            <div class="well well-sm" id="sidebar">
+            {% include 'includes/sidebar.html' %}
+            </div> <!-- /.well #sidebar -->
+        </div> <!-- /.col-sm-3 -->
+    {% endif %}
+    </div> <!-- /.row -->
 </div> <!-- /.container -->
 {%- include 'includes/footer.html' %}
 
 {% if ASSET_JS %}
-	{# put assets in a seperate file, otherwise it breaks if the assets #}
-	{# plugin is not active #}
-	{% include 'includes/assets-js.html' %}
+    {# put assets in a seperate file, otherwise it breaks if the assets #}
+    {# plugin is not active #}
+    {% include 'includes/assets-js.html' %}
 {% else %}
     {% if not JQUERY_JS_IN_HEAD == True %}
         <script src="{{ JQUERY_JS_URL }}" type="text/javascript"></script>
     {% endif %}
 
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js" type="text/javascript"></script>
 
-	<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-	<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/respond.min.js" type="text/javascript"></script>
+    <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/respond.min.js" type="text/javascript"></script>
 {% endif %}
 {% if CUSTOM_JS_LIST %}
-	{% for custom_js in CUSTOM_JS_LIST %}
-		{% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
-			<script src="{{ custom_js }}" type="text/javascript"></script>
-		{% else %}
-			<script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
-		{% endif %}
-	{% endfor %}
+    {% for custom_js in CUSTOM_JS_LIST %}
+        {% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
+            <script src="{{ custom_js }}" type="text/javascript"></script>
+        {% else %}
+            <script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
+        {% endif %}
+    {% endfor %}
 {% endif -%}
 
 
