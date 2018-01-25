@@ -272,6 +272,11 @@ HIDE_SITENAME = False
   Hide the sitename in the site navbar.
 INDEX_COPY_DATE
   Copyright date to display on the index page (homepage) of the site.
+JQUERY_JS_IN_HEAD = False
+  Bootstrap depends on JQuery. Typically, good practice is to load all your
+  Javascript from the end of your page. However, in certain cases, I've needed
+  to load JQuery sooner. So this moves loading JQuery from the end of the page
+  to the header.
 LINKS
   Extra links to display sidebar. Provide a list of tuples of the form
   ``('name', 'link')``.
