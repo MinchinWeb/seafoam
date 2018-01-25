@@ -244,7 +244,9 @@ th {
     border: 1px solid #000;
   }
   .table,
-  .gt-tab-table {
+  .gt-tab-table,
+  .grtable,
+  .glist {
     border-collapse: collapse !important;
   }
   .table td,
@@ -2258,7 +2260,9 @@ th {
   text-align: left;
 }
 .table,
-.gt-tab-table {
+.gt-tab-table,
+.grtable,
+.glist {
   width: 100%;
   max-width: 100%;
   margin-bottom: 25px;
@@ -5807,7 +5811,6 @@ button.list-group-item-danger.active:focus {
 }
 .well,
 .gt-toc,
-#gt-menu,
 .gt-stats-wrapper,
 .gt-heatmap-wrapper,
 .gt-census-wrapper,
@@ -6939,6 +6942,14 @@ body {
 /* for Genealogy (Adam/Gigatrees)
 // ------------------------------
 */
+.gt-tab-table th,
+.grtable th,
+.glist th,
+.gt-tab-table td,
+.grtable td,
+.glist td {
+  padding: 1px 10px;
+}
 .gt-heatmap-wrapper {
   min-height: 750px;
   padding: 3px 13px 5px 14px;
@@ -7068,7 +7079,8 @@ body {
 .gt-source-publication {
   background: #c1c872;
 }
-.gt-source-bibliography {
+.gt-source-bibliography,
+.gbib {
   background: #d9c072;
 }
 .gt-source-template {
@@ -7078,10 +7090,12 @@ body {
 .gt-source-type {
   background: #c1c872;
 }
-.gt-source-repository {
+.gt-source-repository,
+.grepo {
   background: #c1c872;
 }
-.gt-source-quality {
+.gt-source-quality,
+.gsrcq {
   background: #ed9489;
 }
 .gt-source-page {
@@ -7090,14 +7104,17 @@ body {
 .gt-source-ref {
   white-space: nowrap;
 }
-.gt-referrer {
+.gt-referrer,
+.gref {
   background: #c1c872;
 }
 .gt-url {
   background: #b5b4d4;
 }
-.gt-citation-heading {
+.gt-citation-heading,
+.gcitehead {
   background: #7f918d;
+  color: #fdf6e3;
   padding: 1px 10px 2px 10px;
 }
 .gt-citation-text {
@@ -7119,16 +7136,16 @@ body {
   border: 1px solid #aaa;
   border-spacing: 0px;
   border-collapse: separate;
-  border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   /*padding-bottom: 1px;*/
 }
 /* Statistics Page */
 .gt-bonkers-item {
   background: #fdf6e3;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
   color: #586e75;
   margin-bottom: 20px;
   padding-left: 10px;
@@ -7226,11 +7243,10 @@ body {
 /* Last Modified date */
 #gt-modified {
   font-size: 16px;
-  padding: 2px 0px 0px 0px;
-  margin-top: 20px;
 }
 /* GEDCOM ids */
-.gt-heading {
+.gt-heading,
+.ghead {
   background: #002b36;
   color: #fdf6e3;
 }
@@ -7243,32 +7259,35 @@ body {
 }
 /* Photos */
 /* Claims */
-.gt-name {
+.gt-name,
+.gnm {
   background: #b5b4d4;
 }
-.gt-parents {
+.gt-parents,
+.gparent {
   background: #ed9489;
 }
-.gt-spouses {
+.gt-spouses,
+.gspouse {
   background: #fdf6e3;
   color: #586e75;
 }
-.gt-children {
+.gt-children,
+.gchild {
   background: #92c1db;
 }
 .gt-assoc {
   background: #EDCBAD;
 }
-.gt-event {
+.gt-event,
+.gevent {
   background: #fdf6e3;
   color: #586e75;
 }
-.gt-attr {
+.gt-attr,
+.gattr {
   background: #fdf6e3;
   color: #586e75;
-}
-.gt-claim > td {
-  padding-right: 1em;
 }
 .gt-claim-index {
   padding: 0px 5px 0px 0px;
@@ -7279,11 +7298,13 @@ body {
 .gt-claim-tag-no-wrap {
   white-space: nowrap;
 }
-.gt-claim-date {
+.gt-claim-date,
+.gdate {
   white-space: nowrap;
   text-align: right;
 }
-.gt-claim-age {
+.gt-claim-age,
+.gage {
   white-space: nowrap;
 }
 .gt-claim-disproved {
@@ -7367,6 +7388,19 @@ body {
 .gt-claim-conclusion a:active {
   color: #6c71c4;
 }
+.gsex,
+.gsrc {
+  background: #fdf6e3;
+  color: #586e75;
+}
+.grtable > thead {
+  background: #586e75;
+}
+.gchild:hover,
+.gparent:hover,
+.gnm:hover {
+  color: #586e75;
+}
 /* Links */
 .gt-source-link {
   background: #fdf6e3;
@@ -7382,24 +7416,29 @@ body {
   border-bottom-width: 0;
 }
 /* Text */
-.gt-comment {
+.gt-comment,
+.gcomment {
   background: #d9c072;
+  padding: 1px 10px;
 }
-.gt-note-text {
+.gt-note-text,
+.gtext {
   background: #92c1db;
+  color: #fdf6e3;
   padding: 5px 10px 3px 10px;
 }
 /* Tabs Content */
 .gt-list-group {
+  background: #fdf6e3;
   border-radius: 0 0 4px 4px;
   margin: 0;
+  padding-left: 0;
 }
 .gt-list-item {
   position: relative;
   display: block;
   padding: 5px 10px 8px 15px;
   margin-bottom: -1px;
-  border: 1px solid #ddd;
 }
 .gt-list-item:last-child {
   margin-bottom: 0;
@@ -7410,7 +7449,7 @@ body {
   padding: 10px 10px 10px 10px;
 }
 .gt-map {
-  padding: 0px 0px 0px 00px;
+  padding: 0px 0px 0px 0px;
 }
 #gt-map-canvas {
   height: 500px;
@@ -7444,29 +7483,34 @@ div.infowindow {
   margin: 15px 0 15px 0;
 }
 /* Ancestor Lists */
-.gt-al-page {
+.gt-al-page,
+.glist {
   background: #fdf6e3;
   color: #586e75;
   padding: 5px;
-  border: 1px solid #aaa;
-  margin: 2px 0px 20px 0px;
-  border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
+  border: transparent;
+  margin: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
 }
-.gt-al-page b {
+.gt-al-page b,
+.glist b {
   font-weight: 700;
 }
-.gt-al-page i {
+.gt-al-page i,
+.glist i {
   font-style: italic;
 }
-.gt-al-legend {
+.gt-al-legend,
+.glist-legend {
   width: 600px;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-.gt-al-generation {
+.gt-al-generation,
+.glist-gen {
   padding-top: 10px;
   font-weight: 700;
 }
@@ -7482,13 +7526,20 @@ div.infowindow {
 .gt-al-item-uncertain {
   background: lightgrey;
 }
-.gt-al-name {
+.gt-al-name,
+.gname {
   float: left;
   margin: 0;
 }
-.gt-al-path {
+.gt-al-path,
+.gpath {
   float: right;
   margin: 0;
+}
+.gt-al-page > thead,
+.glist > thead {
+  background: #586e75;
+  color: #fdf6e3;
 }
 /* Note and Articles */
 .gt-note-text img,
@@ -7538,10 +7589,10 @@ div.infowindow {
   height: 36px;
   width: 156px;
   border-color: #949494;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -khtml-border-radius: 6px;
 }
 .gt-chart-nodeshadow {
   position: absolute;
@@ -7550,10 +7601,10 @@ div.infowindow {
   height: 33px;
   width: 153px;
   background-color: #444;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -khtml-border-radius: 5px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -khtml-border-radius: 6px;
 }
 .gt-chart-connector {
   position: absolute;
@@ -8420,7 +8471,7 @@ div.infowindow {
   background: #35c9be;
 }
 .gt-ac-container {
-  margin: 5px auto 30px auto;
+  margin: 6px auto 10px auto;
   text-align: left;
 }
 .gt-ac-container label:hover:after,
@@ -8583,11 +8634,6 @@ div.infowindow {
     font-size: 1.0em;
   }
 }
-@media only screen and (max-width: 1120px) {
-  #gt-chart-tab {
-    display: none;
-  }
-}
 @media only screen and (max-width: 992px) {
   .gt-al-path {
     display: none;
@@ -8597,9 +8643,6 @@ div.infowindow {
   }
 }
 @media only screen and (max-width: 768px) {
-  #gt-ancestors-tab {
-    display: none;
-  }
   .gt-census-wrapper {
     font-size: .6em;
   }
