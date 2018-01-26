@@ -235,6 +235,8 @@
     {% for custom_js in CUSTOM_JS_LIST %}
         {% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
             <script src="{{ custom_js }}" type="text/javascript"></script>
+        {% elif custom_js.startswith('<script') %}
+            {{ custom_js }}
         {% else %}
             <script src="{{ SITEURL }}/{{ custom_js }}" type="text/javascript"></script>
         {% endif %}

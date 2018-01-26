@@ -5,8 +5,8 @@ Changelog
 
 - :feature:`-` add ``JQUERY_JS_IN_HEAD`` to move loading JQuery from the end of
   the page to the head section.
-- :bug:`- major` support local and absolute URLs for ``CUSTOM_CSS_LIST`` and
-  ``CUSTOM_JS_LIST``
+- :feature:`-` support local and absolute URLs for ``CUSTOM_CSS_LIST`` and
+  ``CUSTOM_JS_LIST``, and scripts directly for ``CUSTOM_JS_LIST``.
 - :release:`2.3.4 <2018-01-18>`
 - :bug:`-` Add instructions on how to use the *404 Error* page.
 - :release:`2.3.3 <2018-01-18>`

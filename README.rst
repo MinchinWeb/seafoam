@@ -177,9 +177,17 @@ CC_LICENSE_DERIVATIVES
 CUSTOM_CSS
   Link, relative to SITEURL, to a custom CSS file.
 CUSTOM_CSS_LIST
-  A list of links, relative to SITEURL, to custom CSS files.
+  Custom CSS to load; can be either absolute links, or relative links. If the
+  listed item starts with ``//``, ``http://``, ``https://``, it is assumed to
+  be absolute link and added as-is to the markup. Otherwise, the link is
+  assumed to be relative to SITEURL.
 CUSTOM_JS_LIST
-  A list of links, relative to SITEURL, to custom Javascript files.
+  Custom Javascript to load; can be either scripts, absolute links, or relative
+  links. If the listed item starts with ``<script``, then the item is assumed
+  to be the contents of a script, including opening and closing tags, and so
+  added to the pages' markup directly. If the listed item starts with ``//``,
+  ``http://``, ``https://``, it is assumed to be absolute link and added as-is
+  to the markup. Otherwise, the link is assumed to be relative to SITEURL.
 DEFAULT_LANG
   .
 DISPLAY_BREADCRUMBS = False
