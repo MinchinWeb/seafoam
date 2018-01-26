@@ -877,6 +877,70 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
   g.dxc-title g text tspan {font-size: .7em;}
 }
 
+// https://blog.trifork.com/2014/07/29/creating-charts-with-c3-js/ for a C3 example
+// titles on individual charts
+.c3-chart-title{
+  &:extend(.h4);
+}
+
+// x- and y-axis line
+.c3 .c3-axis path {
+  fill: @sol-black;
+}
+
+.c3 tspan {
+  fill: @text-color-inverse;
+}
+
+// y-axis labels + legend text
+.c3 text {
+  fill: @text-color-inverse;
+  font-size:@font-size-small;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+// tooltips
+.c3-tooltip {
+  border-collapse:collapse;
+  border-spacing:0;
+  background-color:@sol-grayLighter;
+  empty-cells:show;
+  -webkit-box-shadow: 7px 7px 12px -9px @sol-grayDarker;
+     -moz-box-shadow: 7px 7px 12px -9px @sol-grayDarker;
+          box-shadow: 7px 7px 12px -9px @sol-grayDarker;
+  opacity: 0.9;
+}
+.c3-tooltip tr {
+  border:1px solid @sol-gray;
+}
+.c3-tooltip th {
+  background-color: @sol-grayDark;
+  font-size:@font-size-base;
+  padding:@padding-xs-vertical @padding-xs-horizontal;
+  text-align:left;
+  color:@text-color;
+}
+.c3-tooltip td {
+  font-size:@font-size-small;
+  padding: @padding-xs-vertical @padding-xs-horizontal;
+  background-color:@sol-white;
+  border-left:1px dotted @sol-gray;
+  color: @text-color-inverse;
+}
+.c3-tooltip td > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+.c3-tooltip td.value{
+  text-align: right;
+}
+
+
+
 /********************/
 /* Mobile Overrides */
 /********************/
