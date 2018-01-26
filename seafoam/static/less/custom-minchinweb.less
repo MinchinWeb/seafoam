@@ -382,7 +382,7 @@ body {
 .gt-citation-text-missing      {padding: 0;}
 .gt-citation-text pre          {margin: 5px 0px;}
 /* Location Page */
-.gt-location                   {background:mix(@well-bg, @sol-blueDark); padding:5px 10px 5px 10px;}  //#E7F0FF
+.gt-location, .gloc            {background:mix(@well-bg, @sol-blueDark); padding:5px 10px 5px 10px;}  //#E7F0FF
 .gt-table-box                  {width:100%; border:1px solid #aaa; border-spacing:0px; border-collapse:separate; border-radius: @border-radius-base; -webkit-border-radius: @border-radius-base; -moz-border-radius: @border-radius-base; /*padding-bottom: 1px;*/}
 /* Statistics Page */
 .gt-bonkers-item               {background:@well-bg; border-radius: @border-radius-large; -webkit-border-radius: @border-radius-large; color:@text-color-inverse; margin-bottom:20px; padding-left:10px; padding-right:10px; padding-bottom:10px;}  //background:white
@@ -514,8 +514,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-map-location               {white-space:nowrap;}
 .gt-map-person                 {white-space:nowrap;}
 .gt-map-status                 {display: inline-block; max-width:1024px; width:auto; margin:15px 0 15px 0;}
-.gloc                          {padding:5px 10px 5px 10px;}
-.gt-float-map-buttons 		    	{padding-bottom: 10px;}
+.gt-float-map-buttons          {padding-bottom: 10px;}
 /* Ancestor Lists */
 .gt-al-page, .glist            {background:@well-bg; color:@text-color-inverse; padding:5px; border: transparent; margin: 0; border-radius: @border-radius-base; -webkit-border-radius: @border-radius-base; -moz-border-radius: @border-radius-base;}  //background:#E0FFFF
 .gt-al-page b, .glist b        {font-weight:700;}  //bold
@@ -539,10 +538,10 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-ethnicity-unk-label        {font-style: italic;}
 .gt-ethnicity-home-label       {font-style: italic;}
 /* Charts */
-#gt-person-chart               {position:relative;}
+#gt-person-chart               {position:relative; border-radius: 0; margin-bottom: 0;}
 .gt-chart-node                 {padding:2px; text-align:left; font-size:8pt; font-family:@font-family-serif; vertical-align:middle; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:rgb(0, 0, 0); border-right-color:rgb(0, 0, 0); border-bottom-color:rgb(0, 0, 0); border-left-color:rgb(0, 0, 0); border-image:initial;}  //font-family:Arial, Helvetica, sans-serif;
 .gt-chart-node                 {position:absolute; z-index:5; overflow:hidden; height:36px; width:156px; border-color: #949494; -moz-border-radius:@border-radius-large; -webkit-border-radius:@border-radius-large; border-radius:@border-radius-large; -khtml-border-radius:@border-radius-large;}
-.gt-chart-nodeshadow           {position:absolute; z-index:1; overflow:hidden; height:33px; width:153px; background-color:#444; -moz-border-radius:@border-radius-large; -webkit-border-radius:@border-radius-large; border-radius:@border-radius-large; -khtml-border-radius:@border-radius-large;}
+.gt-chart-nodeshadow           {position:absolute; z-index:1; overflow:hidden; height:33px; width:153px; background-color:@sol-grayDarker; -moz-border-radius:@border-radius-large; -webkit-border-radius:@border-radius-large; border-radius:@border-radius-large; -khtml-border-radius:@border-radius-large;}
 .gt-chart-connector            {position:absolute; z-index:3; overflow:hidden; background-color:#949494;}
 .gt-chart-arrow                {position:absolute; z-index:5;}
 //.gt-chart-arrow img            {/*width:10px;  height:10px;*/ cursor:pointer; margin:0 0 5px; background-color:#fff; border:1px solid #ccc; padding:2px; -moz-border-radius:@border-radius-base; -webkit-border-radius:@border-radius-base;}
@@ -717,6 +716,16 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 #gt-chart-node31               {top:610px; left:848px;}
 #gt-chart-nodeshadow31         {top:614px; left:852px;}
 #gt-chart-arrow31              {top:619px; left:1010px;}
+
+.gchart {
+  margin-bottom: 0;
+}
+.gchart > tbody > tr > td {
+  padding: 0;
+}
+#gt-chart-tab .table-responsive {
+  background: @well-bg;
+}
 
 // Use Icon font for arrows rather than images
 .gt-chart-arrow0 a,

@@ -9714,7 +9714,8 @@ body {
   margin: 5px 0px;
 }
 /* Location Page */
-.gt-location {
+.gt-location,
+.gloc {
   background: #92c1db;
   padding: 5px 10px 5px 10px;
 }
@@ -10077,9 +10078,6 @@ div.infowindow {
   width: auto;
   margin: 15px 0 15px 0;
 }
-.gloc {
-  padding: 5px 10px 5px 10px;
-}
 .gt-float-map-buttons {
   padding-bottom: 10px;
 }
@@ -10175,6 +10173,8 @@ div.infowindow {
 /* Charts */
 #gt-person-chart {
   position: relative;
+  border-radius: 0;
+  margin-bottom: 0;
 }
 .gt-chart-node {
   padding: 2px;
@@ -10214,7 +10214,7 @@ div.infowindow {
   overflow: hidden;
   height: 33px;
   width: 153px;
-  background-color: #444;
+  background-color: #586e75;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
@@ -11056,6 +11056,15 @@ div.infowindow {
 #gt-chart-arrow31 {
   top: 619px;
   left: 1010px;
+}
+.gchart {
+  margin-bottom: 0;
+}
+.gchart > tbody > tr > td {
+  padding: 0;
+}
+#gt-chart-tab .table-responsive {
+  background: #fdf6e3;
 }
 .gt-chart-arrow0 a,
 .gt-chart-arrow2 a,
