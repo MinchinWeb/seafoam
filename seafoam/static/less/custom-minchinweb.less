@@ -533,14 +533,14 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-chart-node-uncertain       {background-color:#aaaaaa;}
 .gt-chart-node-uncertain a     {color:#ffffff;}
 .gt-chart-node-unknown         {background-color:#efefef;}
-.gt-chart-arrow0               {left:  4px;}
+.gt-chart-arrow0               {left:  6px;}  // 4px
 .gt-chart-node0                {left: 23px;}
 .gt-chart-nodeshadow0          {left: 27px;}
 .gt-chart-connector0a          {left:179px; height:1px; width:5px;}
 .gt-chart-connector0b          {left:183px; height:1px; width:5px;}
 .gt-chart-connector0c          {left:183px; height:40px; width:1.1px;}
-#gt-chart-arrow2               {top:290px; left:320px; width:16px; height:10px;}
-#gt-chart-arrow3               {top:350px; left:320px; width:16px; height:10px;}
+#gt-chart-arrow2               {top:290px; left:360px; /*width:16px; height:10px;*/}
+#gt-chart-arrow3               {top:350px; left:360px; /*width:16px; height:10px;*/}
 #gt-chart-node1                {top:310px; left:188px;}
 #gt-chart-nodeshadow1          {top:314px; left:192px;}
 #gt-chart-connector1           {top:328px; left:344px; height:  1px; width:5px;}
@@ -694,6 +694,35 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 #gt-chart-node31               {top:610px; left:848px;}
 #gt-chart-nodeshadow31         {top:614px; left:852px;}
 #gt-chart-arrow31              {top:619px; left:1010px;}
+
+// Use Icon font for arrows rather than images
+.gt-chart-arrow0 a,
+.gt-chart-arrow2 a,
+.gt-chart-arrow3 a {
+  // copied from font-awesome/core.less
+  // this can't be referenced directly with 'extend' as the css class is defined by a variable
+  display: inline-block;
+  font: normal normal normal @fa-font-size-base/@fa-line-height-base FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // plus additions
+  border-bottom: none !important;
+  color: @text-color-inverse;
+  padding-top: 8px;
+  text-decoration: none;  // turn off underline
+}
+.gt-chart-arrow0 a:before {
+  content: @fa-var-chevron-left;
+}
+.gt-chart-arrow2 a:before {
+  content: @fa-var-chevron-up;
+}
+.gt-chart-arrow3 a:before {
+  content: @fa-var-chevron-down;
+}
 
 /******************/
 /* Tabs           */
