@@ -407,14 +407,12 @@ body {
 .gt-census-entryeven           {background:lightyellow; vertical-align:top; white-space:nowrap; text-align:center;}
 .gt-census-entryodd            {background:lightgrey;   vertical-align:top; white-space:nowrap; text-align:center;}
 /* Immigrants Page */
-.gt-immigrant-ship             {font-style:italic;}
+.gt-immigrant-ship, .gship     {font-style:italic;}
 /* Nobility Titles Page */
 .gt-title-new                  {}
 .gt-title-cont                 {}
 
 /* Product Version */
-//.gt-version                    {font-size:.9em; padding-top:10px; padding-bottom:10px;}  //unsed
-#gt-qscore                     {display:none;}
 /* Last Modified date */
 #gt-modified                   {font-size:@font-size-small;}  //font-size:.9em; padding: 2px 0px 0px 0px;
 /* GEDCOM ids */
@@ -423,6 +421,7 @@ body {
 .gt-heading li.gt-id           {float:right;}
 /* Photos */ 
 .gt-photo                      {}
+//.gt-photo-box 					       {vertical-align: top; display: inline-block;width: 100px; height:100px;}
 /* Claims */
 .gt-name, .gnm                 {background:mix(@well-bg, @sol-purple);}  //E7D0FF
 .gt-parents, .gparent          {background:mix(@well-bg, @sol-red);}  //#EDCBAD
@@ -441,20 +440,37 @@ body {
 .gt-claim-age, .gage           {white-space:nowrap;}
 .gt-claim-disproved            {background:lightgrey;}
 .gt-claim-quality              {text-align:right; white-space: nowrap;}
-.gt-claim-quality-disproved    {background:lightgrey; font-weight:700;}  //bold
-.gt-claim-quality-uncertain    {color:@sol-black;}  //black
+
+.gt-claim-quality-unsupported,
+.gt-claim-quality-questionable,
+.gt-claim-quality-unreliable,
+.gt-claim-quality-uncertain {
+  color:@sol-black;
+}  //black
 .gt-claim-quality-estimated    {color:@sol-purple;}  //purple
-.gt-claim-quality-unsupported  {color:@sol-black;}  //black
-.gt-claim-quality-improbable   {color:@sol-red;  font-weight:700;}  //red
 .gt-claim-quality-probable     {color:@sol-green;}  //green
-.gt-claim-quality-proposed     {color:@sol-blueDark;}  //#28A500
-.gt-claim-quality-possible     {color:@sol-blueDark;}  //#28A500
-.gt-claim-quality-supported    {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-proposed,
+.gt-claim-quality-supported,
+.gt-claim-quality-reported {
+  color:@sol-blueDark;
+}  //#28A500
+.gt-claim-quality-certain,
+.gt-claim-quality-proven {
+  color:@sol-blue;
+}  //blue
+
+.gt-claim-quality-special      {font-weight:bold;}
+.gt-claim-quality-impossible   {font-weight:bold;}
+.gt-claim-quality-questionable {font-weight:bold;}
+.gcalert                       {color:@sol-red; font-weight: bold;}
+
+.gt-claim-quality-assumed      {color:@sol-blueDark;}  //#28A500
+.gt-claim-quality-disproved    {background:lightgrey; font-weight:700;}  //bold
+.gt-claim-quality-improbable   {color:@sol-red;  font-weight:700;}  //red
 .gt-claim-quality-likely       {color:@sol-blueDark;}  //#28A500
 .gt-claim-quality-maybe        {color:@sol-blueDark;}  //#28A500
-.gt-claim-quality-assumed      {color:@sol-blueDark;}  //#28A500
-.gt-claim-quality-proven       {color:@sol-blue;}  //blue
-.gt-claim-quality-certain      {color:@sol-blue;}  //blue
+.gt-claim-quality-possible     {color:@sol-blueDark;}  //#28A500
+
 .gt-claim-evidence             {color:@sol-green;}  //green
 .gt-claim-evidence a           {color:@sol-green;}  //green
 .gt-claim-evidence a:link      {color:@sol-green;}  //green
@@ -490,14 +506,16 @@ body {
 .gt-list-item                  {position: relative; display: block; padding: 5px 10px 8px 15px; margin-bottom: -1px;} 
 .gt-list-item:last-child       {margin-bottom: 0;}
 /* Maps */
-#map                           {min-height:750px; padding: 10px 10px 10px 10px;}
-.gt-map                        {padding:0px 0px 0px 0px;}
+#map                           {min-height:720px; padding: 10px 10px 10px 10px;}
+.gt-map                        {padding:0;}
 #gt-map-canvas                 {height: 500px;}
 #gt-heat-map                   {width:100%; max-width:1023px; height:650px; margin-right:10px; float:left; border: 1px solid rgba(196, 196, 196, 0.25);}
 div.infowindow                 {max-height:400px; width: 100%; max-width:400px; overflow-y:auto; overflow-x: hidden;} /* for use with google heat map */
 .gt-map-location               {white-space:nowrap;}
 .gt-map-person                 {white-space:nowrap;}
 .gt-map-status                 {display: inline-block; max-width:1024px; width:auto; margin:15px 0 15px 0;}
+.gloc                          {padding:5px 10px 5px 10px;}
+.gt-float-map-buttons 		    	{padding-bottom: 10px;}
 /* Ancestor Lists */
 .gt-al-page, .glist            {background:@well-bg; color:@text-color-inverse; padding:5px; border: transparent; margin: 0; border-radius: @border-radius-base; -webkit-border-radius: @border-radius-base; -moz-border-radius: @border-radius-base;}  //background:#E0FFFF
 .gt-al-page b, .glist b        {font-weight:700;}  //bold
@@ -515,6 +533,11 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 /* Note and Articles */
 .gt-note-text img, .gt-url img {cursor:pointer; margin:0 0 3px; background-color:#fff; border:1px solid #ccc; padding:2px; -moz-border-radius:4px; -webkit-border-radius:4px;}
 .gt-note-text img              {max-height: 100%; max-width: 100%; margin:auto; display:block; }
+/* Ethnicity */
+.gt-ethnicity-trace-label      {font-style: italic;}
+.gt-ethnicity-dup-label        {font-style: italic;}
+.gt-ethnicity-unk-label        {font-style: italic;}
+.gt-ethnicity-home-label       {font-style: italic;}
 /* Charts */
 #gt-person-chart               {position:relative;}
 .gt-chart-node                 {padding:2px; text-align:left; font-size:8pt; font-family:@font-family-serif; vertical-align:middle; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:rgb(0, 0, 0); border-right-color:rgb(0, 0, 0); border-bottom-color:rgb(0, 0, 0); border-left-color:rgb(0, 0, 0); border-image:initial;}  //font-family:Arial, Helvetica, sans-serif;
@@ -522,7 +545,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 .gt-chart-nodeshadow           {position:absolute; z-index:1; overflow:hidden; height:33px; width:153px; background-color:#444; -moz-border-radius:@border-radius-large; -webkit-border-radius:@border-radius-large; border-radius:@border-radius-large; -khtml-border-radius:@border-radius-large;}
 .gt-chart-connector            {position:absolute; z-index:3; overflow:hidden; background-color:#949494;}
 .gt-chart-arrow                {position:absolute; z-index:5;}
-.gt-chart-arrow img            {/*width:10px;  height:10px;*/ cursor:pointer; margin:0 0 5px; background-color:#fff; border:1px solid #ccc; padding:2px; -moz-border-radius:@border-radius-base; -webkit-border-radius:@border-radius-base;}
+//.gt-chart-arrow img            {/*width:10px;  height:10px;*/ cursor:pointer; margin:0 0 5px; background-color:#fff; border:1px solid #ccc; padding:2px; -moz-border-radius:@border-radius-base; -webkit-border-radius:@border-radius-base;}
 .gt-chart-node-bkgnd5          {background-color:#f5ecce;}
 .gt-chart-node-bkgnd4          {background-color:#f7f2e0;}
 .gt-chart-node-bkgnd3          {background-color:#fbf8ef;}
@@ -747,8 +770,6 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
   background: lighten(@brand-primary, 10%);;
 }
 
-
-
 .gt-ac-container{
   margin: @padding-base-vertical auto @padding-large-vertical auto;
   text-align: left;
@@ -762,60 +783,6 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
     background-image: url(../images/ac_arrow_up.png);
 }    
 
-/*
-.gt-ac-container label[for^='gt-ac']{
-  font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif;
-  padding: 5px 15px;
-  margin-bottom: 0px; /* override bootstrap */ /*
-  position: relative;
-  display: block;
-  height: 40px;
-  cursor: pointer;
-  color: #333;
-  line-height: 33px;
-  font-size: 19px;
-  font-weight:normal;
-  background: #ffffff;
-  background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));
-  background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-  background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-  background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-  background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
-  box-shadow:
-    0px 0px 0px 1px rgba(155,155,155,0.3),
-    1px 0px 0px 0px rgba(255,255,255,0.9) inset,
-    0px 2px 2px rgba(0,0,0,0.1);
-}
-.gt-ac-container label[for^='gt-ac']:hover{
-  background: #fff;
-  font-weight: 500;
-}
-.gt-ac-container input[id^="gt-ac-"]:checked + label,
-.gt-ac-container input[id^="gt-ac-"]:checked + label:hover{
-    background: #96b432;
-    background: -moz-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #96b432), color-stop(3%, #92b42a), color-stop(9%, #8fb429), color-stop(12%, #8eb12f), color-stop(15%, #8db12b), color-stop(24%, #88ad29), color-stop(41%, #7fa629), color-stop(56%, #759d23), color-stop(79%, #679320), color-stop(85%, #64911a), color-stop(88%, #648e22), color-stop(91%, #638d1d), color-stop(97%, #5e8d1d), color-stop(100%, #64891f));
-    background: -webkit-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
-    background: -o-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
-    background: -ms-linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
-    background: linear-gradient(top, #96b432 0, #92b42a 3%, #8fb429 9%, #8eb12f 12%, #8db12b 15%, #88ad29 24%, #7fa629 41%, #759d23 56%, #679320 79%, #64911a 85%, #648e22 88%, #638d1d 91%, #5e8d1d 97%, #64891f 100%);
-  color: #fff;
-  text-shadow: 0px 1px 1px rgba(255,255,255, 0.3);
-  box-shadow:
-    0px 0px 0px 1px rgba(155,155,155,0.3),
-    0px 2px 2px rgba(0,0,0,0.1);
-}
-.gt-ac-container label[for^='gt-ac']:hover:after,
-.gt-ac-container input[id^="gt-ac-"]:checked + label:hover:after{
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  right: 13px;
-  top: 7px;
-} */
 .gt-ac-container input[id^="gt-ac-"] {
   display: none;
 }
