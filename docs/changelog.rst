@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :support:`-` upgrade to ``respond.js`` v1.4.2.
 - :feature:`-` add ability to add Javascript to ``<head>`` with
   ``CUSTOM_JS_LIST_HEAD``, which is designed to work very similar to
   ``CUSTOM_JS_LIST``.
