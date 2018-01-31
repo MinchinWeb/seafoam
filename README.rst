@@ -188,6 +188,19 @@ CUSTOM_JS_LIST
   added to the pages' markup directly. If the listed item starts with ``//``,
   ``http://``, ``https://``, it is assumed to be absolute link and added as-is
   to the markup. Otherwise, the link is assumed to be relative to SITEURL.
+
+  See also ``CUSTOM_JS_LIST_HEAD`` and ``JQUERY_JS_IN_HEAD``.
+CUSTOM_JS_LIST_HEAD
+  Exactly the same format as ``CUSTOM_JS_LIST``, but is added to the pages'
+  ``<head>`` section rather than the end of the page. Generally, you will want
+  to put your Javascript at the end of the page (i.e. in ``CUSTOM_JS_LIST``
+  rather than here), as any Javascript referenced here must generally be
+  completed loaded before the page will start being rendered.
+  
+  When ``JQUERY_JS_IN_HEAD == True`` (not the default), JQuery is listed before
+  the other scripts listed here.
+  
+  See also ``CUSTOM_JS_LIST`` and ``JQUERY_JS_IN_HEAD``.
 DEFAULT_LANG
   .
 DISPLAY_BREADCRUMBS = False
@@ -284,7 +297,8 @@ JQUERY_JS_IN_HEAD = False
   Bootstrap depends on JQuery. Typically, good practice is to load all your
   Javascript from the end of your page. However, in certain cases, I've needed
   to load JQuery sooner. So this moves loading JQuery from the end of the page
-  to the header.
+  to the header. When active, JQuery is listed before the other scripts in
+  ``CUSTOM_JS_LIST_HEAD``. See also ``CUSTOM_JS_LIST_HEAD``.
 LINKS
   Extra links to display sidebar. Provide a list of tuples of the form
   ``('name', 'link')``.

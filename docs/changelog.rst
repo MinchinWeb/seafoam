@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add ability to add Javascript to ``<head>`` with
+  ``CUSTOM_JS_LIST_HEAD``, which is designed to work very similar to
+  ``CUSTOM_JS_LIST``.
 - :feature:`-` add ``JQUERY_JS_IN_HEAD`` to move loading JQuery from the end of
   the page to the head section.
 - :feature:`-` support local and absolute URLs for ``CUSTOM_CSS_LIST`` and
