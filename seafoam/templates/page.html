@@ -15,9 +15,9 @@
             <li><a href="{{ SITEURL }}/{{ page.at_link }}" title="{{ page.at }}">{{ page.at }}</a></li>
         {% endif %}
         {% if not page.url == '' %}
-            <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>
+            <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title | trim }}">{{ page.title | trim }}</a></li>
         {% endif %}
-    </ol>
+    </ol> <!-- /.breadcrumbs -->
     {% endif %}
 {% endblock %}
 

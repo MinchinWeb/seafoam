@@ -17,6 +17,7 @@ def build(ctx):
     source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
     dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
     run('lessc {} > {}'.format(source, dest))
+    print("Seafoam LESS compiled to CSS!")
     # TODO -- minimize css!
     #   consider css-html-js-minify
 
