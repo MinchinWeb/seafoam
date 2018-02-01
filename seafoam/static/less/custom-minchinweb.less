@@ -353,13 +353,14 @@ body {
 .gt-toc-item                   {}
 
 /* Surnames Page */
+#gt-menu                       {margin-bottom: @padding-large-horizontal;}
 .gt-index-legend               {text-align:center;}
 .gt-index-names                {text-align:center;}
 .gt-index-entry                {display:inline; white-space:nowrap;}
 /* Bonkers Page */
 .gt-bonkers                    {background:@well-bg; color:@text-color-inverse; font-size:@font-size-small; padding-top:5px;}  // no backgound, font-size:12px
 /* Photos Page */
-#gt-photos                     {background:@well-bg; color:@text-color-inverse; padding: 3px 3px 0px 3px;}  //no background
+#gt-photos                     {background:@well-bg; color:@text-color-inverse; padding: @padding-large-vertical @padding-large-horizontal; border-radius:@border-radius-base; margin-bottom: @padding-large-horizontal; }  //no background
 /* Updates page */
 .gt-updated-missing            {background:@well-bg; color:@text-color-inverse;}
 .gt-updated-person             {background:@well-bg; color:@text-color-inverse;}
@@ -509,7 +510,7 @@ body {
 #map                           {min-height:720px; padding: 10px 10px 10px 10px;}
 .gt-map                        {padding:0;}
 #gt-map-canvas                 {height: 500px;}
-#gt-heat-map                   {width:100%; max-width:1023px; height:650px; margin-right:10px; float:left; border: 1px solid rgba(196, 196, 196, 0.25);}
+#gt-heat-map                   {height:650px; width:100%; max-width:1023px; border-radius: @border-radius-base;} /*any wider and heatmap won't display on window load*/
 div.infowindow                 {max-height:400px; width: 100%; max-width:400px; overflow-y:auto; overflow-x: hidden;} /* for use with google heat map */
 .gt-map-location               {white-space:nowrap;}
 .gt-map-person                 {white-space:nowrap;}
@@ -915,6 +916,81 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
   text-align: right;
 }
 
+/******************/
+/* Fancybox       */
+/******************/
+
+
+#fancybox-buttons {
+	position: fixed;
+	left: 0;
+	width: 100%;
+  z-index: 8050;
+    
+  // copied from font-awesome/core.less
+  // this can't be referenced directly with 'extend' as the css class is defined by a variable
+  display: inline-block;
+  font: normal normal normal @fa-font-size-base/@fa-line-height-base FontAwesome; // shortening font declaration
+  font-size: inherit; // can't have font-size inherit on line above, so need to override
+  text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // plus additions
+  border-bottom: none !important;
+  color: @text-color-inverse;
+  text-decoration: none;  // turn off underline
+  text-align: center;
+
+  ul {
+    &:extend(.pagination);
+    margin: @padding-small-vertical 0;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        outline: none;
+        overflow: hidden;
+        padding: 6px 12px;
+        position: relative;
+      }
+    }
+  }
+
+  a {
+    background-color: @pagination-bg;
+    border: 1px solid @pagination-border;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    border-bottom: none;
+    text-decoration: none !important;
+  }
+
+  li:first-child a {
+    .border-left-radius(@border-radius-base);
+  }
+  li:last-child a {
+    .border-right-radius(@border-radius-base);
+  }
+}
+
+#fancybox-buttons.top                   { top: 10px; }
+#fancybox-buttons.bottom                { bottom: 10px; }
+
+#fancybox-buttons a.btnPrev:before      { content: @fa-var-step-backward; }
+#fancybox-buttons a.btnNext:before      { content: @fa-var-step-forward; }
+#fancybox-buttons a.btnPlay:before      { content: @fa-var-play; }
+#fancybox-buttons a.btnPlayOn:before    { content: @fa-var-pause; }
+#fancybox-buttons a.btnToggle:before    { content: @fa-var-expand; }
+#fancybox-buttons a.btnToggleOn:before  { content: @fa-var-compress; }
+#fancybox-buttons a.btnClose:before     { content: @fa-var-close; }
+
+#fancybox-buttons a.btnDisabled:before {
+	opacity : 0.4;
+	cursor: default;
+}
 
 
 /********************/
@@ -943,7 +1019,7 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 }
 
 /********************/
-/*Overrides         */
+/* Overrides        */
 /********************/
 
 //.entry-content {

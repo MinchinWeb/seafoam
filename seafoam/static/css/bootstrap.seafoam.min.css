@@ -4711,7 +4711,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .breadcrumb > .active {
   color: #2aa198;
 }
-.pagination {
+.pagination,
+#fancybox-buttons ul {
   display: inline-block;
   padding-left: 0;
   margin: 25px 0;
@@ -9620,6 +9621,9 @@ body {
   text-decoration: none;
 }
 /* Surnames Page */
+#gt-menu {
+  margin-bottom: 16px;
+}
 .gt-index-legend {
   text-align: center;
 }
@@ -9641,7 +9645,9 @@ body {
 #gt-photos {
   background: #fdf6e3;
   color: #586e75;
-  padding: 3px 3px 0px 3px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 /* Updates page */
 .gt-updated-missing {
@@ -10051,13 +10057,12 @@ body {
   height: 500px;
 }
 #gt-heat-map {
+  height: 650px;
   width: 100%;
   max-width: 1023px;
-  height: 650px;
-  margin-right: 10px;
-  float: left;
-  border: 1px solid rgba(196, 196, 196, 0.25);
+  border-radius: 4px;
 }
+/*any wider and heatmap won't display on window load*/
 div.infowindow {
   max-height: 400px;
   width: 100%;
@@ -11254,6 +11259,87 @@ div.infowindow {
 .c3-tooltip td.value {
   text-align: right;
 }
+/******************/
+/* Fancybox       */
+/******************/
+#fancybox-buttons {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 8050;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-bottom: none !important;
+  color: #586e75;
+  text-decoration: none;
+  text-align: center;
+}
+#fancybox-buttons ul {
+  margin: 5px 0;
+}
+#fancybox-buttons ul li {
+  display: inline-block;
+}
+#fancybox-buttons ul li a {
+  display: block;
+  outline: none;
+  overflow: hidden;
+  padding: 6px 12px;
+  position: relative;
+}
+#fancybox-buttons a {
+  background-color: #fdf6e3;
+  border: 1px solid #ddd;
+}
+#fancybox-buttons a:hover,
+#fancybox-buttons a:active,
+#fancybox-buttons a:focus {
+  border-bottom: none;
+  text-decoration: none !important;
+}
+#fancybox-buttons li:first-child a {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#fancybox-buttons li:last-child a {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#fancybox-buttons.top {
+  top: 10px;
+}
+#fancybox-buttons.bottom {
+  bottom: 10px;
+}
+#fancybox-buttons a.btnPrev:before {
+  content: "\f048";
+}
+#fancybox-buttons a.btnNext:before {
+  content: "\f051";
+}
+#fancybox-buttons a.btnPlay:before {
+  content: "\f04b";
+}
+#fancybox-buttons a.btnPlayOn:before {
+  content: "\f04c";
+}
+#fancybox-buttons a.btnToggle:before {
+  content: "\f065";
+}
+#fancybox-buttons a.btnToggleOn:before {
+  content: "\f066";
+}
+#fancybox-buttons a.btnClose:before {
+  content: "\f00d";
+}
+#fancybox-buttons a.btnDisabled:before {
+  opacity: 0.4;
+  cursor: default;
+}
 /********************/
 /* Mobile Overrides */
 /********************/
@@ -11285,7 +11371,7 @@ div.infowindow {
   }
 }
 /********************/
-/*Overrides         */
+/* Overrides        */
 /********************/
 .fake-list ul {
   padding-left: 0;
