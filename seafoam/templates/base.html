@@ -4,7 +4,8 @@
 {% if HIDE_SIDEBAR is not defined %}
     {% set HIDE_SIDEBAR = False %}
 {% endif -%}
-{% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?3.1.1" %}
+
+{% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?v=3.1.1" -%}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -251,7 +252,7 @@
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/bootstrap.min.js" type="text/javascript"></script>
 
     <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/respond.min.js" type="text/javascript"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/respond.min.js?v=1.4.2" type="text/javascript"></script>
 {% endif %}
 
 <!-- CUSTOM_JS_LIST -->
