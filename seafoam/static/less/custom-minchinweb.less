@@ -345,11 +345,12 @@ body {
 #gt-menu h3                    {padding:5px; font-weight:700;}  //bold
 #gt-menu ul                    {padding: 0; margin: 0; border: 0; list-style: none;}
 #gt-menu ul li                 {background: transparent;}  //border-bottom: 1px solid rgba(196, 196, 196, 0.25);
-#gt-menu a                     {color:@text-color-inverse; border-bottom:none;}  //#282828
-#gt-menu a:link                {color:@text-color-inverse;}  //#282828
-#gt-menu a:visited             {color:@text-color-inverse;}  //#282828
-#gt-menu a:active              {color:@text-color-inverse;}  //#282828
-#gt-menu a:hover               {color:@link-color; text-decoration:none;}  //#9e9e9e
+#gt-menu                       {color:@text-color-inverse;}
+#gt-menu a                     {color:@link-color; border-bottom:none;}  //#282828
+#gt-menu a:link                {color:@link-color;}  //#282828
+#gt-menu a:visited             {color:@link-color;}  //#282828
+#gt-menu a:active              {color:@link-color;}  //#282828
+#gt-menu a:hover               {color:@link-hover-color; text-decoration:@link-hover-decoration;}  //#9e9e9e
 .gt-toc-item                   {}
 
 /* Surnames Page */
@@ -860,6 +861,10 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
   &:extend(.h4);
 }
 
+.c3 path, .c3 line {
+  fill: none;
+}
+
 // x- and y-axis line
 .c3 .c3-axis path {
   fill: @sol-black;
@@ -1021,6 +1026,14 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 /********************/
 /* Overrides        */
 /********************/
+
+.grtable > tbody > tr:hover,
+.glist > tbody > tr:hover {
+  background:mix(@well-bg, @gray-dark); color:@text-color;
+  a:hover {
+    color: darken(@link-color, 15%);
+  }
+}
 
 //.entry-content {
 .fake-list {

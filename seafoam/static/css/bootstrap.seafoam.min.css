@@ -9603,22 +9603,25 @@ body {
 #gt-menu ul li {
   background: transparent;
 }
-#gt-menu a {
+#gt-menu {
   color: #586e75;
+}
+#gt-menu a {
+  color: #2aa198;
   border-bottom: none;
 }
 #gt-menu a:link {
-  color: #586e75;
+  color: #2aa198;
 }
 #gt-menu a:visited {
-  color: #586e75;
+  color: #2aa198;
 }
 #gt-menu a:active {
-  color: #586e75;
+  color: #2aa198;
 }
 #gt-menu a:hover {
-  color: #2aa198;
-  text-decoration: none;
+  color: #48cfc5;
+  text-decoration: underline;
 }
 /* Surnames Page */
 #gt-menu {
@@ -11210,6 +11213,10 @@ div.infowindow {
     font-size: .7em;
   }
 }
+.c3 path,
+.c3 line {
+  fill: none;
+}
 .c3 .c3-axis path {
   fill: #002b36;
 }
@@ -11373,6 +11380,15 @@ div.infowindow {
 /********************/
 /* Overrides        */
 /********************/
+.grtable > tbody > tr:hover,
+.glist > tbody > tr:hover {
+  background: #c8ccc2;
+  color: #fdf6e3;
+}
+.grtable > tbody > tr:hover a:hover,
+.glist > tbody > tr:hover a:hover {
+  color: #1a645f;
+}
 .fake-list ul {
   padding-left: 0;
   list-style: none;
