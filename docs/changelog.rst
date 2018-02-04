@@ -3,6 +3,13 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.4.0 <2018-02-03>`
+- :bug:`- major` Make the output HTML a little cleaner.
+- :support:`-` edit some JS and CSS links to explicitly note the version of the
+  library being loaded. This should make both cache-ing and library upgrading a
+  little simpler.
+- :feature:`-` various CSS additions to support Gigatrees 4.4.1 (genealogy site
+  generator).
 - :support:`-` upgrade to ``respond.js`` v1.4.2.
 - :feature:`-` add ability to add Javascript to ``<head>`` with
   ``CUSTOM_JS_LIST_HEAD``, which is designed to work very similar to
