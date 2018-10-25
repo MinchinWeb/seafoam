@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` adjust 404 page text.
 - :release:`2.4.0 <2018-02-03>`
 - :bug:`- major` Make the output HTML a little cleaner.
 - :support:`-` edit some JS and CSS links to explicitly note the version of the
