@@ -391,19 +391,19 @@ PRJCT
   Set to ``TRUE`` to active `prjct <https://github.com/MinchinWeb/prjct>`_
   support. Recommended segment to include in your ``pelicanconf.py``:
 
-  ```
-  import prjct
+  .. code-block:: python
 
-  PRJCT = True
-  PRJCT_TODO, PRJCT_DONE = prjct.todo_export.to_html_dicts()
-  PRJCT_PROJECTS = prjct.multi_source.project_list()
-  PRJCT_ACTIVE_PROJECTS = prjct.multi_source.active_project_list()
-  PRJCT_SOMEDAY_PROJECTS = prjct.config.someday_projects()
-  PRJCT_COMPLETED_PROJECTS = prjct.config.completed_projects()
-  PRJCT_DESC = prjct.descriptions.to_html_dict(markdown_extension_config=MARKDOWN['extension_configs'])
-  PRJCT_VERSION = prjct.__version__
-  PRJCT_FOOTER_URL = prjct.__url__
-  ```
+    import prjct
+
+    PRJCT = True
+    PRJCT_TODO, PRJCT_DONE = prjct.todo_export.to_html_dicts()
+    PRJCT_PROJECTS = prjct.multi_source.project_list()
+    PRJCT_ACTIVE_PROJECTS = prjct.multi_source.active_project_list()
+    PRJCT_SOMEDAY_PROJECTS = prjct.config.someday_projects()
+    PRJCT_COMPLETED_PROJECTS = prjct.config.completed_projects()
+    PRJCT_DESC = prjct.descriptions.to_html_dict(markdown_extension_config=MARKDOWN['extension_configs'])
+    PRJCT_VERSION = prjct.__version__
+    PRJCT_FOOTER_URL = prjct.__url__
 
   Also add prjct to our direct templates list.
 PRJCT_ACTIVE_PROJECTS
