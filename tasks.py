@@ -11,15 +11,57 @@ p = Path(__file__).parent  # directory holding this file
 
 
 @task
-def build(ctx):
-    """Compile the theme LESS files to CSS."""
+def build(ctx, mimify=True, watch=False, update=False):
+    """Compile the theme SASS files to CSS."""
+    # install "sass" via Chocolately
+    # install postcss, autoprefixer via npm
+
     p2 = p / 'seafoam'
-    source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
-    dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
-    run('lessc {} > {}'.format(source, dest))
-    print("Seafoam LESS compiled to CSS!")
-    # TODO -- minimize css!
-    #   consider css-html-js-minify
+    source_folder = p2 / 'src' /
+    dest_folder = p2 / 'static' / 'css'
+    postcss_config = source_folder / "bootstrap" / "postcss.config.js"
+
+    for style in [None,
+                #   "seafoam",
+                  ]:
+        if style:
+            source = source_folder / "{}.scss".format(style)
+            dest = dest_folder / "bootstrap.{}.css".format(style)
+        else:
+            source = source_folder / "bootstrap" / "bootstrap.scss"
+            dest = dest_folder / "bootstrap.css"
+
+        opts = ""
+        if mimify:
+            opts += " --style=compressed"
+            dest = dest.with_suffix(".min.css")
+        else:
+            opts += " --style=expanded"
+
+        if watch:
+            opts += " --watch"
+
+        if update:
+            opts += " --update"
+
+        # compile SASS
+        run('sass {} {}{}'.format(source, dest, opts))
+        # add vender prefixes
+        run('postcss --config {} --replace {}'.format(postcss_config, dest))
+
+        """
+        optimize further
+
+        cleancss --level 1 --source-map --source-map-inline-sources
+        --output dist/css/bootstrap.min.css dist/css/bootstrap.css &&
+
+        cleancss --level 1 --source-map --source-map-inline-sources --output
+        dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css &&
+
+        cleancss --level 1 --source-map --source-map-inline-sources --output
+        dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css
+        """
+    print("Seafoam SASS compiled to CSS!")
 
 
 @task
