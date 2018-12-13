@@ -1,6 +1,9 @@
 {% if DISPLAY_TAGS_ON_SIDEBAR is not defined %}
     {% set DISPLAY_TAGS_ON_SIDEBAR = True %}
 {% endif %}
+{% if TAGS_URL is not defined %}
+    {% set TAGS_URL = "tags.html" %}
+{% endif %}
 
 <aside>
     <section>
