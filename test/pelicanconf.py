@@ -1,7 +1,7 @@
 import seafoam
 
 THEME = seafoam.get_path()
-BOOTSTRAP_THEME = 'seafoam'
+# BOOTSTRAP_THEME = 'seafoam'
 PATH = 'content'
 STATIC_PATHS = ['images',
                ]

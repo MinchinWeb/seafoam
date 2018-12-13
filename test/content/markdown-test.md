@@ -13,10 +13,11 @@ This file serves three purposes:
 Let us begin:
 
 # Table of Contents (JS)
+
 Include an empty div with `id="contents"` at start of file to have a floating 
 table of contents automatically generated. eg:
-~~~
-    <div id="contents"></div>
+~~~html
+<div id="contents"></div>
 ~~~
 The Table of Contents div scrolls down with the page and is generated from headers.
 This is generated through the use of JavaScript and is not (directly) a part of
@@ -98,22 +99,22 @@ that underscores in words are ignored in Markdown Extra.
 
     <div class="custom-class" markdown="1">
     This is a div wrapping some Markdown plus.  Without the
-    DIV attribute (the 'markdown=1' part), it ignores the block. 
+    DIV attribute (the 'markdown=1' part), it ignores the block.
     </div>
 
 <div class="custom-class" markdown="1">
 This is a div wrapping some Markdown-Plus.  Without the
-DIV attribute (the 'markdown=1' part), it ignores the block. 
+DIV attribute (the 'markdown=1' part), it ignores the block.
 </div>
 
 # Links #
 
     Here is a Markdown link to [Google](http://google.com).
-    
-Here is a Markdown link to [Google](http://google.com). 
+
+Here is a Markdown link to [Google](http://google.com).
 
     This is [an example][id] reference-method link.
-    
+
     [id]: http://example.com/ "Optional Title Here"
 
 This is [an example][id] reference-method link.
@@ -154,7 +155,7 @@ The actual numbers used are ignored at the present time.
     * Bullet lists are easy too
     - Another one
     + Another one
-    
+
     1. A numbered list
     2. Which is numbered
     3. With periods and a space
@@ -175,7 +176,7 @@ Code can be intended.
 
     // Code is just text indented a bit like this
     which(is_easy) to_remember();
-    
+
 Code can be marked off with ~~~ above and below the block.
 
 ~~~
@@ -186,6 +187,17 @@ if (this_is_more_code == true && !indented) {
 }
 ~~~
 <!-- _ this is just to make it display nice is Notepad++ -->
+
+With Pgyments, specifying a langague should result in the code being
+appropriated highlighted.
+
+~~~js
+// Markdown extra adds un-indented code blocks too
+
+if (this_is_more_code == true && !indented) {
+    // tild wrapped code blocks, also not indented
+}
+~~~
 
 Code can be inline:
 
@@ -223,6 +235,7 @@ porta eros massa quis nunc.
 |  Cell  |  Cell  |   $10  |
 |  Cell  |  Cell  |   $20  |
 
+
 * Outer pipes on tables are optional
 * Colon used for alignment (right versus left)
 
@@ -251,7 +264,7 @@ Pop
 
     Hover over this here [ABBR] (a tooltip should show up)
     *[ABBR]: Markdown-Plus abbreviations (produces an <abbr> tag)
-    
+
 Hover over this here [ABBR] (a tooltip should show up)
 
 *[ABBR]: Markdown-Plus abbreviations (produces an <abbr> tag)
@@ -268,8 +281,8 @@ That's some text with a footnote.[^1]
 
 Note that footnotes show up at the bottom of the page, with a
 link back to its place in the original text.
-Note that two footnotes cannot have the same "name". 
-    
+Note that two footnotes cannot have the same "name".
+
 # Literal Characters #
 
 The following characters sometimes have special meanings in Markdown. You
@@ -289,8 +302,8 @@ can make sure Markdown doesn't interpret these characters by placing a backslash
     !  exclamation mark
     :  colon
     |  pipe
-    
-<!-- _ this is just to make it display nice is Notepad++ -->    
+
+<!-- _ this is just to make it display nice is Notepad++ -->
 # SmartyPants #
 SmartyPants transforms:
 
@@ -299,14 +312,14 @@ SmartyPants transforms:
 * Dashed in en- and em- dashes: -- and ---
 * Three consecutive dots in an ellipsis: ...
 * Adds unbreakable spaces
- * before a colon :  
- * before a semicolon ;
- * before an explamation mark !
- * before a question mark ?
- * inside << French style quotes >>
- * as the thousand seperator 100 000
- * between a value and common unit symbols  12 kg  and 10 °C
-    
+  * before a colon :  
+  * before a semicolon ;
+  * before an explamation mark !
+  * before a question mark ?
+  * inside << French style quotes >>
+  * as the thousand seperator 100 000
+  * between a value and common unit symbols  12 kg  and 10 °C
+
 # MathJax #
 Math display via MathJax has been activated, allowing the typing of math formulas.
 For more information about MathJax: <http://www.mathjax.org/>. For
@@ -368,16 +381,18 @@ v_\infty \left[ \pi a + \frac{2d}{\pi a + 2dw^{-1/2}(w-1)^{1/2}} \right]^-\)
 
 This is text that is supposed to be displayed in
 2 columns. Invoke columns by using:
-~~~
-    <div class="col2" markdown="1">
+~~~html
+<div class="col2" markdown="1">
     text here
-    </div>
+</div>
 ~~~
 Markdown will be rendered. `<H1>`, `<H2>`, and `<hr>` will span both columns.
 This is not a function of the Markdown, but rather the stylesheet.
 
 ...
 
+</div>
+<div class="col2" markdown="1">
 # Two Column Break ============ &
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pretium metus.
@@ -396,6 +411,8 @@ Ut gravida nulla at erat accumsan quis
 fermentum est sagittis. Suspendisse dignissim congue nibh, quis porttitor magna
 dignissim at. Sed ut eros est.
 
+</div>
+<div class="col2" markdown="1">
 ## Another Two Column Break ================ &
 
 Maecenas dictum sodales leo in sagittis. Sed ullamcorper enim nec ligula tempus
@@ -412,7 +429,7 @@ Praesent aliquam tempor
 lectus, sed facilisis urna aliquam non. Nulla facilisi.
 
  ***
- 
+
 Aenean at tellus velit. Aliquam eleifend cursus posuere. Sed semper, justo
 lacinia pharetra ultricies, nulla purus tincidunt enim, non pretium odio ante
 eget velit. Cras luctus dolor vitae eros mattis hendrerit.
@@ -423,6 +440,7 @@ nostra, per inceptos himenaeos.
 </div>
 
 # For more information #
+
 * Markdown Handler for Apache (this project) - <https://github.com/MinchinWeb/markdown-handler>
 * Markdown - <http://daringfireball.net/projects/markdown/syntax>
 * Markdown Plus - <http://michelf.ca/projects/php-markdown/extra/>
@@ -430,4 +448,3 @@ nostra, per inceptos himenaeos.
 * MathJax - <http://www.mathjax.org/>
 * jsMath (an alternative to MathJax) - <http://www.math.union.edu/~dpvc/jsmath/>
 * Markdown and MathJax - <https://github.com/drdrang/php-markdown-extra-math>
-

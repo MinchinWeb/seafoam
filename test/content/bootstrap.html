@@ -4,30 +4,14 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
     <title>Bootstrap TLDR</title>
-    <meta name="description" content="All Bootstrap's components in one page. Briefly presented with their own CSS selectors.">
-    <meta name="viewport" content="width=device-width">
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-
+    <meta name="summary" content="All Bootstrap's components in one page. Briefly presented with their own CSS selectors.">
     <meta name="date" content="2016-03-08" />
   </head>
-  <body data-spy="scroll" data-target="#sidebar">
+  <body>
     <!--[if lt IE 10]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <!-- builddist:section githubRibbon -->
-    <!-- /builddist -->
 
     <!-- Fixed navbar --><nav class="navbar navbar-default navbar-fixed-top bg-faded">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
@@ -57,7 +41,7 @@
 
 <h2 id="typography">Typography</h2>
 <!-- Headings -->
-<div class="media js-html-inspector" data-replace-target="> div">
+<div class="media">
     <div class="media-left media-middle">
         <h1>
             h1
@@ -76,6 +60,8 @@
             <small>small</small>
         </h3>
     </div>
+</div>
+<div class="media">
     <div class="media-left media-middle">
         <div class="h4">
             .h4
@@ -96,8 +82,8 @@
     </div>
 </div>
 
-<div class="row js-html-inspector" data-replace-target="> div" data-remove-target="br">
-    <div class="col-sm-2 col-xs-4">
+<div class="row">
+    <div class="col-sm-3 col-6">
         <!-- Lead body copy -->
         <span class="lead">.lead</span><br>
         <!-- Bold -->
@@ -105,21 +91,21 @@
         <strong>strong</strong>
     </div>
 
-    <div class="col-sm-2 col-xs-4">
+    <div class="col-sm-2 col-4">
         <!-- Small text -->
         <small>small</small>
         <br>
         <span class="small">.small</span>
     </div>
 
-    <div class="col-sm-2 col-xs-4">
+    <div class="col-sm-2 col-4">
         <!-- Italics -->
         <em>em</em><br>
         <i>i (italic)</i>
     </div>
 
     <!-- Inline text elements -->
-    <div class="col-sm-2 col-xs-4">
+    <div class="col-sm-6 col-8">
         <!-- Deleted text -->
         <del>del</del>
         <br>
@@ -132,7 +118,7 @@
         <u>u (underline)</u>
     </div>
 
-    <div class="col-sm-2 col-xs-4">
+    <div class="col-sm-2 col-4">
         <!-- Inline code -->
         <code>code</code><br>
         <!-- Variables -->
@@ -141,7 +127,7 @@
         <samp>samp</samp>
     </div>
 
-    <div class="col-sm-2 col-xs-4">
+    <div class="col-sm-2 col-4">
         <!-- Marked text -->
         <mark>mark</mark>
         <br>
@@ -151,30 +137,30 @@
 </div><br>
 
 <!-- Alignment classes -->
-<div class="row js-html-inspector" data-replace-target="> div">
-    <div class="col-xs-4">
+<div class="row">
+    <div class="col-4">
         <p class="text-left">.text-left</p>
     </div>
-    <div class="col-xs-4">
+    <div class="col-4">
         <p class="text-center">.text-center</p>
     </div>
-    <div class="col-xs-4">
+    <div class="col-4">
         <p class="text-right">.text-right</p>
     </div>
-    <div class="col-xs-12">
+    <div class="col-12">
         <div class="text-justify">.text-justify</div>
     </div>
 </div><br>
 
 <!-- Transformation classes -->
-<div class="js-html-inspector">
+<div>
     <span class="text-lowercase">.text-lowercase</span>
     <span class="text-uppercase">.text-uppercase</span>
     <span class="text-capitalize">.text-capitalize</span>
 </div><br>
 
 <!-- Abbreviations -->
-<div class="js-html-inspector">
+<div>
     <abbr title="abbreviation">abbr</abbr>
     <abbr class="initialism" title="abbreviation.initialism">
         .initialism
@@ -182,7 +168,7 @@
 </div><br>
 
 <!-- Addresses -->
-<div class="js-html-inspector">
+<div>
     <address>
         <strong>address strong</strong><br>
         address<br>
@@ -192,7 +178,7 @@
 
 <!-- Blockquotes -->
 <div class="row">
-    <div class="col-sm-6 js-html-inspector">
+    <div class="col-sm-6">
         <blockquote class="blockquote">
             <p>blockquote p</p>
             <footer class="blockquote-footer">
@@ -201,7 +187,7 @@
             </footer>
         </blockquote>
     </div>
-    <div class="col-sm-6 js-html-inspector">
+    <div class="col-sm-6">
         <blockquote class="blockquote-reverse">
             <p>blockquote-reverse p</p>
             <footer class="blockquote-footer">
@@ -214,7 +200,7 @@
 
 <div class="row">
     <!-- Unordered list -->
-    <div class="col-sm-4 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-4">
         <ul>
             <li>li</li>
             <li>
@@ -229,7 +215,7 @@
     </div>
 
     <!-- Ordered list -->
-    <div class="col-sm-4 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-4">
         <ol>
             <li>List item</li>
             <li>
@@ -244,7 +230,7 @@
     </div>
 
     <!-- Unstyled list -->
-    <div class="col-sm-4 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-4">
         <ul class="list-unstyled">
             <li>List item</li>
             <li>
@@ -261,7 +247,7 @@
 <div class="row">
 
     <!-- Inline list -->
-    <div class="col-sm-12 js-html-inspector" data-remove-target="p:first">
+    <div class="col-12">
         <ul class="list-inline">
             <li class="list-inline-item">List item</li>
             <li class="list-inline-item">List item</li>
@@ -272,7 +258,7 @@
 
 <div class="row">
     <!-- Description -->
-    <div class="col-xs-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-6">
         <dl>
             <dt>dt</dt>
             <dd>dd</dd>
@@ -282,7 +268,7 @@
     </div>
 
     <!-- Horizontal description -->
-    <div class="col-xs-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-6">
         <dl class="dl-horizontal">
             <dt>Term</dt>
             <dd>Description</dd>
@@ -295,7 +281,7 @@
 
 <h2 id="tables">Tables</h2>
 <!-- Basic example -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <table class="table">
         <thead>
         <tr>
@@ -324,7 +310,7 @@
 
 <div class="row">
     <!-- Striped rows -->
-    <div class="col-sm-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-6">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -346,7 +332,7 @@
     </div>
 
     <!-- Bordered table -->
-    <div class="col-sm-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-6">
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -370,7 +356,7 @@
 
 <div class="row">
     <!-- Hover rows -->
-    <div class="col-sm-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-6">
         <table class="table table-hover">
             <thead>
             <tr>
@@ -392,7 +378,7 @@
     </div>
 
     <!-- Condensed table -->
-    <div class="col-sm-6 js-html-inspector" data-remove-target="p:first">
+    <div class="col-sm-6">
         <table class="table table-condensed">
             <thead>
             <tr>
@@ -415,7 +401,7 @@
 </div>
 
 <!-- Responsive tables and Contextual classes -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -473,7 +459,7 @@
 
 <h2 id="forms">Forms</h2>
 <!-- Basic example -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <form>
         <fieldset class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -543,7 +529,7 @@
 </div>
 
 <!-- Inline form -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <form class="form-inline">
         <div class="form-group">
             <label for="exampleInputName2">Name</label>
@@ -559,7 +545,7 @@
 <br>
 
 <!-- Horizontal form -->
-<div class="js-html-inspector" data-remove-target='["p:not([class])","br"]'>
+<div>
     <form>
         <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 form-control-label">Email</label>
@@ -619,7 +605,7 @@
 </div>
 
 <!-- Validation states -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <form class="form-horizontal">
         <div class="form-group has-success">
             <label class="form-control-label" for="inputSuccess1">Input with success</label>
@@ -658,7 +644,7 @@
 
 <h2 id="buttons">Buttons</h2>
 <!-- Styled buttons -->
-<p class="bse-buttons js-html-inspector">
+<p class="bse-buttons">
     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
     <button type="button" class="btn btn-primary">Primary</button>
 
@@ -688,7 +674,7 @@
 </p>
 
 <!-- Button sizes -->
-<p class="bse-buttons js-html-inspector">
+<p class="bse-buttons">
     <button type="button" class="btn btn-primary btn-lg">Large button</button>
     <button type="button" class="btn btn-secondary btn-lg">Large button</button>
     <button type="button" class="btn btn-primary btn-sm">Small button</button>
@@ -696,20 +682,20 @@
 </p>
 
 <!-- Block level buttons -->
-<p class="js-html-inspector">
+<p>
     <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
     <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
 </p>
 
 <!-- Button tags -->
-<p class="bse-buttons js-html-inspector">
+<p class="bse-buttons">
     <a class="btn btn-primary" href="#" role="button">Link</a>
     <button class="btn btn-primary" type="submit">Button</button>
     <input class="btn btn-primary" type="button" value="Input">
     <input class="btn btn-primary" type="submit" value="Submit">
 </p>
 
-<p class="bse-buttons js-html-inspector">
+<p class="bse-buttons">
     <!-- Active state -->
     <a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
     <a href="#" class="btn btn-secondary btn-lg active" role="button">Link</a>
@@ -720,7 +706,7 @@
 
 
 <h2 id="images">Images</h2>
-<div class="row bs-thumbnails js-html-inspector" data-remove-target="p" data-replace-target="> div">
+<div class="row bs-thumbnails">
     <div class="col-sm-6">
         <img class="img-rounded"
              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+"
@@ -746,7 +732,7 @@
 
 <h2 id="helper-classes">Helper classes</h2>
 <!-- Contextual colors -->
-<p class="js-html-inspector">
+<p>
     <span class="text-muted">.text-muted</span>
     <span class="text-primary">.text-primary</span>
     <span class="text-success">.text-success</span>
@@ -756,7 +742,7 @@
 </p>
 
 <!-- Contextual backgrounds -->
-<p class="js-html-inspector">
+<p>
     <span class="bg-primary">.bg-primary</span>
     <span class="bg-success">.bg-success</span>
     <span class="bg-info">.bg-info</span>
@@ -765,23 +751,23 @@
 </p>
 
 <!-- Close icon -->
-<p class="js-html-inspector">
+<p>
     button.close &rarr;
     <button class="close" type="button">&times;</button>
 </p>
 
 <!-- Carets -->
-<p class="js-html-inspector">
+<p>
     .caret <span class="caret"></span>
 </p>
 
 <!-- Clearfix and floats -->
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <p><strong>.clearfix</strong></p>
 
     <div class="clearfix">
-        <div class="pull-left">.pull-left</div>
-        <div class="pull-right">.pull-right</div>
+        <div class="float-left">.float-left</div>
+        <div class="float-right">.float-right</div>
     </div>
 </div>
 <br>
@@ -813,7 +799,7 @@
 
 
 <h2 id="button-groups">Button groups</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="btn-group">
         <button class="btn btn-primary" type="button">#1</button>
         <button class="btn btn-primary" type="button">#2</button>
@@ -821,7 +807,7 @@
     </div>
 </div><br>
 
-<div class="js-html-inspector" data-remove-target="p:first" data-remove-class-target="div.bse-buttons">
+<div>
     <div class="btn-toolbar bse-buttons">
         <!-- Large button group -->
         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
@@ -839,7 +825,7 @@
     </div>
 </div><br>
 
-<div class="btn-toolbar bse-buttons js-html-inspector">
+<div class="btn-toolbar bse-buttons">
     <!-- Button group with dropdown -->
     <div class="btn-group">
         <button class="btn btn-primary" type="button">#1</button>
@@ -875,7 +861,7 @@
     </div>
 </div><br>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="btn-group btn-group-justified">
         <a href="#" class="btn btn-primary">#1</a>
         <a href="#" class="btn btn-primary">#2</a>
@@ -883,7 +869,7 @@
     </div>
 </div><br>
 
-<div class="js-html-inspector" data-remove-target="p:first" data-remove-class-target="div.bse-buttons">
+<div>
     <!-- Split button dropup -->
     <div class="btn-group dropup bse-buttons">
         <button class="btn btn-primary" type="button">.dropdown-menu &rarr;</button>
@@ -911,7 +897,7 @@
 
 
 <h2 id="input-groups">Input groups</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="form-group">
         <div class="input-group">
             <span class="input-group-addon">.input-group-addon</span>
@@ -936,7 +922,7 @@
     </div>
 </div>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="form-group">
         <div class="input-group input-group-lg">
             <span class="input-group-addon">Addon</span>
@@ -946,7 +932,7 @@
     </div>
 </div>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="form-group">
         <div class="input-group input-group-sm">
             <span class="input-group-addon">Addon</span>
@@ -958,7 +944,7 @@
 
 
 <h2 id="navs">Navs</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -975,7 +961,7 @@
     </ul>
 </div>
 
-<div class="js-html-inspector" data-remove-target='["p:first","br"]'>
+<div>
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -992,7 +978,7 @@
     </ul>
 </div>
 
-<div class="js-html-inspector" data-remove-target='["p:first","br"]'>
+<div>
     <ul class="nav nav-pills nav-stacked">
         <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -1011,7 +997,7 @@
 
 
 <h2 id="breadcrumbs">Breadcrumbs</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <ol class="breadcrumb">
         <li><a href="#">li a</a></li>
         <li><a href="#">Link #2</a></li>
@@ -1021,7 +1007,7 @@
 
 
 <h2 id="pagination">Pagination</h2>
-<div class="js-html-inspector" data-remove-target="div:first">
+<div>
     <div><strong>nav ul.pagination</strong></div>
     <nav>
         <ul class="pagination">
@@ -1046,7 +1032,7 @@
     </nav>
 </div>
 
-<div class="js-html-inspector" data-remove-target="div:first">
+<div>
     <div><strong>nav ul.pagination.pagination-lg</strong></div>
     <nav>
         <ul class="pagination pagination-lg">
@@ -1069,7 +1055,7 @@
     </nav>
 </div>
 
-<div class="js-html-inspector" data-remove-target="div:first">
+<div>
     <div><strong>nav ul.pagination.pagination-sm</strong></div>
     <nav>
         <ul class="pagination pagination-sm">
@@ -1092,7 +1078,7 @@
     </nav>
 </div>
 
-<div class="js-html-inspector" data-remove-target="div:first">
+<div>
     <div><strong>ul.pager</strong></div>
     <!-- Default pager -->
     <ul class="pager">
@@ -1109,7 +1095,7 @@
 
 
 <h2 id="labels">Labels</h2>
-<p class="js-html-inspector" data-remove-target="p:first">
+<p>
     <span class="label label-default">.label.label-default</span>
     <span class="label label-primary">.label.label-primary</span>
     <span class="label label-success">.label.label-success</span>
@@ -1120,7 +1106,7 @@
 
 
 <h2 id="jumbotron">Jumbotron</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="jumbotron">
         <h1 class="display-3">Hello, world!</h1>
 
@@ -1177,7 +1163,7 @@
 <h2 id="progress-bars">Progress bars</h2>
 
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <progress class="progress" value="0" max="100">0%</progress>
     <progress class="progress" value="25" max="100">25%</progress>
     <progress class="progress" value="50" max="100">50%</progress>
@@ -1185,7 +1171,7 @@
     <progress class="progress" value="100" max="100">100%</progress>
 </div>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <progress class="progress progress-striped" value="10" max="100">10%</progress>
     <progress class="progress progress-striped progress-success" value="25" max="100">25%</progress>
     <progress class="progress progress-striped progress-info" value="50" max="100">50%</progress>
@@ -1210,7 +1196,7 @@
     </div>
 </div><br>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="media">
         <a class="media-left media-middle" href="#">
             <img class="media-object"
@@ -1237,7 +1223,7 @@
     </div>
 </div><br>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <ul class="media-list">
         <li class="media">
             <a class="media-left media-bottom" href="#">
@@ -1279,7 +1265,7 @@
 
 
 <h2 id="list-group">List group</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <ul class="list-group">
         <li class="list-group-item">li.list-group-item</li>
         <li class="list-group-item">
@@ -1331,7 +1317,7 @@
     </div>
 </div>
 
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="list-group">
         <a class="list-group-item active" href="#">
             <h4 class="list-group-item-heading">h4.list-group-item-heading</h4>
@@ -1347,9 +1333,9 @@
 </div>
 
 <h2 id="cards">Cards</h2>
-<div class="js-html-inspector" data-remove-target="p:first">
+<div>
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <h4 class="card-title">Card title</h4>
@@ -1360,7 +1346,7 @@
         </div>
     </div>
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <h4 class="card-title">Card title</h4>
@@ -1386,7 +1372,7 @@
         </ul>
     </div>
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -1406,7 +1392,7 @@
             <h4 class="card-title">Card title</h4>
             <h6 class="card-subtitle text-muted">Support card subtitle</h6>
         </div>
-        <img src="http://placehold.it/350x150" alt="Card image">
+        <img src="{filename}images/350x150.gif" alt="Card image">
 
         <div class="card-block">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -1464,7 +1450,7 @@
         </div>
     </div>
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <h4 class="card-title">Card title</h4>
@@ -1488,10 +1474,10 @@
                 <small class="text-muted">Last updated 3 mins ago</small>
             </p>
         </div>
-        <img class="card-img-bottom" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-bottom" src="{filename}images/350x150.gif" alt="Card image cap">
     </div>
     <div class="card card-inverse">
-        <img class="card-img" src="http://placehold.it/350x150" alt="Card image">
+        <img class="card-img" src="{filename}images/350x150.gif" alt="Card image">
 
         <div class="card-img-overlay">
             <h4 class="card-title">Card title</h4>
@@ -1555,7 +1541,7 @@
 </div>
 <div class="card-columns">
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <h4 class="card-title">Card title that wraps to a new line</h4>
@@ -1575,7 +1561,7 @@
         </blockquote>
     </div>
     <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x150" alt="Card image cap">
+        <img class="card-img-top" src="{filename}images/350x150.gif" alt="Card image cap">
 
         <div class="card-block">
             <h4 class="card-title">Card title</h4>
@@ -1607,7 +1593,7 @@
         </p>
     </div>
     <div class="card">
-        <img class="card-img" src="http://placehold.it/350x150" alt="Card image">
+        <img class="card-img" src="{filename}images/350x150.gif" alt="Card image">
     </div>
     <div class="card card-block text-xs-right">
         <blockquote class="card-blockquote">
@@ -1632,36 +1618,7 @@
 </div></div>
 
 
-        </div>
       </div>
     </div>
-
-    <div class="modal" id="dialog-html-inspector">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" data-dismiss="modal" type="button">&times;</button>
-            <h4 class="modal-title">Source Code</h4>
-          </div>
-          <div class="modal-body">
-            <pre><code></code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js(.) scripts/plugins.js -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
   </body>
 </html>
