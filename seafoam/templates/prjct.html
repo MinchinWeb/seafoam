@@ -28,7 +28,7 @@
                             {{- my_project | string | replace('_', ' ') | titlecase -}}
                         </a>
                     </div>
-                    <div class="prjct-projects-nextitem col-xs-7 col-sm-9">
+                    <div class="prjct-projects-nextitem col-7 col-md-9">
                         {% if my_project in PRJCT_TODO %}
                             {{- PRJCT_TODO[my_project].split('\n')[1] | replace('<li class="prjct-task-list-item">', '') | replace('</li>', '') -}}
                         {% else -%}
@@ -49,13 +49,13 @@
             {% for my_project in PRJCT_SOMEDAY_PROJECTS | sort %}
                 {% set my_project = my_project.lower() %}
                 <div class="row">
-                    <div class="prjct-projects-title col-xs-4 col-sm-3">
+                    <div class="prjct-projects-title col-4 col-md-3">
                         <a name="{{ my_project }}"></a>
                         <a href="{{ SITEURL -}} / {{- TAG_URL | replace('{slug}', my_project | replace("'", "") | lower) }}">
                             {{- my_project | string | replace('_', ' ') | titlecase -}}
                         </a>
                     </div>
-                    <div class="prjct-projects-nextitem col-xs-7 col-sm-9">
+                    <div class="prjct-projects-nextitem col-7 col-md-9">
                         {% if my_project in PRJCT_TODO %}
                             {{- PRJCT_TODO[my_project].split('\n')[1] | replace('<li class="prjct-task-list-item">', '') | replace('</li>', '') -}}
                         {% else -%}
@@ -75,13 +75,13 @@
             {% for my_project in PRJCT_COMPLETED_PROJECTS | sort %}
                 {% set my_project = my_project.lower() %}
                 <div class="row">
-                    <div class="prjct-projects-title col-xs-4 col-sm-3">
+                    <div class="prjct-projects-title col-4 col-md-3">
                         <a name="{{ my_project }}"></a>
                         <a href="{{ SITEURL -}} / {{- TAG_URL | replace('{slug}', my_project | replace("'", "") | lower) }}">
                             {{- my_project | string | replace('_', ' ') | titlecase -}}
                         </a>
                     </div>
-                    <div class="prjct-projects-nextitem col-xs-7 col-sm-9">
+                    <div class="prjct-projects-nextitem col-7 col-md-9">
                         {% if my_project in PRJCT_TODO %}
                             {{- PRJCT_TODO[my_project].split('\n')[1] | replace('<li class="prjct-task-list-item">', '') | replace('</li>', '') -}}
                         {% else -%}

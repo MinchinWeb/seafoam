@@ -48,7 +48,7 @@
     <div class="container">
         <hr>
         <div class="row">
-            <div class="col-sm-10 col-xs-8">
+            <div class="col-md-10 col-8">
                 &copy; {{ copy_date }} {{ AUTHOR }}
                 {% if modified %}
                     {# 'bull' looks better than middot' in the Cabin font #}
@@ -66,7 +66,7 @@
                 {% endif %}
                 {# TODO: Make this optional #}
                 &bull;
-                <a href="http://blog.minchin.ca/label/seafoam/">Seafoam theme</a>
+                <a href="https://blog.minchin.ca/label/seafoam/">Seafoam theme</a>
                 {% if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
                     &bull;
                     {% from 'includes/cc-license.html' import cc_license_mark %}
@@ -77,7 +77,7 @@
                     <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed"><i class="fa fa-rss-square" aria-hidden="true"></i> Atom Feed</a> (all posts)
                 {% endif %}
             </div>
-            <div class="col-sm-2 col-xs-4"><p class="pull-right"><span class="fa fa-arrow-up"></span> <a href="#">Back to top</a></p></div>
+            <div class="col-md-2 col-4"><p class="float-right"><span class="fa fa-arrow-up"></span> <a href="#">Back to top</a></p></div>
         </div>
     </div>
 </footer>

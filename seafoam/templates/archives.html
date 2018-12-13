@@ -23,7 +23,7 @@
         <div id="archives">
             {# Top Row with links to Archives by Year #}
             <div class="row">
-                <div class="archives-quicklinks text-center col-xs-12">
+                <div class="archives-quicklinks text-center col-12">
                     {% for article in dates %}
                         {% if loop.index0 == 0 or (article.date.year != dates[loop.index0 - 1].date.year) %}
                             {% if loop.index0 != 0 %} &bull; {% endif -%}
@@ -31,8 +31,8 @@
                         {%- endif -%}
                     {%- endfor %}
                 </div>
-                <div class="archives-spacer col-xs-12">&nbsp;</div>
-                <div class="archives-spacer col-xs-12">&nbsp;</div>
+                <div class="archives-spacer col-12">&nbsp;</div>
+                <div class="archives-spacer col-12">&nbsp;</div>
             </div>
 
             {# Main Archive Listing #}
@@ -40,14 +40,14 @@
                 <div class="row">
                     {% if (loop.index0 == 0) or (article.date.year != dates[loop.index0 - 1].date.year) %}
                         {% if loop.index0 != 0 -%}
-                            <div class="archives-spacer col-xs-12">&nbsp;</div>
-                            <div class="archives-spacer col-xs-12">&nbsp;</div>
+                            <div class="archives-spacer col-12">&nbsp;</div>
+                            <div class="archives-spacer col-12">&nbsp;</div>
                         {%- endif %}
-                        <div class="archives-date archives-year col-xs-4 col-md-2 col-md-offset-2">
+                        <div class="archives-date archives-year col-4 col-lg-2 offset-lg-2">
                             <a name="{{ article.date.year }}"></a>
                             {{- article.date.year -}}
                         </div>
-                        <div class="archives-title col-xs-7 col-sm-6">
+                        <div class="archives-title col-7 col-md-6">
                             &nbsp;
                         </div>
                     {% endif %}
@@ -57,16 +57,16 @@
                                 {% if ((article.date.year == dates[loop.index0 - 1].date.year) and (article.date.month != dates[loop.index0 - 1].date.month)) -%}
                                             <div class="archives-spacer col-xs-12">&nbsp;</div>
                                 {%- endif %}
-                                <div class="archives-date archives-month col-xs-4 col-md-2 col-md-offset-2">
+                                <div class="archives-date archives-month col-4 col-lg-2 offset-lg-2">
                                 <a name="{{ article.date.year }}-{{ article.date.month }}"></a>
                                     {{- article.date|strftime('%B') -}}
                                 </div>
-                                <div class="archives-title col-xs-7 col-sm-6">
+                                <div class="archives-title col-7 col-md-6">
                                     &nbsp;
                                 </div>
                     {% endif %}
 
-                    <div class="archives-date categories-timestamp col-xs-4 col-md-2 col-md-offset-2">
+                    <div class="archives-date categories-timestamp col-4 col-lg-2 offset-lg-2">
                         {%- if ((article.date.day == dates[loop.index0 - 1].date.day) and
                                 (article.date.month == dates[loop.index0 - 1].date.month) and 
                                 (article.date.year == dates[loop.index0 - 1].date.year)) %}
@@ -75,7 +75,7 @@
                                     <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%a %-d') }}</time>
                         {%- endif -%}
                     </div>
-                    <div class="archives-title col-xs-7 col-md-6">
+                    <div class="archives-title col-7 col-lg-6">
                         <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                         {% if article.subtitle %}<br />{{ article.subtitle }}{% endif %}
                     </div>

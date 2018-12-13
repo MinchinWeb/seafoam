@@ -60,9 +60,16 @@
 								<div class="panel-body pcs-comment-content" {# psc- class used as id in comments.js #}>
 									{{ comment.content }}
 
-									<div class="pull-right">
-										<a class="btn btn-link btn-xs" role="button" href="{{ SITEURL }}/{{ article.url }}#comment-{{comment.slug}}" rel="bookmark" title="Permalink to this comment"><i class="fa fa-link"></i> Permalink</a>
-										<button class="btn btn-primary btn-xs" onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');"><i class="fa fa-reply"></i> Reply</button>
+									<div class="float-right">
+										<a class="btn btn-link btn-xs" role="button"
+										   href="{{ SITEURL }}/{{ article.url }}#comment-{{comment.slug}}"
+										   rel="bookmark" title="Permalink to this comment">
+											<i class="fa fa-link"></i> Permalink
+										</a>
+										<button class="btn btn-primary btn-xs"
+												onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');">
+											<i class="fa fa-reply"></i> Reply
+										</button>
 									</div>
 								</div>
 							</div>  <!-- panel -->
@@ -74,7 +81,7 @@
 					</div>  <!-- media -->
 				{%- endfor %}
 			{% else %}
-				<p>There are no comments yet. Will add the first one?</p>
+				<p>There are no comments yet. Will you add the first one?</p>
 			{% endif %}
 
 			{# comment form #}
@@ -83,20 +90,20 @@
 					<input type="hidden" id="pcs-comment-form-input-replyto">
 					<legend>Add a Comment</legend>
 					<div class="form-group">
-						<label for="pcs-comment-form-input-name" class="col-sm-2 control-label">Name</label>
-						<div class="col-sm-10">
+						<label for="pcs-comment-form-input-name" class="col-md-2 col-form-label">Name</label>
+						<div class="col-md-10">
 							<input id="pcs-comment-form-input-name" type="text" placeholder="Your name or nickname" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="pcs-comment-form-input-website" class="col-sm-2 control-label">Website</label>
-						<div class="col-sm-10">
+						<label for="pcs-comment-form-input-website" class="col-md-2 col-form-label">Website</label>
+						<div class="col-md-10">
 							<input id="pcs-comment-form-input-website" type="text" placeholder="Your website (optional)" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="pcs-comment-form-input-textarea" class="col-sm-2 control-label">Comment</label>
-						<div class="col-sm-10">
+						<label for="pcs-comment-form-input-textarea" class="col-md-2 col-form-label">Comment</label>
+						<div class="col-md-10">
 							<textarea id="pcs-comment-form-input-textarea" rows="5" style="resize:vertical;" placeholder="Your comment" class="form-control"></textarea>
 							<p class="help-block">You can use the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> syntax to format your comment.</p>	
 						</div>
@@ -104,7 +111,7 @@
 					<div style="display: none;" id="pcs-comment-form-display-replyto">
 					</div>
 					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
+						<div class="offset-md-2 col-md-10">
 							<button type="submit" class="btn btn-primary"
 							        id="pcs-comment-form-button-submit">
 							    <i class="fa fa-paper-plane"></i>
@@ -118,7 +125,7 @@
 					</div>
 
 				{%- if PELICAN_COMMENT_SYSTEM_FEED and article %}
-					<div class="form-group"><div class="col-sm-offset-2 col-sm-10">
+					<div class="form-group"><div class="offset-md-2 col-md-10">
 						<a href="{{ SITEURL }}/{{ PELICAN_COMMENT_SYSTEM_FEED|format(article.slug) }}">
 							<i class="fa fa-rss-square"></i>
 							Comment Atom Feed

@@ -1,5 +1,5 @@
 <footer class="post-info">
-    <span class="label label-default">Published</span>
+    <span class="badge badge-dark">Published</span>
     <span class="published">
         <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
     </span>
@@ -10,19 +10,19 @@
     {#{% endif -%}-#}
 
     {%- if article.readtime_minutes -%}
-        <span class="label label-default">Reading Time</span>
+        <span class="badge badge-dark">Reading Time</span>
         <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
     {%- elif article.stats -%}
-        <span class="label label-default">Reading Time</span>
+        <span class="badge badge-dark">Reading Time</span>
         <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
     {%- endif -%}
 
     {#- Uncomment if you want to show Categories#}
-    {#<span class="label label-default">Category</span>#}
+    {#<span class="badge badge-dark">Category</span>#}
     {#<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>-#}
 
     {%- if PDF_PROCESSOR %}
-        <span class="label label-default">
+        <span class="badge badge-dark">
             <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
         </span>
     {% endif -%}

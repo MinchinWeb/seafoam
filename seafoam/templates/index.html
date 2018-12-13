@@ -16,30 +16,30 @@
         {% for article in (articles_page.object_list if articles_page else articles) %}
             {% set DISPLAY_IMAGE = false %}
             <article class="row">
-                <h2 class="col-xs-12"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                <h2 class="col-12"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 {%- if article.image %}
                     {% set DISPLAY_IMAGE = true %}
-                    <div class="col-xs-4">
+                    <div class="col-4">
                         <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
                     </div>
-                    <div class="summary col-xs-8">
+                    <div class="summary col-8">
                 {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
                     {% set DISPLAY_IMAGE = true %}
-                    <div class="col-xs-4">
+                    <div class="col-4">
                         <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
                     </div>
-                    <div class="summary col-xs-8">
+                    <div class="summary col-8">
                 {% else %}
-                    <div class="summary col-xs-12">            
+                    <div class="summary col-12">            
                 {% endif -%}
 
                     {{- article.summary -}}
 
                 </div>
                 {% if DISPLAY_IMAGE == true %}
-                    <div class="col-xs-8 col-xs-offset-4">
+                    <div class="col-8 offset-4">
                 {% else %}
-                    <div class="col-xs-12">
+                    <div class="col-12">
                 {% endif %}
                     <p class="text-right"><small>
                         <span class="published">
@@ -59,7 +59,7 @@
                         {% include 'includes/comment_count.html' %}
                         {# only display the 'read more' link if there is more to the article #}
                         {% if article.has_summary != false %} 
-                            &bull; <span class="label label-primary">
+                            &bull; <span class="badge badge-primary">
                                 <a href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
                             </span>
                         {% endif %}

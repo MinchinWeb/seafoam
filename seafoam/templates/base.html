@@ -14,12 +14,12 @@
 <head>
     <title>{% block title %}{{ SITENAME|striptags|breaking_spaces }}{% endblock %}</title>
     <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     {%- if FAVICON %}
-    <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon">
+    <link href="{{ SITEURL }}/{{ FAVICON }}" rel="icon" />
     {% endif -%}
 
     {# Open Graph tags #}
@@ -29,25 +29,25 @@
     {% if USE_OPEN_GRAPH %}
     <!-- Open Graph tags -->
         {% if OPEN_GRAPH_FB_APP_ID %}
-            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}"/>
+            <meta property="fb:app_id" content="{{ OPEN_GRAPH_FB_APP_ID }}" />
         {% endif %}
         {% if article %}
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
-            <meta property="og:description" content="{{ article.summary|striptags }}"/>
+            <meta property="og:title" content="{{ article.title|striptags|breaking_spaces }}" />
+            <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+            <meta property="og:description" content="{{ article.summary|striptags }}" />
         {% elif page %}
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}"/>
+            <meta property="og:title" content="{{ page.title|striptags|breaking_spaces }}" />
+            <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
         {% else %}
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}"/>
-            <meta property="og:url" content="{{ SITEURL }}"/>
-            <meta property="og:description" content="{{ SITENAME }}"/>
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="{{ SITENAME|striptags|breaking_spaces }}" />
+            <meta property="og:url" content="{{ SITEURL }}" />
+            <meta property="og:description" content="{{ SITENAME }}" />
             {% if OPEN_GRAPH_IMAGE %}
                 <meta property="og:image"
-                    content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}"/>
+                      content="{{ SITEURL }}/static/{{ OPEN_GRAPH_IMAGE }}" />
             {% endif %}
         {% endif %}
     {% endif -%}
@@ -59,9 +59,9 @@
   {% else %}
     <!-- Bootstrap CSS -->
     {% if BOOTSTRAP_THEME %}
-        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css"/>
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.{{ BOOTSTRAP_THEME }}.min.css" rel="stylesheet" type="text/css" />
     {% else %}
-        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     {% endif %}
     {# DISABLED -- moved this to my Bootstrap theme 
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -113,18 +113,18 @@
     <!-- Feeds -->
     {% if FEED_ALL_ATOM %}
         <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
-              title="{{ SITENAME }} ATOM Feed"/>
+              title="{{ SITENAME }} ATOM Feed" />
     {% endif %}
     {% if FEED_ALL_RSS %}
         <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/atom+xml" rel="alternate"
-              title="{{ SITENAME }} RSS Feed"/>
+              title="{{ SITENAME }} RSS Feed" />
     {% endif -%}
 </head>
 <body>
     <div class="container">
     {% if not NAVBAR_ON_TOP %}
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
             <div class="sidebar-nav">
     {% endif %}
                 <nav class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %}" role="navigation">
@@ -138,7 +138,7 @@
                         </button>
                         <a href="{{ SITE_ROOT_URL }}/" class="navbar-brand">
                             {% if SITELOGO %}
-                                <img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-responsive pull-left gap-right"/>
+                                <img src="{{ SITEURL }}/{{ SITELOGO }}" width="{{ SITELOGO_SIZE }}" alt="{{ SITENAME }}" class="img-fluid float-left gap-right" />
                             {% endif %}
                             {% if not HIDE_SITENAME %}
                                 <span class="navbar-text">{{- SITENAME -}}</span>
@@ -207,11 +207,11 @@
     {% endif %}
 
     {%- if not HIDE_SIDEBAR and not NAVBAR_ON_TOP %}
-        <div class="col-sm-6">
+        <div class="col-md-6">
     {% elif not HIDE_SIDEBAR or not NAVBAR_ON_TOP %}
-        <div class="col-sm-9">
+        <div class="col-md-9">
     {% else %}
-        <div class="col-sm-12">
+        <div class="col-md-12">
     {% endif -%}
 
     {% block breadcrumbs %}
@@ -227,8 +227,8 @@
 
         </div>
     {%- if not HIDE_SIDEBAR %}
-        <div class="col-sm-3">
-            <div class="well well-sm" id="sidebar">
+        <div class="col-md-3">
+            <div class="card bg-faded p-1 mb-3" id="sidebar">
             {% include 'includes/sidebar.html' %}
             </div> <!-- /.well #sidebar -->
         </div> <!-- /.col-sm-3 -->
