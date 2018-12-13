@@ -1,10 +1,12 @@
 // SeaFoam theme -- base Bootstrap colors
 
-@import "_variables.scss";
+@import "variables";
 
-@import "bootstrap/bootstrap.scss";
+@import "bootstrap/bootstrap";
 
-@import "fontawesome/scss/fontawesome.scss";
-@import "fontawesome/scss/solid.scss";
-@import "fontawesome/scss/regular.scss";
-@import "fontawesome/scss/brands.scss";
+@import "fontawesome/scss/fontawesome";
+@import "fontawesome/scss/solid";
+@import "fontawesome/scss/regular";
+@import "fontawesome/scss/brands";
+
+@import "glyphicons/scss/glyphicons"

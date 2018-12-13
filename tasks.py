@@ -21,6 +21,7 @@ def build(ctx, mimify=True, watch=False, update=False):
     source_folder = p2 / 'src'
     dest_folder = p2 / 'static' / 'css'
     postcss_config = source_folder / "bootstrap" / "postcss.config.js"
+    font_dest_folder = p2 / 'static' / 'fonts'
 
     for style in ["base",
                 #   "seafoam",
@@ -66,8 +67,13 @@ def build(ctx, mimify=True, watch=False, update=False):
 
     for fn in (p2 / 'src' / 'fontawesome' / 'webfonts').iterdir():
         if fn.is_file():
-            shutil.copy(fn, (p2 / 'static' / 'fonts'))
+            shutil.copy(fn, font_dest_folder)
     print("FontAwesome font files copied!")
+
+    for fn in (p2 / 'src' / 'glyphicons' / 'webfonts').iterdir():
+        if fn.is_file():
+            shutil.copy(fn, font_dest_folder)
+    print("Glyphicons font files copied!")
 
 
 @task
