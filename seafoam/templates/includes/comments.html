@@ -64,11 +64,11 @@
 										<a class="btn btn-link btn-xs" role="button"
 										   href="{{ SITEURL }}/{{ article.url }}#comment-{{comment.slug}}"
 										   rel="bookmark" title="Permalink to this comment">
-											<i class="fa fa-link"></i> Permalink
+											<i class="fas fa-link"></i> Permalink
 										</a>
 										<button class="btn btn-primary btn-xs"
 												onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');">
-											<i class="fa fa-reply"></i> Reply
+											<i class="fas fa-reply"></i> Reply
 										</button>
 									</div>
 								</div>
@@ -114,7 +114,7 @@
 						<div class="offset-md-2 col-md-10">
 							<button type="submit" class="btn btn-primary"
 							        id="pcs-comment-form-button-submit">
-							    <i class="fa fa-paper-plane"></i>
+							    <i class="fas fa-paper-plane"></i>
 								Post comment via email
 							</button>
 							<p>
@@ -127,7 +127,7 @@
 				{%- if PELICAN_COMMENT_SYSTEM_FEED and article %}
 					<div class="form-group"><div class="offset-md-2 col-md-10">
 						<a href="{{ SITEURL }}/{{ PELICAN_COMMENT_SYSTEM_FEED|format(article.slug) }}">
-							<i class="fa fa-rss-square"></i>
+							<i class="fas fa-rss-square"></i>
 							Comment Atom Feed
 						</a>
 						(for this post)

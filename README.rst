@@ -306,7 +306,7 @@ MENUITEMS
   Extra items to add to the menu. Provide a list of tuples of the form
   ``(title, link, icon)``. ``link`` is absolute, so build them using SITEURL, 
   if needed. ``icon`` here is of the form of the CSS classes to be used; e.g.
-  ``'fa fa-fw fa-pencil'``. ``icon`` can be set to ``None``.
+  ``'fas fa-fw fa-pencil-alt'``. ``icon`` can be set to ``None``.
 
   If this is set, the working assumption is that the site you are generating is
   a "sub-site".
@@ -315,7 +315,7 @@ MENUITEMS_2
   ``MENUITEMS_2_AT`` setting. Provide a list of tuples of the form
   ``(title, link, icon)``. ``link`` is absolute, so build them using SITEURL, 
   if needed. ``icon`` here is of the form of the CSS classes to be used; e.g.
-  ``'fa fa-fw fa-pencil'``. ``icon`` can be set to ``None``.
+  ``'fas fa-fw fa-pencil-alt'``. ``icon`` can be set to ``None``.
 
   This setting is working on the assumption that your generated site in going
   into a subdirectory of your "main" site.

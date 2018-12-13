@@ -3,7 +3,7 @@
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
         <ol class="breadcrumb">
-            <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
+            <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fas fa-home fa-lg"></span></a></li>
             {% if MENUITEMS_2_AT %}
                 <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
             {% endif %}
@@ -43,24 +43,24 @@
                 {% endif %}
                     <p class="text-right"><small>
                         <span class="published">
-                            <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
+                            <i class="fas fa-calendar-alt"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
                         </span>
                         {% if article.readtime_minutes -%}
-                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min to read
+                            &bull; <i class="far fa-clock"></i> ~{{ article.readtime_minutes }} min to read
                         {% elif article.stats -%}
-                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read
+                            &bull; <i class="far fa-clock"></i> ~{{ article.stats['read_mins'] }} min to read
                         {%- endif %}
                         {% if DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS %}
-                            &bull; <i class="fa fa-comments"></i>
+                            &bull; <i class="fas fa-comments"></i>
                         {% endif -%}
                         {% if PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false %}
-                            &bull; <i class="fa fa-comments"></i>
+                            &bull; <i class="fas fa-comments"></i>
                         {% endif -%}
                         {% include 'includes/comment_count.html' %}
                         {# only display the 'read more' link if there is more to the article #}
                         {% if article.has_summary != false %} 
                             &bull; <span class="badge badge-primary">
-                                <a href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
+                                <a href="{{ SITEURL }}/{{ article.url }}">read more <i class="fas fa-arrow-circle-right"></i>&nbsp;</a>
                             </span>
                         {% endif %}
                     </small></p>

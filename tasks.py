@@ -1,4 +1,5 @@
 from pathlib import Path
+import shutil
 
 from invoke import run, task
 from minchin.releaser import make_release
@@ -17,19 +18,19 @@ def build(ctx, mimify=True, watch=False, update=False):
     # install postcss, autoprefixer via npm
 
     p2 = p / 'seafoam'
-    source_folder = p2 / 'src' /
+    source_folder = p2 / 'src'
     dest_folder = p2 / 'static' / 'css'
     postcss_config = source_folder / "bootstrap" / "postcss.config.js"
 
-    for style in [None,
+    for style in ["base",
                 #   "seafoam",
                   ]:
         if style:
             source = source_folder / "{}.scss".format(style)
-            dest = dest_folder / "bootstrap.{}.css".format(style)
+            dest = dest_folder / "seafoam.{}.css".format(style)
         else:
-            source = source_folder / "bootstrap" / "bootstrap.scss"
-            dest = dest_folder / "bootstrap.css"
+            source = source_folder / "base.scss"
+            dest = dest_folder / "seafoam.css"
 
         opts = ""
         if mimify:
@@ -62,6 +63,11 @@ def build(ctx, mimify=True, watch=False, update=False):
         dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css
         """
     print("Seafoam SASS compiled to CSS!")
+
+    for fn in (p2 / 'src' / 'fontawesome' / 'webfonts').iterdir():
+        if fn.is_file():
+            shutil.copy(fn, (p2 / 'static' / 'fonts'))
+    print("FontAwesome font files copied!")
 
 
 @task

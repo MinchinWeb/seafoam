@@ -7,7 +7,7 @@
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
-        <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
+        <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fas fa-home fa-lg"></span></a></li>
         {% if MENUITEMS_2_AT %}
             <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
         {% endif %}
@@ -55,7 +55,7 @@
                           (article.date.year != dates[loop.index0 - 1].date.year) or
                           ((article.date.year == dates[loop.index0 - 1].date.year) and (article.date.month != dates[loop.index0 - 1].date.month)) %}
                                 {% if ((article.date.year == dates[loop.index0 - 1].date.year) and (article.date.month != dates[loop.index0 - 1].date.month)) -%}
-                                            <div class="archives-spacer col-xs-12">&nbsp;</div>
+                                            <div class="archives-spacer col-12">&nbsp;</div>
                                 {%- endif %}
                                 <div class="archives-date archives-month col-4 col-lg-2 offset-lg-2">
                                 <a name="{{ article.date.year }}-{{ article.date.month }}"></a>

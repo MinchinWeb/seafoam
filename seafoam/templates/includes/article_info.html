@@ -1,23 +1,23 @@
 <footer class="post-info">
     <span class="badge badge-dark">Published</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
+        <i class="fas fa-calendar-alt"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
     </span>
     {# Uncomment if you want the author shown #}
     {#{% if article.author %}#}
     {#<span class="label">By</span>#}
-    {#<a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>#}
+    {#<a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fas fa-user"></i> {{ article.author }}</a>#}
     {#{% endif -%}-#}
 
     {%- if article.readtime_minutes -%}
         <span class="badge badge-dark">Reading Time</span>
-        <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
+        <i class="far fa-clock"></i> ~{{ article.readtime_minutes }} min
     {%- elif article.stats -%}
         <span class="badge badge-dark">Reading Time</span>
-        <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
+        <i class="far fa-clock"></i> ~{{ article.stats['read_mins'] }} min
     {%- endif -%}
 
-    {#- Uncomment if you want to show Categories#}
+    {#- Uncomment if you want to show Categories #}
     {#<span class="badge badge-dark">Category</span>#}
     {#<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>-#}
 
