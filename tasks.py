@@ -22,6 +22,7 @@ def build(ctx, mimify=True, watch=False, update=False):
     dest_folder = p2 / 'static' / 'css'
     postcss_config = source_folder / "bootstrap" / "postcss.config.js"
     font_dest_folder = p2 / 'static' / 'fonts'
+    js_dest_folder = p2 / 'static' / 'js'
 
     for style in ["base",
                 #   "seafoam",
@@ -65,6 +66,15 @@ def build(ctx, mimify=True, watch=False, update=False):
         """
     print("Seafoam SASS compiled to CSS!")
 
+    # bundle includes Bootstrap custom components, plus Pooper
+    shutil.copy(source_folder / 'bootstrap-compiled-js' / 'bootstrap.bundle.min.js',
+                js_dest_folder)
+    print("Bootstrap JS copied!")
+
+    shutil.copy(source_folder / 'jQuery' / 'jquery-3.3.1.min.js',
+                js_dest_folder / 'jquery.min.js')
+    print("jQuery (JS) copied!")
+
     for fn in (p2 / 'src' / 'fontawesome' / 'webfonts').iterdir():
         if fn.is_file():
             shutil.copy(fn, font_dest_folder)
@@ -91,3 +101,5 @@ def serve_test(ctx, port='8000'):
 
     p4 = p / 'test' / 'output'
     run('cd {} && start python -m http.server {}'.format(p4, port))
+    # run('Start-Process -FilePath python -ArgumentList "-m http.server {}"'
+    #     ' -WorkingDirectory {}'.format(port, p4))
