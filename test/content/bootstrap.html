@@ -13,26 +13,6 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Fixed navbar --><nav class="navbar navbar-default navbar-fixed-top bg-faded">
-      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-        &#9776;
-      </button>
-      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-        <a class="navbar-brand" href="#">TLDR v4</a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#css">CSS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#components">Components</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#javascript">JS</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
     <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-md-12">
@@ -607,22 +587,21 @@
 <!-- Validation states -->
 <div>
     <form class="form-horizontal">
-        <div class="form-group has-success">
+        <div class="form-group">
             <label class="form-control-label" for="inputSuccess1">Input with success</label>
-            <input type="text" class="form-control form-control-success" id="inputSuccess1">
+            <input type="text" class="form-control is-valid" id="inputSuccess1">
+            <div class="valid-feedback">With feedback! (Looks good!)</div>
         </div>
-        <div class="form-group has-warning">
-            <label class="form-control-label" for="inputWarning1">Input with warning</label>
-            <input type="text" class="form-control form-control-warning" id="inputWarning1">
-        </div>
-        <div class="form-group has-danger">
+        <div class="form-group">
             <label class="form-control-label" for="inputDanger1">Input with danger</label>
-            <input type="text" class="form-control form-control-danger" id="inputDanger1">
+            <input type="text" class="form-control is-invalid" id="inputDanger1">
+            <div class="invalid-feedback">With feedback! (How to fix it)</div>
         </div>
 
-        <div class="checkbox has-success">
+    <!--
+        <div class="checkbox">
             <label>
-                <input type="checkbox" id="checkboxSuccess" value="option1">
+                <input type="checkbox" class="is-valid" id="checkboxSuccess" value="option1">
                 Checkbox with success
             </label>
         </div>
@@ -632,12 +611,13 @@
                 Checkbox with warning
             </label>
         </div>
-        <div class="checkbox has-danger">
+        <div class="checkbox is-invalid">
             <label>
                 <input type="checkbox" id="checkboxDanger" value="option1">
                 Checkbox with danger
             </label>
         </div>
+    -->
     </form>
 </div>
 
@@ -645,6 +625,7 @@
 <h2 id="buttons">Buttons</h2>
 <!-- Styled buttons -->
 <p class="bse-buttons">
+    <p>primary</p>
     <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
     <button type="button" class="btn btn-primary">Primary</button>
 
@@ -663,20 +644,30 @@
     <!-- Indicates a dangerous or potentially negative action -->
     <button type="button" class="btn btn-danger">Danger</button>
 
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+
+    <p>Link only</p>
     <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
     <button type="button" class="btn btn-link">Link</button>
-    <button type="button" class="btn btn-primary-outline">Primary</button>
-    <button type="button" class="btn btn-secondary-outline">Secondary</button>
-    <button type="button" class="btn btn-success-outline">Success</button>
-    <button type="button" class="btn btn-info-outline">Info</button>
-    <button type="button" class="btn btn-warning-outline">Warning</button>
-    <button type="button" class="btn btn-danger-outline">Danger</button>
+
+    <p>Outlines</p>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-light">Light</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
 </p>
 
 <!-- Button sizes -->
 <p class="bse-buttons">
     <button type="button" class="btn btn-primary btn-lg">Large button</button>
     <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+    <button type="button" class="btn btn-primary">Normal</button>
+    <button type="button" class="btn btn-secondary">Normal</button>
     <button type="button" class="btn btn-primary btn-sm">Small button</button>
     <button type="button" class="btn btn-secondary btn-sm">Small button</button>
 </p>
@@ -697,10 +688,10 @@
 
 <p class="bse-buttons">
     <!-- Active state -->
-    <a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>
+    <a href="#" class="btn btn-primary btn-lg active" role="button">Active link</a>
     <a href="#" class="btn btn-secondary btn-lg active" role="button">Link</a>
     <!-- Disabled state -->
-    <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+    <button type="button" class="btn btn-lg btn-primary" disabled>Disabled button</button>
     <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
 </p>
 
@@ -708,14 +699,14 @@
 <h2 id="images">Images</h2>
 <div class="row bs-thumbnails">
     <div class="col-sm-6">
-        <img class="img-rounded"
+        <img class="rounded"
              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+"
-             alt=".img-rounded">
+             alt=".rounded">
     </div>
     <div class="col-sm-6">
-        <img class="img-circle"
+        <img class="rounded-circle"
              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+"
-             alt=".img-circle">
+             alt=".rounded-circle">
     </div>
     <div class="col-sm-6">
         <img class="img-thumbnail"
@@ -723,9 +714,9 @@
              alt=".img-thumbnail">
     </div>
     <div class="col-sm-6">
-        <img class="img-responsive"
+        <img class="img-fluid"
              src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+"
-             alt=".img-responsive">
+             alt=".img-fluid">
     </div>
 </div>
 
@@ -754,11 +745,6 @@
 <p>
     button.close &rarr;
     <button class="close" type="button">&times;</button>
-</p>
-
-<!-- Carets -->
-<p>
-    .caret <span class="caret"></span>
 </p>
 
 <!-- Clearfix and floats -->
@@ -800,7 +786,7 @@
 
 <h2 id="button-groups">Button groups</h2>
 <div>
-    <div class="btn-group">
+    <div class="btn-group" role="group">
         <button class="btn btn-primary" type="button">#1</button>
         <button class="btn btn-primary" type="button">#2</button>
         <button class="btn btn-primary" type="button">#3</button>
@@ -808,58 +794,51 @@
 </div><br>
 
 <div>
-    <div class="btn-toolbar bse-buttons">
-        <!-- Large button group -->
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-            <button class="btn btn-primary" type="button">.btn-group-lg #1</button>
-            <button class="btn btn-primary" type="button">#2</button>
-            <button class="btn btn-primary" type="button">#3</button>
-        </div>
-
-        <!-- Small button group -->
-        <div class="btn-group btn-group-sm">
-            <button class="btn btn-primary" type="button">.btn-group-sm #1</button>
-            <button class="btn btn-primary" type="button">#2</button>
-            <button class="btn btn-primary" type="button">#3</button>
-        </div>
-    </div>
-</div><br>
-
-<div class="btn-toolbar bse-buttons">
-    <!-- Button group with dropdown -->
-    <div class="btn-group">
-        <button class="btn btn-primary" type="button">#1</button>
+    <!-- Large button group -->
+    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+        <button class="btn btn-primary" type="button">.btn-group-lg #1</button>
         <button class="btn btn-primary" type="button">#2</button>
-        <div class="btn-group">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">
-                button.dropdown-toggle
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Link #1</a></li>
-                <li><a href="#">Link #2</a></li>
-            </ul>
-        </div>
+        <button class="btn btn-primary" type="button">#3</button>
     </div>
 
-    &nbsp;<!-- Only .btn-group has left padding inside .btn-toolbar -->
-
-    <!-- Vertical button group with dropdown -->
-    <div class="btn-group-vertical">
-        <button class="btn btn-primary" type="button">.btn-group-vertical button</button>
-        <div class="btn-group">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">
-                Dropdown
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Link #1</a></li>
-                <li><a href="#">Link #2</a></li>
-            </ul>
-        </div>
+    <!-- Small button group -->
+    <div class="btn-group btn-group-sm" role="group">
+        <button class="btn btn-primary" type="button">.btn-group-sm #1</button>
+        <button class="btn btn-primary" type="button">#2</button>
         <button class="btn btn-primary" type="button">#3</button>
     </div>
 </div><br>
+
+<!-- Button group with dropdown -->
+<div class="btn-group">
+    <button class="btn btn-primary" type="button">#1</button>
+    <button class="btn btn-primary" type="button">#2</button>
+    <div class="btn-group" role="group">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">
+            button.dropdown-toggle
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link #1</a>
+            <a class="dropdown-item" href="#">Link #2</a>
+        </div>
+    </div>
+</div><br><br>
+
+<!-- Vertical button group with dropdown -->
+<div class="btn-group-vertical">
+    <button class="btn btn-primary" type="button">.btn-group-vertical button</button>
+    <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Link #1</a></li>
+            <li><a href="#">Link #2</a></li>
+        </ul>
+    </div>
+    <button class="btn btn-primary" type="button">#3</button>
+</div><br><br>
 
 <div>
     <div class="btn-group btn-group-justified">
@@ -997,13 +976,13 @@
 
 
 <h2 id="breadcrumbs">Breadcrumbs</h2>
-<div>
+<nav>
     <ol class="breadcrumb">
-        <li><a href="#">li a</a></li>
-        <li><a href="#">Link #2</a></li>
-        <li class="active">li.active</li>
+        <li class="breadcrumb-item"><a href="#">li a</a></li>
+        <li class="breadcrumb-item"><a href="#">Link #2</a></li>
+        <li class="breadcrumb-item active">li.active</li>
     </ol>
-</div>
+</nav>
 
 
 <h2 id="pagination">Pagination</h2>
@@ -1078,30 +1057,15 @@
     </nav>
 </div>
 
-<div>
-    <div><strong>ul.pager</strong></div>
-    <!-- Default pager -->
-    <ul class="pager">
-        <li><a href="#">li a "Previous"</a></li>
-        <li><a href="#">li a "Next"</a></li>
-    </ul>
 
-    <!-- Aligned pager links -->
-    <ul class="pager">
-        <li class="previous"><a href="#">li.previous a "&larr; Older"</a></li>
-        <li class="next"><a href="#">li.next a "Newer &rarr;"</a></li>
-    </ul>
-</div>
-
-
-<h2 id="labels">Labels</h2>
+<h2 id="labels"><del>Labels</del> Badges</h2>
 <p>
-    <span class="label label-default">.label.label-default</span>
-    <span class="label label-primary">.label.label-primary</span>
-    <span class="label label-success">.label.label-success</span>
-    <span class="label label-info">.label.label-info</span>
-    <span class="label label-warning">.label.label-warning</span>
-    <span class="label label-danger">.label.label-danger</span>
+    <span class="badge badge-dark">.badge.badge-default</span>
+    <span class="badge badge-primary">.badge.badge-primary</span>
+    <span class="badge badge-success">.badge.badge-success</span>
+    <span class="badge badge-info">.badge.badge-info</span>
+    <span class="badge badge-warning">.badge.badge-warning</span>
+    <span class="badge badge-danger">.badge.badge-danger</span>
 </p>
 
 
@@ -1160,27 +1124,35 @@
 </div>
 
 
-<h2 id="progress-bars">Progress bars</h2>
+<h2 id="progress-bars">Progress Bars</h2>
 
+Doesn't use the HTML5 <code>&lt;progress&gt;</code> element. <a
+href="https://getbootstrap.com/docs/4.0/components/progress/">See docs</a>.
 
-<div>
-    <progress class="progress" value="0" max="100">0%</progress>
-    <progress class="progress" value="25" max="100">25%</progress>
-    <progress class="progress" value="50" max="100">50%</progress>
-    <progress class="progress" value="75" max="100">75%</progress>
-    <progress class="progress" value="100" max="100">100%</progress>
+<div class="progress">
+    <div class="progress-bar"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar" style="width: 10%">10%</div>
+</div>
+<div class="progress">
+    <div class="progress-bar bg-success" style="width: 25%">25%</div>
+</div>
+<div class="progress">
+    <div class="progress-bar bg-info" style="width: 50%">50%</div>
+</div>
+<div class="progress">
+    <div class="progress-bar bg-warning" style="width: 75%">75%</div>
+</div>
+<div class="progress">
+    <div class="progress-bar bg-danger" style="width: 100%">100%</div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" style="width: 87%">87%</div>
 </div>
 
-<div>
-    <progress class="progress progress-striped" value="10" max="100">10%</progress>
-    <progress class="progress progress-striped progress-success" value="25" max="100">25%</progress>
-    <progress class="progress progress-striped progress-info" value="50" max="100">50%</progress>
-    <progress class="progress progress-striped progress-warning" value="75" max="100">75%</progress>
-    <progress class="progress progress-striped progress-danger" value="100" max="100">100%</progress>
-</div>
 
-
-<h2 id="media-object">Media object</h2>
+<h2 id="media-object">Media Object</h2>
 <div class="js-html-inspector" data-remove-target="strong:first">
     <div class="media">
         <a class="media-left" href="#">
