@@ -6,6 +6,7 @@ PATH = 'content'
 STATIC_PATHS = ['images',
                ]
 
+TIMEZONE = 'UTC'
 
 PLUGINS = [
            'minchin.pelican.jinja_filters',

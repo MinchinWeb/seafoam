@@ -4,3 +4,77 @@
 
 $fa-font-path:          "../fonts";
 $glyphicon-font-path:   "../fonts";
+
+//== Colours
+//
+//-- Solarized Colours
+$sol-black:                #002b36;
+$sol-next-to-darkest-gray: #073642; //Bootstrap only uses 7 greys, so this one was skipped
+$sol-grayDarker:           #586e75;
+$sol-grayDark:             #657b83;
+$sol-gray:                 #839496;
+$sol-grayLight:            #93a1a1;
+$sol-grayLighter:          #eee8d5;
+$sol-white:                #fdf6e3;
+ 
+$sol-blue:     #2aa198;			// used here as the accent colour
+$sol-blueDark: #268bd2;
+$sol-green:    #859900;
+$sol-red:      #dc322f;
+$sol-yellow:   #b58900;
+$sol-orange:   #cb4b16;
+$sol-pink:     #d33682;
+$sol-purple:   #6c71c4;
+
+//-- BootFlat Colours
+//   http://bootflat.github.io/documentation.html
+
+$flat-jeans-lt:       #5d9cec;
+$flat-jeans-dk:       #4a89dc;
+$flat-aqua-lt:        #4fc1e9;
+$flat-aqua-dk:        #3bafda;
+$flat-mint-lt:        #48cfad;
+$flat-mint-dk:        #37bc9b;
+$flat-grass-lt:       #a0d468;
+$flat-grass-dk:       #8cc152;
+$flat-sunflower-lt:   #ffce54;
+$flat-sunflower-dk:   #f6bb42;
+$flat-bittersweet-lt: #fc6e51;
+$flat-bittersweet-dk: #e9573f;
+$flat-grapefruit-lt:  #ed5565;
+$flat-grapefruit-dk:  #da4453;
+$flat-lavender-lt:    #ac92ec;
+$flat-lavender-dk:    #967adc;
+$flat-rose-lt:        #ec87c0;
+$flat-rose-dk:        #d770ad;
+$flat-lt-grey-lt:     #f5f7fa;
+$flat-lt-grey-dk:     #e6e9ed;
+$flat-md-grey-lt:     #ccd1d9;
+$flat-md-grey-dk:     #aab2bd;
+$flat-dk-grey-lt:     #656d78;
+$flat-dk-grey-dk:     #434a54;
+
+
+$cursor-disabled: not-allowed;
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;  
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal: 10px !default;
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:  12px !default;
+$padding-large-horizontal: 16px !default;
+$padding-large-vertical:   10px !default;
+
+$body-color-inverse: $sol-grayLighter !default;  // inverse text color
+$gray-dark:    $sol-grayDark !default;
+$gray-lighter: $sol-grayLighter !default;
