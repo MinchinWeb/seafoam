@@ -28,7 +28,7 @@ def build(ctx, mimify=True, watch=False, update=False):
                 #   "seafoam",
                   ]:
         if style:
-            source = source_folder / "{}.scss".format(style)
+            source = source_folder / "theme-{}.scss".format(style)
             dest = dest_folder / "seafoam.{}.css".format(style)
         else:
             source = source_folder / "base.scss"

@@ -8,7 +8,7 @@ tags: markdown, test
 This file serves three purposes:  
 1) a markdown language reference,  
 2) a test file to ensure that the markdown is being interpreted propertly, and  
-3) a place to test out changes to the accompaning CSS file (`md-styles.css`).
+3) <del>a place to test out changes to the accompaning CSS file (`md-styles.css`).</del>
 
 Let us begin:
 

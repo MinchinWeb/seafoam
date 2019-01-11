@@ -1,0 +1,3 @@
+[submodule "seafoam/src/pygments-css"]
+	path = seafoam/src/pygments-css
+	url = https://github.com/richleland/pygments-css
