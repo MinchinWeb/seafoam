@@ -68,10 +68,12 @@
             {% endif %}
 
             {% if DISPLAY_TAGS_ON_SIDEBAR %}
-                {% if DISPLAY_TAGS_INLINE %}
-                    {% set tags = tag_cloud | sort(attribute='0') %}
-                {% else %}
-                    {% set tags = tag_cloud | sort(attribute='1') %}
+                {% if tag_cloud %}
+                    {% if DISPLAY_TAGS_INLINE %}
+                        {% set tags = tag_cloud | sort(attribute='0') %}
+                    {% else %}
+                        {% set tags = tag_cloud | sort(attribute='1') %}
+                    {% endif %}
                 {% endif %}
                 <li class="list-group-item">
                     <a href="{{ SITEURL }}/{{ TAGS_URL }}">
