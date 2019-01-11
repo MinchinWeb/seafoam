@@ -18,10 +18,18 @@ body {
     padding-top: 20px   !important;
 }
 
-/* Sidebar Vertical Navigation
+// 
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+// Sidebar Vertical Navigation
 // -------------------------
 // from  http://www.jonathanbriehl.com/2014/01/17/vertical-menu-for-bootstrap-3/
-*/
 
 @include media-breakpoint-up(sm) {
     .sidebar-nav .navbar .navbar-collapse {
@@ -62,70 +70,69 @@ body {
   }
   
   
-  /* More Sidebar Nav
-  // -------------------------
-  */
+ // More Sidebar Nav
+ // -------------------------
   
-  .nav-list-level2 {
+.nav-list-level2 {
     font-size: $font-size-base;
     padding-left: 40px;
-  }
-  
-  /* No top navigation */
-  body {
-      padding-top: 20px   !important;
-  }
-  
-  /* have links only below the header image */
-  .navbar-nonheader {
+}
+
+/* No top navigation */
+body {
+    padding-top: 20px   !important;
+}
+
+/* have links only below the header image */
+.navbar-nonheader {
     clear: left;
-  }
+}
+
+/* make sidebar nav vertical */
+/* modifications for our logo */
   
-  /* make sidebar nav vertical */
-  /* modifications for our logo */
-  
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     .navbar-header {
-      margin-bottom: 45px;
+        margin-bottom: 45px;
     /*  This is too much if the screen is narrower than about 250px */
     }
-  }
+}
   
   
-  /* Images with Captions
-  // -------------------------
-  */
+ // Images with Captions
+ // -------------------------
+ 
   
-  .max-col-md-9 {
-      max-width: ((map-get($grid-breakpoints, md) - ($grid-gutter-width * 2)) * 9 / 12);
-  }
+.max-col-md-9 {
+    max-width: ((map-get($grid-breakpoints, md) - ($grid-gutter-width * 2)) * 9 / 12);
+}
   
   
-  // Blog Archives page
-  .archives-date {
-      text-align: right;
-  }
+// Blog Archives page
+.archives-date {
+    text-align: right;
+}
   
-  // Blog Featured Images
-  .featured-image {
+// Blog Featured Images
+.featured-image {
     @extend .center-block;
     @extend .img-fluid;
     border-radius: $border-radius;
-  }
+}
   
-  // Blog -- Project 365 EXIF data
-  .photo-infobox {
+// Blog -- Project 365 EXIF data
+.photo-infobox {
     @extend blockquote;
     padding-left: $h2-font-size + $line-height-computed;
     em {
-      font-style: normal;
-      color: $primary;
+        font-style: normal;
+        color: $primary;
     }
     p:last-child {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
-  }
-  .photo-infobox::before {
+}
+.photo-infobox::before {
     // displays 'exif', rotated, along the left edge of the box
     color: $blockquote-small-color;
     content: 'exif';
@@ -136,116 +143,114 @@ body {
     position: absolute;
     transform: translate($h2-font-size + $line-height-computed, 150px) rotate(-90deg);
     transform-origin: -2*$h2-font-size top 0;
-  }
-  
-  /* Pager spacing
-  //
-  // On narrow screens, the two pages end up touching. This puts vertical space
-  // between them.
-  */
-  // TO-DO: Fix this further
-  .pager {
+}
+
+// Pager spacing
+//
+// On narrow screens, the two pages end up touching. This puts vertical space
+// between them.
+
+// TO-DO: Fix this further
+.pager {
     a {
-      margin-top: 12.5px;
-      margin-bottom: 12.5px;
+        margin-top: 12.5px;
+        margin-bottom: 12.5px;
     }
     margin-top: 0;
     margin-bottom: 0;
+}
   
-  }
   
-  
-  /* Tipue Search
-  // ------------------------
-  */
-  
-  .tipue_search_content_title {
+// Tipue Search
+// ------------------------
+
+.tipue_search_content_title {
     @extend .h3;
-  }
-  
-  .tipue_search_content_url {
+}
+
+.tipue_search_content_url {
     display: none;
-  }
-  
-  // selection highlight
-  .h01 {
+}
+
+// selection highlight
+.h01 {
     background: $sol-yellow;
-  }
-  
-  #tipue_search_foot {
+}
+
+#tipue_search_foot {
     @extend .text-center;
-  }
+}
   
-  // below is copied from 'pagination.less'
-  // .pagination {
-  #tipue_search_foot_boxes {
+// below is copied from 'pagination.less'
+// .pagination {
+#tipue_search_foot_boxes {
     display: inline-block;
     padding-left: 0;
     margin: $line-height-computed 0;
     border-radius: $border-radius;
     cursor: pointer;
-  
+
     > li {
-      display: inline; // Remove list-style and block-level defaults
-      > a,
-      > span {
-        position: relative;
-        float: left; // Collapse white-space
-        padding: $list-group-item-padding-y $list-group-item-padding-x;
-        line-height: $line-height-base;
-        text-decoration: none;
-        color: $pagination-color;
-        background-color: $pagination-bg;
-        border: 1px solid $pagination-border-color;
-        margin-left: -1px;
-      }
-      &:first-child {
-        &,
+        display: inline; // Remove list-style and block-level defaults
         > a,
         > span {
-          margin-left: 0;
-          @include border-left-radius($border-radius);
+            position: relative;
+            float: left; // Collapse white-space
+            padding: $list-group-item-padding-y $list-group-item-padding-x;
+            line-height: $line-height-base;
+            text-decoration: none;
+            color: $pagination-color;
+            background-color: $pagination-bg;
+            border: 1px solid $pagination-border-color;
+            margin-left: -1px;
         }
-      }
-      &:last-child {
-        &,
-        > a,
-        > span {
-            @include border-right-radius($border-radius);
+        &:first-child {
+            &,
+            > a,
+            > span {
+                margin-left: 0;
+                @include border-left-radius($border-radius);
+            }
         }
-      }
+        &:last-child {
+            &,
+            > a,
+            > span {
+                @include border-right-radius($border-radius);
+            }
+        }
     }
-  
+
     > li > a,
     > li > span {
-      &:hover,
-      &:focus {
-        z-index: 2;
-        color: $pagination-hover-color;
-        background-color: $pagination-hover-bg;
-        border-color: $pagination-hover-border-color;
-      }
+        &:hover,
+        &:focus {
+            z-index: 2;
+            color: $pagination-hover-color;
+            background-color: $pagination-hover-bg;
+            border-color: $pagination-hover-border-color;
+        }
     }
   
     // > .active > a,
     // > .active > span {
     > .current {
-      &,
-      &:hover,
-      &:focus {
-        z-index: 3;
-        color: $pagination-active-color;
-        background-color: $pagination-active-bg;
-        cursor: $cursor-disabled;
-  
-        position: relative;
-        float: left; // Collapse white-space
-        padding: $list-group-item-padding-y $list-group-item-padding-x;
-        line-height: $line-height-base;
-        text-decoration: none;
-        border: 1px solid $pagination-active-border-color;
-        margin-left: -1px;
-      }
+        &,
+        &:hover,
+        &:focus {
+            z-index: 3;
+            color: $pagination-active-color;
+            background-color: $pagination-active-bg;
+            cursor: $cursor-disabled;
+    
+            position: relative;
+            float: left; // Collapse white-space
+            padding: $list-group-item-padding-y $list-group-item-padding-x;
+            line-height: $line-height-base;
+            text-decoration: none;
+            border: 1px solid $pagination-active-border-color;
+            margin-left: -1px;
+        }
     }
   
     // > .disabled {
@@ -261,12 +266,11 @@ body {
     //     cursor: @cursor-disabled;
     //   }
     // }
-  }
+}
   
   
-  /* for Genealogy (Adam/Gigatrees)
-  // ------------------------------
-  */
+// for Genealogy (Adam/Gigatrees)
+// ------------------------------
 
 @import "gigatrees";
 
@@ -274,15 +278,15 @@ body {
 // links within labels, panels
 .label-default,
 .label-primary {
-  a {
-    color: $body-color;
-  }
+    a {
+        color: $body-color;
+    }
 }
 
 .panel-primary {
-  .panel-heading {
-    a {
-      color: $body-color;
+    .panel-heading {
+        a {
+            color: $body-color;
+        }
     }
-  }
 }
