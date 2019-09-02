@@ -22,6 +22,7 @@ setup(
     version=get_version(),
     description="Pelican theme, first used for Minchin.ca.",
     long_description="\n\n".join([open(os.path.join(base_dir, "README.rst")).read()]),
+    long_description_content_type="text/x-rst",
     author="W. Minchin",
     author_email="w_minchin@hotmail.com",
     url="https://github.com/MinchinWeb/seafoam",
