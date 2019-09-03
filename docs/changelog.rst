@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.4.3 <2019-09-02>`
+- :bug:`-` upgrade Tipue Search to version 7.1, and update templates to match.
 - :release:`2.4.2 <2019-09-02>`
 - :bug:`-` limit width of images on index pages to 100%.
 - :release:`2.4.1 <2018-10-25>`
