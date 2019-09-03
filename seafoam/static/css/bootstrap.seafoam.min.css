@@ -9582,11 +9582,38 @@ body {
 /* Tipue Search
 // ------------------------
 */
-.tipue_search_content_url {
-  display: none;
+.tipue_search_content_title {
+  margin-bottom: 12px;
 }
-.h01 {
+.tipue_search_content_url {
+  font-size: 16px;
+  margin-left: 16px;
+  margin-bottom: 12px;
+}
+.tipue_search_content_url a {
+  color: #fdf6e3;
+}
+.tipue_search_content_url a:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f0c1";
+  margin-right: 5px;
+}
+.tipue_search_content_url a:hover,
+.tipue_search_content_url a:focus {
+  color: #48cfc5;
+}
+.h01,
+.tipue_search_content_bold {
   background: #b58900;
+}
+.tipue_search_image_close,
+.tipue_search_image_block {
+  display: none;
 }
 #tipue_search_foot_boxes {
   display: inline-block;
