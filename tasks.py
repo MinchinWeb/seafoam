@@ -36,4 +36,5 @@ def serve_test(ctx, port='8000'):
     # invoke serve_test --port 8001
 
     p4 = p / 'test' / 'output'
+    print(p4)
     run('cd {} && start python -m http.server {}'.format(p4, port))

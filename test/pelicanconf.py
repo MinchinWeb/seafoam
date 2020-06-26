@@ -5,7 +5,8 @@ BOOTSTRAP_THEME = 'seafoam'
 PATH = 'content'
 STATIC_PATHS = ['images',
                ]
-
+TIMEZONE = "America/Edmonton"
+OUTPUT_PATH = "output"
 
 PLUGINS = [
            'minchin.pelican.jinja_filters',

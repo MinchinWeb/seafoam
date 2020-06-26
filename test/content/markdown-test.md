@@ -140,11 +140,11 @@ not otherwise contain automatic link and address detection.
     ![Alt text][img1]
     [img1]: /path/to/img.jpg "Title"
 
-![Alt text]({filename}images/sample.png "Image call example")
-![Alt text]({filename}images/sample.png)
-![Alt text]({filename}images/sample.png "Title")
+![Alt text]({static}images/sample.png "Image call example")
+![Alt text]({static}images/sample.png)
+![Alt text]({static}images/sample.png "Title")
 ![Alt text][img1]
-[img1]: {filename}images/sample.png "Title" 
+[img1]: {static}images/sample.png "Title"
 
 # Lists #
 
