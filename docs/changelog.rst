@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.4.4 <2020-06-26>`
 - :bug:`-` use local version of fonts.
 - :release:`2.4.3 <2019-09-02>`
 - :bug:`-` upgrade Tipue Search to version 7.1, and update templates to match.
