@@ -46,12 +46,12 @@
                             <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
                         </span>
                         {% if article.readtime_minutes -%}
-                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min to read
+                            &bull;&nbsp;<i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min to read
                         {% elif article.stats -%}
-                            &bull; <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read
+                            &bull;&nbsp;<i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min to read
                         {%- endif %}
                         {% if DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS %}
-                            &bull; <i class="fa fa-comments"></i>
+                            &bull;&nbsp;<i class="fa fa-comments"></i>
                         {% endif -%}
                         {% if PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false %}
                             &bull; <i class="fa fa-comments"></i>
@@ -59,7 +59,7 @@
                         {% include 'includes/comment_count.html' %}
                         {# only display the 'read more' link if there is more to the article #}
                         {% if article.has_summary != false %} 
-                            &bull; <span class="label label-primary">
+                            &bull;&nbsp;<span class="label label-primary">
                                 <a href="{{ SITEURL }}/{{ article.url }}">read more <i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
                             </span>
                         {% endif %}

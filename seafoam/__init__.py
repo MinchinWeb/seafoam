@@ -10,15 +10,17 @@ try:
 except ImportError:
     from pathlib2 import Path
 
-__version__ = "2.4.4"
+__version__ = "2.4.5-dev"
 
 
 def get_path():
     """
     Shortcut for users whose theme is not next to their pelicanconf.py.
 
-    Returns:
+    Returns
+    -------
         str: filepath to folder containing theme
+
     """
     # Theme directory is defined as our parent directory
     return str(Path(__file__).resolve().parent)
