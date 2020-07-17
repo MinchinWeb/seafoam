@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.4.5 <2020-07-16>`
+- :bug:`-` have bullet points list seperators go to the next line.
+- :bug:`-` only display comment count if there are comments.
 - :release:`2.4.4 <2020-06-26>`
 - :bug:`-` use local version of fonts.
 - :release:`2.4.3 <2019-09-02>`
