@@ -53,10 +53,10 @@
                         {% if DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS %}
                             &bull;&nbsp;<i class="fa fa-comments"></i>
                         {% endif -%}
-                        {% if PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false %}
-                            &bull; <i class="fa fa-comments"></i>
+                        {% if DISQUS_SITENAME or (PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false and article.comments_count > 0) %}
+                            &bull;&nbsp;<i class="fa fa-comments"></i>
+                            {% include 'includes/comment_count.html' %}
                         {% endif -%}
-                        {% include 'includes/comment_count.html' %}
                         {# only display the 'read more' link if there is more to the article #}
                         {% if article.has_summary != false %} 
                             &bull;&nbsp;<span class="label label-primary">
