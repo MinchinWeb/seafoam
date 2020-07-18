@@ -4,10 +4,10 @@ Changelog
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
 - :release:`2.4.5 <2020-07-16>`
-- :bug:`-` have bullet points list seperators go to the next line.
+- :bug:`-` have bullet points list separators go to the next line.
 - :bug:`-` only display comment count if there are comments.
 - :release:`2.4.4 <2020-06-26>`
-- :bug:`-` use local version of fonts.
+- :bug:`16` use local version of fonts.
 - :release:`2.4.3 <2019-09-02>`
 - :bug:`-` upgrade Tipue Search to version 7.1, and update templates to match.
 - :release:`2.4.2 <2019-09-02>`
@@ -55,8 +55,8 @@ Changelog
 - :support:`-` use ``minchin.releaser`` to put out releases
 - :release:`2.1.5 <2017-05-31>`
 - :bug:`11` indent definition list items
-- :bug:`-` note that Image Processing v1.1.2 is broken (see
-  [issue 32](https://github.com/MinchinWeb/minchin.pelican.plugins.image_process/issues/2))
+- :bug:`-` note that Image Processing v1.1.2 is broken (see their
+  [issue 2](https://github.com/MinchinWeb/minchin.pelican.plugins.image_process/issues/2))
 - :release:`2.1.4 <2017-04-09>`
 - :bug:`-` ``Framework :: Pelican :: Themes`` trove classifier on PyPI now
   available.
@@ -71,7 +71,7 @@ Changelog
 - :bug:`-` fix pagination links on category and tag pages. See `this issue
   <https://github.com/MinchinWeb/blog.minchin.ca/issues/6>`_.
 - :bug:`13` remove unused code in pagination template. Thanks
-  `@jorgesumle <https://github.com/jorgesumle>`_
+  `@jorgesumle <https://github.com/jorgesumle>`_!
 - :release:`2.1.0 <2017-02-20>`
 - :feature:`-` add support for
   `readtime <https://pypi.python.org/pypi/pelican-readtime>` plugin in
