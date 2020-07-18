@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` add a new non-breaking spaces to help flow of article details on
+  blog index.
 - :release:`2.4.5 <2020-07-16>`
 - :bug:`-` have bullet points list separators go to the next line.
 - :bug:`-` only display comment count if there are comments.

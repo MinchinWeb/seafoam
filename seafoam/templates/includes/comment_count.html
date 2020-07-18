@@ -2,5 +2,5 @@
 	<a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" {% if not DISQUS_NO_ID %}data-disqus-identifier="{{ article.date|strftime('%Y-%m-') ~ article.slug if DISQUS_ID_PREFIX_SLUG else article.slug }}"{% endif %}> comments</a>
 {%- endif -%}
 {%- if PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false -%}
-	<a href="{{ SITEURL }}/{{ article.url }}#comments">{{ article.comments_count }}  comment{% if article.comments_count != 1 %}s{% endif %}</a>
+	<a href="{{ SITEURL }}/{{ article.url }}#comments">{{ article.comments_count }}&nbsp;comment{% if article.comments_count != 1 %}s{% endif %}</a>
 {%- endif -%}
