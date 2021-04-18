@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` fix 404 page layout issues and typos
 - :release:`2.4.7 <2021-04-17>`
 - :bug:`-` apply table formatting without requiring the ``.table`` class
 - :release:`2.4.6 <2020-07-18>`
