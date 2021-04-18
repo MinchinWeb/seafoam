@@ -49,3 +49,6 @@ PAGE_SAVE_AS = PAGE_URL
 MENUITEMS = (
     ("Dev Blog", "https://blog.minchin.ca/label/seafoam/", "fa fa-fw fa-pencil"),
 )
+
+DISPLAY_BREADCRUMBS = True
+DISPLAY_CATEGORY_IN_BREADCRUMBS = True
