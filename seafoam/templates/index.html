@@ -5,7 +5,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
             {% if MENUITEMS_2_AT %}
-                <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+                <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
             {% endif %}
         </ol>     
     {% endif %}
@@ -16,17 +16,17 @@
         {% for article in (articles_page.object_list if articles_page else articles) %}
             {% set DISPLAY_IMAGE = false %}
             <article class="row">
-                <h2 class="col-xs-12"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                <h2 class="col-xs-12"><a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a></h2>
                 {% if article.image %}
                     {% set DISPLAY_IMAGE = true %}
                     <div class="col-xs-4">
-                        <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ article.image|urlencode }}" alt="{{ article.title|striptags }}">
+                        <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- article.image|urlencode }}" alt="{{ article.title|striptags }}">
                     </div>
                     <div class="summary entry-content col-xs-8">
                 {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
                     {% set DISPLAY_IMAGE = true %}
                     <div class="col-xs-4">
-                        <img class="featured-image image-process-index-feature" src="{{ SITEURL }}/{{ CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
+                        <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
                     </div>
                     <div class="summary entry-content col-xs-8">
                 {% else %}
@@ -57,7 +57,7 @@
                         {# only display the 'read more' link if there is more to the article #}
                         {% if article.has_summary != false %} 
                             &bull;&nbsp;<span class="label label-primary">
-                                <a href="{{ SITEURL }}/{{ article.url }}">read more&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
+                                <a href="{{ SITEURL -}} / {{- article.url }}">read more&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
                             </span>
                         {% endif %}
                     </small></p>

@@ -5,14 +5,14 @@
 	<ul class="pager">
 		{% if article.prev_article %}
 		    <li class="previous">
-		        <a href="{{ SITEURL }}/{{ article.prev_article.url}}" rel="prev">
+		        <a href="{{ SITEURL -}} / {{- article.prev_article.url}}" rel="prev">
 		            <i class="fa fa-arrow-circle-left"></i> {{ article.prev_article.title -}}
 		        </a>
 		    </li>
 		{% endif %}
 		{% if article.next_article %}
 		    <li class="next">
-		        <a href="{{ SITEURL }}/{{ article.next_article.url}}" rel="next">
+		        <a href="{{ SITEURL -}} / {{- article.next_article.url}}" rel="next">
 		            {{- article.next_article.title }} <i class="fa fa-arrow-circle-right"></i>
 		        </a>
 		   </li>
@@ -29,14 +29,14 @@
 			<ul class="pager">
 				{% if article.prev_article_in_category %}
 			     	<li class="previous">
-			         	<a href="{{ SITEURL }}/{{ article.prev_article_in_category.url}}">
+			         	<a href="{{ SITEURL -}} / {{- article.prev_article_in_category.url}}">
 			            	<i class="fa fa-arrow-circle-left"></i> {{ article.prev_article_in_category.title -}}
 			         	</a>
 				    </li>
 				{% endif %}
 				{% if article.next_article_in_category %}
 				    <li class="next">
-				        <a href="{{ SITEURL }}/{{ article.next_article_in_category.url}}">
+				        <a href="{{ SITEURL -}} / {{- article.next_article_in_category.url}}">
 				            {{- article.next_article_in_category.title }} <i class="fa fa-arrow-circle-right"></i>
 				        </a>
 				    </li>

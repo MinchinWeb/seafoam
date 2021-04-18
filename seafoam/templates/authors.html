@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
           {% if MENUITEMS_2_AT %}
-            <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+            <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
           {% endif %}
             <li class="active">Authors</li>
         </ol>
@@ -19,6 +19,6 @@
 {% block content %}
     <h1>Authors on {{ SITENAME }}</h1>
     {% for author, articles in authors|sort %}
-        <li><a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a> ({{ articles|count }})</li>
+        <li><a href="{{ SITEURL -}} / {{- author.url }}">{{ author }}</a> ({{ articles|count }})</li>
     {% endfor %}
 {% endblock %}

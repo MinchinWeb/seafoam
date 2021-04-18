@@ -9,13 +9,13 @@
     <ol class="breadcrumb">
         <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
         {% if MENUITEMS_2_AT %}
-            <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+            <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
         {% endif %}
         {% if page.at %}
-            <li><a href="{{ SITEURL }}/{{ page.at_link }}" title="{{ page.at }}">{{ page.at }}</a></li>
+            <li><a href="{{ SITEURL -}} / {{- page.at_link }}" title="{{ page.at }}">{{ page.at }}</a></li>
         {% endif %}
         {% if not page.url == '' %}
-            <li class="active"><a href="{{ SITEURL }}/{{ page.url }}" title="{{ page.title | trim }}">{{ page.title | trim }}</a></li>
+            <li class="active"><a href="{{ SITEURL -}} / {{- page.url }}" title="{{ page.title | trim }}">{{ page.title | trim }}</a></li>
         {% endif %}
     </ol> <!-- /.breadcrumbs -->
     {% endif %}
@@ -27,7 +27,7 @@
         {% import 'includes/translations.html' as translations with context %}
         {{ translations.translations_for(page) }}
         {% if PDF_PROCESSOR %}
-            <a href="{{ SITEURL }}/pdf/{{ page.slug }}.pdf">
+            <a href="{{ SITEURL -}} /pdf/ {{- page.slug }}.pdf">
                 get the pdf
             </a>
         {% endif %}

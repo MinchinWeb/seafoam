@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
       {% if MENUITEMS_2_AT %}
-        <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+        <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
       {% endif %}
         <li class="active">Tags</li>
     </ol>
@@ -24,13 +24,22 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{tag.slug}}">{{ tag }} <span class="badge pull-right">{{ articles|count }}</span></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{tag.slug}}">
+                            {{ tag }} <span class="badge pull-right">{{ articles|count }}</span>
+                        </a>
                     </h4>
                 </div>
                 <div id="collapse-{{tag.slug}}" class="panel-collapse collapse">
                     <div class="panel-body">
                         {% for article in articles %}
-                        <p><span class="categories-timestamp"><time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time></span> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></p>
+                        <p>
+                            <span class="categories-timestamp">
+                                <time datetime="{{ article.date.isoformat() }}">
+                                    {{ article.locale_date }}
+                                </time>
+                            </span>
+                            <a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a>
+                        </p>
                         {% endfor %}
                     </div>
                 </div>

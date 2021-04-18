@@ -22,5 +22,5 @@
 
 {# ALL_CSS cannot be a list or a tuple for this to work... #} 
 {% assets filters="cssmin", output="all-css.css", ALL_CSS %}
-	<link href="{{ SITEURL }}/{{ ASSET_URL }}" rel="stylesheet" type="text/css" />
+	<link href="{{ SITEURL -}} / {{- ASSET_URL }}" rel="stylesheet" type="text/css" />
 {% endassets %}

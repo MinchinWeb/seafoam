@@ -9,9 +9,9 @@
     <ol class="breadcrumb">
         <li><a href="{{ SITE_ROOT_URL }}" title="{{ SITENAME }}"><span class="fa fa-home fa-lg"></span></a></li>
       {% if MENUITEMS_2_AT %}
-        <li><a href="{{ SITEURL }}/{{ MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+        <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
       {% endif %}
-        <li class="active"><a href="{{ SITEURL }}/{{ SEARCH_URL | default('search.html') }}" title="Search">Search</a></li>
+        <li class="active"><a href="{{ SITEURL -}} / {{- SEARCH_URL | default('search.html') }}" title="Search">Search</a></li>
     </ol>
   {% endif %}
 {% endblock %}
@@ -20,8 +20,8 @@
     {% if 'assets' in PLUGINS %}
         {% include 'includes/minify_tipuesearch.html' with context %}
     {% else %}
-        <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
-        <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
+        <script type="text/javascript" src="{{ SITEURL -}} / {{- THEME_STATIC_DIR }}/tipuesearch/tipuesearch_set.js"></script>
+        <script type="text/javascript" src="{{ SITEURL -}} / {{- THEME_STATIC_DIR }}/tipuesearch/tipuesearch.min.js"></script>
     {% endif %}
     <script src="{{ SITEURL }}/tipuesearch_content.js"></script>
     <script>
