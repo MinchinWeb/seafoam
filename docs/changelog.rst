@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.4.7 <2021-04-17>`
 - :bug:`-` apply table formatting without requiring the ``.table`` class
 - :release:`2.4.6 <2020-07-18>`
 - :bug:`-` add a new non-breaking spaces to help flow of article details on

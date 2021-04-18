@@ -12,6 +12,7 @@ releaser:
         test:
             - pillow
             - pelican
+            - soupsieve
         pypi:
             - pillow
             - python-dateutil
