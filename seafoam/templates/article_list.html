@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title -%}
+    Articles &mdash; {{ super() }}
+{%- endblock %}
+
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
         <ol class="breadcrumb">
