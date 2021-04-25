@@ -18,22 +18,35 @@
 
 {% block content %}
     <section id="content">
-        <h1>Archives for {{ SITENAME }}</h1>
+        {% block archives_pagetitle %}
+            <h1>Archives for {{ SITENAME }}</h1>
+        {% endblock %}
 
         <div id="archives">
-            {# Top Row with links to Archives by Year #}
-            <div class="row">
-                <div class="archives-quicklinks text-center col-xs-12">
-                    {% for article in dates %}
-                        {% if loop.index0 == 0 or (article.date.year != dates[loop.index0 - 1].date.year) %}
-                            {% if loop.index0 != 0 %} &bull; {% endif -%}
-                            <a href="#{{ article.date.year }}">{{ article.date.year }}</a>
-                        {%- endif -%}
-                    {%- endfor %}
+            {% block archives_quicklinks %}
+                {# Top Row with links to Archives by Year #}
+                <div class="row">
+                    <div class="archives-quicklinks text-center col-xs-12">
+                        {% for article in dates %}
+                            {% if loop.index0 == 0 or (article.date.year != dates[loop.index0 - 1].date.year) %}
+                                {% if loop.index0 != 0 %} &bull; {% endif -%}
+                                <a href=
+                                    {%- if YEAR_ARCHIVE_URL -%}
+                                        "{{ SITEURL -}} /
+                                         {{- article.date.year | datetime_from_period | merge_date_url (YEAR_ARCHIVE_URL) }}"
+                                    {%- else -%}
+                                        "#{{ article.date.year }}"
+                                    {%- endif -%}
+                                >
+                                    {{- article.date.year -}}
+                                </a>
+                            {%- endif -%}
+                        {%- endfor %}
+                    </div>
+                    <div class="archives-spacer col-xs-12">&nbsp;</div>
+                    <div class="archives-spacer col-xs-12">&nbsp;</div>
                 </div>
-                <div class="archives-spacer col-xs-12">&nbsp;</div>
-                <div class="archives-spacer col-xs-12">&nbsp;</div>
-            </div>
+            {% endblock %}
 
             {# Main Archive Listing #}
             {% for article in dates %}
@@ -59,7 +72,7 @@
                                 {%- endif %}
                                 <div class="archives-date archives-month col-xs-4 col-md-2 col-md-offset-2">
                                 <a name="{{ article.date.year }}-{{ article.date.month }}"></a>
-                                    {{- article.date|strftime('%B') -}}
+                                    {{- article.date | strftime('%B') -}}
                                 </div>
                                 <div class="archives-title col-xs-7 col-sm-6">
                                     &nbsp;
