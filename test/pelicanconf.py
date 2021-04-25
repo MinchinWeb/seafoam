@@ -10,7 +10,7 @@ TIMEZONE = "America/Edmonton"
 OUTPUT_PATH = "output"
 
 PLUGINS = [
-    "minchin.pelican.jinja_filters",
+    "pelican.plugins.jinja_filters",
     "minchin.pelican.plugins.image_process",
 ]
 
