@@ -119,7 +119,7 @@
 
 				{%- if PELICAN_COMMENT_SYSTEM_FEED and article %}
 					<div class="form-group"><div class="col-sm-offset-2 col-sm-10">
-						<a href="{{ SITEURL -}} / {{- PELICAN_COMMENT_SYSTEM_FEED | format(article.slug) }}">
+						<a href="{{ SITEURL -}} / {{- PELICAN_COMMENT_SYSTEM_FEED | format(slug=article.slug) }}">
 							<i class="fa fa-rss-square"></i>
 							Comment Atom Feed
 						</a>

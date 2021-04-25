@@ -8,6 +8,9 @@
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
         <li><a href="{{ SITE_ROOT_URL | default('/') }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+        {% if MENUITEMS_2_AT %}
+            <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
+        {% endif %}
         <li class="active">prjct</li>
     </ol>
     {% endif %}

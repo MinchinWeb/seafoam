@@ -67,7 +67,8 @@
                     {% endif %}
 
                     <div class="archives-date categories-timestamp col-xs-4 col-md-2 col-md-offset-2">
-                        {%- if ((article.date.day == dates[loop.index0 - 1].date.day) and
+                        {%- if ((loop.index0 != 0) and
+                                (article.date.day == dates[loop.index0 - 1].date.day) and
                                 (article.date.month == dates[loop.index0 - 1].date.month) and 
                                 (article.date.year == dates[loop.index0 - 1].date.year)) %}
                                     &mdash;

@@ -390,7 +390,7 @@ backslash in front of them.
 
 \\  \`  \*  \_  \{\} \[\] \(\) \#  \+  \-  \.  \!  \:  \|  
 
-# SmartyPants 
+# SmartyPants
 
 SmartyPants transforms:
 
@@ -399,13 +399,13 @@ SmartyPants transforms:
 * Dashed in en- and em- dashes: -- and ---
 * Three consecutive dots in an ellipsis: ...
 * Adds unbreakable spaces
-* before a colon :  
-* before a semicolon ;
-* before an exclamation mark !
-* before a question mark ?
-* inside << French style quotes >>
-* as the thousand seperator 100 000
-* between a value and common unit symbols  12 kg  and 10 °C
+    * before a colon :  
+    * before a semicolon ;
+    * before an exclamation mark !
+    * before a question mark ?
+    * inside << French style quotes >>
+    * as the thousand seperator 100 000
+    * between a value and common unit symbols  12 kg  and 10 °C
 
 # MathJax
 
