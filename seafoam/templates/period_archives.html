@@ -1,0 +1,150 @@
+{% extends "archives.html" %}
+
+{% block title -%}
+    {%- if period | length == 1 -%}
+        {{ period | datetime_from_period | strftime("%Y") }}
+    {%- elif period | length == 2 -%}
+        {{ period | datetime_from_period | strftime("%B %Y") }}
+    {%- else -%}
+        {{ period | datetime_from_period | strftime("%B %-d, %Y") }}
+    {%- endif %} Archives &mdash; {{ super.super() }}
+{%- endblock %}
+
+{% block breadcrumbs %}
+    {% if DISPLAY_BREADCRUMBS %}
+    <ol class="breadcrumb">
+        <li><a href="{{ SITE_ROOT_URL | default('/') }}" title="{{ SITENAME }}">
+            <span class="fa fa-home fa-lg"></span>
+        </a></li>
+        {% if MENUITEMS_2_AT %}
+            <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">
+                {{ MENUITEMS_2_AT }}
+            </a></li>
+        {% endif %}
+        <li><a href="{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html')}}" title="Archives">
+            Archives
+        </a></li>
+        <li {% if period | length == 1%}class="active"{% endif %}>
+            {% if period | length != 1 and YEAR_ARCHIVE_URL %}
+                <a href="{{ SITEURL -}} / {{- period | datetime_from_period | merge_date_url(YEAR_ARCHIVE_URL) }}">
+                    {{- period | datetime_from_period | strftime("%Y") -}}
+                </a>
+            {% else %}
+                {{- period | datetime_from_period | strftime("%Y") -}}
+            {% endif %}
+        </li>
+
+        {% if period | length >= 2 %}
+            <li {% if period | length == 2%}class="active"{% endif %}>
+                {% if period | length != 2 and MONTH_ARCHIVE_URL %}
+                    <a href="{{ SITEURL -}} / {{- period | datetime_from_period | merge_date_url(MONTH_ARCHIVE_URL) }}">
+                        {{- period | datetime_from_period | strftime("%b") -}}
+                    </a>
+                {% else %}
+                    {{- period | datetime_from_period | strftime("%b") -}}
+                {% endif %}
+            </li>
+        {% endif %}
+
+        {% if period | length >= 3 %}
+            <li class="active">
+                {{- period | datetime_from_period | strftime("%-d") -}}
+            </li>
+        {% endif %}
+    </ol>
+    {% endif %}
+{% endblock %}
+
+{% block archives_pagetitle %}
+    <h1> 
+    {% if period | length == 1 -%}
+        {{ period | datetime_from_period | strftime("%Y") }}
+    {%- elif period | length == 2 -%}
+        {{ period | datetime_from_period | strftime("%B %Y") }}
+    {%- else -%}
+        {{ period | datetime_from_period | strftime("%B %-d, %Y") }}
+    {%- endif %}
+    Archives for {{ SITENAME }}</h1>
+{% endblock %}
+
+
+{% block archives_quicklinks %}
+    <div class="row">
+        {# Top Row with links to Archives by Year #}
+        <div class="archives-quicklinks text-center col-xs-12">
+            {% for article in dates %}
+                {% if loop.index0 == 0 or (article.date.year != dates[loop.index0 - 1].date.year) %}
+                    {% if loop.index0 != 0 %} &bull; {% endif -%}
+                    {%- if article.date.year == period[0] and period | length == 1 -%}
+                        <span class="active">{{ article.date.year }}</span>
+                    {%- else -%}
+                        <a href=
+                            {%- if YEAR_ARCHIVE_URL -%}
+                                "{{ SITEURL -}} /
+                                    {{- article.date | merge_date_url (YEAR_ARCHIVE_URL) }}"
+                            {%- else -%}
+                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}"
+                            {%- endif -%}
+                        >
+                            {{- article.date.year -}}
+                        </a>
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endfor %}
+        </div>
+
+        {# Row with links to Archives by Month #}
+        <div class="archives-spacer col-xs-12">&nbsp;</div>
+        <div class="archives-quicklinks text-center col-xs-12">
+            {% for article in dates if article.date.year == period[0] %}
+                {% if loop.index0 == 0 or (article.date.month != dates[loop.index0 - 1].date.month) %}
+                    {% if loop.index0 != 0 %} &bull; {% endif -%}
+                    {%- if article.date.month == (period | datetime_from_period).month and period | length == 2 -%}
+                        <span class="active">{{ article.date | strftime("%b") }}</span>
+                    {%- else -%}
+                        <a href=
+                            {%- if MONTH_ARCHIVE_URL -%}
+                                "{{ SITEURL -}} /
+                                    {{- article.date | merge_date_url (MONTH_ARCHIVE_URL) }}"
+                            {%- else -%}
+                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}-{{ article.date.month }}"
+                            {%- endif -%}
+                        >
+                            {{- article.date | strftime("%b") -}}
+                        </a>
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endfor %}
+        </div>
+
+    {% if period | length >= 2 %}
+        {# Row with links to Archives by Day #}
+        <div class="archives-spacer col-xs-12">&nbsp;</div>
+        <div class="archives-quicklinks text-center col-xs-12">
+            {% for article in dates if (article.date.year == period[0] and article.date.month == (period | datetime_from_period).month) %}
+                {% if loop.index0 == 0 or (article.date.day != dates[loop.index0 - 1].date.day) %}
+                    {% if loop.index0 != 0 %} &bull; {% endif -%}
+                    {%- if article.date.day == (period | datetime_from_period).day and period | length == 3 -%}
+                        <span class="active">{{ article.date | strftime("%-d") }}</span>
+                    {%- else -%}
+                        <a href=
+                            {%- if DAY_ARCHIVE_URL -%}
+                                "{{ SITEURL -}} /
+                                    {{- article.date | merge_date_url (DAY_ARCHIVE_URL) }}"
+                            {%- else -%}
+                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}-{{ article.date.month }}-{{ article.date.day }}"
+                            {%- endif -%}
+                        >
+                            {{- article.date | strftime("%-d") -}}
+                        </a>
+                    {%- endif -%}
+                {%- endif -%}
+            {%- endfor %}
+        </div>
+    {% endif %}
+
+        <div class="archives-spacer col-xs-12">&nbsp;</div>
+        <div class="archives-spacer col-xs-12">&nbsp;</div>
+    </div>
+{% endblock %}
+

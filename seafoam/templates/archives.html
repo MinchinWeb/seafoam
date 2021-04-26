@@ -86,6 +86,7 @@
                                 (article.date.year == dates[loop.index0 - 1].date.year)) %}
                                     &mdash;
                         {% else -%}
+                                    <a name="{{ article.date.year }}-{{ article.date.month }}-{{ article.date.day }}"></a>
                                     <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%a %-d') }}</time>
                         {%- endif -%}
                     </div>
