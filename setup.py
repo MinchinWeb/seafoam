@@ -31,7 +31,7 @@ setup(
     install_requires=[
         "pelican",
         "minchin.pelican.plugins.image_process>=1.0.1, !=1.1.2",
-        "pelican.plugins.jinja_filters>2.0.0",
+        "pelican-jinja-filters>2.0.0",
         # requires asset plugin, bundle? -- https://github.com/getpelican/pelican-plugins/tree/master/assets
     ],
     extras_require={
