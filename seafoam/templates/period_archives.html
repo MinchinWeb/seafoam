@@ -21,7 +21,7 @@
                 {{ MENUITEMS_2_AT }}
             </a></li>
         {% endif %}
-        <li><a href="{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html')}}" title="Archives">
+        <li><a href="{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html') }}" title="Archives">
             Archives
         </a></li>
         <li {% if period | length == 1%}class="active"{% endif %}>
@@ -83,7 +83,8 @@
                                 "{{ SITEURL -}} /
                                     {{- article.date | merge_date_url (YEAR_ARCHIVE_URL) }}"
                             {%- else -%}
-                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}"
+                                "{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html') -}}
+                                 #{{ article.date.year }}"
                             {%- endif -%}
                         >
                             {{- article.date.year -}}
@@ -107,7 +108,8 @@
                                 "{{ SITEURL -}} /
                                     {{- article.date | merge_date_url (MONTH_ARCHIVE_URL) }}"
                             {%- else -%}
-                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}-{{ article.date.month }}"
+                                "{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html') -}}
+                                 #{{ article.date.year }}-{{ article.date.month }}"
                             {%- endif -%}
                         >
                             {{- article.date | strftime("%b") -}}
@@ -132,7 +134,8 @@
                                 "{{ SITEURL -}} /
                                     {{- article.date | merge_date_url (DAY_ARCHIVE_URL) }}"
                             {%- else -%}
-                                "{{ SITEURL -}} / {{- ARCHIVE_URL -}} #{{ article.date.year }}-{{ article.date.month }}-{{ article.date.day }}"
+                                "{{ SITEURL -}} / {{- ARCHIVES_URL | default('archives.html') -}}
+                                 #{{ article.date.year }}-{{ article.date.month }}-{{ article.date.day }}"
                             {%- endif -%}
                         >
                             {{- article.date | strftime("%-d") -}}
