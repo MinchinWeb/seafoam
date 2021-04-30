@@ -34,10 +34,11 @@ the image processing patterns used:
   THEME = seafoam.get_path()
   BOOTSTRAP_THEME = 'seafoam'
 
-  PLUGINS = ['minchin.pelican.jinja_filters',
-             'minchin.pelican.plugins.image_process',
-             # others, as desired...
-             ]
+  PLUGINS = [
+      'pelican.plugins.jinja_filters',
+      'minchin.pelican.plugins.image_process',
+      # others, as desired...
+  ]
 
   IMAGE_PROCESS = {
     'article-feature': ["scale_in 848 848 True"],

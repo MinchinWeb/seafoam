@@ -3,7 +3,11 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add stylized period archive pages
 - :bug:`-` fix 404 page layout issues and typos
+- :support:`-` upgrades from ``minchin.pelican.jinja-filters`` to
+  ``pelican-jinja-filters`` (It's the same plugin, just under a new name on
+  PyPI and packaged as a namespace plugin for Pelican 4.5 or newer.)
 - :release:`2.4.7 <2021-04-17>`
 - :bug:`-` apply table formatting without requiring the ``.table`` class
 - :release:`2.4.6 <2020-07-18>`
