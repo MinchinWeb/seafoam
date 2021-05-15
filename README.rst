@@ -36,7 +36,7 @@ the image processing patterns used:
 
   PLUGINS = [
       'pelican.plugins.jinja_filters',
-      'minchin.pelican.plugins.image_process',
+      'pelican.plugins.image_process',
       # others, as desired...
   ]
 
@@ -68,8 +68,8 @@ installed with pip:
 .. code-block:: sh
 
    pip install pelican
-   pip install minchin.pelican.plugins.image_process
-   pip install minchin.pelican.jinja_filters
+   pip install pelican-image-process
+   pip install pelican-jinja-filters
 
 
 Supported Plugins
