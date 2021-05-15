@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.5.0 <2021-05-15>`
 - :feature:`-` add stylized period archive pages
 - :bug:`-` fix 404 page layout issues and typos
 - :support:`-` upgrades from ``minchin.pelican.jinja-filters`` to

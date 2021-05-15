@@ -5,7 +5,7 @@ releaser:
     test: test
     source: seafoam
     changelog: changelog.rst
-    version: seafoam\__init__.py
+    version: seafoam/__init__.py
     test_command: none
     version_bump: none
     extra_packages:
@@ -13,6 +13,8 @@ releaser:
             - pillow
             - pelican
             - soupsieve
+            - pelican-image-process
+            - pelican-jinja-filters
         pypi:
             - pillow
             - python-dateutil
