@@ -1,7 +1,10 @@
 from pathlib import Path
 
 from invoke import run, task
-from minchin.releaser import make_release
+try:
+    from minchin.releaser import make_release
+except ImportError:
+    print("[WARN] minchin.releaser not installed")
 
 # also requires `lessc` to be installed and available from the commandline
 
