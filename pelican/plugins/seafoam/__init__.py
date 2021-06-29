@@ -5,10 +5,7 @@ Seafoam.
 This is a Pelican theme. This module is the helper code to go with it.
 """
 
-try:
-    from pathlib import Path
-except ImportError:
-    from pathlib2 import Path
+from pathlib import Path
 
 from pelican import signals
 
