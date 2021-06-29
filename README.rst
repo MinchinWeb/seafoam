@@ -29,7 +29,7 @@ the image processing patterns used:
 
 .. code-block:: python
 
-  import seafoam
+  from pelican.plugins import seafoam
 
   THEME = seafoam.get_path()
   BOOTSTRAP_THEME = 'seafoam'

@@ -1,4 +1,4 @@
-import seafoam
+from pelican.plugins import seafoam
 
 THEME = seafoam.get_path()
 BOOTSTRAP_THEME = "seafoam"
@@ -11,7 +11,7 @@ OUTPUT_PATH = "output"
 
 PLUGINS = [
     "pelican.plugins.jinja_filters",
-    "minchin.pelican.plugins.image_process",
+    "pelican.plugins.image_process",
 ]
 
 CACHE_CONTENT = False

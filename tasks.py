@@ -16,7 +16,7 @@ p = Path(__file__).parent  # directory holding this file
 @task
 def build(ctx):
     """Compile the theme LESS files to CSS."""
-    p2 = p / 'seafoam'
+    p2 = p / 'pelican' / 'plugins' / 'seafoam'
     source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
     dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
     run('lessc {} > {}'.format(source, dest))
