@@ -10,7 +10,9 @@ try:
 except ImportError:
     from pathlib2 import Path
 
-__version__ = "3.0.0-dev.0"
+from pelican import signals
+
+from .initialize import seafoam_version
 
 
 def get_path():
@@ -25,4 +27,7 @@ def get_path():
     # Theme directory is defined as our parent directory
     return str(Path(__file__).resolve().parent)
 
-# TODO: add extension that adds theme version to Pelican metadata
+
+def register():
+    """Register the plugin pieces with Pelican."""
+    signals.initialized.connect(seafoam_version)

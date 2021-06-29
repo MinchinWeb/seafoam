@@ -10,6 +10,7 @@ TIMEZONE = "America/Edmonton"
 OUTPUT_PATH = "output"
 
 PLUGINS = [
+    "pelican.plugins.seafoam",
     "pelican.plugins.jinja_filters",
     "pelican.plugins.image_process",
 ]

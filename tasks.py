@@ -26,10 +26,19 @@ def build(ctx):
 
 
 @task
-def test(ctx):
+def test(ctx, carefully=False, verbose=False, debug=False):
     """Generate the test Pelican site."""
-    p3 = p / 'test' / 'pelicanconf.py'
-    run('pelican -s {}'.format(p3))
+    config = p / 'test' / 'pelicanconf.py'
+
+    cli_args = ""
+    if carefully:
+        cli_args += " --fatal=warnings"
+    if verbose:
+        cli_args += " --verbose"
+    if debug:
+        cli_args += " --debug"
+
+    run('pelican -s {}{}'.format(config, cli_args))
 
 
 @task

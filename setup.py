@@ -9,7 +9,7 @@ except ImportError:
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-def get_version(filename="pelican/plugins/seafoam/__init__.py"):
+def get_version(filename="pelican/plugins/seafoam/constants.py"):
     with open(os.path.join(base_dir, filename), encoding="utf-8") as initfile:
         for line in initfile.readlines():
             m = re.match("__version__ *= *['\"](.*)['\"]", line)
@@ -39,6 +39,7 @@ setup(
         "dev": [
             "minchin.releaser",
             "markdown",
+            "black",
         ],
     },
     classifiers=[
