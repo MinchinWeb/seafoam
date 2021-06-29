@@ -9,8 +9,13 @@ def seafoam_version(pelican):
     """
     Insert seafoam version into Pelican context.
     """
-    logger.debug(
-        "%s Adding Seafoam version (%s) to context." % (LOG_PREFIX, __version__)
-    )
 
-    pelican.settings["SEAFOAM_VERSION"] = __version__
+    if "SEAFOAM_VERSION" not in pelican.settings.keys():
+        pelican.settings["SEAFOAM_VERSION"] = __version__
+        logger.debug(
+            "%s Adding Seafoam version (%s) to context." % (LOG_PREFIX, __version__)
+        )
+    else:
+        logger.debug(
+            "%s SEAFOAM_VERSION already defined (%s)." % (LOG_PREFIX, pelican.settings["SEAFOAM_VERSION"])
+        )

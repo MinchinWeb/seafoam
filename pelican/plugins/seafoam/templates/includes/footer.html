@@ -66,7 +66,9 @@
                 {% endif %}
                 {# TODO: Make this optional #}
                 &bull;
-                <a href="http://blog.minchin.ca/label/seafoam/">Seafoam theme</a>
+                <a href="http://blog.minchin.ca/label/seafoam/" title="Seafoam version {{ SEAFOAM_VERSION }}">
+                    Seafoam theme
+                </a>
                 {% if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
                     &bull;
                     {% from 'includes/cc-license.html' import cc_license_mark %}

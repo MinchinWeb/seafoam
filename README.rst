@@ -445,6 +445,8 @@ RELATED_POSTS_TEXT = 'Related Posts:'
   Header for related posts listing. Requires that the
   `Related Posts Plugin <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_
   be active.
+SEAFOAM_VERSION
+  The version of the them (automatically provided by the bundled plugin).
 SITELOGO
   Link to the site logo (displayed in the navbar). This is relative to the
   SITEURL.
