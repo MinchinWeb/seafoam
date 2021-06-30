@@ -25,7 +25,6 @@ def find_meta(*meta_file_parts, meta_key):
     raise RuntimeError("Unable to find __{}__ string.".format(meta_key))
 
 
-
 ##############################################################################
 #                          PACKAGE METADATA                                  #
 ##############################################################################
@@ -40,12 +39,20 @@ AUTHOR_EMAIL = find_meta(*META_PATH, meta_key="email")
 URL = find_meta(*META_PATH, meta_key="url")
 LICENSE = find_meta(*META_PATH, meta_key="license")
 
-PACKAGES = setuptools.find_packages(exclude=("vendor_src", "test", "docs"))
+PACKAGES = setuptools.find_packages(
+    exclude=(
+        "vendor_src",
+        "test",
+        "docs",
+        "css_src",
+    )
+)
 
 INSTALL_REQUIRES = [
-        "pelican",
-        "pelican-image-process>=2.1.1",
-        "pelican-jinja-filters>=2.1.0",
+    "pelican",
+    "pelican-image-process>=2.1.1",
+    "pelican-jinja-filters>=2.1.0",
+    "semantic_version",
 ]
 
 EXTRA_REQUIRES = {
@@ -69,7 +76,7 @@ EXTRA_REQUIRES = {
     ],
     "dev": [
         "markdown",
-    ]
+    ],
 }
 
 # full list of Classifiers at

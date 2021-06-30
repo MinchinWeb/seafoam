@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from invoke import run, task
+
 try:
     from minchin.releaser import make_release
 except ImportError:
@@ -16,10 +17,17 @@ p = Path(__file__).parent  # directory holding this file
 @task
 def build(ctx):
     """Compile the theme LESS files to CSS."""
-    p2 = p / 'pelican' / 'plugins' / 'seafoam'
-    source = p2 / 'static' / 'less' / 'bootstrap.seafoam.less'
-    dest = p2 / 'static' / 'css' / 'bootstrap.seafoam.min.css'
-    run('lessc {} > {}'.format(source, dest))
+
+    source = "css_src" / "less" / "bootstrap.seafoam.less"
+    dest = (
+        "pelican"
+        / "plugins"
+        / "seafoam"
+        / "static"
+        / "css"
+        / "bootstrap.seafoam.min.css"
+    )
+    run("lessc {} > {}".format(source, dest))
     print("Seafoam LESS compiled to CSS!")
     # TODO -- minimize css!
     #   consider css-html-js-minify
@@ -28,7 +36,7 @@ def build(ctx):
 @task
 def test(ctx, carefully=False, verbose=False, debug=False):
     """Generate the test Pelican site."""
-    config = p / 'test' / 'pelicanconf.py'
+    config = p / "test" / "pelicanconf.py"
 
     cli_args = ""
     if carefully:
@@ -38,15 +46,15 @@ def test(ctx, carefully=False, verbose=False, debug=False):
     if debug:
         cli_args += " --debug"
 
-    run('pelican -s {}{}'.format(config, cli_args))
+    run("pelican -s {}{}".format(config, cli_args))
 
 
 @task
-def serve_test(ctx, port='8000'):
+def serve_test(ctx, port="8000"):
     """Serve the generated test site."""
     # call using:
     # invoke serve_test --port 8001
 
-    p4 = p / 'test' / 'output'
+    p4 = p / "test" / "output"
     print(p4)
-    run('cd {} && start python -m http.server {}'.format(p4, port))
+    run("cd {} && start python -m http.server {}".format(p4, port))
