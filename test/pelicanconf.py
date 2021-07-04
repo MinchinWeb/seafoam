@@ -1,7 +1,7 @@
 from pelican.plugins import seafoam
 
-THEME = seafoam.get_path()
-BOOTSTRAP_THEME = "seafoam"
+# THEME = seafoam.get_path()
+# BOOTSTRAP_THEME = "seafoam"
 PATH = "content"
 STATIC_PATHS = [
     "images",
@@ -11,16 +11,16 @@ OUTPUT_PATH = "output"
 
 PLUGINS = [
     "pelican.plugins.seafoam",
-    "pelican.plugins.jinja_filters",
-    "pelican.plugins.image_process",
+    # "pelican.plugins.jinja_filters",
+    # "pelican.plugins.image_process",
 ]
 
 CACHE_CONTENT = False
 LOAD_CACHE_CONTENT = False
 
-TEMPLATE_PAGES = {
-    "404.html": "404.html",
-}
+# TEMPLATE_PAGES = {
+#     "404.html": "404.html",
+# }
 
 # Set URL's
 TAG_URL = "tags/{slug}/"

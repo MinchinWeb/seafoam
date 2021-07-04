@@ -1,8 +1,112 @@
 import logging
 
-from .constants import LOG_PREFIX, __version__, __url__
+import semantic_version
+
+from pelican import __version__ as pelican_version
+
+from .constants import LOG_PREFIX, PLUGIN_LIST, __url__, __version__
 
 logger = logging.getLogger(__name__)
+
+
+def pelican_namespace_plugin_support():
+    """
+    Determine if the installed version of Pelican natively supports namespace
+    plugins.
+
+    In short, the Pelican version must be greater than 4.6.0.
+
+    Return:
+        bool: if namespace plugins are supported
+    """
+
+    pelican_semver = semantic_version.Version(pelican_version)
+    if pelican_semver.major > 4:
+        return True
+    elif pelican_semver.major == 4 and pelican_semver.minor >= 5:
+        return True
+    else:
+        return False
+
+
+def check_settings(pelican):
+    """
+    Insert defaults in Pelican settings, as needed.
+    """
+    logger.debug("%s messaging settings, setting defaults." % LOG_PREFIX)
+
+    # THEME = seafoam.get_path()
+
+    # A default value is set for "THEME", so simply testing for its lack won't
+    # work
+
+    # if "THEME" not in pelican.settings.keys():
+    if True:
+        from . import get_path  # to avoid circular imports
+
+        # this needs to be set directly, because this setting has already been
+        # read
+        pelican.theme = get_path()
+        logger.debug('%s THEME set to "%s"' % (LOG_PREFIX, pelican.theme))
+    else:
+        logger.debug("%s THEME previously set manually. Is %s" % (LOG_PREFIX, pelican.theme))
+
+    # BOOTSTRAP_THEME = 'seafoam'
+    if "BOOTSTRAP_THEME" not in pelican.settings.keys():
+        pelican.settings["BOOTSTRAP_THEME"] = "seafoam"
+        logger.debug('%s BOOTSTRAP_THEME set to "%s"' % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"]))
+    else:
+        logger.debug('%s BOOTSTRAP_THEME previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"]))
+
+
+    # PLUGINS = [
+    #     'pelican.plugins.seafoam',
+    #     'pelican.plugins.jinja_filters',
+    #     'pelican.plugins.image_process',
+    #     # others, as desired...
+    # ]
+    if (
+        "PLUGINS" not in pelican.settings.keys()
+        and not pelican_namespace_plugin_support()
+    ):
+        pelican.settings["PLUGINS"] = list()
+        for k in PLUGIN_LIST:
+            pelican.settings["PLUGINS"].append(k)
+            logger.debug('%s "%s" appended to PLUGINS' % (LOG_PREFIX, k))
+        # force update of plugins
+        pelican.init_plugins()
+
+    elif "PLUGINS" in pelican.settings.keys():
+        for k in PLUGIN_LIST:
+            if k not in pelican.settings["PLUGINS"]:
+                pelican.settings["PLUGINS"].append(k)
+                logger.debug('%s "%s" appended to PLUGINS' % (LOG_PREFIX, k))
+        # force update of plugins
+        pelican.init_plugins()
+
+    # IMAGE_PROCESS = {
+    #     "article-feature": ["scale_in 848 848 True"],
+    #     "index-feature": ["scale_in 263 263 True"],
+    # }
+    if "IMAGE_PROCESS" not in pelican.settings.keys():
+        pelican.settings["IMAGE_PROCESS"] = dict()
+    if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
+        pelican.settings["IMAGE_PROCESS"]["article-feature"] = ["scale_in 848 848 True"]
+        logging.debug('%s added "article-feature" to IMAGE_PROCESS' % LOG_PREFIX)
+    if "index-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
+        pelican.settings["IMAGE_PROCESS"]["index-feature"] = ["scale_in 263 263 True"]
+        logging.debug('%s added "index-feature" to IMAGE_PROCESS' % LOG_PREFIX)
+
+    # TEMPLATE_PAGES
+    # Generate 404 error page
+    # TEMPLATE_PAGES = {
+    #     "404.html": "404.html",
+    # }
+    if "TEMPLATE_PAGES" not in pelican.settings.keys():
+        pelican.settings["TEMPLATE_PAGES"] = dict()
+    if "404.html" not in pelican.settings["TEMPLATE_PAGES"].keys():
+        pelican.settings["TEMPLATE_PAGES"]["404.html"] = "404.html"
+        logging.debug('%s added "404.html" to TEMPLATE_PAGES' % LOG_PREFIX)
 
 
 def seafoam_version(pelican):
@@ -13,19 +117,19 @@ def seafoam_version(pelican):
     if "SEAFOAM_VERSION" not in pelican.settings.keys():
         pelican.settings["SEAFOAM_VERSION"] = __version__
         logger.debug(
-            "%s Adding Seafoam version (%s) to context." % (LOG_PREFIX, __version__)
+            '%s Adding Seafoam version "%s" to context.' % (LOG_PREFIX, __version__)
         )
     else:
         logger.debug(
-            "%s SEAFOAM_VERSION already defined (%s)." % (LOG_PREFIX, pelican.settings["SEAFOAM_VERSION"])
+            '%s SEAFOAM_VERSION already defined. Is "%s".'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_VERSION"])
         )
 
     if "SEAFOAM_URL" not in pelican.settings.keys():
         pelican.settings["SEAFOAM_URL"] = __version__
-        logger.debug(
-            "%s Adding Seafoam URL (%s) to context." % (LOG_PREFIX, __url__)
-        )
+        logger.debug('%s Adding Seafoam URL "%s" to context.' % (LOG_PREFIX, __url__))
     else:
         logger.debug(
-            "%s SEAFOAM_URL already defined (%s)." % (LOG_PREFIX, pelican.settings["SEAFOAM_URL"])
+            '%s SEAFOAM_URL already defined. Is "%s".'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_URL"])
         )

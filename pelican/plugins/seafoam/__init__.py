@@ -9,7 +9,7 @@ from pathlib import Path
 
 from pelican import signals
 
-from .initialize import seafoam_version
+from .initialize import check_settings, seafoam_version
 
 
 def get_path():
@@ -27,4 +27,5 @@ def get_path():
 
 def register():
     """Register the plugin pieces with Pelican."""
+    signals.initialized.connect(check_settings)
     signals.initialized.connect(seafoam_version)
