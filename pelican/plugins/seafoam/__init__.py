@@ -9,6 +9,7 @@ from pathlib import Path
 
 from pelican import signals
 
+from .formatting import table_fix
 from .initialize import check_settings, seafoam_version
 
 
@@ -29,3 +30,4 @@ def register():
     """Register the plugin pieces with Pelican."""
     signals.initialized.connect(check_settings)
     signals.initialized.connect(seafoam_version)
+    signals.content_written.connect(table_fix)

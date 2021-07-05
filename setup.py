@@ -53,9 +53,13 @@ INSTALL_REQUIRES = [
     "pelican-image-process>=2.1.1",
     "pelican-jinja-filters>=2.1.0",
     "semantic_version",
+    "beautifulsoup4",
 ]
 
 EXTRA_REQUIRES = {
+    "lxml": [
+        "lxml",
+    ],
     "build": [
         # "pip-tools",
         "minchin.releaser",

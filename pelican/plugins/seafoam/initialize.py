@@ -1,10 +1,14 @@
 import logging
 
 import semantic_version
-
 from pelican import __version__ as pelican_version
 
 from .constants import LOG_PREFIX, PLUGIN_LIST, __url__, __version__
+
+try:
+    import lxml
+except ImportError:
+    lxml = None
 
 logger = logging.getLogger(__name__)
 
@@ -49,15 +53,22 @@ def check_settings(pelican):
         pelican.theme = get_path()
         logger.debug('%s THEME set to "%s"' % (LOG_PREFIX, pelican.theme))
     else:
-        logger.debug("%s THEME previously set manually. Is %s" % (LOG_PREFIX, pelican.theme))
+        logger.debug(
+            "%s THEME previously set manually. Is %s" % (LOG_PREFIX, pelican.theme)
+        )
 
     # BOOTSTRAP_THEME = 'seafoam'
     if "BOOTSTRAP_THEME" not in pelican.settings.keys():
         pelican.settings["BOOTSTRAP_THEME"] = "seafoam"
-        logger.debug('%s BOOTSTRAP_THEME set to "%s"' % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"]))
+        logger.debug(
+            '%s BOOTSTRAP_THEME set to "%s"'
+            % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"])
+        )
     else:
-        logger.debug('%s BOOTSTRAP_THEME previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"]))
-
+        logger.debug(
+            '%s BOOTSTRAP_THEME previously set manually. Is "%s"'
+            % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"])
+        )
 
     # PLUGINS = [
     #     'pelican.plugins.seafoam',
@@ -107,6 +118,21 @@ def check_settings(pelican):
     if "404.html" not in pelican.settings["TEMPLATE_PAGES"].keys():
         pelican.settings["TEMPLATE_PAGES"]["404.html"] = "404.html"
         logging.debug('%s added "404.html" to TEMPLATE_PAGES' % LOG_PREFIX)
+
+    if not "SEAFOAM_PARSER" in pelican.settings.keys():
+        if lxml:
+            pelican.settings["SEAFOAM_PARSER"] = "lxml"
+        else:
+            pelican.settings["SEAFOAM_PARSER"] = "html.parser"
+        logging.debug('%s SEAFOAM_PARSER set to "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"]))
+    else:
+        logging.debug('%s SEAFOAM_PARSER previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"]))
+
+    if not "SEAFOAM_ENCODING" in pelican.settings.keys():
+        pelican.settings["SEAFOAM_ENCODING"] = "utf-8"
+        logging.debug('%s SEAFOAM_ENCODING set to "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"]))
+    else:
+        logging.debug('%s SEAFOAM_ENCODING previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"]))
 
 
 def seafoam_version(pelican):
