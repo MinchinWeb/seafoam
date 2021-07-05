@@ -18,16 +18,19 @@ p = Path(__file__).parent  # directory holding this file
 def build(ctx):
     """Compile the theme LESS files to CSS."""
 
-    source = "css_src" / "less" / "bootstrap.seafoam.less"
+    style = "seafoam"
+
+    source = p / "css_src" / "less" / f"bootstrap.{style}.less"
     dest = (
-        "pelican"
+        p
+        / "pelican"
         / "plugins"
         / "seafoam"
         / "static"
         / "css"
-        / "bootstrap.seafoam.min.css"
+        / f"bootstrap.{style}.min.css"
     )
-    run("lessc {} > {}".format(source, dest))
+    run(f"lessc {source} > {dest}")
     print("Seafoam LESS compiled to CSS!")
     # TODO -- minimize css!
     #   consider css-html-js-minify
@@ -46,7 +49,7 @@ def test(ctx, carefully=False, verbose=False, debug=False):
     if debug:
         cli_args += " --debug"
 
-    run("pelican -s {}{}".format(config, cli_args))
+    run(f"pelican -s {config}{cli_args}")
 
 
 @task
@@ -57,4 +60,4 @@ def serve_test(ctx, port="8000"):
 
     p4 = p / "test" / "output"
     print(p4)
-    run("cd {} && start python -m http.server {}".format(p4, port))
+    run(f"cd {p4} && start python -m http.server {port}")
