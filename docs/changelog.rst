@@ -3,6 +3,21 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.6.0 <2021-07-05>`
+- :support:`1` add screenshots. Also issue #18.
+- :feature:`-` include *seafoam* version in source HTML of generated sites
+- :support:`-` updated ``setup.py``. Include tempalate and static files at new
+  location.
+- :support:`-` no longer include raw LESS files in distributions or in
+  generated sites.
+- :support:`-` now also required ``beautifulsoup4`` and ``semantic_version``
+- :bug:`- major` adjust HTML to add the ``.table`` class where needed, rather
+  than applying the formatting to all HTML tables. Effectively a re-work of
+  v.2.4.7.
+- :feature:`-` add internal plugin. This will allow the theme to automatically
+  configure and activate itself. Should significantly reduced installation
+  complexity. You may be able to completely remove the configuration you have
+  in place for the plugin; see the release blog post for details.
 - :release:`2.5.0 <2021-05-15>`
 - :feature:`-` add stylized period archive pages
 - :bug:`-` fix 404 page layout issues and typos
