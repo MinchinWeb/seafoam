@@ -99,6 +99,7 @@ CLASSIFIERS = [
     # 'Development Status :: 7 - Inactive',
     "Environment :: Console",
     "Framework :: Pelican :: Plugins",
+    "Framework :: Pelican :: Themes",
     # 'Programming Language :: Python :: 2',
     # 'Programming Language :: Python :: 2.6',
     # 'Programming Language :: Python :: 2.7',

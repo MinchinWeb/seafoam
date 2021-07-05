@@ -10,7 +10,7 @@ Changelog
   location.
 - :support:`-` no longer include raw LESS files in distributions or in
   generated sites.
-- :support:`-` now also required ``beautifulsoup4`` and ``semantic_version``
+- :support:`-` now also requires ``beautifulsoup4`` and ``semantic_version``
 - :bug:`- major` adjust HTML to add the ``.table`` class where needed, rather
   than applying the formatting to all HTML tables. Effectively a re-work of
   v.2.4.7.

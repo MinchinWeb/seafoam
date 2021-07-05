@@ -28,7 +28,7 @@ of pip. This will also install the required dependencies automatically.
   pip install seafoam
 
 Alternatively, you can force the installation of ``lxml``, which is a HTML
-parser that is often faster than the default, and will be used in installed:
+parser that is often faster than the default, and will be used if installed:
 
 .. code-block:: sh
 
@@ -60,10 +60,10 @@ You may also need to configure the theme through the use of additional settings
 Requirements
 ------------
 
-``Seafoam`` requires Pelican, ``image_process`` plugin, the ``jinja filters``
-plugin, ``beautifulsoup4``, and ``semantic_version``. If the theme is installed
-from pip, these should be automatically installed. If needed they can be
-manually installed with pip:
+``Seafoam`` requires Pelican, the ``image_process`` plugin, the ``jinja
+filters`` plugin, ``beautifulsoup4``, and ``semantic_version``. If the theme is
+installed from pip, these should be automatically installed. If needed, they
+can be manually installed with pip:
 
 .. code-block:: sh
 
@@ -80,11 +80,25 @@ Supported Plugins
 Seafoam also works with several other plugins for Pelican, but none of those
 listed in this section are required.
 
-- `readtime <https://pypi.python.org/pypi/pelican-readtime>`_ -- provides estimated reading time for articles. Available from PyPI as ``pelican-readtime``.
-- `post-stats <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_ -- provides estimated reading time for articles if `readtime` is not available. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
-- `neighbors <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides post-article links to the next and previous  article on your blog and the next and previous article in that category. Available on PyPI as ``pelican-neighours``.
-- `pelican_comment_system <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_ -- add static comments to your blog. Available in the `Pelican Plugins collection <https://github.com/getpelican/pelican-plugins/>`_.
-- `Related Posts <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ -- adds the related_posts variable to the article's context.
+- `readtime <https://pypi.python.org/pypi/pelican-readtime>`_ -- provides
+  estimated reading time for articles. Available from PyPI as
+  ``pelican-readtime``.
+- `post-stats
+  <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_ --
+  provides estimated reading time for articles if `readtime` is not available.
+  Available in the `Pelican Plugins collection
+  <https://github.com/getpelican/pelican-plugins/>`_.
+- `neighbors <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides
+  post-article links to the next and previous article on your blog and the
+  next and previous article in that category. Available on PyPI as
+  ``pelican-neighours``.
+- `pelican_comment_system
+  <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_
+  -- add static comments to your blog. Available on PyPI as
+  ``pelican-comment-system``.
+- `Related Posts
+  <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ --
+  adds the related_posts variable to the article's context.
 - Tipue Search
 
 
@@ -102,18 +116,18 @@ Main article body
 .. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/article_body.png
     :align: center
     :alt: Article Body
+    
+Comments
+    
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/comments.png
+    :align: center
+    :alt: Comments
 
 Comment Form
 
 .. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/comment_form.png
     :align: center
     :alt: Comment Form
-
-Comments
-
-.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/comments.png
-    :align: center
-    :alt: Comments
 
 Main Archives
 
@@ -232,13 +246,14 @@ AVATAR
   is the path to the picture. See the ``ABOUT_ME`` setting to set the
   descriptive paragraph.
 BOOTSTRAP_NAVBAR_INVERSE = False
-  Apply inverse CSS setting to Navbar.
+  Apply inverse CSS setting to Navbar. Changing this will swap the top
+  navigation bar between light and dark.
 BOOTSTRAP_THEME = "seafoam"
   Automatically set to ``seafoam`` by the internal plugin. Other values
   (including leaving this unset) are not expected to work correctly.
 CATEGORIES_URL
   Same as the regular Pelican setting.
-CATEGORY_IMAGES
+CATEGORY_IMAGES = {}
   Provide a default featured image by category. If an image is set in the
   article metadata, that will override this.
 
@@ -262,12 +277,12 @@ CC_LICENSE_DERIVATIVES
   license".
 CUSTOM_CSS
   Link, relative to SITEURL, to a custom CSS file.
-CUSTOM_CSS_LIST
+CUSTOM_CSS_LIST = []
   Custom CSS to load; can be either absolute links, or relative links. If the
   listed item starts with ``//``, ``http://``, ``https://``, it is assumed to
   be absolute link and added as-is to the markup. Otherwise, the link is
   assumed to be relative to SITEURL.
-CUSTOM_JS_LIST
+CUSTOM_JS_LIST = []
   Custom Javascript to load; can be either scripts, absolute links, or relative
   links. If the listed item starts with ``<script``, then the item is assumed
   to be the contents of a script, including opening and closing tags, and so
@@ -276,12 +291,12 @@ CUSTOM_JS_LIST
   to the markup. Otherwise, the link is assumed to be relative to SITEURL.
 
   See also ``CUSTOM_JS_LIST_HEAD`` and ``JQUERY_JS_IN_HEAD``.
-CUSTOM_JS_LIST_HEAD
+CUSTOM_JS_LIST_HEAD = []
   Exactly the same format as ``CUSTOM_JS_LIST``, but is added to the pages'
   ``<head>`` section rather than the end of the page. Generally, you will want
   to put your Javascript at the end of the page (i.e. in ``CUSTOM_JS_LIST``
   rather than here), as any Javascript referenced here must generally be
-  completed loaded before the page will start being rendered.
+  completely loaded before the page will start being rendered.
   
   When ``JQUERY_JS_IN_HEAD == True`` (not the default), JQuery is listed before
   the other scripts listed here.
@@ -371,12 +386,12 @@ GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY
   Set this to the Google Analytics "property" this site represents. See also
   (and set) ``GOOGLE_ANALYTICS_UNIVERSAL``.
 HIDE_SIDEBAR = False
-  Hide the sidebar, and all it's contents. Also review the settings
+  Hides the sidebar, and all it's contents. Also review the settings
   ``DISPLAY_CATEGORIES_ON_SIDEBAR``, ``DISPLAY_RECENT_POSTS_ON_SIDEBAR``,
   ``DISPLAY_TAGS_ON_SIDEBAR``, ``GITHUB_USER``, ``LINKS``, and
-  ``TWITTER_USERNAME`` variables.
+  ``TWITTER_USERNAME``.
 HIDE_SITENAME = False
-  Hide the sitename in the site navbar.
+  Hides the sitename in the site navbar.
 IMAGE_PROCESS = {"article-feature": ["scale_in 848 848 True"], "index-feature": ["scale_in 263 263 True"],}
   Used by the *image process* plugin. The "article-feature" and "index-feature"
   configurations are set by the included plugin if not set in your
@@ -389,7 +404,7 @@ JQUERY_JS_IN_HEAD = False
   to load JQuery sooner. So this moves loading JQuery from the end of the page
   to the header. When active, JQuery is listed before the other scripts in
   ``CUSTOM_JS_LIST_HEAD``. See also ``CUSTOM_JS_LIST_HEAD``.
-LINKS
+LINKS = []
   Extra links to display sidebar. Provide a list of tuples of the form
   ``('name', 'link')``.
 MENUITEMS
@@ -421,7 +436,7 @@ MENUITEMS_2_AT_LINK
   When set and Breadcrumbs are enabled, all items on the site are shown to be
   under both "home" (linked to at the ``SITE_ROOT_URL``) and ``MENUITEMS_2_AT``
   (linked to at ``MENUITEMS_2_AT_LINK``).
-NAVBAR_ON_TOP
+NAVBAR_ON_TOP = False
   If True, the navigation menu is on top. If False, the navigation menu is
   vertical on the left side of the page. Default is False.
 NEIGHBORS
@@ -495,7 +510,9 @@ PRJCT
     PRJCT_ACTIVE_PROJECTS = prjct.multi_source.active_project_list()
     PRJCT_SOMEDAY_PROJECTS = prjct.config.someday_projects()
     PRJCT_COMPLETED_PROJECTS = prjct.config.completed_projects()
-    PRJCT_DESC = prjct.descriptions.to_html_dict(markdown_extension_config=MARKDOWN['extension_configs'])
+    PRJCT_DESC = prjct.descriptions.to_html_dict(
+        markdown_extension_config=MARKDOWN['extension_configs']
+    )
     PRJCT_VERSION = prjct.__version__
     PRJCT_FOOTER_URL = prjct.__url__
 
@@ -547,7 +564,7 @@ SEAFOAM_PARSER = "html.parser"
   This is the parser that Beautiful Soup uses when run by the internal plugin.
 SEAFOAM_URL = "http://blog.minchin.ca/label/seafoam/"
   The project url of the them (automatically provided by the bundled plugin).
-SEAFOAM_VERSION = "2.6.0"
+SEAFOAM_VERSION = pelican.plugins.seafoam.__version__
   The version of the them (automatically provided by the bundled plugin).
 SITELOGO
   Link to the site logo (displayed in the navbar). This is relative to the
@@ -574,7 +591,7 @@ TAGS_URL
 TEMPLATE_PAGES = {"404.html": "404.html",}
   Same as the Pelican setting. Automatically set by the internal plugin to
   enable a 404 error page on GitHub pages (and perhaps elsewhere).
-THEME = <path on disc to seafoam theme files>
+THEME = pelican.plugins.seafoam.get_path()
   Same as the Pelican setting. Automatically set by the internal plugin.
 THEME_STATIC_DIR
   Same as the Pelican setting.
