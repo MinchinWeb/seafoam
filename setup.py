@@ -39,7 +39,7 @@ AUTHOR_EMAIL = find_meta(*META_PATH, meta_key="email")
 URL = find_meta(*META_PATH, meta_key="url")
 LICENSE = find_meta(*META_PATH, meta_key="license")
 
-PACKAGES = setuptools.find_packages(
+PACKAGES = setuptools.find_namespace_packages(
     exclude=(
         "vendor_src",
         "test",
@@ -49,11 +49,11 @@ PACKAGES = setuptools.find_packages(
 )
 
 INSTALL_REQUIRES = [
-    "pelican",
-    "pelican-image-process>=2.1.1",
-    "pelican-jinja-filters>=2.1.0",
-    "semantic_version",
-    "beautifulsoup4",
+    # "pelican",
+    # "pelican-image-process>=2.1.1",
+    # "pelican-jinja-filters>=2.1.0",
+    # "semantic_version",
+    # "beautifulsoup4",
 ]
 
 EXTRA_REQUIRES = {
@@ -63,7 +63,7 @@ EXTRA_REQUIRES = {
     "build": [
         # "pip-tools",
         "minchin.releaser",
-        # less, installed via npm
+        # less, installed via npm  # npm install less -g
     ],
     "docs": [
         # 'sphinx >= 1.4',  # theme requires at least 1.4
@@ -93,8 +93,8 @@ CLASSIFIERS = [
     # 'Development Status :: 1 - Planning',
     # 'Development Status :: 2 - Pre-Alpha',
     # 'Development Status :: 3 - Alpha',
-    "Development Status :: 4 - Beta",
-    # 'Development Status :: 5 - Production/Stable',
+    # "Development Status :: 4 - Beta",
+    'Development Status :: 5 - Production/Stable',
     # 'Development Status :: 6 - Mature',
     # 'Development Status :: 7 - Inactive',
     "Environment :: Console",
@@ -152,9 +152,9 @@ setuptools.setup(
     platforms="any",
     classifiers=CLASSIFIERS,
     # namespace_packages=[
-    #     "pelican",
-    #     "pelican.plugins",
-    #     # "pelican.plugins.gpx_reader",
+    #     # "pelican",
+    #     # "pelican.plugins",
+    #     "pelican.plugins.seafoam",
     # ],
-    zip_save=False,  # use wheel instead
+    # zip_save=False,  # use wheel instead
 )
