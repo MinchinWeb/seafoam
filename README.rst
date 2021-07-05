@@ -12,6 +12,11 @@ a static site generator written in Python.
 The ``seafoam`` theme is based on Bootstrap 3, and was first used at
 `Minchin.ca <http://minchin.ca>`_. 
 
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/front_page.png
+    :align: center
+    :alt: Front Page
+
+
 Installation
 ------------
 
@@ -22,60 +27,57 @@ of pip. This will also install the required dependencies automatically.
 
   pip install seafoam
 
-Then, in your ``pelicanconf.py`` file, import the module, use the
-built in function to specify your theme location, set the default
-colour scheme (more options coming soon), add the required plugins, and set
-the image processing patterns used:
+Alternatively, you can force the installation of ``lxml``, which is a HTML
+parser that is often faster than the default, and will be used in installed:
+
+.. code-block:: sh
+
+  pip install seafoam[lxml]
+
+If you are using Pelican v4.5 or newer and only namespace plugins, ``seafoam``
+is set up as a namespace plugin and will automatically activate and configure
+itself.
+
+If you are using a version of Pelican older that v4.5 or non-namespace plugins,
+you will need to add ``seafoam`` to your list of plugins:
 
 .. code-block:: python
 
-  from pelican.plugins import seafoam
-
-  THEME = seafoam.get_path()
-  BOOTSTRAP_THEME = 'seafoam'
+  # pelicanconf.py
 
   PLUGINS = [
-      'pelican.plugins.jinja_filters',
-      'pelican.plugins.image_process',
+      "pelican.plugins.seafoam",
       # others, as desired...
   ]
-
-  IMAGE_PROCESS = {
-    'article-feature': ["scale_in 848 848 True"],
-    'index-feature': ["scale_in 263 263 True"],
-  }
-
-  # Generate 404 error page
-  TEMPLATE_PAGES = {
-      '404.html':     '404.html',
-  }
 
   # the rest of the your configuration file...
 
 
-You will may also need to configure the theme through the use of additional
-settings (see below).
+You may also need to configure the theme through the use of additional settings
+(see below).
 
 
 Requirements
 ------------
 
-``Seafoam`` requires Pelican and the ``image_process`` and
-the ``jinja filters`` plugin. If the theme is installed from pip, these
-should be automatically installed. If needed they can be manually
-installed with pip:
+``Seafoam`` requires Pelican, ``image_process`` plugin, the ``jinja filters``
+plugin, ``beautifulsoup4``, and ``semantic_version``. If the theme is installed
+from pip, these should be automatically installed. If needed they can be
+manually installed with pip:
 
 .. code-block:: sh
 
    pip install pelican
    pip install pelican-image-process
    pip install pelican-jinja-filters
+   pip install beautifulsoup4
+   pip install semantic_version
 
 
 Supported Plugins
 -----------------
 
-Seafoam works with several other plugins for Pelican, but none of those
+Seafoam also works with several other plugins for Pelican, but none of those
 listed in this section are required.
 
 - `readtime <https://pypi.python.org/pypi/pelican-readtime>`_ -- provides estimated reading time for articles. Available from PyPI as ``pelican-readtime``.
@@ -86,6 +88,64 @@ listed in this section are required.
 - Tipue Search
 
 
+Additional Images
+-----------------
+
+Article with header image
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/article_with_header.png
+    :align: center
+    :alt: Article with Header Image
+
+Main article body
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/article_body.png
+    :align: center
+    :alt: Article Body
+
+Comment Form
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/comment_form.png
+    :align: center
+    :alt: Comment Form
+
+Comments
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/comments.png
+    :align: center
+    :alt: Comments
+
+Main Archives
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/archives.png
+    :align: center
+    :alt: Main Archives
+
+Main Archives
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/archives.png
+    :align: center
+    :alt: Main Archives
+
+Yearly Archives
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/archives-year.png
+    :align: center
+    :alt: Yearly Archives
+
+Monthly Archives
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/archives-month.png
+    :align: center
+    :alt: Monthly Archives
+
+404 Error Page
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/404.png
+    :align: center
+    :alt: 404 Error
+
+
 Additional Settings
 -------------------
 
@@ -93,7 +153,7 @@ These settings can be set in your ``pelicanconf.py`` file (your Pelican settings
 file) to alter the behavior of the theme.
 
 If a value is given below, this represents the effective default value. If no
-value is given, the effective default value is `None`.
+value is given, the effective default value is ``None``.
 
 If you are using this theme on a sub-site (i.e a directory of the "main site"),
 look at ``MENUITEMS_2``, ``MENUITEMS_2_AT``, and ``MENUITEMS_2_AT_LINK``
@@ -101,6 +161,37 @@ settings.
 
 If you are using this theme on a subdomain, look at the ``SITE_ROOT_URL``
 setting.
+
+Seafoam also auto-configures itself when possible. If you need to manually
+create the default configuration, you would need the following:
+
+.. code-block:: python
+
+  # pelicanconf.py
+
+  from pelican.plugins import seafoam
+
+  THEME = seafoam.get_path()
+  BOOTSTRAP_THEME = "seafoam"
+
+  PLUGINS = [
+      "pelican.plugins.seafoam",
+      "pelican.plugins.jinja_filters",
+      "pelican.plugins.image_process",
+      # others, as desired...
+  ]
+
+  IMAGE_PROCESS = {
+    "article-feature": ["scale_in 848 848 True"],
+    "index-feature": ["scale_in 263 263 True"],
+  }
+
+  # Generate 404 error page
+  TEMPLATE_PAGES = {
+      "404.html": "404.htm"',
+  }
+
+  # the rest of the your configuration file...
 
 This documentation has to be manually updated. If the settings no longer match
 the theme's behavior, or a setting is missing from here, please open a ticket
@@ -148,9 +239,9 @@ AVATAR
   descriptive paragraph.
 BOOTSTRAP_NAVBAR_INVERSE = False
   Apply inverse CSS setting to Navbar.
-BOOTSTRAP_THEME
-  Set this to `seafoam`. Other values (including leaving this unset) are not
-  expected to work correctly.
+BOOTSTRAP_THEME = "seafoam"
+  Automatically set to ``seafoam`` by the internal plugin. Other values
+  (including leaving this unset) are not expected to work correctly.
 CATEGORIES_URL
   Same as the regular Pelican setting.
 CATEGORY_IMAGES
@@ -292,6 +383,10 @@ HIDE_SIDEBAR = False
   ``TWITTER_USERNAME`` variables.
 HIDE_SITENAME = False
   Hide the sitename in the site navbar.
+IMAGE_PROCESS = {"article-feature": ["scale_in 848 848 True"], "index-feature": ["scale_in 263 263 True"],}
+  Used by the *image process* plugin. The "article-feature" and "index-feature"
+  configurations are set by the included plugin if not set in your
+  configuration to something else.
 INDEX_COPY_DATE
   Copyright date to display on the index page (homepage) of the site.
 JQUERY_JS_IN_HEAD = False
@@ -363,7 +458,7 @@ PELICAN_COMMENT_SYSTEM = False
   that are not used directly by the theme.
 
   You will probably only use this or Disqus; odd results may come if you try to
-  use both together. See the ``DISQUS_SITENAME`` setting.
+  use both together. See also the ``DISQUS_SITENAME`` setting.
 PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS = True
   Whether to display the number of comments
 PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN
@@ -387,12 +482,16 @@ PIWIK_SSL_URL = PIWIK_URL
 PIWIK_URL
   Used for Piwik site analytics.
 PLUGINS
-  Same as the regular Pelican setting.
+  Same as the regular Pelican setting. If you set this, be sure to include the
+  internal plugin ``pelican.plugins.seafoam`` to get the theme to
+  auto-configure itself.
 PRJCT
   Set to ``TRUE`` to active `prjct <https://github.com/MinchinWeb/prjct>`_
   support. Recommended segment to include in your ``pelicanconf.py``:
 
   .. code-block:: python
+
+    # pelicanconf.py
 
     import prjct
 
@@ -445,9 +544,16 @@ RELATED_POSTS_TEXT = 'Related Posts:'
   Header for related posts listing. Requires that the
   `Related Posts Plugin <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_
   be active.
-SEAFOAM_URL
+SEAFOAM_ENCODING = "uft-8"
+  The encoding that Beautiful Soup uses when run by the internal plugin.
+SEAFOAM_PARSER = "html.parser"
+  Will be set to "lxml" is it is installed (which is the case with the most
+  recent versions of the required ``image-process`` plugin).
+
+  This is the parser that Beautiful Soup uses when run by the internal plugin.
+SEAFOAM_URL = "http://blog.minchin.ca/label/seafoam/"
   The project url of the them (automatically provided by the bundled plugin).
-SEAFOAM_VERSION
+SEAFOAM_VERSION = "2.6.0"
   The version of the them (automatically provided by the bundled plugin).
 SITELOGO
   Link to the site logo (displayed in the navbar). This is relative to the
@@ -471,6 +577,11 @@ SOCIAL
   setting.
 TAGS_URL
   Same as the Pelican setting.
+TEMPLATE_PAGES = {"404.html": "404.html",}
+  Same as the Pelican setting. Automatically set by the internal plugin to
+  enable a 404 error page on GitHub pages (and perhaps elsewhere).
+THEME = <path on disc to seafoam theme files>
+  Same as the Pelican setting. Automatically set by the internal plugin.
 THEME_STATIC_DIR
   Same as the Pelican setting.
 TWITTER_USERNAME
