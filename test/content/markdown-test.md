@@ -5,13 +5,14 @@ version: 1.2.1
 tags: markdown, test
 author: MinchinWeb
 category: test
+image: images/birger-strahl-olI66vtMgNo-unsplash.jpg
 
 <div id="contents"></div>
 
 This file serves three purposes:  
 1) a markdown language reference,  
 2) a test file to ensure that the markdown is being interpreted propertly, and  
-3) a place to test out changes to the accompaning CSS file (`md-styles.css`).
+3) a place to test out changes to the accompanying CSS file (`md-styles.css`).
 
 Let us begin:
 
@@ -545,3 +546,7 @@ nostra, per inceptos himenaeos.
 * MathJax - <http://www.mathjax.org/>
 * jsMath (an alternative to MathJax) - <http://www.math.union.edu/~dpvc/jsmath/>
 * Markdown and MathJax - <https://github.com/drdrang/php-markdown-extra-math>
+
+# Image Credit
+
+Header photo by [Birger Strahl](https://unsplash.com/@bist31).
