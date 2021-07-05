@@ -1,6 +1,7 @@
 import logging
 
 import semantic_version
+
 from pelican import __version__ as pelican_version
 
 from .constants import LOG_PREFIX, PLUGIN_LIST, __url__, __version__
@@ -51,6 +52,9 @@ def check_settings(pelican):
         # this needs to be set directly, because this setting has already been
         # read
         pelican.theme = get_path()
+        # setting THEME doesn't seem to be used directly by Pelican, but set
+        # here in case someone else comes looking
+        pelican.settings["THEME"] = pelican.theme
         logger.debug('%s THEME set to "%s"' % (LOG_PREFIX, pelican.theme))
     else:
         logger.debug(

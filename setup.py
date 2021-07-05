@@ -49,11 +49,11 @@ PACKAGES = setuptools.find_namespace_packages(
 )
 
 INSTALL_REQUIRES = [
-    # "pelican",
-    # "pelican-image-process>=2.1.1",
-    # "pelican-jinja-filters>=2.1.0",
-    # "semantic_version",
-    # "beautifulsoup4",
+    "pelican",
+    "pelican-image-process >= 2.1.1",
+    "pelican-jinja-filters >= 2.1.0",
+    "semantic_version",
+    "beautifulsoup4",
 ]
 
 EXTRA_REQUIRES = {
@@ -62,17 +62,17 @@ EXTRA_REQUIRES = {
     ],
     "build": [
         # "pip-tools",
-        "minchin.releaser",
+        "minchin.releaser >= 0.8.0",
         # less, installed via npm  # npm install less -g
     ],
     "docs": [
         # 'sphinx >= 1.4',  # theme requires at least 1.4
-        # 'cloud_sptheme >=1.8',
+        # 'cloud_sptheme >= 1.8',
         # 'releases',
-        # 'Babel >=1.3,!=2.0',  # 2.0 breaks on Windows
+        # 'Babel >= 1.3, != 2.0',  # 2.0 breaks on Windows
     ],
     "test": [
-        # 'green >=1.9.4',  # v2 works
+        # 'green >= 1.9.4',  # v2 works
         # 'coverage',
         # 'isort',
         # 'pydocstyle',

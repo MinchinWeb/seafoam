@@ -9,6 +9,7 @@ from pathlib import Path
 
 from pelican import signals
 
+from .constants import __version__
 from .formatting import table_fix
 from .initialize import check_settings, seafoam_version
 

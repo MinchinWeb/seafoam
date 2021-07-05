@@ -1,11 +1,12 @@
 releaser:
-    module_name: seafoam
+    module_name: pelican.plugins.seafoam
+    pypi_name: seafoam
     here: .
     docs: docs
     test: test
-    source: seafoam
+    source: pelican
     changelog: changelog.rst
-    version: seafoam/__init__.py
+    version: pelican/plugins/seafoam/constants.py
     test_command: none
     version_bump: none
     extra_packages:
@@ -15,6 +16,7 @@ releaser:
             - soupsieve
             - pelican-image-process
             - pelican-jinja-filters
+            - setuptools
         pypi:
             - pillow
             - python-dateutil
