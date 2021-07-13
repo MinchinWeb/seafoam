@@ -170,7 +170,10 @@ settings.
 If you are using this theme on a subdomain, look at the ``SITE_ROOT_URL``
 setting.
 
-Seafoam also auto-configures itself when possible. If you need to manually
+If you want to disable *Image Process* for local development, see
+``SEAFOAM_DEV_MODE``.
+
+Seafoam also auto-configures itself when possible.  If you need to manually
 create the default configuration, you would need the following:
 
 .. code-block:: python
@@ -555,6 +558,10 @@ RELATED_POSTS_TEXT = 'Related Posts:'
   Header for related posts listing. Requires that the
   `Related Posts Plugin <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_
   be active.
+SEAFOAM_DEV_MODE = False
+  Enable this to speed local development by (effectively) disabling the *Image
+  Process* plugin. If you disable this in your ``pelicanconf.py``, you'll
+  likely want to activate it in your ``publishconf.py`` file.
 SEAFOAM_ENCODING = "uft-8"
   The encoding that Beautiful Soup uses when run by the internal plugin.
 SEAFOAM_PARSER = "html.parser"

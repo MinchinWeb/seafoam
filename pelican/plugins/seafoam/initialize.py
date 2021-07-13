@@ -4,7 +4,13 @@ import semantic_version
 
 from pelican import __version__ as pelican_version
 
-from .constants import LOG_PREFIX, PLUGIN_LIST, __url__, __version__
+from .constants import (
+    LOG_PREFIX,
+    PLUGIN_LIST,
+    PRODUCTION_PLUGIN_LIST,
+    __url__,
+    __version__,
+)
 
 try:
     import lxml
@@ -31,6 +37,24 @@ def pelican_namespace_plugin_support():
     elif pelican_semver.major == 4 and pelican_semver.minor >= 5:
         return True
     else:
+        return False
+
+
+def seafoam_dev_mode_active(pelican):
+    """
+    Check if Seafoam Development Mode is active.
+    """
+    if (
+        "SEAFOAM_DEV_MODE" in pelican.settings.keys()
+        and pelican.settings["SEAFOAM_DEV_MODE"]
+    ):
+        logger.warning(
+            "%s Development Mode is active. Image Process has been disabled.",
+            LOG_PREFIX,
+        )
+        return True
+    else:
+        pelican.settings["SEAFOAM_DEV_MODE"] = False
         return False
 
 
@@ -80,19 +104,24 @@ def check_settings(pelican):
     #     'pelican.plugins.image_process',
     #     # others, as desired...
     # ]
+    if seafoam_dev_mode_active(pelican):
+        seafoam_plugins = PLUGIN_LIST
+    else:
+        seafoam_plugins = PRODUCTION_PLUGIN_LIST
+
     if (
         "PLUGINS" not in pelican.settings.keys()
         and not pelican_namespace_plugin_support()
     ):
         pelican.settings["PLUGINS"] = list()
-        for k in PLUGIN_LIST:
+        for k in seafoam_plugins:
             pelican.settings["PLUGINS"].append(k)
             logger.debug('%s "%s" appended to PLUGINS' % (LOG_PREFIX, k))
         # force update of plugins
         pelican.init_plugins()
 
     elif "PLUGINS" in pelican.settings.keys():
-        for k in PLUGIN_LIST:
+        for k in seafoam_plugins:
             if k not in pelican.settings["PLUGINS"]:
                 pelican.settings["PLUGINS"].append(k)
                 logger.debug('%s "%s" appended to PLUGINS' % (LOG_PREFIX, k))
@@ -103,14 +132,21 @@ def check_settings(pelican):
     #     "article-feature": ["scale_in 848 848 True"],
     #     "index-feature": ["scale_in 263 263 True"],
     # }
-    if "IMAGE_PROCESS" not in pelican.settings.keys():
+    if seafoam_dev_mode_active(pelican):
         pelican.settings["IMAGE_PROCESS"] = dict()
-    if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
-        pelican.settings["IMAGE_PROCESS"]["article-feature"] = ["scale_in 848 848 True"]
-        logging.debug('%s added "article-feature" to IMAGE_PROCESS' % LOG_PREFIX)
-    if "index-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
-        pelican.settings["IMAGE_PROCESS"]["index-feature"] = ["scale_in 263 263 True"]
-        logging.debug('%s added "index-feature" to IMAGE_PROCESS' % LOG_PREFIX)
+    else:
+        if "IMAGE_PROCESS" not in pelican.settings.keys():
+            pelican.settings["IMAGE_PROCESS"] = dict()
+        if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
+            pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
+                "scale_in 848 848 True"
+            ]
+            logging.debug('%s added "article-feature" to IMAGE_PROCESS' % LOG_PREFIX)
+        if "index-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
+            pelican.settings["IMAGE_PROCESS"]["index-feature"] = [
+                "scale_in 263 263 True"
+            ]
+            logging.debug('%s added "index-feature" to IMAGE_PROCESS' % LOG_PREFIX)
 
     # TEMPLATE_PAGES
     # Generate 404 error page
@@ -128,15 +164,27 @@ def check_settings(pelican):
             pelican.settings["SEAFOAM_PARSER"] = "lxml"
         else:
             pelican.settings["SEAFOAM_PARSER"] = "html.parser"
-        logging.debug('%s SEAFOAM_PARSER set to "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"]))
+        logging.debug(
+            '%s SEAFOAM_PARSER set to "%s"'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"])
+        )
     else:
-        logging.debug('%s SEAFOAM_PARSER previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"]))
+        logging.debug(
+            '%s SEAFOAM_PARSER previously set manually. Is "%s"'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_PARSER"])
+        )
 
     if not "SEAFOAM_ENCODING" in pelican.settings.keys():
         pelican.settings["SEAFOAM_ENCODING"] = "utf-8"
-        logging.debug('%s SEAFOAM_ENCODING set to "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"]))
+        logging.debug(
+            '%s SEAFOAM_ENCODING set to "%s"'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"])
+        )
     else:
-        logging.debug('%s SEAFOAM_ENCODING previously set manually. Is "%s"' % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"]))
+        logging.debug(
+            '%s SEAFOAM_ENCODING previously set manually. Is "%s"'
+            % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"])
+        )
 
 
 def seafoam_version(pelican):

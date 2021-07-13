@@ -1,5 +1,5 @@
 __title__ = "seafoam"
-__version__ = "2.6.0"
+__version__ = "2.7.0+dev.0"
 __description__ = "Pelican theme, first used for Minchin.ca."
 __author__ = "W. Minchin"
 __email__ = "w_minchin@hotmail.com"
@@ -10,5 +10,7 @@ LOG_PREFIX = "[Seafoam]"
 PLUGIN_LIST = [
     "pelican.plugins.seafoam",
     "pelican.plugins.jinja_filters",
+]
+PRODUCTION_PLUGIN_LIST = PLUGIN_LIST + [
     "pelican.plugins.image_process",
 ]
