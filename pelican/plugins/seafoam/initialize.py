@@ -204,7 +204,7 @@ def seafoam_version(pelican):
         )
 
     if "SEAFOAM_URL" not in pelican.settings.keys():
-        pelican.settings["SEAFOAM_URL"] = __version__
+        pelican.settings["SEAFOAM_URL"] = __url__
         logger.debug('%s Adding Seafoam URL "%s" to context.' % (LOG_PREFIX, __url__))
     else:
         logger.debug(

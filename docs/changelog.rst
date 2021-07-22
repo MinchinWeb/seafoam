@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`- major` have ``SEAFOAM_URL`` return the project URL.
+- :feature:`-` add ``SEAFOAM_DEV_MODE`` to turn off the *image process* plugin.
 - :release:`2.6.0 <2021-07-05>`
 - :support:`1` add screenshots. Also issue #18.
 - :feature:`-` include *seafoam* version in source HTML of generated sites
