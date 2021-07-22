@@ -186,6 +186,9 @@ def check_settings(pelican):
             % (LOG_PREFIX, pelican.settings["SEAFOAM_ENCODING"])
         )
 
+    if not "TAGS_TEXT" in pelican.settings.keys():
+        pelican.settings["TAGS_TEXT"] = "Tags"
+
 
 def seafoam_version(pelican):
     """

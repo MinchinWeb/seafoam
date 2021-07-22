@@ -11,7 +11,7 @@
       {% if MENUITEMS_2_AT %}
         <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
       {% endif %}
-        <li><a href="{{ SITEURL -}} / {{- TAGS_URL }}" title="Tags">Tags</a></li>
+        <li><a href="{{ SITEURL -}} / {{- TAGS_URL }}" title="{{ TAGS_TEXT }}">{{ TAGS_TEXT }}</a></li>
         <li class="active">{{ tag }}</li>
     </ol>
     {% endif %}

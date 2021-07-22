@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add ``TAGS_TEXT`` to customize tag label.
 - :bug:`- major` have ``SEAFOAM_URL`` return the project URL.
 - :feature:`-` add ``SEAFOAM_DEV_MODE`` to turn off the *image process* plugin.
 - :release:`2.6.0 <2021-07-05>`

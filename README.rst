@@ -593,6 +593,9 @@ SOCIAL
   list of tuples in the form ('social network name', 'full link to profile').
   The theme will display the logo of the network. See the ``HIDE_SIDEBAR``
   setting.
+TAGS_TEXT = "Tags"
+  Text used as the header to "Tags" (articles can be filed under multiple tags,
+  but assumes to be under a single (or no) category. Assumed to be plural.
 TAGS_URL
   Same as the Pelican setting.
 TEMPLATE_PAGES = {"404.html": "404.html",}

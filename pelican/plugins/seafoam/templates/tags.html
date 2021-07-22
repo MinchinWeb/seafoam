@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title -%}
-    Tags &mdash; {{ super() }}
+    {{ TAGS_TEXT }} &mdash; {{ super() }}
 {%- endblock %}
 
 {% block breadcrumbs %}
@@ -11,14 +11,14 @@
       {% if MENUITEMS_2_AT %}
         <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
       {% endif %}
-        <li class="active">Tags</li>
+        <li class="active">{{ TAGS_TEXT }}</li>
     </ol>
     {% endif %}
 {% endblock %}
 
 {% block content %}
     <section id="tags">
-        <h1>Tags for {{ SITENAME }}</h1>
+        <h1>{{ TAGS_TEXT }} for {{ SITENAME }}</h1>
         <div class="panel-group" id="accordion">
             {%- for tag, articles in tags|sort %}
             <div class="panel panel-default">
