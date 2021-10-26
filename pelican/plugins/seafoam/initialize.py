@@ -132,11 +132,18 @@ def check_settings(pelican):
     #     "article-feature": ["scale_in 848 848 True"],
     #     "index-feature": ["scale_in 263 263 True"],
     # }
-    if seafoam_dev_mode_active(pelican):
+    if "IMAGE_PROCESS" not in pelican.settings.keys():
         pelican.settings["IMAGE_PROCESS"] = dict()
+
+    if seafoam_dev_mode_active(pelican):
+        # return the given image
+        pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
+                lambda x: x
+            ]
+        pelican.settings["IMAGE_PROCESS"]["index-feature"] = [
+                lambda x: x
+            ]
     else:
-        if "IMAGE_PROCESS" not in pelican.settings.keys():
-            pelican.settings["IMAGE_PROCESS"] = dict()
         if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
             pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
                 "scale_in 848 848 True"

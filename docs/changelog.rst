@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`- major` in ``SEAFOAM_DEV_MODE``, assume that the *Image Process*
+  plugin might still be active (and so supply no-op transformations rather than
+  no configuration).
 - :feature:`-` under "related posts", link to the category page, if applicable
 - :feature:`-` add ``TAGS_TEXT`` to customize tag label.
 - :bug:`- major` have ``SEAFOAM_URL`` return the project URL.
