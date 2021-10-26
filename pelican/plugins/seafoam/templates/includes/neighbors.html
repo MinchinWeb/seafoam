@@ -24,7 +24,7 @@
 		{# skip if the only article in the category #}
 		{% if article.prev_article_in_category or article.next_article_in_category %}
 			<hr />
-			<p class="text-center">Other posts under {{ article.category }}</p>
+			<p class="text-center">Other posts under <a href="{{ SITEURL -}} / {{- article.category.url }}">{{ article.category }}</a></p>
 
 			<ul class="pager">
 				{% if article.prev_article_in_category %}
@@ -43,7 +43,7 @@
 				{% endif %}
 			</ul>
 		{% else %}
-			<!-- no other artcles in category {{ article.category }}, skipping... -->
+			<!-- no other articles in category {{ article.category }}, skipping... -->
 		{% endif %}
 	{% endif %}
 
