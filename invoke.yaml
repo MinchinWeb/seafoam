@@ -16,7 +16,9 @@ releaser:
             - soupsieve
             - pelican-image-process
             - pelican-jinja-filters
+            - semantic-version
             - setuptools
+            - wheel
         pypi:
             - pillow
             - python-dateutil

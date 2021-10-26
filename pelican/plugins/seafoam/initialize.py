@@ -137,12 +137,8 @@ def check_settings(pelican):
 
     if seafoam_dev_mode_active(pelican):
         # return the given image
-        pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
-                lambda x: x
-            ]
-        pelican.settings["IMAGE_PROCESS"]["index-feature"] = [
-                lambda x: x
-            ]
+        pelican.settings["IMAGE_PROCESS"]["article-feature"] = [lambda x: x]
+        pelican.settings["IMAGE_PROCESS"]["index-feature"] = [lambda x: x]
     else:
         if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
             pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
