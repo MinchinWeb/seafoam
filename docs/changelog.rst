@@ -7,12 +7,13 @@ Changelog
 - :bug:`- major` in ``SEAFOAM_DEV_MODE``, assume that the *Image Process*
   plugin might still be active (and so supply no-op transformations rather than
   no configuration).
-- :feature:`-` under "related posts", link to the category page, if applicable
+- :feature:`-` under "related posts", link to the category page, if applicable.
 - :feature:`-` add ``TAGS_TEXT`` to customize tag label.
 - :bug:`- major` have ``SEAFOAM_URL`` return the project URL.
 - :feature:`-` add ``SEAFOAM_DEV_MODE`` to turn off the *image process* plugin.
 - :release:`2.6.0 <2021-07-05>`
-- :support:`1` add screenshots. Also issue #18.
+- :support:`1` add screenshots. Also `issue #18
+  <https://github.com/MinchinWeb/seafoam/issues/18>`_.
 - :feature:`-` include *seafoam* version in source HTML of generated sites
 - :support:`-` updated ``setup.py``. Include tempalate and static files at new
   location.
@@ -27,8 +28,8 @@ Changelog
   complexity. You may be able to completely remove the configuration you have
   in place for the plugin; see the release blog post for details.
 - :release:`2.5.0 <2021-05-15>`
-- :feature:`-` add stylized period archive pages
-- :bug:`-` fix 404 page layout issues and typos
+- :feature:`-` add stylized period archive pages.
+- :bug:`-` fix 404 page layout issues and typos.
 - :support:`-` upgrades from ``minchin.pelican.jinja-filters`` to
   ``pelican-jinja-filters`` (It's the same plugin, just under a new name on
   PyPI and packaged as a namespace plugin for Pelican 4.5 or newer.)

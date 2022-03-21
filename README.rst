@@ -9,6 +9,27 @@ Seafoam
 ``Seafoam`` is a theme for `Pelican <http://docs.getpelican.com/>`_,
 a static site generator written in Python.
 
+.. image:: https://img.shields.io/pypi/v/seafoam.svg?style=flat
+    :target: https://pypi.python.org/pypi/seafoam/
+    :alt: PyPI version number
+
+.. image:: https://img.shields.io/badge/-Changelog-success
+   :target: https://github.com/MinchinWeb/seafoam/blob/master/docs/changelog.rst
+   :alt: Changelog
+
+.. image:: https://img.shields.io/pypi/pyversions/seafoam?style=flat
+    :target: https://pypi.python.org/pypi/seafoam/
+    :alt: Supported Python version
+
+.. image:: https://img.shields.io/pypi/l/seafoam.svg?style=flat&color=green
+    :target: https://github.com/MinchinWeb/seafoam/blob/master/LICENSE.txt
+    :alt: License
+
+.. image:: https://img.shields.io/pypi/dm/seafoam.svg?style=flat
+    :target: https://pypi.python.org/pypi/seafoam/
+    :alt: Download Count
+
+
 The ``seafoam`` theme is based on Bootstrap 3, and was first used at
 `Minchin.ca <http://minchin.ca>`_. 
 
