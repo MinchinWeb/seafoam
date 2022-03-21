@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :support:`-` bump to `minchin.releaser` 0.8.2, and thus officially support
+  Python 3.10.
 - :release:`2.7.0 <2021-10-25>`
 - :bug:`- major` in ``SEAFOAM_DEV_MODE``, assume that the *Image Process*
   plugin might still be active (and so supply no-op transformations rather than

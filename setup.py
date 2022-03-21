@@ -62,7 +62,7 @@ EXTRA_REQUIRES = {
     ],
     "build": [
         # "pip-tools",
-        "minchin.releaser >= 0.8.0",
+        "minchin.releaser >= 0.8.2",
         # less, installed via npm  # npm install less -g
     ],
     "docs": [
@@ -113,6 +113,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3 :: Only",
     "Natural Language :: English",
     "Intended Audience :: Developers",
