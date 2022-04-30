@@ -113,7 +113,7 @@ listed in this section are required.
   post-article links to the next and previous article on your blog and the
   next and previous article in that category. Available on PyPI as
   ``pelican-neighours``.
-- `static-comments <https://blog.minchin.ca/label/static-comments/>` (or the
+- `static-comments <https://blog.minchin.ca/label/static-comments/>`_ (or the
   older `pelican_comment_system
   <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_)
   -- add static comments to your blog. Available on PyPI as
