@@ -113,10 +113,11 @@ listed in this section are required.
   post-article links to the next and previous article on your blog and the
   next and previous article in that category. Available on PyPI as
   ``pelican-neighours``.
-- `pelican_comment_system
-  <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_
+- `static-comments <https://blog.minchin.ca/label/static-comments/>` (or the
+  older `pelican_comment_system
+  <https://bernhard.scheirle.de/posts/2014/March/29/static-comments-via-email/>`_)
   -- add static comments to your blog. Available on PyPI as
-  ``pelican-comment-system``.
+  ``minchin.pelican.plugins.static-comments``.
 - `Related Posts
   <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ --
   adds the related_posts variable to the article's context.
@@ -206,6 +207,7 @@ create the default configuration, you would need the following:
   THEME = seafoam.get_path()
   BOOTSTRAP_THEME = "seafoam"
 
+  # if PLUGINS is not defined on Pelican 4.5+, these plugins will autoload
   PLUGINS = [
       "pelican.plugins.seafoam",
       "pelican.plugins.jinja_filters",
