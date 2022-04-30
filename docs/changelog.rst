@@ -3,6 +3,11 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.7.1 <2022-04-30>`
+- :bug:`-` fix typo in comment form.
+- :support:`-` replace references to ``pelican-comment-system`` with the
+  updated `Static Comments
+  <https://blog.minchin.ca/2022/04/static-comments-211-released.html>`_ plugin.
 - :support:`-` bump to `minchin.releaser` 0.8.2, and thus officially support
   Python 3.10.
 - :release:`2.7.0 <2021-10-25>`
