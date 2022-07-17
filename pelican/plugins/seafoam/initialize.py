@@ -140,11 +140,16 @@ def check_settings(pelican):
         pelican.settings["IMAGE_PROCESS"]["article-feature"] = [lambda x: x]
         pelican.settings["IMAGE_PROCESS"]["index-feature"] = [lambda x: x]
     else:
+        # "article feature" images are the headers on the article pages
+        # don't scale these up.
         if "article-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
             pelican.settings["IMAGE_PROCESS"]["article-feature"] = [
-                "scale_in 848 848 True"
+                "scale_in 848 848 False"
             ]
             logging.debug('%s added "article-feature" to IMAGE_PROCESS' % LOG_PREFIX)
+        # "index feature" images are the header images, but displayed to the
+        # side of the article summary on the index (or listing page)
+        # These can be scaled up. 
         if "index-feature" not in pelican.settings["IMAGE_PROCESS"].keys():
             pelican.settings["IMAGE_PROCESS"]["index-feature"] = [
                 "scale_in 263 263 True"
