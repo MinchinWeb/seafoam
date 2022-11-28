@@ -593,9 +593,9 @@ SEAFOAM_PARSER = "html.parser"
 
   This is the parser that Beautiful Soup uses when run by the internal plugin.
 SEAFOAM_URL = "http://blog.minchin.ca/label/seafoam/"
-  The project url of the them (automatically provided by the bundled plugin).
+  The project url of the theme (automatically provided by the bundled plugin).
 SEAFOAM_VERSION = pelican.plugins.seafoam.__version__
-  The version of the them (automatically provided by the bundled plugin).
+  The version of the theme (automatically provided by the bundled plugin).
 SITELOGO
   Link to the site logo (displayed in the navbar). This is relative to the
   SITEURL.
@@ -612,7 +612,7 @@ SITE_ROOT_URL = SITEURL
   logo in the navbar and the home icon in the breadcrumbs will point to. See
   also the ``MENUITEMS_2_AT`` setting.
 SOCIAL
-  A list of your social media sites to be listed in the sidebar. Should he a
+  A list of your social media sites to be listed in the sidebar. Should be a
   list of tuples in the form ('social network name', 'full link to profile').
   The theme will display the logo of the network. See the ``HIDE_SIDEBAR``
   setting.
