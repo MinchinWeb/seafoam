@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` upgrade version of self-hosted fonts.
 - :release:`2.7.1 <2022-04-30>`
 - :bug:`-` fix typo in comment form.
 - :support:`-` replace references to ``pelican-comment-system`` with the
