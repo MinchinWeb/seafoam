@@ -1,13 +1,27 @@
 from pathlib import Path
+import sys
 
 from invoke import run, task
 
 try:
     from minchin.releaser import make_release
 except ImportError:
-    print("[WARN] minchin.releaser not installed")
+    print("[WARN] minchin.releaser not installed.")
+
+try:
+    from pelican.plugins.seafoam.constants import STYLES
+except ImportError:
+    try:
+        sys.path.insert(0, "pelican/plugins/seafoam")
+        from constants import STYLES
+    except ImportError:
+        STYLES = None
+        print("[WARN] STYLES list is unavailable. Install package to fix.")
+
 
 # also requires `lessc` to be installed and available from the commandline
+#
+# npm install less -g
 
 # TODO: provide for alternative shell on something other than Windows
 
@@ -18,22 +32,24 @@ p = Path(__file__).parent  # directory holding this file
 def build(ctx):
     """Compile the theme LESS files to CSS."""
 
-    style = "seafoam"
+    if STYLES is None:
+        sys.exit("STYLES list is unavailable. Exiting...")
 
-    source = p / "css_src" / "less" / f"bootstrap.{style}.less"
-    dest = (
-        p
-        / "pelican"
-        / "plugins"
-        / "seafoam"
-        / "static"
-        / "css"
-        / f"bootstrap.{style}.min.css"
-    )
-    run(f"lessc {source} > {dest}")
-    print("Seafoam LESS compiled to CSS!")
-    # TODO -- minimize css!
-    #   consider css-html-js-minify
+    for style in STYLES:
+        source = p / "css_src" / "less" / f"bootstrap.{style}.less"
+        dest = (
+            p
+            / "pelican"
+            / "plugins"
+            / "seafoam"
+            / "static"
+            / "css"
+            / f"bootstrap.{style}.min.css"
+        )
+        run(f"lessc {source} > {dest}")
+        print(f'Seafoam LESS for "{style}" compiled to CSS!')
+        # TODO -- minimize css!
+        #   consider css-html-js-minify
 
 
 @task

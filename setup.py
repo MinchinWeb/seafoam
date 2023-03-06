@@ -81,6 +81,7 @@ EXTRA_REQUIRES = {
     ],
     "dev": [
         "markdown",
+        "invoke",
     ],
 }
 

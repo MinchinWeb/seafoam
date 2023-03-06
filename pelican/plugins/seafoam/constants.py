@@ -14,3 +14,6 @@ PLUGIN_LIST = [
 PRODUCTION_PLUGIN_LIST = PLUGIN_LIST + [
     "pelican.plugins.image_process",
 ]
+STYLES = [
+    "seafoam",
+]
