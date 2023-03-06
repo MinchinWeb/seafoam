@@ -3,7 +3,10 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
-- :bug:`-` upgrade version of self-hosted fonts.
+- :bug:`-` adjust supported Python versions to only include those currently
+  supported upstream. Nothing has been removed that should keep older versions
+  from working.
+- :bug:`16` upgrade version of self-hosted fonts.
 - :release:`2.7.1 <2022-04-30>`
 - :bug:`-` fix typo in comment form.
 - :support:`-` replace references to ``pelican-comment-system`` with the
