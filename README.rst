@@ -275,8 +275,9 @@ BOOTSTRAP_NAVBAR_INVERSE = False
   Apply inverse CSS setting to Navbar. Changing this will swap the top
   navigation bar between light and dark.
 BOOTSTRAP_THEME = "seafoam"
-  Automatically set to ``seafoam`` by the internal plugin. Other values
-  (including leaving this unset) are not expected to work correctly.
+  Valid values are ``seafoam`` and ``strathcona``. Automatically set to
+  ``seafoam`` by the internal plugin if unspecified. Other values (including
+  leaving this unset) are not expected to work correctly.
 CATEGORIES_URL
   Same as the regular Pelican setting.
 CATEGORY_IMAGES = {}

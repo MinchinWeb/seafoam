@@ -94,7 +94,7 @@ def check_settings(pelican):
         )
     else:
         logger.debug(
-            '%s BOOTSTRAP_THEME previously set manually. Is "%s"'
+            '%s BOOTSTRAP_THEME previously set manually. Is "%s".'
             % (LOG_PREFIX, pelican.settings["BOOTSTRAP_THEME"])
         )
 

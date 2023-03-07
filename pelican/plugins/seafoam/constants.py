@@ -1,5 +1,5 @@
 __title__ = "seafoam"
-__version__ = "2.7.2.dev.0"
+__version__ = "2.8.0.dev.0"
 __description__ = "Pelican theme, first used for Minchin.ca."
 __author__ = "W. Minchin"
 __email__ = "w_minchin@hotmail.com"
@@ -16,4 +16,5 @@ PRODUCTION_PLUGIN_LIST = PLUGIN_LIST + [
 ]
 STYLES = [
     "seafoam",
+    "strathcona",
 ]
