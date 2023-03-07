@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add header image to pages (not just articles).
 - :feature:`-` add *strathcona* colour scheme/theme, and supporting fonts.
 - :bug:`- major` adjust supported Python versions to only include those
   currently supported upstream. Nothing has been removed that should keep older
