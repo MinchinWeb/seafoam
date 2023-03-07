@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add ``DISPLAY_ARCHIVES_ON_MENU`` to control display of
+  "Archives" link on navbar.
 - :feature:`-` add header image to pages (not just articles).
 - :feature:`-` add *strathcona* colour scheme/theme, and supporting fonts.
 - :bug:`- major` adjust supported Python versions to only include those

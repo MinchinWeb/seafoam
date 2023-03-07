@@ -240,7 +240,7 @@ ABOUT_ME
 ADAM
   These ADAM settings were originally set up to support my genealogy sub-site
   (the original name of the the pre-processor I was using as called "Adam"). If
-  this is set to ``False``, the rest of the ADAM_* settings won't be active.
+  this is set to ``False``, the rest of the ``ADAM_*`` settings won't be active.
   These settings are probably generic enough that you could use these for any
   generator or outside program used to help generate your site.
 ADAM_COPY_DATE
@@ -331,6 +331,8 @@ CUSTOM_JS_LIST_HEAD = []
   See also ``CUSTOM_JS_LIST`` and ``JQUERY_JS_IN_HEAD``.
 DEFAULT_LANG
   .
+DISPLAY_ARCHIVES_ON_MENU = True
+  Include archives on the main site menu.
 DISPLAY_BREADCRUMBS = False
   Display Breadcrumbs on site.
 

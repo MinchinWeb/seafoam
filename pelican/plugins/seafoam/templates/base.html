@@ -6,6 +6,9 @@
 {% if HIDE_SIDEBAR is not defined %}
     {% set HIDE_SIDEBAR = False %}
 {% endif -%}
+{% if DISPLAY_ARCHIVES_ON_MENU is not defined %}
+    {% set DISPLAY_ARCHIVES_ON_MENU = True %}
+{% endif -%}
 
 {% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?v=3.1.1" -%}
 
@@ -182,7 +185,7 @@
                                 {% endif %}
                             </ul>
                         {% endif %}
-                        {% if 'tipue_search' in PLUGINS or ARCHIVES_SAVE_AS %}
+                        {% if DISPLAY_ARCHIVES_ON_MENU and ('tipue_search' in PLUGINS or ARCHIVES_SAVE_AS) %}
                             <ul class="nav navbar-nav {%if NAVBAR_ON_TOP %}navbar-right{% endif %}">
                                 {% if 'tipue_search' in PLUGINS %}
                                     <li><span>
