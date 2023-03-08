@@ -50,38 +50,38 @@
                         <div class="panel-body">
                           <ul class="fa-ul">
                             {% if page.term %}
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li><span class="fa-li"><i class="fa fa-check"></i></span>
                                     Rate good for {{ page.term }} year term
                                 </li>
                             {% else %}
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
                                     Continious rate
                                 </li>
                             {% endif %}
                             {% if page.admin_fee %}
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
                                     Admin fee of ${{ page.admin_fee }}/month
                                 </li>
                             {% else %}
-                                <li class="text-muted"><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
                                     No Administration fee
                                 </li>
                             {% endif %}
                             {% if page.site_fee %}
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
                                     Site fee of ${{ page.site_fee }}/day
                                 </li>
                             {% else %}
-                                <li class="text-muted"><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
                                     No Site fee
                                 </li>
                             {% endif %}
                             {% if page.exit_fee %}
-                                <li><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
                                     Early exit fee of ${{ page.exit_fee }}
                                 </li>
                             {% else %}
-                                <li class="text-muted"><span class="fa-li"><i class="fas fa-check"></i></span>
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
                                     No Early exit fee
                                 </li>
                             {% endif %}
