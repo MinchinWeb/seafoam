@@ -9375,6 +9375,16 @@ input .gsc-search-button .badge {
   color: #2aa198;
   background-color: #fdf6e3;
 }
+input .gsc-search-button a {
+  color: #fdf6e3;
+}
+input .gsc-search-button a:link,
+input .gsc-search-button a:visited,
+input .gsc-search-button a:hover,
+input .gsc-search-button a:active {
+  text-decoration-line: none;
+  border-bottom: none;
+}
 input.gsc-search-button {
   color: #fdf6e3 !important;
 }
@@ -11588,8 +11598,29 @@ div.infowindow {
 .label-primary a {
   color: #fdf6e3;
 }
+.label-default a:link,
+.label-primary a:link,
+.label-default a:visited,
+.label-primary a:visited,
+.label-default a:hover,
+.label-primary a:hover,
+.label-default a:active,
+.label-primary a:active {
+  text-decoration-line: none;
+  border-bottom: none;
+}
 .panel-primary .panel-heading a {
   color: #fdf6e3;
+}
+.btn-primary a {
+  color: #fdf6e3;
+}
+.btn-primary a:link,
+.btn-primary a:visited,
+.btn-primary a:hover,
+.btn-primary a:active {
+  text-decoration-line: none;
+  border-bottom: none;
 }
 body {
   padding-top: 70px;

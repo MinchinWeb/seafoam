@@ -1073,11 +1073,19 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
 }
 .gt-revision                   {background:@well-bg; color:@text-color-inverse; font-size:@font-size-base;}
 
-// links within labels, panels
+// links within labels, panels, buttons
 .label-default,
 .label-primary {
   a {
-    color: @text-color;
+    color: @panel-primary-text;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration-line: none;
+    border-bottom: none;
+    // color: @panel-primary-text;
   }
 }
 
@@ -1086,5 +1094,18 @@ div.infowindow                 {max-height:400px; width: 100%; max-width:400px; 
     a {
       color: @text-color;
     }
+  }
+}
+
+.btn-primary {
+  a {
+    color: @btn-primary-color;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration-line: none;
+    border-bottom: none;
   }
 }

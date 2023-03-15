@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% if page.article_listing is not defined %}
+    {% set ARTICLE_LISTING = False %}
+{% else %}
+    {% set ARTICLE_LISTING = page.article_listing %}
+{% endif -%}
+
 {% block title -%}
     {{ page.title|striptags|breaking_spaces }} &mdash; {{ super() }}
 {%- endblock %}
@@ -38,9 +44,18 @@
         {% endif %}
         <div class="entry-content">
             {{ page.content }}
+            {% if articles and ARTICLE_LISTING %}
+                {% for article in articles %}
+                    {% with HEADING_LEVEL=3 %}
+                        {% include 'includes/article_listing.html' %}
+                    {% endwith %}
+                {% endfor %}
+                <p><a href="{{ SITEURL -}} / {{- ARCHIVES_URL }}">Click to see every post in a big list</a></p>
+            {% endif %}
             {% if ADAM_FOOTER %}
                 {{ ADAM_FOOTER }}
             {% endif %}
+            {{ page.footer }}
         </div>
     </section>
 {% endblock %}
