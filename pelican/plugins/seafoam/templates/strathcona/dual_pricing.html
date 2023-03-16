@@ -1,0 +1,169 @@
+{% extends "page.html" %}
+
+{% block content %}
+    <section id="content" class="body">
+        {% if page.image %}
+            <img class="featured-image image-process-article-feature" src="{{ SITEURL -}} / {{- page.image|urlencode }}" alt="{{ page.title|striptags }}">
+        {% endif %}
+        <header class="entry-header">
+            <h1 class="entry-title">{{ page.title }}</h1>
+        </header>
+        {% import 'includes/translations.html' as translations with context %}
+        {{ translations.translations_for(page) }}
+        {% if PDF_PROCESSOR %}
+            <a href="{{ SITEURL -}} /pdf/ {{- page.slug }}.pdf">
+                get the pdf
+            </a>
+        {% endif %}
+        <div class="entry-content">
+            {% if page.summary %}
+                <section>
+                    {{ page.summary }}
+                </section>
+            {% endif %}
+
+            <section class="pricing py-5">
+                <div class="not-container">
+                  <div class="row">
+                    <div class="col-lg-4 col-lg-offset-1">
+                      <div class="panel panel-primary card mb-5 mb-lg-0">
+                        <div class="panel-heading card-body">
+                          <h5 class="panel-title card-title text-muted text-uppercase text-center">
+                            {{ page.el_price_title }}
+                          </h5>
+                          <h6 class="panel-title card-price text-center">
+                            {{ page.el_price }} &cent;<span class="period">/kWh</span>
+                            {% if page.el_floating_price %}
+                                <br />
+                                <small>
+                                  + wholesale
+                                </small>
+                            {% endif %}
+                          </h6>
+                        </div>  <!-- panel heading -->
+                        <div class="panel-body">
+                          <ul class="fa-ul">
+                            {% if page.el_term %}
+                                <li><span class="fa-li"><i class="fa fa-check"></i></span>
+                                    Rate good for {{ page.el_term }} year term
+                                </li>
+                            {% else %}
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                    Continious rate
+                                </li>
+                            {% endif %}
+                            {% if page.el_admin_fee %}
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                    Admin fee of ${{ page.el_admin_fee }}/month
+                                </li>
+                            {% else %}
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                    No Administration fee
+                                </li>
+                            {% endif %}
+                            {% if page.el_site_fee %}
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                    Site fee of ${{ page.el_site_fee }}/day
+                                </li>
+                            {% else %}
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                    No Site fee
+                                </li>
+                            {% endif %}
+                            {% if page.el_exit_fee %}
+                                <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                    Early exit fee of ${{ page.el_exit_fee }}
+                                </li>
+                            {% else %}
+                                <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                    No Early exit fee
+                                </li>
+                            {% endif %}
+                          </ul>
+                          <div class="d-grid text-center">
+                            <a href="{{ page.el_call_to_action_url}}"
+                               class="btn btn-primary text-uppercase">
+                               {{ page.el_call_to_action}}
+                            </a>
+                          </div>  <!-- d-grid -->
+                        </div>  <!-- panel-body -->
+                      </div>  <!-- panel -->
+                    </div>  <!-- col -->
+
+                    <div class="col-lg-4 col-lg-offset-2">
+                        <div class="panel panel-primary card mb-5 mb-lg-0">
+                          <div class="panel-heading card-body">
+                            <h5 class="panel-title card-title text-muted text-uppercase text-center">
+                              {{ page.ng_price_title }}
+                            </h5>
+                            <h6 class="panel-title card-price text-center">
+                              ${{ page.ng_price }}<span class="period">/GJ</span>
+                              {% if page.ng_floating_price %}
+                                  <br />
+                                  <small>
+                                    + wholesale
+                                  </small>
+                              {% endif %}
+                            </h6>
+                          </div>  <!-- panel heading -->
+                          <div class="panel-body">
+                            <ul class="fa-ul">
+                              {% if page.ng_term %}
+                                  <li><span class="fa-li"><i class="fa fa-check"></i></span>
+                                      Rate good for {{ page.ng_term }} year term
+                                  </li>
+                              {% else %}
+                                  <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                      Continious rate
+                                  </li>
+                              {% endif %}
+                              {% if page.ng_admin_fee %}
+                                  <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                      Admin fee of ${{ page.ng_admin_fee }}/month
+                                  </li>
+                              {% else %}
+                                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                      No Administration fee
+                                  </li>
+                              {% endif %}
+                              {% if page.ng_site_fee %}
+                                  <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                      Site fee of ${{ page.ng_site_fee }}/day
+                                  </li>
+                              {% else %}
+                                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                      No Site fee
+                                  </li>
+                              {% endif %}
+                              {% if page.ng_exit_fee %}
+                                  <li><span class="fa-li"><i class="fa fa-hand-o-right"></i></span>
+                                      Early exit fee of ${{ page.ng_exit_fee }}
+                                  </li>
+                              {% else %}
+                                  <li class="text-muted"><span class="fa-li"><i class="fa fa-times"></i></span>
+                                      No Early exit fee
+                                  </li>
+                              {% endif %}
+                            </ul>
+                            <div class="d-grid text-center">
+                              <a href="{{ page.ng_call_to_action_url}}"
+                                 class="btn btn-primary text-uppercase">
+                                 {{ page.ng_call_to_action}}
+                              </a>
+                            </div>  <!-- d-grid -->
+                          </div>  <!-- panel-body -->
+                        </div>  <!-- panel -->
+                      </div>  <!-- col -->
+                  </div>  <!-- row -->
+                </div>  <!-- container -->
+            </section>
+
+            {% if page.content %}
+                <section>
+                    {{ page.content }}
+                </section>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
+
