@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.8.1 <2023-06-11>`
 - :bug:`-` fix link to font files
 - :release:`2.8.0 <2023-06-11>`
 - :feature:`20` add support for Google Analytics v4. Use
