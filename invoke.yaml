@@ -22,3 +22,4 @@ releaser:
         pypi:
             - pillow
             - python-dateutil
+            - rich
