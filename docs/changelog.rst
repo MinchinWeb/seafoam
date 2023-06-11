@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`20` add support for Google Analytics v4. Use
+  ``GOOGLE_ANALYTICS_V4``. The previous version of Google Analytics is being
+  deprecated, effective the end of June 2023.
 - :feature:`-` add ``DISPLAY_ARCHIVES_ON_MENU`` to control display of
   "Archives" link on navbar.
 - :feature:`-` add header image to pages (not just articles).

@@ -404,16 +404,19 @@ GOOGLE_ANALYTICS
   Used to activate "classic" Google Analytics. Set this to your account's Google
   Analytics ID. Although this setting doesn't conflict with
   ``GOOGLE_ANALYTICS_UNIVERSAL``, you will in most cases only use one or the
-  other.
+  other. This has been deprecated by Google; see ``GOOGLE_ANALYTICS_V4``.
 GOOGLE_ANALYTICS_UNIVERSAL
   Used to activate "universal" Google Analytics (this is the new version). Set
   this to your account's ID (a number). Also set
   ``GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY``. Although this setting doesn't
   conflict with ``GOOGLE_ANALYTICS``, you will in most cases only use one or
-  the other.
+  the other. This has been deprecated by Google (in June 2023); see
+  ``GOOGLE_ANALYTICS_V4``.
 GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY
   Set this to the Google Analytics "property" this site represents. See also
   (and set) ``GOOGLE_ANALYTICS_UNIVERSAL``.
+GOOGLE_ANALYTICS_V4
+  Set this to activate Google Analytics v4.
 HIDE_SIDEBAR = False
   Hides the sidebar, and all it's contents. Also review the settings
   ``DISPLAY_CATEGORIES_ON_SIDEBAR``, ``DISPLAY_RECENT_POSTS_ON_SIDEBAR``,
