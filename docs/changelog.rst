@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`- major` review ``og`` meta tags, particularly for featured images.
+  c.f. `blog.minchin.ca Issue #104
+  <https://github.com/MinchinWeb/blog.minchin.ca/issues/104>`_.
 - :release:`2.8.1 <2023-06-11>`
 - :bug:`-` fix link to font files
 - :release:`2.8.0 <2023-06-11>`
