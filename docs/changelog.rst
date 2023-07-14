@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.9.0 <2023-07-14>`
 - :feature:`-` add support for *microblogging*, through my `microblogging
   plugin <https://blog.minchin.ca/label/microblogging-pelican/>`_.
   c.f. `blog.minchin.ca Issue #105
