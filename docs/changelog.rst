@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`- major` no longer capitalize category names, when displayed on
+  sidebar. This is part of the changes to support microblogging.
 - :bug:`- major` review ``og`` meta tags, particularly for featured images.
   c.f. `blog.minchin.ca Issue #104
   <https://github.com/MinchinWeb/blog.minchin.ca/issues/104>`_.
