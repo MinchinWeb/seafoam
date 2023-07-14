@@ -81,10 +81,10 @@ You may also need to configure the theme through the use of additional settings
 Requirements
 ------------
 
-``Seafoam`` requires Pelican, the ``image_process`` plugin, the ``jinja
-filters`` plugin, ``beautifulsoup4``, and ``semantic_version``. If the theme is
-installed from pip, these should be automatically installed. If needed, they
-can be manually installed with pip:
+``Seafoam`` requires Pelican, the ``image_process`` plugin, the
+``jinja filters`` plugin, ``beautifulsoup4``, and ``semantic_version``. If the
+theme is installed from pip, these should be automatically installed. If
+needed, they can be manually installed with pip:
 
 .. code-block:: sh
 
@@ -109,7 +109,7 @@ listed in this section are required.
   ``pelican-readtime``.
 - `post-stats
   <https://github.com/getpelican/pelican-plugins/tree/master/post_stats>`_ --
-  provides estimated reading time for articles if `readtime` is not available.
+  provides estimated reading time for articles if ``readtime`` is not available.
   Available in the `Pelican Plugins collection
   <https://github.com/getpelican/pelican-plugins/>`_.
 - `neighbors <https://pypi.python.org/pypi/pelican-neighbors>`_ -- provides
@@ -123,7 +123,7 @@ listed in this section are required.
   ``minchin.pelican.plugins.static-comments``.
 - `Related Posts
   <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ --
-  adds the related_posts variable to the article's context.
+  adds the ``related_posts`` variable to the article's context.
 - Tipue Search
 
 
@@ -179,6 +179,8 @@ Monthly Archives
     :alt: 404 Error
 
 .. add microblog post image
+
+.. add Strathcona theme image
 
 
 Additional Settings
@@ -280,9 +282,11 @@ BOOTSTRAP_NAVBAR_INVERSE = False
   Apply inverse CSS setting to Navbar. Changing this will swap the top
   navigation bar between light and dark.
 BOOTSTRAP_THEME = "seafoam"
-  Valid values are ``seafoam`` and ``strathcona``. Automatically set to
-  ``seafoam`` by the internal plugin if unspecified. Other values (including
-  leaving this unset) are not expected to work correctly.
+  Use this to set the "colour scheme" of the framework. Valid values are
+  ``seafoam`` and ``strathcona``. ``seafoam`` teal on darker green;
+  ``strathcona`` is maroon on white. This is a Automatically set to ``seafoam``
+  by the internal plugin if unspecified. Other values (including leaving this
+  unset) are not expected to work correctly.
 CATEGORIES_URL
   Same as the regular Pelican setting.
 CATEGORY_IMAGES = {}

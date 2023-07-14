@@ -17,7 +17,7 @@ Changelog
 - :release:`2.8.0 <2023-06-11>`
 - :feature:`20` add support for Google Analytics v4. Use
   ``GOOGLE_ANALYTICS_V4``. The previous version of Google Analytics is being
-  deprecated, effective the end of June 2023.
+  deprecated (by Google), effective the end of June 2023.
 - :feature:`-` add ``DISPLAY_ARCHIVES_ON_MENU`` to control display of
   "Archives" link on navbar.
 - :feature:`-` add header image to pages (not just articles).
@@ -31,7 +31,7 @@ Changelog
 - :support:`-` replace references to ``pelican-comment-system`` with the
   updated `Static Comments
   <https://blog.minchin.ca/2022/04/static-comments-211-released.html>`_ plugin.
-- :support:`-` bump to `minchin.releaser` 0.8.2, and thus officially support
+- :support:`-` bump to ``minchin.releaser`` 0.8.2, and thus officially support
   Python 3.10.
 - :release:`2.7.0 <2021-10-25>`
 - :bug:`- major` in ``SEAFOAM_DEV_MODE``, assume that the *Image Process*
@@ -186,6 +186,6 @@ Changelog
 - :feature:`-` add breadcrumbs to main blog post listing page
 - :support:`-` add release machinery
 - :release:`1.0.0 <2016-08-15>`
-- :feature:`-` add 'setup.py', 'README.rst', 'CHANGELOG.rst'
+- :feature:`-` add ``setup.py``, ``README.rst``, ``CHANGELOG.rst``.
 - :support:`-` move package to 'minchin.pelican.themes.minchindotca'
 - :support:`-` pull code out of main Minchin.ca website repo

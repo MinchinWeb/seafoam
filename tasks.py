@@ -21,6 +21,8 @@ except ImportError:
 
 # also requires `lessc` to be installed and available from the commandline
 #
+# choco install nodejs-lts
+# refresh-env
 # npm install less -g
 
 # TODO: provide for alternative shell on something other than Windows
