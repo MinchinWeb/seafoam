@@ -1,28 +1,43 @@
+{# 
+    This is looped to display each acticle in "summary" mode on the index pages.
+#}
+
 {% if HEADING_LEVEL is not defined %}
     {% set HEADING_LEVEL = 2 %}
 {% endif -%}
+
 {% set DISPLAY_IMAGE = false %}
 <article class="row">
-    <h{{ HEADING_LEVEL }} class="col-xs-12">
-        <a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a>
-    </h{{ HEADING_LEVEL }}>
+    {% if not article.micro %}
+        <h{{ HEADING_LEVEL }} class="col-xs-12">
+            <a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a>
+        </h{{ HEADING_LEVEL }}>
+    {% endif %}
     {% if article.image %}
         {% set DISPLAY_IMAGE = true %}
         <div class="col-xs-4">
-            <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- article.image|urlencode }}" alt="{{ article.title|striptags }}">
+            <a href="{{ SITEURL -}} / {{- article.url }}">
+                <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- article.image|urlencode }}" alt="{{ article.title|striptags }}">
+            </a>
         </div>
         <div class="summary entry-content col-xs-8">
     {% elif CATEGORY_IMAGES and article.category in CATEGORY_IMAGES %}
         {% set DISPLAY_IMAGE = true %}
         <div class="col-xs-4">
-            <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
+            <a href="{{ SITEURL -}} / {{- article.url }}">
+                <img class="featured-image image-process-index-feature" src="{{ SITEURL -}} / {{- CATEGORY_IMAGES[article.category]|urlencode }}"  alt="{{ article.category|striptags }}">
+            </a>
         </div>
         <div class="summary entry-content col-xs-8">
     {% else %}
         <div class="summary entry-content col-xs-12">            
     {% endif -%}
 
+    {% if not article.micro %}
         {{- article.summary -}}
+    {% else %}
+        {{- article.content -}}
+    {% endif %}
 
     </div>
     {% if DISPLAY_IMAGE == true %}
@@ -34,9 +49,9 @@
             <span class="published">
                 <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}">&nbsp;{{ article.date | article_date }}</time>
             </span>
-            {% if article.readtime_minutes -%}
+            {% if article.readtime_minutes and not article.micro -%}
                 &bull;&nbsp;<i class="fa fa-clock-o"></i>&nbsp;~{{ article.readtime_minutes }}&nbsp;min to read
-            {% elif article.stats -%}
+            {% elif article.stats and not article.micro -%}
                 &bull;&nbsp;<i class="fa fa-clock-o"></i>&nbsp;~{{ article.stats['read_mins'] }}&nbsp;min to read
             {%- endif %}
             {% if (DISQUS_SITENAME and DISQUS_DISPLAY_COUNTS) or (PELICAN_COMMENT_SYSTEM and PELICAN_COMMENT_SYSTEM_DISPLAY_COUNTS != false and article.comments_count > 0) %}
@@ -44,9 +59,13 @@
                 {% include 'includes/comment_count.html' %}
             {% endif -%}
             {# only display the 'read more' link if there is more to the article #}
-            {% if article.has_summary != false %} 
+            {% if article.has_summary != false and not article.micro %} 
                 &bull;&nbsp;<span class="label label-primary">
                     <a href="{{ SITEURL -}} / {{- article.url }}">read more&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
+                </span>
+            {% elif article.micro %}
+                &bull;&nbsp;<span class="label label-primary">
+                    <a href="{{ SITEURL -}} / {{- article.url }}"><i class="fa fa-link"></i>&nbsp;permalink</a>
                 </span>
             {% endif %}
         </small></p>

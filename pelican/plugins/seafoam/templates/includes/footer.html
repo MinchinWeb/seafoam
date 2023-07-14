@@ -17,6 +17,9 @@
     {% if article.modified %}
         {% set modified = article.modified.strftime('%B %d, %Y').replace(' 0',' ') %}
     {% endif %}
+    {% if article.micro %}
+        {% set micro_footer = True %}
+    {% endif %}
 {% endif -%}
 
 {% if page %}
@@ -44,6 +47,12 @@
     {% endif %}
 {% endif %}
 
+{% if category %}
+    {% if category == "µ" %}
+        {% set micro_footer = True %}
+    {% endif %}
+{% endif %}
+
 <footer>
     <div class="container">
         <hr>
@@ -66,9 +75,15 @@
                 {% endif %}
                 {# TODO: Make this optional #}
                 &bull;
-                <a href="{{ SEAFOAM_URL }}" title="Seafoam version {{ SEAFOAM_VERSION }}">
-                    Seafoam theme
-                </a>
+                <a href="{{ SEAFOAM_URL }}" title="seafoam, version {{ SEAFOAM_VERSION }}">
+                    Seafoam
+                </a> theme
+                {% if micro_footer %}
+                    &bull;
+                    <a href="{{ MICROBLOG_DEV_URL }}" title="minchin.pelican.readers.microblog, version {{ MICROBLOG_VERSION }}">
+                        Microblogging
+                    </a> plugin
+                {% endif %}
                 {% if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
                     &bull;
                     {% from 'includes/cc-license.html' import cc_license_mark %}

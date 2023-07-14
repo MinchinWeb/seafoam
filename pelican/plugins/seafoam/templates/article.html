@@ -80,6 +80,7 @@
                 <img class="featured-image image-process-article-feature" src="{{ SITEURL -}} / {{- CATEGORY_IMAGES[article.category]|urlencode }}" alt="{{ article.category|striptags }}"/>
             {% endif %}
 
+            {% if not article.micro %}
             <header class="entry-header">
                 <h1>
                     <a href="{{ SITEURL -}} / {{- article.url }}"
@@ -89,6 +90,7 @@
                     </a>
                 </h1>
             </header>
+            {% endif %}
             <div class="entry-content">
                 <div class="panel">
                     <div class="panel-body">

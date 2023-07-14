@@ -3,6 +3,10 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`-` add support for *microblogging*, through my `microblogging
+  plugin <https://blog.minchin.ca/label/microblogging-pelican/>`_.
+  c.f. `blog.minchin.ca Issue #105
+  <https://github.com/MinchinWeb/blog.minchin.ca/issues/105>`_.
 - :bug:`- major` no longer capitalize category names, when displayed on
   sidebar. This is part of the changes to support microblogging.
 - :bug:`- major` review ``og`` meta tags, particularly for featured images.

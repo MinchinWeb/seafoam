@@ -49,6 +49,7 @@
             {% endblock %}
 
             {# Main Archive Listing #}
+            {# "dates" is the article list, sorted by date #}
             {% for article in dates %}
                 <div class="row">
                     {% if (loop.index0 == 0) or (article.date.year != dates[loop.index0 - 1].date.year) %}
@@ -91,8 +92,15 @@
                         {%- endif -%}
                     </div>
                     <div class="archives-title col-xs-7 col-md-6">
-                        <a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a>
-                        {% if article.subtitle %}<br />{{ article.subtitle }}{% endif %}
+                        {% if not article.micro %}
+                            <a href="{{ SITEURL -}} / {{- article.url }}">{{ article.title }}</a>
+                            {% if article.subtitle %}<br />{{ article.subtitle }}{% endif %}
+                        {% else %}
+                            {{ article.content }}
+                            {# &bull;&nbsp;<span class="label label-primary">
+                                <a href="{{ SITEURL -}} / {{- article.url }}"><i class="fa fa-link"></i></a>
+                            </span> #}
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

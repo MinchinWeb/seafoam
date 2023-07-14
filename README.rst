@@ -101,6 +101,9 @@ Supported Plugins
 Seafoam also works with several other plugins for Pelican, but none of those
 listed in this section are required.
 
+- `microblogging <https://blog.minchin.ca/label/microblogging-pelican/>`_ --
+  adds the ability to have "microposts", and tweaks the formatting of the theme
+  based on their (assumed) shorter length.
 - `readtime <https://pypi.python.org/pypi/pelican-readtime>`_ -- provides
   estimated reading time for articles. Available from PyPI as
   ``pelican-readtime``.
@@ -174,6 +177,8 @@ Monthly Archives
 .. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/404.png
     :align: center
     :alt: 404 Error
+
+.. add microblog post image
 
 
 Additional Settings
@@ -468,6 +473,11 @@ MENUITEMS_2_AT_LINK
   When set and Breadcrumbs are enabled, all items on the site are shown to be
   under both "home" (linked to at the ``SITE_ROOT_URL``) and ``MENUITEMS_2_AT``
   (linked to at ``MENUITEMS_2_AT_LINK``).
+MICROBLOG_DEV_URL
+  The project url for the microblogging plugin. Provided by the plugin, when in
+  use.
+MICROBLOG_VERSION
+  The version of the microblogging plugin. Provided by the plugin, when in use.
 NAVBAR_ON_TOP = False
   If True, the navigation menu is on top. If False, the navigation menu is
   vertical on the left side of the page. Default is False.

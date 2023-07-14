@@ -11578,6 +11578,9 @@ div.infowindow {
 .glist > tbody > tr:hover a:hover {
   color: #1a645f;
 }
+.featured-image {
+  margin-bottom: 25px;
+}
 .fake-list ul {
   padding-left: 0;
   list-style: none;
