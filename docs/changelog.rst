@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.9.1 <2023-07-15>`
 - :support:`- minor` convert indentation to spaces
 - :bug:`-` better display of micropost links
 - :release:`2.9.0 <2023-07-14>`
