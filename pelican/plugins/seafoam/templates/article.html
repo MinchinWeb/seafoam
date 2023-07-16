@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title -%}
-    {{ article.title|striptags|breaking_spaces }} &mdash; {{ super() }}
+    {{ article.title | striptags | breaking_spaces }} &mdash; {{ super() }}
 {%- endblock %}
 
 {% block html_lang %}{{ article.lang }}{% endblock %}
@@ -69,7 +69,7 @@
             {% if article.micro %}
                 <li class="active">{{ article.date | datetime("%B %d, %Y at %H:%M") }}</li>
             {% else %}
-            <li class="active">{{ article.title | striptags }}</li>
+                <li class="active">{{ article.title | striptags }}</li>
             {% endif %}
         </ol>     
     {% endif %}

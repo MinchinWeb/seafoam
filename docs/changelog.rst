@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :support:`- minor` convert indentation to spaces
 - :bug:`-` better display of micropost links
 - :release:`2.9.0 <2023-07-14>`
 - :feature:`-` add support for *microblogging*, through my `microblogging

@@ -1,73 +1,73 @@
 {% if NEIGHBORS %}
-	<hr />
-	{# next and previous post #}
-	<p class="text-center">Other posts</p>
-	<ul class="pager">
-		{% if article.prev_article %}
-		    <li class="previous">
-		        <a href="{{ SITEURL -}} / {{- article.prev_article.url}}" rel="prev">
-		            <i class="fa fa-arrow-circle-left"></i> 
-					{% if article.prev_article.micro -%}
-						{{ article.prev_article.date | datetime("%B %d, %Y at %H:%M") -}}
-					{% else -%}
-						{{ article.prev_article.title -}}
-					{%- endif -%}
-		        </a>
-		    </li>
-		{% endif %}
-		{% if article.next_article %}
-		    <li class="next">
-		        <a href="{{ SITEURL -}} / {{- article.next_article.url}}" rel="next">
-					{%- if article.next_article.micro %}
-						{{- article.next_article.date | datetime("%B %d, %Y at %H:%M") -}}
-					{%- else %}
-		            	{{- article.next_article.title }}
-					{%- endif %}
-					<i class="fa fa-arrow-circle-right"></i>
-		        </a>
-		   </li>
-		{% endif %}
-	</ul>
+    <hr />
+    {# next and previous post #}
+    <p class="text-center">Other posts</p>
+    <ul class="pager">
+        {% if article.prev_article %}
+            <li class="previous">
+                <a href="{{ SITEURL -}} / {{- article.prev_article.url}}" rel="prev">
+                    <i class="fa fa-arrow-circle-left"></i> 
+                    {% if article.prev_article.micro -%}
+                        {{ article.prev_article.date | datetime("%B %d, %Y at %H:%M") -}}
+                    {% else -%}
+                        {{ article.prev_article.title -}}
+                    {%- endif -%}
+                </a>
+            </li>
+        {% endif %}
+        {% if article.next_article %}
+            <li class="next">
+                <a href="{{ SITEURL -}} / {{- article.next_article.url}}" rel="next">
+                    {%- if article.next_article.micro %}
+                        {{- article.next_article.date | datetime("%B %d, %Y at %H:%M") -}}
+                    {%- else %}
+                        {{- article.next_article.title }}
+                    {%- endif %}
+                    <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
 
-	{# in this category, next and previous post #}
-	{% if not article.category == 'misc' %}
-		{# skip if the only article in the category #}
-		{% if article.prev_article_in_category or article.next_article_in_category %}
-			<hr />
-			<p class="text-center">Other posts under <a href="{{ SITEURL -}} / {{- article.category.url }}">{{ article.category }}</a></p>
+    {# in this category, next and previous post #}
+    {% if not article.category == 'misc' %}
+        {# skip if the only article in the category #}
+        {% if article.prev_article_in_category or article.next_article_in_category %}
+            <hr />
+            <p class="text-center">Other posts under <a href="{{ SITEURL -}} / {{- article.category.url }}">{{ article.category }}</a></p>
 
-			<ul class="pager">
-				{% if article.prev_article_in_category %}
-			     	<li class="previous">
-			         	<a href="{{ SITEURL -}} / {{- article.prev_article_in_category.url }}">
-			            	<i class="fa fa-arrow-circle-left"></i> 
-							{% if article.prev_article_in_category.micro -%}
-								{{ article.prev_article_in_category.date | datetime("%B %d, %Y at %H:%M") -}}
-							{% else -%}
-								{{ article.prev_article_in_category.title -}}
-							{% endif -%}
-			         	</a>
-				    </li>
-				{% endif %}
-				{% if article.next_article_in_category %}
-				    <li class="next">
-				        <a href="{{ SITEURL -}} / {{- article.next_article_in_category.url }}">
-				            {%- if article.next_article_in_category.micro %}
-								{{- article.next_article_in_category.date | datetime("%B %d, %Y at %H:%M") }}
-							{%- else %}
-								{{- article.next_article_in_category.title }} <i class="fa fa-arrow-circle-right"></i>
-							{%- endif %}
-				        </a>
-				    </li>
-				{% endif %}
-			</ul>
-		{% else %}
-			<!-- no other articles in category {{ article.category }}, skipping... -->
-		{% endif %}
-	{% endif %}
+            <ul class="pager">
+                {% if article.prev_article_in_category %}
+                    <li class="previous">
+                        <a href="{{ SITEURL -}} / {{- article.prev_article_in_category.url }}">
+                            <i class="fa fa-arrow-circle-left"></i> 
+                            {% if article.prev_article_in_category.micro -%}
+                                {{ article.prev_article_in_category.date | datetime("%B %d, %Y at %H:%M") -}}
+                            {% else -%}
+                                {{ article.prev_article_in_category.title -}}
+                            {% endif -%}
+                        </a>
+                    </li>
+                {% endif %}
+                {% if article.next_article_in_category %}
+                    <li class="next">
+                        <a href="{{ SITEURL -}} / {{- article.next_article_in_category.url }}">
+                            {%- if article.next_article_in_category.micro %}
+                                {{- article.next_article_in_category.date | datetime("%B %d, %Y at %H:%M") }}
+                            {%- else %}
+                                {{- article.next_article_in_category.title }} <i class="fa fa-arrow-circle-right"></i>
+                            {%- endif %}
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        {% else %}
+            <!-- no other articles in category {{ article.category }}, skipping... -->
+        {% endif %}
+    {% endif %}
 
-	<hr />
-	<div class="text-center">
-		<p><a href="{{ SITEURL -}} / {{- ARCHIVES_URL }}">Click to see every post in a big list</a></p>
-	</div>
+    <hr />
+    <div class="text-center">
+        <p><a href="{{ SITEURL -}} / {{- ARCHIVES_URL }}">Click to see every post in a big list</a></p>
+    </div>
 {% endif %}

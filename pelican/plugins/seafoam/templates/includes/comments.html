@@ -1,133 +1,133 @@
 {% if DISQUS_SITENAME or PELICAN_COMMENT_SYSTEM %}
-	<hr />
-	<section class="comments pcs-comments" id="comments">
-		<h2>Comments</h2>
+    <hr />
+    <section class="comments pcs-comments" id="comments">
+        <h2>Comments</h2>
 
-		{%- if DISQUS_SITENAME %}
-			<div id="disqus_thread"></div>
-			<script type="text/javascript">
-				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
-				{% if not DISQUS_NO_ID %}
-				var disqus_identifier = '{{ article.date|strftime('%Y-%m-') ~ article.slug if DISQUS_ID_PREFIX_SLUG else article.slug }}';
-				{% endif %}
-				var disqus_url = '{{ SITEURL -}} / {{- article.url }}';
-				var disqus_config = function () {
-					this.language = "{{ DEFAULT_LANG }}";
-				};
+        {%- if DISQUS_SITENAME %}
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = '{{ DISQUS_SITENAME }}'; // required: replace example with your forum shortname
+                {% if not DISQUS_NO_ID %}
+                var disqus_identifier = '{{ article.date|strftime('%Y-%m-') ~ article.slug if DISQUS_ID_PREFIX_SLUG else article.slug }}';
+                {% endif %}
+                var disqus_url = '{{ SITEURL -}} / {{- article.url }}';
+                var disqus_config = function () {
+                    this.language = "{{ DEFAULT_LANG }}";
+                };
 
-				/* * * DON'T EDIT BELOW THIS LINE * * */
-				(function () {
-					var dsq = document.createElement('script');
-					dsq.type = 'text/javascript';
-					dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-				Disqus.</a></noscript>
-			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-		{% endif -%}
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        {% endif -%}
 
-		{%- if PELICAN_COMMENT_SYSTEM %}
-			{# comments and comment form -#}
+        {%- if PELICAN_COMMENT_SYSTEM %}
+            {# comments and comment form -#}
 
-			{#- existing comments, if any -#}
-			{%- if article.comments %}
-				{%- for comment in article.comments recursive %}
-					<div class="media" id="comment-{{comment.slug}}">
-						<div class="media-left">
-							<img src="{{ SITEURL -}} / {{- comment.avatar }}"
-								 alt="Avatar for {{ comment.author }}"
-								 height="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"  {# default size is 72x72, provided by the plugin #}
-								 width="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"
-								 class="media-object">
-						</div>
-						<div class="media-body">
-							<div class="panel
-								        {%- if article.author == comment.author %} panel-primary {%- else %} panel-default {%- endif -%}">
-								<div class="panel-heading">
-									<strong>
-										{%- if comment.metadata['website'] -%}
-											<a href="{{comment.metadata['website']}}">{{ comment.author }}</a>
-										{%- else -%}
-											{{ comment.author }}
-										{%- endif -%}
-									</strong>
-									on <time datetime="{{ comment.date.isoformat() }}" title="{{ comment.date.isoformat() }}">{{ comment.date | article_date }}</time>
-								</div>
-								<div class="panel-body pcs-comment-content" {# psc- class used as id in comments.js #}>
-									{{ comment.content }}
+            {#- existing comments, if any -#}
+            {%- if article.comments %}
+                {%- for comment in article.comments recursive %}
+                    <div class="media" id="comment-{{comment.slug}}">
+                        <div class="media-left">
+                            <img src="{{ SITEURL -}} / {{- comment.avatar }}"
+                                 alt="Avatar for {{ comment.author }}"
+                                 height="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"  {# default size is 72x72, provided by the plugin #}
+                                 width="{{ PELICAN_COMMENT_SYSTEM_IDENTICON_SIZE }}"
+                                 class="media-object">
+                        </div>
+                        <div class="media-body">
+                            <div class="panel
+                                        {%- if article.author == comment.author %} panel-primary {%- else %} panel-default {%- endif -%}">
+                                <div class="panel-heading">
+                                    <strong>
+                                        {%- if comment.metadata['website'] -%}
+                                            <a href="{{comment.metadata['website']}}">{{ comment.author }}</a>
+                                        {%- else -%}
+                                            {{ comment.author }}
+                                        {%- endif -%}
+                                    </strong>
+                                    on <time datetime="{{ comment.date.isoformat() }}" title="{{ comment.date.isoformat() }}">{{ comment.date | article_date }}</time>
+                                </div>
+                                <div class="panel-body pcs-comment-content" {# psc- class used as id in comments.js #}>
+                                    {{ comment.content }}
 
-									<div class="pull-right">
-										<a class="btn btn-link btn-xs" role="button" href="{{ SITEURL -}} / {{- article.url }}#comment-{{comment.slug}}" rel="bookmark" title="Permalink to this comment"><i class="fa fa-link"></i> Permalink</a>
-										<button class="btn btn-primary btn-xs" onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');"><i class="fa fa-reply"></i> Reply</button>
-									</div>
-								</div>
-							</div>  <!-- panel -->
-						
-							{%- if comment.replies %}
-								{{ loop(comment.replies) }}
-							{% endif -%}
-						</div>  <!-- media-body -->
-					</div>  <!-- media -->
-				{%- endfor %}
-			{% else %}
-				<p>There are no comments yet. Will you add the first one?</p>
-			{% endif %}
+                                    <div class="pull-right">
+                                        <a class="btn btn-link btn-xs" role="button" href="{{ SITEURL -}} / {{- article.url }}#comment-{{comment.slug}}" rel="bookmark" title="Permalink to this comment"><i class="fa fa-link"></i> Permalink</a>
+                                        <button class="btn btn-primary btn-xs" onclick="CommentSystem.setReply('{{comment.slug | urlencode}}', '{{comment.author | urlencode}}');"><i class="fa fa-reply"></i> Reply</button>
+                                    </div>
+                                </div>
+                            </div>  <!-- panel -->
+                        
+                            {%- if comment.replies %}
+                                {{ loop(comment.replies) }}
+                            {% endif -%}
+                        </div>  <!-- media-body -->
+                    </div>  <!-- media -->
+                {%- endfor %}
+            {% else %}
+                <p>There are no comments yet. Will you add the first one?</p>
+            {% endif %}
 
-			{# comment form #}
-			<section>
-				<form class="form-horizontal" id="pcs-comment-form" action="#">
-					<input type="hidden" id="pcs-comment-form-input-replyto">
-					<legend>Add a Comment</legend>
-					<div class="form-group">
-						<label for="pcs-comment-form-input-name" class="col-sm-2 control-label">Name</label>
-						<div class="col-sm-10">
-							<input id="pcs-comment-form-input-name" type="text" placeholder="Your name or nickname" class="form-control" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="pcs-comment-form-input-website" class="col-sm-2 control-label">Website</label>
-						<div class="col-sm-10">
-							<input id="pcs-comment-form-input-website" type="text" placeholder="Your website (optional)" class="form-control" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="pcs-comment-form-input-textarea" class="col-sm-2 control-label">Comment</label>
-						<div class="col-sm-10">
-							<textarea id="pcs-comment-form-input-textarea" rows="5" style="resize:vertical;" placeholder="Your comment" class="form-control"></textarea>
-							<p class="help-block">You can use the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> syntax to format your comment.</p>	
-						</div>
-					</div>
-					<div style="display: none;" id="pcs-comment-form-display-replyto">
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-primary"
-							        id="pcs-comment-form-button-submit">
-							    <i class="fa fa-paper-plane"></i>
-								Post comment via email
-							</button>
-							<p>
-								or alternately, send me your thoughts at
-								<tt>{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }} [at] {{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}</tt>
-							</p>
-						</div>
-					</div>
+            {# comment form #}
+            <section>
+                <form class="form-horizontal" id="pcs-comment-form" action="#">
+                    <input type="hidden" id="pcs-comment-form-input-replyto">
+                    <legend>Add a Comment</legend>
+                    <div class="form-group">
+                        <label for="pcs-comment-form-input-name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input id="pcs-comment-form-input-name" type="text" placeholder="Your name or nickname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pcs-comment-form-input-website" class="col-sm-2 control-label">Website</label>
+                        <div class="col-sm-10">
+                            <input id="pcs-comment-form-input-website" type="text" placeholder="Your website (optional)" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pcs-comment-form-input-textarea" class="col-sm-2 control-label">Comment</label>
+                        <div class="col-sm-10">
+                            <textarea id="pcs-comment-form-input-textarea" rows="5" style="resize:vertical;" placeholder="Your comment" class="form-control"></textarea>
+                            <p class="help-block">You can use the <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> syntax to format your comment.</p>
+                        </div>
+                    </div>
+                    <div style="display: none;" id="pcs-comment-form-display-replyto">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary"
+                                    id="pcs-comment-form-button-submit">
+                                <i class="fa fa-paper-plane"></i>
+                                Post comment via email
+                            </button>
+                            <p>
+                                or alternately, send me your thoughts at
+                                <tt>{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }} [at] {{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}</tt>
+                            </p>
+                        </div>
+                    </div>
 
-				{%- if PELICAN_COMMENT_SYSTEM_FEED and article %}
-					<div class="form-group"><div class="col-sm-offset-2 col-sm-10">
-						<a href="{{ SITEURL -}} / {{- PELICAN_COMMENT_SYSTEM_FEED | format(slug=article.slug) }}">
-							<i class="fa fa-rss-square"></i>
-							Comment Atom Feed
-						</a>
-						(for this post)
-					</div></div>
-				{% endif %}
-				</form>
-			</section>
-		{% endif %}
-	</section>
+                {%- if PELICAN_COMMENT_SYSTEM_FEED and article %}
+                    <div class="form-group"><div class="col-sm-offset-2 col-sm-10">
+                        <a href="{{ SITEURL -}} / {{- PELICAN_COMMENT_SYSTEM_FEED | format(slug=article.slug) }}">
+                            <i class="fa fa-rss-square"></i>
+                            Comment Atom Feed
+                        </a>
+                        (for this post)
+                    </div></div>
+                {% endif %}
+                </form>
+            </section>
+        {% endif %}
+    </section>
 {% endif -%}

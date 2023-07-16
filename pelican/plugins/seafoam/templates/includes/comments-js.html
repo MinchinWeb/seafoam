@@ -1,31 +1,31 @@
 {% if article %}
-	{% if PELICAN_COMMENT_SYSTEM %}
-		{# load after jQuery #}
-		<!-- Pelican Comment System -->
-		<script src="{{ SITEURL -}} / {{- THEME_STATIC_DIR -}} /js/comments.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				CommentSystem.email_user   = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }}";
-				CommentSystem.email_domain = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}";
-				CommentSystem.display_replyto_html = function(comment_content, article_slug, author) { 
-					return ''
-						+ '<div class="form-group">'
-						+ '<div class="col-sm-offset-2 col-sm-10">'
-						+ '<button class="pull-xs-right btn btn-sm btn-danger" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
-						+ 	'<i class="fa fa-times-circle"></i> Cancel reply'
-						+ '</button> '
-						+ 'This comment will be posted as a reply to \'<a title="'+comment_content+'" href="#comment-'+article_slug+'">'+author+'</a>\''
-						+ '</div></div>';
-				};
+    {% if PELICAN_COMMENT_SYSTEM %}
+        {# load after jQuery #}
+        <!-- Pelican Comment System -->
+        <script src="{{ SITEURL -}} / {{- THEME_STATIC_DIR -}} /js/comments.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                CommentSystem.email_user   = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_USER }}";
+                CommentSystem.email_domain = "{{ PELICAN_COMMENT_SYSTEM_EMAIL_DOMAIN }}";
+                CommentSystem.display_replyto_html = function(comment_content, article_slug, author) { 
+                    return ''
+                        + '<div class="form-group">'
+                        + '<div class="col-sm-offset-2 col-sm-10">'
+                        + '<button class="pull-xs-right btn btn-sm btn-danger" onclick="CommentSystem.cancelReply(); return false;" title="Cancel the reply">'
+                        +   '<i class="fa fa-times-circle"></i> Cancel reply'
+                        + '</button> '
+                        + 'This comment will be posted as a reply to \'<a title="'+comment_content+'" href="#comment-'+article_slug+'">'+author+'</a>\''
+                        + '</div></div>';
+                };
 
-				$('#pcs-comment-form').on("submit",
-					function( event )
-					{
-						event.preventDefault();
-						$(location).attr('href', CommentSystem.getMailtoLink("{{ article.slug }}"));
-					}
-				);
-			});
-		</script>
-	{% endif %}
+                $('#pcs-comment-form').on("submit",
+                    function( event )
+                    {
+                        event.preventDefault();
+                        $(location).attr('href', CommentSystem.getMailtoLink("{{ article.slug }}"));
+                    }
+                );
+            });
+        </script>
+    {% endif %}
 {% endif %}

@@ -441,7 +441,7 @@ http://www.tipue.com/search
                                                   var patr = new RegExp('(' + d + ')', 'gi');
                                                   t = t.replace(patr, "<span class=\"tipue_search_content_bold\">$1</span>");
                                              }
-                                                                                  
+
                                              var t_d = '';
                                              var t_w = t.split(' ');
                                              if (t_w.length < set.descriptiveWords)
@@ -452,7 +452,7 @@ http://www.tipue.com/search
                                              {
                                                   for (var f = 0; f < set.descriptiveWords; f++)
                                                   {
-                                                       t_d += t_w[f] + ' '; 	
+                                                       t_d += t_w[f] + ' '; 
                                                   }
                                              }
                                              t_d = $.trim(t_d);
@@ -490,7 +490,7 @@ http://www.tipue.com/search
                                    
                                    if (start > 0)
                                    {
-                                       out += '<li role="navigation"><a class="tipue_search_foot_box" accesskey="b" id="' + (start - set.show) + '_' + replace + '">' + tipuesearch_string_6 + '</a></li>'; 
+                                        out += '<li role="navigation"><a class="tipue_search_foot_box" accesskey="b" id="' + (start - set.show) + '_' + replace + '">' + tipuesearch_string_6 + '</a></li>'; 
                                    }
                                                        
                                    if (page <= 2)
@@ -531,10 +531,10 @@ http://www.tipue.com/search
                                              }
                                         }
                                    }                         
-                                                      
+
                                    if (page + 1 != pages)
                                    {
-                                       out += '<li role="navigation"><a class="tipue_search_foot_box" accesskey="m" id="' + (start + set.show) + '_' + replace + '">' + tipuesearch_string_7 + '</a></li>'; 
+                                        out += '<li role="navigation"><a class="tipue_search_foot_box" accesskey="m" id="' + (start + set.show) + '_' + replace + '">' + tipuesearch_string_7 + '</a></li>'; 
                                    }                    
                                    
                                    out += '</ul></div>';
@@ -607,5 +607,5 @@ http://www.tipue.com/search
           
           });
      };
-   
+
 })(jQuery);
