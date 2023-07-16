@@ -63,10 +63,14 @@
             {% if MENUITEMS_2_AT %}
                 <li><a href="{{ SITEURL -}} / {{- MENUITEMS_2_AT_LINK }}" title="{{ MENUITEMS_2_AT }}">{{ MENUITEMS_2_AT }}</a></li>
             {% endif %}
-            {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
+            {% if DISPLAY_CATEGORY_IN_BREADCRUMBS or article.micro %}
                 <li><a href="{{ SITEURL -}} / {{- article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
             {% endif %}
+            {% if article.micro %}
+                <li class="active">{{ article.date | datetime("%B %d, %Y at %H:%M") }}</li>
+            {% else %}
             <li class="active">{{ article.title | striptags }}</li>
+            {% endif %}
         </ol>     
     {% endif %}
 {% endblock %}

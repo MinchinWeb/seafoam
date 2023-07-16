@@ -1,7 +1,12 @@
 <footer class="post-info">
     <span class="label label-default">Published</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> {{ article.date | article_date }}</time>
+        <i class="fa fa-calendar"></i><time datetime="{{ article.date.isoformat() }}"> 
+            {{ article.date | article_date }}
+            {% if article.micro %}
+                at {{ article.date | datetime("%H:%M") }}
+            {% endif -%}
+            </time>
     </span>
     {# Uncomment if you want the author shown #}
     {#{% if article.author %}#}
@@ -9,12 +14,14 @@
     {#<a href="{{ SITEURL -}} / {{- article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>#}
     {#{% endif -%}-#}
 
-    {%- if article.readtime_minutes -%}
-        <span class="label label-default">Reading Time</span>
-        <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
-    {%- elif article.stats -%}
-        <span class="label label-default">Reading Time</span>
-        <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
+    {%- if not article.micro -%}
+        {%- if article.readtime_minutes -%}
+            <span class="label label-default">Reading Time</span>
+            <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
+        {%- elif article.stats -%}
+            <span class="label label-default">Reading Time</span>
+            <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
+        {%- endif -%}
     {%- endif -%}
 
     {#- Uncomment if you want to show Categories#}

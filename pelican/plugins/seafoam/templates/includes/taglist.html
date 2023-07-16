@@ -1,4 +1,4 @@
-{% if article.tags %}
+{% if article.tags and not article.micro %}
 	<span class="label label-default">Filed Under</span>
 	<i class="fa fa-tags"></i>
 	{% for tag in article.tags %}
