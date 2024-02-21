@@ -9716,6 +9716,38 @@ body {
   border: 1px solid #800000;
   margin-left: -1px;
 }
+.label-default a,
+.label-primary a {
+  color: #fff;
+}
+.label-default a:link,
+.label-primary a:link,
+.label-default a:visited,
+.label-primary a:visited,
+.label-default a:hover,
+.label-primary a:hover,
+.label-default a:active,
+.label-primary a:active {
+  text-decoration-line: none;
+  border-bottom: none;
+}
+.panel-primary .panel-heading a {
+  color: #222;
+}
+.btn-primary a {
+  color: #fff;
+}
+.btn-primary a:link,
+.btn-primary a:visited,
+.btn-primary a:hover,
+.btn-primary a:active {
+  text-decoration-line: none;
+  border-bottom: none;
+}
+/*
+// Custom Additions -- Seafoam theme colours
+// --------------------------------------------------
+*/
 /* for Genealogy (Adam/Gigatrees)
 // ------------------------------
 */
@@ -11596,34 +11628,6 @@ div.infowindow {
   background: #fff;
   color: #fff;
   font-size: 24px;
-}
-.label-default a,
-.label-primary a {
-  color: #fff;
-}
-.label-default a:link,
-.label-primary a:link,
-.label-default a:visited,
-.label-primary a:visited,
-.label-default a:hover,
-.label-primary a:hover,
-.label-default a:active,
-.label-primary a:active {
-  text-decoration-line: none;
-  border-bottom: none;
-}
-.panel-primary .panel-heading a {
-  color: #222;
-}
-.btn-primary a {
-  color: #fff;
-}
-.btn-primary a:link,
-.btn-primary a:visited,
-.btn-primary a:hover,
-.btn-primary a:active {
-  text-decoration-line: none;
-  border-bottom: none;
 }
 body {
   padding-top: 70px;
