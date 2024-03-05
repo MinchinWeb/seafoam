@@ -20,6 +20,7 @@ releaser:
             - setuptools
             - wheel
         pypi:
+            - lxml
             - pillow
             - python-dateutil
             - rich

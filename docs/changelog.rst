@@ -3,10 +3,12 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
-- :feature:`-` remove ``respond.js``. This was initially added to support
+- :release:`2.9.2 <2024-03-04>`
+- :support:`- minor` remove ``respond.js``. This was initially added to support
   Internet Explorer 6 to 8, which have since faded away. Plus it was throwing
   an Javascript error.
-- :bug:`-` fix missing icons and icon spacing
+- :bug:`-` fix missing icons (micropost category next link) and icon spacing
+  (readtime and tags in article details).
 - :release:`2.9.1 <2023-07-15>`
 - :support:`- minor` convert indentation to spaces
 - :bug:`-` better display of micropost links
