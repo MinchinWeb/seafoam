@@ -55,8 +55,9 @@
                             {%- if article.next_article_in_category.micro %}
                                 {{- article.next_article_in_category.date | datetime("%B %d, %Y at %H:%M") }}
                             {%- else %}
-                                {{- article.next_article_in_category.title }} <i class="fa fa-arrow-circle-right"></i>
+                                {{- article.next_article_in_category.title }}
                             {%- endif %}
+                            <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </li>
                 {% endif %}
