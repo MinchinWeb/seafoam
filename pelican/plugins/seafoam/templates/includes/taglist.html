@@ -1,6 +1,5 @@
 {% if article.tags and not article.micro %}
-    <span class="label label-default">Filed Under</span>
-    <i class="fa fa-tags"></i>
+    <span class="label label-default">Filed Under</span>&nbsp;<i class="fa fa-tags"></i>
     {% for tag in article.tags %}
         <a href="{{ SITEURL -}} / {{- tag.url }}">{{ tag }}</a>
         {%- if not loop.last %} &bull; {% endif -%}

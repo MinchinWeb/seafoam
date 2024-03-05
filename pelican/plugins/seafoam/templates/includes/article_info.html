@@ -16,11 +16,9 @@
 
     {%- if not article.micro -%}
         {%- if article.readtime_minutes -%}
-            <span class="label label-default">Reading Time</span>
-            <i class="fa fa-clock-o"></i> ~{{ article.readtime_minutes }} min
+            <span class="label label-default">Reading Time</span>&nbsp;<i class="fa fa-clock-o"></i>&nbsp;~{{ article.readtime_minutes }}&nbsp;min
         {%- elif article.stats -%}
-            <span class="label label-default">Reading Time</span>
-            <i class="fa fa-clock-o"></i> ~{{ article.stats['read_mins'] }} min
+            <span class="label label-default">Reading Time</span>&nbsp;<i class="fa fa-clock-o"></i>&nbsp;~{{ article.stats['read_mins'] }}&nbsp;min
         {%- endif -%}
     {%- endif -%}
 
