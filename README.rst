@@ -693,6 +693,12 @@ Known Issues
 
 - activating both Typogrify and the Pelican Comment System on Pelican 3.6
   causes issues. This issue has been fixed in Pelican 3.7.
+- minification (specifically,
+  `pelican-minify <https://github.com/pelican-plugins/minify>`_) breaks the
+  included *jQuery* and causes random spacing issues. I have had on and off
+  issues since forever with minification, but my current suggestion is to turn
+  it off. The latest indication that something was wrong was that the
+  navigation pull down menu wouldn't work on narrow screens.
 
 Credits
 -------
