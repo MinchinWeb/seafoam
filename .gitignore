@@ -45,4 +45,4 @@ env*/
 .vscode/*
 
 ## test output
-test/output
+test/output/*

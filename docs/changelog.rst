@@ -3,6 +3,10 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :feature:`17` Upgrade Font Awesome (icons) from v4 to v6.5.1. Includes a shim
+  for v4 compatibility, so no existing icons in use should need to be rename.
+  It appears that some (all?) of the icons have been re-drawn, so they may
+  appear slightly different.
 - :release:`2.9.2 <2024-03-04>`
 - :support:`- minor` remove ``respond.js``. This was initially added to support
   Internet Explorer 6 to 8, which have since faded away. Plus it was throwing
