@@ -19324,6 +19324,635 @@ div.infowindow {
   color: #fff;
   font-size: 24px;
 }
+li.task-list-item {
+  list-style: none;
+  text-indent: -26px;
+}
+input.task-list-item-checkbox {
+  display: none;
+}
+span[data-task='"'],
+span[data-task=" "],
+span[data-task="-"],
+span[data-task="!"],
+span[data-task="?"],
+span[data-task="@"],
+span[data-task="*"],
+span[data-task="/"],
+span[data-task="&"],
+span[data-task="+"],
+span[data-task="<"],
+span[data-task=">"],
+span[data-task="~"],
+span[data-task="A"],
+span[data-task="b"],
+span[data-task="B"],
+span[data-task="c"],
+span[data-task="C"],
+span[data-task="d"],
+span[data-task="D"],
+span[data-task="E"],
+span[data-task="f"],
+span[data-task="F"],
+span[data-task="H"],
+span[data-task="i"],
+span[data-task="I"],
+span[data-task="k"],
+span[data-task="l"],
+span[data-task="L"],
+span[data-task="n"],
+span[data-task="N"],
+span[data-task="O"],
+span[data-task="p"],
+span[data-task="P"],
+span[data-task="Q"],
+span[data-task="r"],
+span[data-task="R"],
+span[data-task="s"],
+span[data-task="S"],
+span[data-task="t"],
+span[data-task="T"],
+span[data-task="u"],
+span[data-task="w"],
+span[data-task="W"],
+span[data-task="x"],
+span[data-task="X"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-family: 'Font Awesome 6 Free';
+  text-align: center;
+  width: 1.25em;
+  color: #93a1a1;
+}
+span[data-task=" "] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task=" "]:before {
+  content: "\f0c8";
+}
+span[data-task="/"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="/"]:before {
+  content: "\f042";
+}
+span[data-task="x"],
+span[data-task="X"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="x"]:before,
+span[data-task="X"]:before {
+  content: "\f14a";
+}
+span[data-task="-"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="-"]:before {
+  content: "\f146";
+}
+span[data-task=">"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task=">"]:before {
+  content: "\f152";
+}
+span[data-task="<"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="<"]:before {
+  content: "\f133";
+}
+span[data-task="?"] {
+  color: #f6bb42;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="?"]:before {
+  content: "\3f";
+}
+span[data-task="!"] {
+  color: #fc6e51;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="!"]:before {
+  content: "\21";
+}
+span[data-task="*"] {
+  color: #f6bb42;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="*"]:before {
+  content: "\f005";
+}
+span[data-task='"'],
+span[data-task="Q"] {
+  color: #3bafda;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task='"']:before,
+span[data-task="Q"]:before {
+  content: "\f10d";
+}
+span[data-task="l"],
+span[data-task="L"] {
+  color: #b58900;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="l"]:before,
+span[data-task="L"]:before {
+  content: "\f3c5";
+}
+span[data-task="b"] {
+  color: #967adc;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="b"]:before {
+  content: "\f02e";
+}
+span[data-task="i"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="i"]:before {
+  content: "\f05a";
+}
+span[data-task="I"] {
+  color: #ffce54;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="I"]:before {
+  content: "\f0eb";
+}
+span[data-task="p"],
+span[data-task="P"] {
+  color: #8cc152;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="p"]:before,
+span[data-task="P"]:before {
+  content: "\f164";
+}
+span[data-task="c"],
+span[data-task="C"] {
+  color: #da4453;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="c"]:before,
+span[data-task="C"]:before {
+  content: "\f165";
+}
+span[data-task="f"] {
+  color: #ed5565;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="f"]:before {
+  content: "\f06d";
+}
+span[data-task="k"] {
+  color: #f6bb42;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="k"]:before {
+  content: "\f084";
+}
+span[data-task="w"] {
+  color: #ac92ec;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="w"]:before {
+  content: "\f1fd";
+}
+span[data-task="u"] {
+  color: #8cc152;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="u"]:before {
+  content: "\e098";
+}
+span[data-task="d"] {
+  color: #da4453;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="d"]:before {
+  content: "\e097";
+}
+span[data-task="n"],
+span[data-task="N"] {
+  color: #ccd1d9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="n"]:before,
+span[data-task="N"]:before {
+  content: "\f249";
+}
+span[data-task="@"] {
+  color: #4fc1e9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="@"]:before {
+  content: "\f183";
+}
+span[data-task="D"] {
+  color: #ccd1d9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="D"]:before {
+  content: "\f273";
+}
+span[data-task="+"] {
+  color: #ec87c0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+span[data-task="+"]:before {
+  content: "\2b";
+}
+span[data-task="R"] {
+  color: #ccd1d9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="R"]:before {
+  content: "\f002";
+}
+span[data-task="B"] {
+  color: #967adc;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="B"]:before {
+  content: "\f5dc";
+}
+span[data-task="E"] {
+  color: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="E"]:before {
+  content: "\f00c";
+}
+span[data-task="A"] {
+  color: #8cc152;
+}
+span[data-task="A"]:before {
+  content: "\f058";
+}
+span[data-task="r"] {
+  color: #ffce54;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="r"]:before {
+  content: "\f091";
+}
+span[data-task="t"] {
+  color: #3bafda;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="t"]:before {
+  content: "\f110";
+}
+span[data-task="T"] {
+  color: #ccd1d9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="T"]:before {
+  content: "\f2f2";
+}
+span[data-task="O"] {
+  color: #37bc9b;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="O"]:before {
+  content: "\f5fd";
+}
+span[data-task="~"] {
+  color: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="~"]:before {
+  content: "\f00c";
+}
+span[data-task="W"] {
+  color: #8cc152;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="W"]:before {
+  content: "\f57d";
+}
+span[data-task="F"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="F"]:before {
+  content: "\f520";
+}
+span[data-task="H"] {
+  color: #ed5565;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="H"]:before {
+  content: "\f004";
+}
+span[data-task="&"] {
+  color: #967adc;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="&"]:before {
+  content: "\f6ad";
+}
+span[data-task="s"] {
+  color: #f6bb42;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="s"]:before {
+  content: "\f023";
+}
+span[data-task="S"] {
+  color: #f6bb42;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="S"]:before {
+  content: "\f4d3";
+}
 body {
   padding-top: 70px;
 }
