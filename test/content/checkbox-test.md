@@ -28,9 +28,8 @@ Likely requires `minchin.pelican.readers.commonmark` and
 - [l] `[l]` location
 - [L] `[L]` (big) location
 - [b] `[b]` bookmark
-- [i] `[i]` information
+- [i] `[i]` information / idea
 - [S] `[S]` savings
-- [i] `[i]` idea
 - [I] `[I]` (big) idea
 - [p] `[p]` pros / paraphrase
 - [P] `[P]` (big) pro

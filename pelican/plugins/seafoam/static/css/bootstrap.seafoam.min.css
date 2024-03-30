@@ -19399,10 +19399,9 @@ span[data-task="X"] {
   font-family: 'Font Awesome 6 Free';
   text-align: center;
   width: 1.25em;
-  color: #93a1a1;
 }
 span[data-task=" "] {
-  color: #93a1a1;
+  color: #4a89dc;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -19416,7 +19415,7 @@ span[data-task=" "]:before {
   content: "\f0c8";
 }
 span[data-task="/"] {
-  color: #93a1a1;
+  color: #4a89dc;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -19431,7 +19430,7 @@ span[data-task="/"]:before {
 }
 span[data-task="x"],
 span[data-task="X"] {
-  color: #93a1a1;
+  color: #4a89dc;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -19439,7 +19438,7 @@ span[data-task="X"] {
   font-variant: normal;
   text-rendering: auto;
   font-family: 'Font Awesome 6 Free';
-  font-weight: 400;
+  font-weight: 900;
 }
 span[data-task="x"]:before,
 span[data-task="X"]:before {
@@ -19459,7 +19458,8 @@ span[data-task="-"] {
 span[data-task="-"]:before {
   content: "\f146";
 }
-span[data-task=">"] {
+span[data-task=">"],
+span[data-task="&gt;"] {
   color: #93a1a1;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -19470,10 +19470,12 @@ span[data-task=">"] {
   font-family: 'Font Awesome 6 Free';
   font-weight: 400;
 }
-span[data-task=">"]:before {
+span[data-task=">"]:before,
+span[data-task="&gt;"]:before {
   content: "\f152";
 }
-span[data-task="<"] {
+span[data-task="<"],
+span[data-task="&lt;"] {
   color: #93a1a1;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -19484,7 +19486,8 @@ span[data-task="<"] {
   font-family: 'Font Awesome 6 Free';
   font-weight: 400;
 }
-span[data-task="<"]:before {
+span[data-task="<"]:before,
+span[data-task="&lt;"]:before {
   content: "\f133";
 }
 span[data-task="?"] {
@@ -19496,10 +19499,10 @@ span[data-task="?"] {
   font-variant: normal;
   text-rendering: auto;
   font-family: 'Font Awesome 6 Free';
-  font-weight: 400;
+  font-weight: 900;
 }
 span[data-task="?"]:before {
-  content: "\3f";
+  content: "\f059";
 }
 span[data-task="!"] {
   color: #fc6e51;
@@ -19510,10 +19513,10 @@ span[data-task="!"] {
   font-variant: normal;
   text-rendering: auto;
   font-family: 'Font Awesome 6 Free';
-  font-weight: 400;
+  font-weight: 900;
 }
 span[data-task="!"]:before {
-  content: "\21";
+  content: "\f071";
 }
 span[data-task="*"] {
   color: #f6bb42;
@@ -19530,7 +19533,8 @@ span[data-task="*"]:before {
   content: "\f005";
 }
 span[data-task='"'],
-span[data-task="Q"] {
+span[data-task="Q"],
+span[data-task="&quot;"] {
   color: #3bafda;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -19542,12 +19546,13 @@ span[data-task="Q"] {
   font-weight: 900;
 }
 span[data-task='"']:before,
-span[data-task="Q"]:before {
+span[data-task="Q"]:before,
+span[data-task="&quot;"]:before {
   content: "\f10d";
 }
 span[data-task="l"],
 span[data-task="L"] {
-  color: #b58900;
+  color: #ec87c0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);
@@ -19576,7 +19581,7 @@ span[data-task="b"]:before {
   content: "\f02e";
 }
 span[data-task="i"] {
-  color: #93a1a1;
+  color: #4fc1e9;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: var(--fa-display, inline-block);

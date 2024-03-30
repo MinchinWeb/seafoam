@@ -71,19 +71,19 @@ span[data-task="X"] {
     text-align: center;
     width: @fa-fw-width;
 
-    color: @sol-grayLight;
+    // color: @sol-grayLight;
 }
 
 //  add  .far;  or  .fas;  to actually apply a font, so the icon shows
 span[data-task=" "] {
-    color: @sol-grayLight;
+    color: @flat-jeans-dk;
     .far;
     &:before {
         content: @fa-var-square;
     }
 }
 span[data-task="/"] {
-    color: @sol-grayLight;
+    color: @flat-jeans-dk;
     .fas;
     &:before {
         content: @fa-var-circle-half-stroke;
@@ -91,8 +91,8 @@ span[data-task="/"] {
 }
 span[data-task="x"],
 span[data-task="X"] {
-    color: @sol-grayLight;
-    .far;
+    color: @flat-jeans-dk;
+    .fas;
     &:before {
         content: @fa-var-square-check;
     }
@@ -105,14 +105,16 @@ span[data-task="-"] {
         content: @fa-var-square-minus;
     }
 }
-span[data-task=">"] {
+span[data-task=">"],
+span[data-task="&gt;"] {
     color: @sol-grayLight;
     .far;
     &:before {
         content: @fa-var-square-caret-right;
     }
 }
-span[data-task="<"] {
+span[data-task="<"],
+span[data-task="&lt;"] {
     color: @sol-grayLight;
     .far;
     &:before {
@@ -121,16 +123,18 @@ span[data-task="<"] {
 }
 span[data-task="?"] {
     color: @flat-sunflower-dk;
-    .far;
+    .fas;
     &:before {
-        content: @fa-var-question;
+        // content: @fa-var-question;
+        content: @fa-var-circle-question;
     }
 }
 span[data-task="!"] {
     color: @flat-bittersweet-lt;
-    .far;
+    .fas;
     &:before {
-        content: @fa-var-exclamation;
+        // content: @fa-var-exclamation;
+        content: @fa-var-triangle-exclamation;
     }
 }
 span[data-task="*"] {
@@ -143,7 +147,8 @@ span[data-task="*"] {
 
 // quote
 span[data-task='"'],
-span[data-task="Q"] {
+span[data-task="Q"],
+span[data-task="&quot;"] {
     color: @flat-aqua-dk;
     .fas;
     &:before {
@@ -154,7 +159,8 @@ span[data-task="Q"] {
 // Location
 span[data-task="l"],
 span[data-task="L"] {
-    color: @sol-yellow;
+    // color: @sol-yellow;
+    color: @flat-rose-lt;
     .fas;
     &:before {
         content: @fa-var-location-dot;
@@ -168,7 +174,7 @@ span[data-task="b"] {
     }
 }
 span[data-task="i"] {
-    color: @sol-grayLight;
+    color: @flat-aqua-lt;
     .fas;
     &:before {
         content: @fa-var-circle-info;
