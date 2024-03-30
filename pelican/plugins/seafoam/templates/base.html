@@ -10,7 +10,7 @@
     {% set DISPLAY_ARCHIVES_ON_MENU = True %}
 {% endif -%}
 
-{% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?v=3.1.1" -%}
+{% set JQUERY_JS_URL=SITEURL ~ "/" ~ THEME_STATIC_DIR ~ "/js/jquery.min.js?v=3.7.1" -%}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -130,18 +130,18 @@
 
     <!-- JQUERY_JS_IN_HEAD -->
     {% if JQUERY_JS_IN_HEAD %}
-        <script src="{{ JQUERY_JS_URL }}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{ JQUERY_JS_URL }}"></script>
     {% endif %}
 
     <!-- CUSTOM_JS_LIST_HEAD -->
     {% if CUSTOM_JS_LIST_HEAD %}
         {% for custom_js in CUSTOM_JS_LIST_HEAD %}
             {% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
-                <script src="{{ custom_js }}" type="text/javascript"></script>
+                <script type="text/javascript" src="{{ custom_js }}"></script>
             {% elif custom_js.startswith('<script') %}
                 {{ custom_js }}
             {% else %}
-                <script src="{{ SITEURL -}} / {{- custom_js }}" type="text/javascript"></script>
+                <script type="text/javascript" src="{{ SITEURL -}} / {{- custom_js }}"></script>
             {% endif %}
         {% endfor %}
     {% endif -%}
@@ -281,25 +281,22 @@
 {% else %}
     <!-- JQuery, if not in head -->
     {% if not JQUERY_JS_IN_HEAD == True %}
-        <script src="{{ JQUERY_JS_URL }}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{ JQUERY_JS_URL }}"></script>
     {% endif %}
 
     <!-- Bootstrap -- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ SITEURL -}} / {{- THEME_STATIC_DIR -}} /js/bootstrap.min.js" type="text/javascript"></script>
-
-    <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-    <script src="{{ SITEURL -}} / {{- THEME_STATIC_DIR -}} /js/respond.min.js?v=1.4.2" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ SITEURL -}} / {{- THEME_STATIC_DIR -}} /js/bootstrap.min.js"></script>
 {% endif %}
 
 <!-- CUSTOM_JS_LIST -->
 {% if CUSTOM_JS_LIST %}
     {% for custom_js in CUSTOM_JS_LIST %}
         {% if custom_js.startswith('//') or custom_js.startswith('http://') or custom_js.startswith('https://') %}
-            <script src="{{ custom_js }}" type="text/javascript"></script>
+            <script type="text/javascript" src="{{ custom_js }}"></script>
         {% elif custom_js.startswith('<script') %}
             {{ custom_js }}
         {% else %}
-            <script src="{{ SITEURL -}} / {{- custom_js }}" type="text/javascript"></script>
+            <script type="text/javascript" src="{{ SITEURL -}} / {{- custom_js }}"></script>
         {% endif %}
     {% endfor %}
 {% endif -%}
