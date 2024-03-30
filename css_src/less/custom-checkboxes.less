@@ -1,7 +1,16 @@
 li.task-list-item {
     list-style: none;
     // margin-left: -18px;  // find variable
-    text-indent: -26px;
+    text-indent: -27px;
+
+    &>p:not(:first-child) {
+        text-indent: 0;
+    }
+
+    &>span[data-task],
+    &>p>span[data-task]{
+        padding-left: 23px;
+    }
 }
 
 input.task-list-item-checkbox {

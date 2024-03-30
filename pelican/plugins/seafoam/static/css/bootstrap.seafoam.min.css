@@ -19331,7 +19331,14 @@ div.infowindow {
 }
 li.task-list-item {
   list-style: none;
-  text-indent: -26px;
+  text-indent: -27px;
+}
+li.task-list-item > p:not(:first-child) {
+  text-indent: 0;
+}
+li.task-list-item > span[data-task],
+li.task-list-item > p > span[data-task] {
+  padding-left: 23px;
 }
 input.task-list-item-checkbox {
   display: none;
