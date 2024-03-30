@@ -17439,6 +17439,11 @@ body {
   text-decoration-line: none;
   border-bottom: none;
 }
+li > p:last-of-type,
+li > p:has(+ ul),
+li > p:has(+ ol) {
+  margin-bottom: 0;
+}
 /*
 // Custom Additions -- Seafoam theme colours
 // --------------------------------------------------

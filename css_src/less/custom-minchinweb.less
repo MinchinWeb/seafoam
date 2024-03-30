@@ -316,3 +316,14 @@ body {
     border-bottom: none;
   }
 }
+
+
+// paragraphs in lists
+
+// drop bottom margin for last paragraph within a list item, or last paragraph
+// before a sub-list
+li>p:last-of-type,
+li>p:has(+ ul),
+li>p:has(+ ol) {
+    margin-bottom: 0;
+}
