@@ -78,6 +78,7 @@ EXTRA_REQUIRES = {
         # 'pydocstyle',
         # 'pycodestyle',
         # 'check-manifest'
+        "markdown",
     ],
     "dev": [
         "markdown",

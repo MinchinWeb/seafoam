@@ -8,6 +8,7 @@ releaser:
     changelog: changelog.rst
     version: pelican/plugins/seafoam/constants.py
     test_command: none
+    doc_command: none
     version_bump: none
     extra_packages:
         test:

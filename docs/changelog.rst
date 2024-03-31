@@ -3,6 +3,8 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.10.0 <2024-03-30>`
+- :feature:`-` add support for fancy tasklists/checkboxes.
 - :bug:`- major` fix last paragraph spacing within lists
 - :feature:`17` Upgrade Font Awesome (icons) from v4 to v6.5.1. Includes a shim
   for v4 compatibility, so no existing icons in use should need to be rename.

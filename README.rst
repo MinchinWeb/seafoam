@@ -14,8 +14,8 @@ a static site generator written in Python.
     :alt: PyPI version number
 
 .. image:: https://img.shields.io/badge/-Changelog-success
-   :target: https://github.com/MinchinWeb/seafoam/blob/master/docs/changelog.rst
-   :alt: Changelog
+    :target: https://github.com/MinchinWeb/seafoam/blob/master/docs/changelog.rst
+    :alt: Changelog
 
 .. image:: https://img.shields.io/pypi/pyversions/seafoam?style=flat
     :target: https://pypi.python.org/pypi/seafoam/
@@ -125,6 +125,9 @@ listed in this section are required.
   <https://github.com/getpelican/pelican-plugins/tree/master/related_posts>`_ --
   adds the ``related_posts`` variable to the article's context.
 - Tipue Search
+- `Fancy Tasklists (Checkboxes)
+  <https://github.com/MinchinWeb/minchin.md-it.fancy-tasklists>`_ -- this
+  extends the Markdown checkboxes to display a number of icons instead.
 
 
 Additional Images
@@ -175,6 +178,12 @@ Monthly Archives
 404 Error Page
 
 .. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.6.0/404.png
+    :align: center
+    :alt: 404 Error
+
+Fancy Checkboxes / Tasklist
+
+.. image:: https://github.com/MinchinWeb/seafoam/raw/master/docs/screenshots/2.10.0/fancy-checkboxes.png
     :align: center
     :alt: 404 Error
 
