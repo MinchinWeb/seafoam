@@ -19344,6 +19344,7 @@ input.task-list-item-checkbox {
   display: none;
 }
 span[data-task='"'],
+span[data-task="&quot;"],
 span[data-task=" "],
 span[data-task="-"],
 span[data-task="!"],
@@ -19352,9 +19353,12 @@ span[data-task="@"],
 span[data-task="*"],
 span[data-task="/"],
 span[data-task="&"],
+span[data-task="&amp;"],
 span[data-task="+"],
 span[data-task="<"],
+span[data-task="&lt;"],
 span[data-task=">"],
+span[data-task="&gt;"],
 span[data-task="~"],
 span[data-task="A"],
 span[data-task="b"],
@@ -19389,7 +19393,9 @@ span[data-task="w"],
 span[data-task="W"],
 span[data-task="x"],
 span[data-task="X"],
-span[data-task="🚿"] {
+span[data-task="🚿"],
+span[data-task="⛪"],
+span[data-task="🦷"] {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -19929,7 +19935,8 @@ span[data-task="H"] {
 span[data-task="H"]:before {
   content: "\f004";
 }
-span[data-task="&"] {
+span[data-task="&"],
+span[data-task="&amp;"] {
   color: #967adc;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -19940,7 +19947,8 @@ span[data-task="&"] {
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
 }
-span[data-task="&"]:before {
+span[data-task="&"]:before,
+span[data-task="&amp;"]:before {
   content: "\f6ad";
 }
 span[data-task="s"] {
@@ -19984,6 +19992,34 @@ span[data-task="🚿"] {
 }
 span[data-task="🚿"]:before {
   content: "\f2cd";
+}
+span[data-task="⛪"] {
+  color: #93a1a1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="⛪"]:before {
+  content: "\f51d";
+}
+span[data-task="🦷"] {
+  color: #ccd1d9;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+span[data-task="🦷"]:before {
+  content: "\f5c9";
 }
 body {
   padding-top: 70px;

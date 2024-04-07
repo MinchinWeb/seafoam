@@ -1,7 +1,7 @@
 ---
 title: Checkbox Test
-date: 2024-01-31 21:42:00
-modified: 2024-03-30 15:40:38
+date: 2024-01-31 21:42:00-0700
+modified: 2024-04-07 14:56:00-0600
 tags:
     - test
     - markdown
@@ -14,9 +14,9 @@ good, and that the align well when imbedded in other lists.
 Likely requires `minchin.pelican.readers.commonmark` and
 `minchin.md-it.fancy-checkboxes`.
 
-- [ ] `[ ]` to-do
+- [ ] `[ ]` to-do (open item)
 - [/] `[/]` incomplete / half-done
-- [x] `[x]` done
+- [x] `[x]` done (todo item)
 - [X] `[X]` (big) done
 - [-] `[-]` canceled / dropped
 - [>] `[>]` forwarded
@@ -60,6 +60,9 @@ Likely requires `minchin.pelican.readers.commonmark` and
 - [H] `[H]` favorite / health
 - [&] `[&]` symbolism
 - [s] `[s]` secret
+- [🚿] `[🚿]` shower
+- [🦷] `[🦷]` tooth / dental
+- [⛪] `[⛪]` church
 
 ---
 

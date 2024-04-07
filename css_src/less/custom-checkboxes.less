@@ -18,6 +18,7 @@ input.task-list-item-checkbox {
 }
 
 span[data-task='"'],
+span[data-task="&quot;"],
 span[data-task=" "],
 span[data-task="-"],
 span[data-task="!"],
@@ -26,9 +27,12 @@ span[data-task="@"],
 span[data-task="*"],
 span[data-task="/"],
 span[data-task="&"],
+span[data-task="&amp;"],
 span[data-task="+"],
 span[data-task="<"],
+span[data-task="&lt;"],
 span[data-task=">"],
+span[data-task="&gt;"],
 span[data-task="~"],
 span[data-task="A"],
 span[data-task="b"],
@@ -63,7 +67,9 @@ span[data-task="w"],
 span[data-task="W"],
 span[data-task="x"],
 span[data-task="X"],
-span[data-task="🚿"] {
+span[data-task="🚿"],
+span[data-task="⛪"],
+span[data-task="🦷"] {
     .fa-icon();
     // .far;  // default to "regular"
     font-family: 'Font Awesome 6 Free';
@@ -337,6 +343,8 @@ span[data-task="t"] {
         content: @fa-var-spinner;
     }
 }
+
+// time
 span[data-task="T"] {
     color: @flat-md-grey-lt;
     .fas;
@@ -386,7 +394,8 @@ span[data-task="H"] {
 }
 
 // Symbolism
-span[data-task="&"] {
+span[data-task="&"],
+span[data-task="&amp;"] {
     color: @flat-lavender-dk;
     .fas;
     &:before {
@@ -418,3 +427,24 @@ span[data-task="🚿"] {
         content: @fa-var-bath;
     }
 }
+
+
+// Church
+span[data-task="⛪"] {
+    color: @sol-grayLight;
+    .fas;
+    &:before {
+        content: @fa-var-church;
+    }
+}
+
+// Tooth
+span[data-task="🦷"] {
+    // color: @sol-white;
+    color: @flat-md-grey-lt;
+    .fas;
+    &:before {
+        content: @fa-var-tooth;
+    }
+}
+

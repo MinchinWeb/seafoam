@@ -1,4 +1,13 @@
 from pelican.plugins import seafoam
+try:
+    from minchin.pelican.readers import commonmark
+except ImportError:
+    commonmark = None
+
+try:
+    from minchin.md_it import fancy_tasklists
+except ImportError:
+    fancy_tasklist = None
 
 # THEME = seafoam.get_path()
 # BOOTSTRAP_THEME = "seafoam"
@@ -14,6 +23,10 @@ PLUGINS = [
     # "pelican.plugins.jinja_filters",
     # "pelican.plugins.image_process",
 ]
+if commonmark:
+    PLUGINS = PLUGINS + [
+        commonmark,
+    ]
 
 CACHE_CONTENT = False
 LOAD_CACHE_CONTENT = False
@@ -53,3 +66,21 @@ MENUITEMS = (
 
 DISPLAY_BREADCRUMBS = True
 DISPLAY_CATEGORY_IN_BREADCRUMBS = True
+
+
+
+
+if commonmark:
+    COMMONMARK = commonmark.constants.COMMONMARK_DEFAULT_CONFIG
+
+    # # use Pelican-style Front Matter
+    # for i, plugin in enumerate(COMMONMARK["extensions"]):
+    #     if plugin.__name__ == "front_matter_plugin":
+    #         del COMMONMARK["extensions"][i]
+
+if commonmark and fancy_tasklists:
+    COMMONMARK["extensions"].append(
+        # minchin.md_it.fancy_tasklists.fancy_tasklists_plugin,
+        fancy_tasklists.fancy_tasklists_plugin,
+    )
+
