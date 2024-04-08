@@ -19343,6 +19343,12 @@ li.task-list-item > p > span[data-task] {
 input.task-list-item-checkbox {
   display: none;
 }
+li.task-list-item li {
+  text-indent: 0;
+}
+li.task-list-item li.task-list-item {
+  text-indent: inherit;
+}
 span[data-task='"'],
 span[data-task="&quot;"],
 span[data-task=" "],

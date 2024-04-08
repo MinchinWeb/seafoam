@@ -101,3 +101,11 @@ Likely requires `minchin.pelican.readers.commonmark` and
         - [x] Level 3  -- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+---
+
+- [*] base list
+    - sub-list should indent as expected under a tasklist, without this list
+      also containing a tasklist. List marker should be visible, and not hidden
+      under the item text.
+        - and this sub-list too!

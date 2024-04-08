@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` Fix indents around complex tasklists.
 - :release:`2.10.1 <2024-04-07>`
 - :bug:`-` additional CSS to add indicators added by *fancy tasklists* v1.1.0
   (💒 (church), and 🦷 (tooth)).
