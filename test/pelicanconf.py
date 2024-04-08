@@ -1,4 +1,5 @@
 from pelican.plugins import seafoam
+
 try:
     from minchin.pelican.readers import commonmark
 except ImportError:
