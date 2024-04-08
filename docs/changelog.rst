@@ -3,6 +3,9 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` additional CSS to add indicators added by *fancy tasklists* v1.1.0
+  (💒 (church), and 🦷 (tooth)).
+- :support:`- minor` better support for testing fancy tasklists. 
 - :release:`2.10.0 <2024-03-30>`
 - :feature:`-` add support for fancy tasklists/checkboxes.
 - :bug:`- major` fix last paragraph spacing within lists
