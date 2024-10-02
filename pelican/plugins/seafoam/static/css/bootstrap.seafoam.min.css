@@ -17444,6 +17444,12 @@ li > p:has(+ ul),
 li > p:has(+ ol) {
   margin-bottom: 0;
 }
+/* Microblogging (Pelican plugin)
+// ------------------------------
+*/
+#archives .microblog-post-tag {
+  display: none;
+}
 /*
 // Custom Additions -- Seafoam theme colours
 // --------------------------------------------------

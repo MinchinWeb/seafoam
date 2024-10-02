@@ -3,8 +3,12 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` support `microblogging pluging
+  <https://blog.minchin.ca/label/microblogging-pelican/>`_ better.
+  Specifically, allow the plugin to control post sort order and hide appended
+  tags on the index page. Requires v1.3.0 or newer of the plugin.
 - :release:`2.10.2 <2024-04-07>`
-- :bug:`-` Fix indents around complex tasklists.
+- :bug:`-` Fix indents around complex (compound) tasklists.
 - :release:`2.10.1 <2024-04-07>`
 - :bug:`-` additional CSS to add indicators added by *fancy tasklists* v1.1.0
   (💒 (church), and 🦷 (tooth)).
