@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.10.3 <2024-10-01>`
 - :bug:`-` support `microblogging pluging
   <https://blog.minchin.ca/label/microblogging-pelican/>`_ better.
   Specifically, allow the plugin to control post sort order and hide appended
