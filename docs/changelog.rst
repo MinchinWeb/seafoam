@@ -3,9 +3,10 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :release:`2.19.2 <2026-08-03>`
 - :bug:`-` cleanup of tasknote "read more" links
 - :bug:`-` add default canonical URL's to several templates (to allow sites to
-  generate if these URL settings are specified)
+  generate if these URL settings are not specified)
 - :release:`2.19.1 <2026-05-19>`
 - :feature:`- minor` add ``GOOGLE_ANALYTICS_V4_2`` to add a second Google tag.
 - :bug:`-` allow separate ``CANONICAL_SITEURL`` from ``SITEURL``

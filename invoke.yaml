@@ -21,3 +21,5 @@ releaser:
             - soupsieve
             - wheel
         pypi:
+            - pelican
+            - beautifulsoup4
