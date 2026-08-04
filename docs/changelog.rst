@@ -3,6 +3,7 @@ Changelog
 
 .. Added, Changed, Depreciated, Removed, Fixed, Security
 
+- :bug:`-` cleanup of tasknote "read more" links
 - :bug:`-` add default canonical URL's to several templates (to allow sites to
   generate if these URL settings are specified)
 - :release:`2.19.1 <2026-05-19>`

@@ -106,9 +106,9 @@
                 {% include 'includes/comment_count.html' %}
             {% endif -%}
             {# only display the 'read more' link if there is more to the article #}
-            {% if article.tasknote and article.content | length <= 7 %}
+            {% if article.tasknote and article.content | length >= 7 %}
                 &bull;&nbsp;<span class="label label-primary">
-                    <a href="{{ SITEURL -}} / {{- article.url }}"><i class="fa fa-link"></i>&nbsp;permalink</a>
+                    <a href="{{ SITEURL -}} / {{- article.url }}">read more&nbsp;<i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
                 </span>
             {% elif article.micro %}
                 &bull;&nbsp;<span class="label label-primary">
@@ -116,7 +116,7 @@
                 </span>
             {% elif article.tasknote %}
                 &bull;&nbsp;<span class="label label-primary">
-                    <a href="{{ SITEURL -}} / {{- article.url }}"><i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
+                    <a href="{{ SITEURL -}} / {{- article.url }}" title="permalink"><i class="fa fa-arrow-circle-right"></i>&nbsp;</a>
                 </span>
             {% elif article.has_summary != false %} 
                 &bull;&nbsp;<span class="label label-primary">
